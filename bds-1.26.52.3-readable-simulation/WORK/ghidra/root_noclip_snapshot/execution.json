@@ -1,0 +1,64 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/root_noclip_snapshot",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_noclip_snapshot/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_noclip_snapshot/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_noclip_snapshot/headless.log"
+  ],
+  "started_utc": "2026-10-15T18:21:05.164545+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/root_noclip_snapshot",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T18:21:15.289074+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/root_noclip_snapshot/0x145e5c6d0_FUN_145e5c6d0.c",
+      "bytes": 4110,
+      "sha256": "6259625f027dfa969a2bb13d74b3d179a024c1c913dfb0ab052df229f618fa97",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_noclip_snapshot/0x145e65390_FUN_145e65390.c",
+      "bytes": 2119,
+      "sha256": "8aa8170fae295a7b27c074adb98d34d98b6b3a6918bae8b9a407d22dfe2be1d5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_noclip_snapshot/0x148265630_FUN_148265630.c",
+      "bytes": 4902,
+      "sha256": "64c1b91d4814a83c365211cab1be08c827cffd3c4835adfc91d218f089465feb",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_noclip_snapshot/0x14826d980_FUN_14826d980.c",
+      "bytes": 1515,
+      "sha256": "a3e157cee9e5a5d91d4b1729d410a3104ae1b04283497875d795292b5609b3f8",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_noclip_snapshot/0x14826db40_FUN_14826db40.c",
+      "bytes": 2839,
+      "sha256": "74a17ae34e416abb4831540c3b70d9f383508038667522315074598673b4a3c5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_noclip_snapshot/0x14826f610_FUN_14826f610.c",
+      "bytes": 11062,
+      "sha256": "5febef46eb69c8f1da64fc8984665c52dbbfda16cbb0599f397282292e808999",
+      "failed": false
+    }
+  ],
+  "expected_targets": 6,
+  "successful_exports": 6
+}

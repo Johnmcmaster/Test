@@ -1,0 +1,504 @@
+{
+  "created_utc": "2026-10-15T20:55:32.005965+00:00",
+  "result": "pass",
+  "binary": {
+    "size": 223223112,
+    "sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443"
+  },
+  "geyser": {
+    "standalone_version": "2.12.0",
+    "build": 1258,
+    "sha256": "34e3dcd0799c4ab896142d8074b5daa5dcd3cca3d43f769d36a0b5f514ce0104"
+  },
+  "tests": [
+    {
+      "name": "bounce-correction",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/physics-kernels/verify_bounce_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 2.729,
+      "log": "DATA/verification/bounce-correction.log",
+      "log_sha256": "b303c383ef70f1de34b66c5457a12dad87e2960314fbb7732692da55e73f32aa"
+    },
+    {
+      "name": "collision-cap-sweep",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/collision-kernels/verify_native_bytes.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 3.253,
+      "log": "DATA/verification/collision-cap-sweep.log",
+      "log_sha256": "3ea7e1b4c8bfa255aa53139454b087470b4e4b64ca548bf5092ad1b554122e86"
+    },
+    {
+      "name": "collision-contact",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/collision-kernels/verify_contact_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 3.339,
+      "log": "DATA/verification/collision-contact.log",
+      "log_sha256": "e3975edf9d8258aa460c07337e68b6f31147e8cb4c84af9d50d721ec49d4e49f"
+    },
+    {
+      "name": "collision-path",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/collision-kernels/verify_path_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 2.469,
+      "log": "DATA/verification/collision-path.log",
+      "log_sha256": "92a9002b2ebef777175b43646b02c801cf92ea5ae2848951b856e8efb82136b1"
+    },
+    {
+      "name": "collision-step",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/collision-kernels/verify_step_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 5.52,
+      "log": "DATA/verification/collision-step.log",
+      "log_sha256": "7d897787eb7eb882e38fc9ce5c1ac487939e7a3da0eb99841382e038178d9c13"
+    },
+    {
+      "name": "component-header",
+      "commands": [
+        [
+          "g++",
+          "-std=c++17",
+          "-x",
+          "c++",
+          "-fsyntax-only",
+          "COMPONENT_STRUCTURES.h"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 0.009,
+      "log": "DATA/verification/component-header.log",
+      "log_sha256": "cb2a9eef2cbad8bdd218305cf055b146d0795f3447056b920134b5cecb51234d"
+    },
+    {
+      "name": "depenetration-thresholds",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/collision-kernels/verify_depenetration_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 1.667,
+      "log": "DATA/verification/depenetration-thresholds.log",
+      "log_sha256": "276934b79c27895c062e758251b1e37297ba463a9d10c4daca21002fcc7f5643"
+    },
+    {
+      "name": "glide",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/physics-kernels/verify_glide_native.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 3.256,
+      "log": "DATA/verification/glide.log",
+      "log_sha256": "7617de0bdb4489c22d39538e7f311a7b757c306159c57ffcafe1ed7771b65ee7"
+    },
+    {
+      "name": "gravity-request-application",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/physics-kernels/verify_gravity_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 2.191,
+      "log": "DATA/verification/gravity-request-application.log",
+      "log_sha256": "0100a88ef7ac42119dfdbdf1b2301351b9588a6b005566eef62146f212adc78a"
+    },
+    {
+      "name": "ground-coefficients",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/physics-kernels/verify_ground_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 3.35,
+      "log": "DATA/verification/ground-coefficients.log",
+      "log_sha256": "0a81132e7841eb2320d3933f0d882caa5b1f7277708923dcf2f838dbbdd224e9"
+    },
+    {
+      "name": "input-acceleration",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/physics-kernels/verify_acceleration_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 2.304,
+      "log": "DATA/verification/input-acceleration.log",
+      "log_sha256": "c8307ce500edae8692b53f3e488df65f14f3e24077bec1dcee0255288e3468b4"
+    },
+    {
+      "name": "java-build",
+      "commands": [
+        [
+          "bash",
+          "JAVA/build.sh",
+          "/workspace/bedrock_movement_master_1.26.52.3/WORK/geyser/Geyser-Standalone-2.12.0-build1258.jar"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 3.436,
+      "log": "DATA/verification/java-build.log",
+      "log_sha256": "f315a93444887c27a20a77aa76ff1c6b81db0cb23688c0ca34847bc222bebfe8"
+    },
+    {
+      "name": "levitation",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/physics-kernels/verify_levitation_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 1.598,
+      "log": "DATA/verification/levitation.log",
+      "log_sha256": "c6531fb49d51ec15e14e7687fbbae3515354109d3bcd12530f9b0680e653e47c"
+    },
+    {
+      "name": "position-application",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/collision-kernels/verify_position_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 2.51,
+      "log": "DATA/verification/position-application.log",
+      "log_sha256": "a497125134a289a9f41926edff590a523e4d3ca90e38e170791cd425fc6981bb"
+    },
+    {
+      "name": "residual-selector",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "WORK/input/emulate_selector.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe"
+        ],
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/core/oracle/compare_native.py",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1",
+          "--vectors",
+          "WORK/input/selector_machine_vectors.json"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0,
+        0
+      ],
+      "elapsed_seconds": 1.861,
+      "log": "DATA/verification/residual-selector.log",
+      "log_sha256": "432ec711ccb45ed60ca86de492c43c7db9995613867f962239be3b1733c36432"
+    },
+    {
+      "name": "vertical-drag",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/physics-kernels/verify_drag_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 3.221,
+      "log": "DATA/verification/vertical-drag.log",
+      "log_sha256": "34df5399a33134bcc8f1f1a68b836495f8e5b6ca0362a59bdebdff25869cfef1"
+    },
+    {
+      "name": "vertical-fly-control",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/physics-kernels/verify_fly_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 2.426,
+      "log": "DATA/verification/vertical-fly-control.log",
+      "log_sha256": "927594ae05c2a9d83a2f006981d37ccfc5d6f276af60bfe00309e5754fd5fb63"
+    },
+    {
+      "name": "water-coefficient",
+      "commands": [
+        [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+          "JAVA/physics-kernels/verify_water_machine.py",
+          "/workspace/scratch/part6_inputs/bedrock_server.exe",
+          "--jdk",
+          "/workspace/scratch/part6_ghidra/jdk-21.0.12.1+1"
+        ]
+      ],
+      "result": "pass",
+      "exit_codes": [
+        0
+      ],
+      "elapsed_seconds": 2.155,
+      "log": "DATA/verification/water-coefficient.log",
+      "log_sha256": "74c7749ae3a966b35b12763eb128f4c430fa52f12d337a7d8e84ad8cbca7b7ba"
+    }
+  ],
+  "oracle_reports": {
+    "collision-cap-sweep": {
+      "path": "JAVA/collision-kernels/native_validation.json",
+      "sha256": "c29d9cf98c60589a4e06dd176a52d214cc869359b524d303c67f31839515fe26",
+      "cases": 35832
+    },
+    "collision-contact": {
+      "path": "JAVA/collision-kernels/contact_machine_validation.json",
+      "sha256": "26498f3eef46042849c36f1a6adf32f93f53ddc5ce6fcffe2443df139b4246e3",
+      "cases": 14738
+    },
+    "collision-path": {
+      "path": "JAVA/collision-kernels/path_machine_validation.json",
+      "sha256": "a408e07dc65bb533d561d061802a9fa63b1875bc6043937480c29823e654dbe5",
+      "cases": 3000
+    },
+    "collision-step": {
+      "path": "JAVA/collision-kernels/step_machine_validation.json",
+      "sha256": "af66fe3c295fa1fa08d6011f0d3cb45108ddad4bc619e5680c80c18adba07d9a",
+      "cases": 3000
+    },
+    "position-application": {
+      "path": "JAVA/collision-kernels/position_machine_validation.json",
+      "sha256": "0c889a8ae072b1e318629711cd547d40ad2045337ea75bbe972c9e3245401c17",
+      "cases": 2000
+    },
+    "input-acceleration": {
+      "path": "JAVA/physics-kernels/acceleration_machine_validation.json",
+      "sha256": "9f235a5f4b818e8ffb1e3c0f1cd9b635e07ce7b6620e1f43c7d3b2a8cd6ff3c1",
+      "cases": 3729
+    },
+    "water-coefficient": {
+      "path": "JAVA/physics-kernels/water_machine_validation.json",
+      "sha256": "ab8c91e95b30cfdc4508fb198763731e8cb94156e42ac18a0464523b1298f023",
+      "cases": 4120
+    },
+    "vertical-fly-control": {
+      "path": "JAVA/physics-kernels/fly_machine_validation.json",
+      "sha256": "e03c6e87c1ab28e3f4c4e4372aadc626d1035beba3d1eb39ee45e044dd892165",
+      "cases": 3720
+    },
+    "levitation": {
+      "path": "JAVA/physics-kernels/levitation_machine_validation.json",
+      "sha256": "7e12c2aaf9a31b800bdb9fac010550a9fd08ad53e31577df889d4046acd35425",
+      "cases": 3170
+    },
+    "ground-coefficients": {
+      "path": "JAVA/physics-kernels/ground_machine_validation.json",
+      "sha256": "64626caeb311402653812ebc5a1209f9851bd8c50de94406b73bb9c3b6cf5c87",
+      "cases": 6432
+    },
+    "depenetration-thresholds": {
+      "path": "JAVA/collision-kernels/depenetration_machine_validation.json",
+      "sha256": "bf83980daf72fde8b83f37b63944af8aaf64173f0e46b6d252fbbbf9f6733f7d",
+      "cases": 3000
+    },
+    "gravity-request-application": {
+      "path": "JAVA/physics-kernels/gravity_machine_validation.json",
+      "sha256": "60a0dafc52f7002cc23a81024dde68d3f73a2bc3f49fdb993095f3035727ef6d",
+      "cases": 6240
+    },
+    "bounce-correction": {
+      "path": "JAVA/physics-kernels/bounce_machine_validation.json",
+      "sha256": "5c509b42d8ace9156e74c776ccc594f76ea21fbee16105c24b7a403896e685bf",
+      "cases": 4060
+    },
+    "vertical-drag": {
+      "path": "JAVA/physics-kernels/drag_machine_validation.json",
+      "sha256": "6b67d6c36d5f7a0a0f5ba22a471290d43a697f04b1685aebee53363f79363d7e",
+      "cases": 9243
+    },
+    "glide": {
+      "path": "JAVA/physics-kernels/glide_machine_validation.json",
+      "sha256": "ac635ed7d1919b099040962085d0cd93f5e12cfff9ec0dd6c4b19bf592787913",
+      "cases": 381
+    },
+    "residual-selector": {
+      "path": "JAVA/build/residual-native-verification.json",
+      "sha256": "24c79ccb0b0373ce8acdf2faef6c52eedb2925f57eedfd50a764bc51756acc1e",
+      "cases": 1363
+    }
+  },
+  "total_machine_comparison_cases": 104028,
+  "counting_note": "Distinct harness cases, including two local SSE slices in one suite; not unique server states or complete movement ticks.",
+  "limits": [
+    "No live BDS, live Geyser/backend, Windows process, or full authoritative simulation test.",
+    "Synthetic ECS/shape inputs; allocator, registry, diagnostic and trigonometric shims are separately recorded.",
+    "Partial kernels and finite fixture sets; successful comparisons are not exhaustive proofs or complete anti-cheat coverage."
+  ],
+  "source_sha256": {
+    "JAVA/collision-kernels/AabbContactCli.java": "cf76ae5a94a0940fcb6910974ece776e80b7557345ad92e15a967832d1153acf",
+    "JAVA/collision-kernels/AabbContactKernel.java": "898447fe22e3942a4d31d39b118afa939faf222da1123dde302285f3c4857d66",
+    "JAVA/collision-kernels/AutoStepTrialCli.java": "a098ce59dcb27e5cfcd7557f6bf213ca1727e09cf7b96fa7d4d43f4b55490350",
+    "JAVA/collision-kernels/AutoStepTrialKernel.java": "a68e30986469ae28da7859acab26039a92748541e869dd8bb8b184e52ab453d2",
+    "JAVA/collision-kernels/CollisionKernelCli.java": "1c15a7e0a198d3b2383559301f0011d367ba2577cae26f6a60f01b5ec3eb9c58",
+    "JAVA/collision-kernels/CollisionPathCli.java": "7682315131af9d9838a324ffaf6b4b6cefa02086c93b4bf55f75ce221c3459ee",
+    "JAVA/collision-kernels/CollisionPathKernel.java": "1cdc8fecf06739e5a6140ba74707f07e4475ea5dc620e3bb952892d44bf58376",
+    "JAVA/collision-kernels/CollisionQueryKernels.java": "b35ba76e73659d24cf981a7cfe927651d2ff63e4208363537c87e9214987e9cc",
+    "JAVA/collision-kernels/DepenetrationThresholdCli.java": "88ae0a7e8da06ac539f4950f60abe6342876d94693fd074e91f20017c0598716",
+    "JAVA/collision-kernels/DepenetrationThresholdKernel.java": "e965639de3a0e43d6138c9865c8ad5d3126076ba30798077049dde8313856baa",
+    "JAVA/collision-kernels/PositionApplicationCli.java": "0cb745a34a760a059285d0926c953b91ff25cd76ea68b38821f250e2fc930a48",
+    "JAVA/collision-kernels/PositionApplicationKernel.java": "a6f828c1869fcb4dca9def44690ccd39b388a4215187c7ad8a0f0fbdc3ff00ea",
+    "JAVA/core/src/main/java/org/bedrockresearch/movement/AuthoritativeSimulator.java": "faea77db55931b2c3d34605821a616ef741a2cdda5bee90ecabc0104c5cb3f45",
+    "JAVA/core/src/main/java/org/bedrockresearch/movement/AuthoritativeState.java": "f92ccc6a724c31f1dced05e6266539f8ec731e046e6e3331cf6774001419ef7e",
+    "JAVA/core/src/main/java/org/bedrockresearch/movement/CorrectionSink.java": "639302ba2dd1b003cf4793d0dd99dea26228326b1dc42505c1a4b27d77f87ad1",
+    "JAVA/core/src/main/java/org/bedrockresearch/movement/EvidenceRef.java": "d2787ef4bc587e295af3261b8513503443142d070c8048ecf6e4cdc51ec2a2f8",
+    "JAVA/core/src/main/java/org/bedrockresearch/movement/InputFrame.java": "b4f9567ff966cc4342b8bc0b14124cd3be15f4f79787ff8683b2ccc80609f764",
+    "JAVA/core/src/main/java/org/bedrockresearch/movement/RecoveredResidualSelector.java": "9106154407117dfb36d18d95b951998d55d652bf209e6aef46fbb413b4df19aa",
+    "JAVA/core/src/main/java/org/bedrockresearch/movement/SimulationResult.java": "8fe9e092af31dec5f295bfd5e45796d4eaaa53b2139198ff2d90b1f604be4631",
+    "JAVA/core/src/main/java/org/bedrockresearch/movement/Vec2f.java": "11f87d5b8f6e0403f377e68e070ea4f03b1e1ed2aa04b1d49269390a7cc5cfe5",
+    "JAVA/core/src/main/java/org/bedrockresearch/movement/Vec3f.java": "a016ebaafe07fb8fb83a5416dcaa9e4155f42f4737e752653949977365c0b3eb",
+    "JAVA/core/src/main/java/org/bedrockresearch/movement/WorldSnapshot.java": "93aed452bcb5faf492be698da352810908dfd6e4a77d5d703d39d919c7a5aedf",
+    "JAVA/core/src/test/java/org/bedrockresearch/movement/CoreContractsTest.java": "c44d2eb9b574d5a7aa5ad2a8896a8c5a840e52fb27590e013fd2a8735cb4c935",
+    "JAVA/core/src/test/java/org/bedrockresearch/movement/RecoveredResidualSelectorTest.java": "80bc672b5bb837546b6dcde20927a07a7b50e68d116a934ea37a3a25d34f4d38",
+    "JAVA/core/src/test/java/org/bedrockresearch/movement/ResidualVectorRunner.java": "42a376381c8f796ed1304edb4e7f7d0803106ad16e30d8aab56e6e9b48628cfd",
+    "JAVA/geyser-integration/src/main/java/org/bedrockresearch/movement/geyser/GeyserCorrectionPackets.java": "ca561b9bf53f3eac791c0b19003a3b9134ea4687355ddbdd35d1eda7cd7b34a6",
+    "JAVA/geyser-integration/src/main/java/org/bedrockresearch/movement/geyser/GeyserInputAdapter.java": "8116f37eb4f49c7010e982e09663dd4a44b44a665c38be71b188e99646f58aed",
+    "JAVA/geyser-integration/src/main/java/org/bedrockresearch/movement/geyser/GeyserResearchHooks.java": "61455ec48b824da665758e115166d136bf28a78bd592d6c6852cb18fb17e4a45",
+    "JAVA/geyser-integration/src/test/java/org/bedrockresearch/movement/geyser/GeyserCorrectionPacketsTest.java": "7648ac6952654e5c211100fe5f523f739991fd7e2203eac230f7d9ce5362eeaa",
+    "JAVA/geyser-integration/src/test/java/org/bedrockresearch/movement/geyser/GeyserInputAdapterTest.java": "9aabae35cefe261d403c0160f95fd25005dea094a86e5de58ae9f2243eb43be1",
+    "JAVA/physics-kernels/src/org/bedrockresearch/movement/physics/GlideKernel.java": "ed7469e6d21a23480fc7e981300ba50036239059bcbb6a30ed86bf8dc0e4e947",
+    "JAVA/physics-kernels/src/org/bedrockresearch/movement/physics/GravityRequestKernel.java": "88c8842c7b0e3846121875efc8b1026317e79246f6a34ea1790139e32aaa0627",
+    "JAVA/physics-kernels/src/org/bedrockresearch/movement/physics/GroundTravelCoefficientKernel.java": "a298b4ebd941626e78bbc553e01ac95711f4ee574387fdce3a21724e739baac2",
+    "JAVA/physics-kernels/src/org/bedrockresearch/movement/physics/InputAccelerationKernel.java": "69deb6fad6384a3f9c6ac8e45535a5caf3046dab7cc314dc25d59c5cb3d40e2c",
+    "JAVA/physics-kernels/src/org/bedrockresearch/movement/physics/LevitationEffectKernel.java": "e915691d4501a78fba2e3d4253988f5bb311a2b0a0eda195da8dd402a89fedde",
+    "JAVA/physics-kernels/src/org/bedrockresearch/movement/physics/VerticalDragKernel.java": "466e2d244d8e383df954da2e55b8a4e8e4664fe441a9329608d1a4a14cf9ea22",
+    "JAVA/physics-kernels/src/org/bedrockresearch/movement/physics/VerticalFlyControlKernel.java": "f96fb1e0db5c1b6cd9304b854c1ce390c1d994d82bda9091b58b09b24591bc7b",
+    "JAVA/physics-kernels/src/org/bedrockresearch/movement/physics/WaterTravelCoefficientKernel.java": "095954f1841208b357cdf55661e0011a367986a4924b63bf114434c939c31617",
+    "JAVA/physics-kernels/test/GlideKernelTest.java": "fad889eb6841ecfeb25178241e088c968188e38cda9898137155fb4f135d28da",
+    "JAVA/physics-kernels/test/GravityRequestCli.java": "0f18ccc4cf0cf0b6ceeaf985a0b2f141aaa3ded621acc4789ae7927d7d23fecb",
+    "JAVA/physics-kernels/test/GroundTravelCoefficientCli.java": "3c67409b5076df2054fd1db667bbcfb0afe9722d8211e9dc96e64394a1f77764",
+    "JAVA/physics-kernels/test/InputAccelerationCli.java": "2ebf0939566a9585133edaa187457b094e2ab244d89ceae5f84eff069e3a8947",
+    "JAVA/physics-kernels/test/LevitationEffectCli.java": "5d4388a76aaeeef70b5ece2a92bc8cc841c3f3affeb73ae4dfabd2113a1a1ae5",
+    "JAVA/physics-kernels/test/VerticalDragCli.java": "b54fc8acfd063af948f1d6e5449fe12db152ba22a45fe31cb9fcff9874f960f3",
+    "JAVA/physics-kernels/test/VerticalFlyControlCli.java": "221d016c7837d9c3635e42effcd743828415d36e7cdd433f6b7a78238b3a534c",
+    "JAVA/physics-kernels/test/WaterTravelCoefficientCli.java": "6cf4f081f97462d7b4e668da3605ae29e42047b83c2303d67a20d55193824237"
+  },
+  "jar_sha256": {
+    "JAVA/build/bedrock-movement-geyser-adapter.jar": "61ead4ebbac96b05b367f78a57282b39bfba550e47025ebed8d78e2904609633",
+    "JAVA/build/bedrock-movement-research-core.jar": "f6b0559a12496e0184bca212324bde5c80e9e91fb25b24a21230513a80b63e78"
+  }
+}

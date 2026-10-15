@@ -31,13 +31,13 @@ int main() {
             std::cout<<std::hex<<queries.size()<<' ';
             for (auto q:queries) for (auto c:q) std::cout<<std::hex<<std::uint32_t(c)<<' ';
         } else if (mode==1 || mode==2) {
-            bool nav=flag(),has=flag();float over=number(),a=number(),b=number();
+            bool member7=flag(),has=flag();float over=number(),a=number(),b=number();
             bool arg6=flag(),arg8=flag();FrictionFields fields{};
             fields.field30=number();fields.present34=std::uint8_t(word());
             fields.field40=number();fields.present44=std::uint8_t(word());fields.rawFlags08Negative=flag();
             Vec3 motion{number(),number(),number()};
-            if (mode==1) ground_friction_141c72700(nav,has?std::optional(over):std::nullopt,a,arg8,fields,motion);
-            else friction_141c5b3c0(has?std::optional(over):std::nullopt,a,b,arg6,nav,arg8,fields,motion);
+            if (mode==1) ground_friction_141c72700(member7,has?std::optional(over):std::nullopt,a,arg8,fields,motion);
+            else friction_141c5b3c0(has?std::optional(over):std::nullopt,a,b,arg6,member7,arg8,fields,motion);
             emit(motion.x);emit(motion.y);emit(motion.z);
         } else if (mode==3) {
             bool member=flag(),has=flag();float over=number();auto flags=std::uint8_t(word());float scalar=number();

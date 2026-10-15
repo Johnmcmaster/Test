@@ -1,0 +1,64 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_velocity",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_velocity/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_velocity/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_velocity/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:48:50.012221+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_velocity",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:48:53.801797+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_velocity/0x143b54810_FUN_143b54810.c",
+      "bytes": 1751,
+      "sha256": "5e848c1d6a9aff716cd0d3b132abe1f61aae6281d549fde60381eb29f52ccf3a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_velocity/0x143b54a00_FUN_143b54a00.c",
+      "bytes": 477,
+      "sha256": "c972300bae30f5f9e41f74abd7baab01c581381fa21c014a7b5964dfd0285832",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_velocity/0x143b6ffb0_FUN_143b6ffb0.c",
+      "bytes": 561,
+      "sha256": "ba65fc1a17beecb50c79572c34c251612442fdb269173340d311edb2e0b50dd9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_velocity/0x143b70120_FUN_143b70120.c",
+      "bytes": 7998,
+      "sha256": "40e450001132e83ee7984b8ef811dbc56cf68b02df00e044516bb18ed73d484b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_velocity/0x143b70f80_FUN_143b70f80.c",
+      "bytes": 362,
+      "sha256": "7d5a82c93a8e79b46cc6f3a999623bcbfea3452aa263561769f41444e2f9a8ef",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_velocity/0x143b710d0_FUN_143b710d0.c",
+      "bytes": 7478,
+      "sha256": "31078dd22948fc3ccae89e85991dd0eed1bd53237f8f115c02690afaf43906c2",
+      "failed": false
+    }
+  ],
+  "expected_targets": 6,
+  "successful_exports": 6
+}

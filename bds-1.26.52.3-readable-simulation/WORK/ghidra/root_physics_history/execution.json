@@ -1,0 +1,46 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/root_physics_history",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_physics_history/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_physics_history/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_physics_history/headless.log"
+  ],
+  "started_utc": "2026-10-15T18:12:50.305665+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/root_physics_history",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T18:12:58.194679+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/root_physics_history/0x14839f2a0_FUN_14839f2a0.c",
+      "bytes": 1176,
+      "sha256": "2e0aabd9a6525c66d7cfc37ff31af1ad7a6d9340d5c1caa70bd4f05e696bdbbb",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_physics_history/0x148456490_FUN_148456490.c",
+      "bytes": 2846,
+      "sha256": "588b6025aca2cb827be9e1e7b3be5ccd965acc7d31c3b55bbba75d779c1e492a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_physics_history/0x14845b3c0_FUN_14845b3c0.c",
+      "bytes": 1298,
+      "sha256": "e7192a2c20323c89b76b5d7df7ece5224895de6212936e17b86120e17147050f",
+      "failed": false
+    }
+  ],
+  "expected_targets": 3,
+  "successful_exports": 3
+}

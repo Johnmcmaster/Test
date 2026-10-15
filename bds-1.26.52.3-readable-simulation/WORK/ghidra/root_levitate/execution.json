@@ -1,0 +1,34 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/root_levitate",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_levitate/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_levitate/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_levitate/headless.log"
+  ],
+  "started_utc": "2026-10-15T18:50:23.943455+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/root_levitate",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T18:50:45.107253+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/root_levitate/0x141c5eb90_FUN_141c5eb90.c",
+      "bytes": 1537,
+      "sha256": "103c3db2ea9cfefb83480a77fbfa11a56d32685c34b93c8b0859c6674d1d2966",
+      "failed": false
+    }
+  ],
+  "expected_targets": 1,
+  "successful_exports": 1
+}

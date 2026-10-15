@@ -1,0 +1,90 @@
+{
+  "start": "0x141c7a690",
+  "rva": "0x1c7a690",
+  "end": "0x141c7a6d8",
+  "size": 72,
+  "requested_va_is_range_start": true,
+  "decoded_bytes": 72,
+  "calls_and_jumps": [
+    {
+      "site": "0x141c7a6b7",
+      "kind": "call",
+      "target": "0x141c5c910",
+      "operand": "0x141c5c910",
+      "resolved": true
+    },
+    {
+      "site": "0x141c7a6d2",
+      "kind": "call",
+      "target": "0x14a110760",
+      "operand": "0x14a110760",
+      "resolved": true
+    }
+  ],
+  "memory_operands": [
+    {
+      "site": "0x141c7a694",
+      "instruction": "mov rax, qword ptr [rsp + 0x60]",
+      "base": "rsp",
+      "disp": "0x60",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x141c7a699",
+      "instruction": "mov r10, qword ptr [rip + 0xae09a20]",
+      "base": "rip",
+      "disp": "0xae09a20",
+      "size": 8,
+      "rip_target": "0x14ca840c0"
+    },
+    {
+      "site": "0x141c7a6a3",
+      "instruction": "mov qword ptr [rsp + 0x30], r10",
+      "base": "rsp",
+      "disp": "0x30",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x141c7a6a8",
+      "instruction": "mov qword ptr [rsp + 0x28], rax",
+      "base": "rsp",
+      "disp": "0x28",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x141c7a6ad",
+      "instruction": "lea rax, [rsp + 0x28]",
+      "base": "rsp",
+      "disp": "0x28",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x141c7a6b2",
+      "instruction": "mov qword ptr [rsp + 0x20], rax",
+      "base": "rsp",
+      "disp": "0x20",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x141c7a6bc",
+      "instruction": "mov rcx, qword ptr [rsp + 0x30]",
+      "base": "rsp",
+      "disp": "0x30",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x141c7a6c4",
+      "instruction": "cmp rcx, qword ptr [rip + 0xae099f5]",
+      "base": "rip",
+      "disp": "0xae099f5",
+      "size": 8,
+      "rip_target": "0x14ca840c0"
+    }
+  ]
+}

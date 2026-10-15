@@ -1,0 +1,86 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/helpers01",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/helpers01/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/helpers01/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/helpers01_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T17:51:42.500294+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/helpers01",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T17:52:21.698898+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/helpers01/0x141165620_FUN_141165620.c",
+      "bytes": 11705,
+      "sha256": "817d91214c91364a64cd8bf76f30e8f3eb1c9685fa9ed4a46b6d43eb7a1990a9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/helpers01/0x141166290_FUN_141166290.c",
+      "bytes": 1951,
+      "sha256": "779dd36ca41e85f8ba05aec177585527518ed4fd9327d0543db2ba5fa4f82d53",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/helpers01/0x141166420_FUN_141166420.c",
+      "bytes": 38389,
+      "sha256": "0f78ed2329be9099fc329f75a37589613a65a42c6c7dd62ea5ea9adcd44f34d3",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/helpers01/0x1418d6210_FUN_1418d6210.c",
+      "bytes": 82105,
+      "sha256": "2410b3be88b48f3fd2eaef26dc282ec57bf20cd2047e9f38ab8d5070b18182ca",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/helpers01/0x142fa6180_FUN_142fa6180.c",
+      "bytes": 5671,
+      "sha256": "13a3e35ef192b18d81a54f1bb0bf20e0ac3bca36a549edcbe780d72f2e639342",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/helpers01/0x142fa64f0_FUN_142fa64f0.c",
+      "bytes": 5507,
+      "sha256": "8059bbbc6cfee0cbff3d0b9a7a1ceadcf37376a7cdd56ce8d27a329a573443c9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/helpers01/0x143b4c860_FUN_143b4c860.c",
+      "bytes": 9420,
+      "sha256": "316543af1de4b4ad79ce410a4e5bcc5ec8833e0698c431cc1e58eea0fb561636",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/helpers01/0x145e37fe0_FUN_145e37fe0.c",
+      "bytes": 5038,
+      "sha256": "7e6472d57a88117e8b59a1215e33c64a560b8c6785605e03c52557aa58bb9bd9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/helpers01/0x1483bf1f0_FUN_1483bf1f0.c",
+      "bytes": 4303,
+      "sha256": "0ea7c430ef2db8a7aed3b6ec0fc01b9fed049504ff96c4d1f5c5d48a256a82b8",
+      "failed": false
+    }
+  ],
+  "expected_targets": 9,
+  "successful_exports": 9
+}

@@ -1,0 +1,52 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_bridge_layouts",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_bridge_layouts/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_bridge_layouts/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_bridge_layouts/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:43:08.651784+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_bridge_layouts",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:43:12.882260+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_bridge_layouts/0x141c67ca0_FUN_141c67ca0.c",
+      "bytes": 1833,
+      "sha256": "d7365bf4f0fd751b912ff5eb8706fcb6f6a864d04447072c2fa1a443c0620695",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_bridge_layouts/0x141c72a90_FUN_141c72a90.c",
+      "bytes": 1832,
+      "sha256": "01e99c34b188b03d6274dca7f4a2d85bb9f7968c8cc98df0211f902f0c0798e8",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_bridge_layouts/0x142c28d30_FUN_142c28d30.c",
+      "bytes": 1571,
+      "sha256": "0df78899cb12027370442606112addaae7922df788552c3610597fc0e467b1e6",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_bridge_layouts/0x14843d8d0_FUN_14843d8d0.c",
+      "bytes": 1482,
+      "sha256": "254811771db56dbdb0c405f07666a08021f580e2546e5bb136818a770cddbf16",
+      "failed": false
+    }
+  ],
+  "expected_targets": 4,
+  "successful_exports": 4
+}

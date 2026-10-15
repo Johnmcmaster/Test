@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_world_shapes",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_world_shapes/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_world_shapes/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_world_shapes_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T23:00:23.874106+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_world_shapes",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T23:00:27.838952+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_world_shapes/0x1415fe590_FUN_1415fe590.c",
+      "bytes": 1598,
+      "sha256": "8007c220130a89f6387afbc4f4a0428865fe9845277d634cb82fb00a0c64c9d6",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_world_shapes/0x142503550_FUN_142503550.c",
+      "bytes": 1770,
+      "sha256": "b2e5015ac0e382ac240b50638a647977b0c1515ace9fd48d6a78015448be11db",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_world_shapes/0x142f30bc0_FUN_142f30bc0.c",
+      "bytes": 1335,
+      "sha256": "6ae245230132c3a5e6b1e08d442e8654d38cb4e9a0ee0bedf91d6815fd2e030e",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_world_shapes/0x142f30c40_FUN_142f30c40.c",
+      "bytes": 2326,
+      "sha256": "9f3c0487e8885226d9f4dd41b97456f9a82975426d749a1bdb7b8539b7f64d6c",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_world_shapes/0x142f30fa0_FUN_142f30fa0.c",
+      "bytes": 1771,
+      "sha256": "ac54a8f108417f5b7f6746c2d24d11c60b0c8e341bc0ac30dc6d47bed28bc724",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

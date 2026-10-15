@@ -1,0 +1,19 @@
+{
+  "load_config_rva": "0xa64c0d0",
+  "load_config_size": 320,
+  "dispatch_field_offset": "0x78",
+  "dispatch_pointer_va": "0x14adaa220",
+  "pointer_bytes": "50a8594a01000000",
+  "stub_va": "0x14a59a850",
+  "stub_bytes": "ffe0",
+  "stub_instructions": [
+    {
+      "va": "0x14a59a850",
+      "bytes": "ffe0",
+      "text": "jmp rax"
+    }
+  ],
+  "analysis_change": "readOnly Ghidra metadata only; no bytes changed",
+  "compiler_spec": "x86-64-win.cspec guard_dispatch_icall injects call[RAX]",
+  "source": "original PE LoadConfig and original .text; no assumption from decompiler"
+}

@@ -1,0 +1,112 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_travel_core",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_travel_core/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_travel_core/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_travel_core/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:18:03.533680+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_travel_core",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:18:07.927287+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x141c67400_FUN_141c67400.c",
+      "bytes": 2569,
+      "sha256": "fb6bd5e50b691a3455f8ba067a9fe6728d95a715ffe3de7c97be187d2eff08d9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x141c69880_FUN_141c69880.c",
+      "bytes": 1191,
+      "sha256": "ddcc9302618a06b104e3f62326f5d646e996f28d907037916cf35acf770decd2",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x141c72700_FUN_141c72700.c",
+      "bytes": 3983,
+      "sha256": "41bb81f06c14ff68ec80b79fc0a8732ca99c3e687e817a6481b57d223b44109b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x141c74c30_FUN_141c74c30.c",
+      "bytes": 1642,
+      "sha256": "e9a81bfce248cb2940f4736102ad30c23d80a1ea69b4d0c14a4144489b570d66",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x141c785b0_FUN_141c785b0.c",
+      "bytes": 3332,
+      "sha256": "510f2296a73b8068ce673844247193d2d75ddbaff0eba474bdd063df5a615e89",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x141c88c60_FUN_141c88c60.c",
+      "bytes": 1121,
+      "sha256": "3b8f886f1f9bb8f142387c4727d1048506689c9ed2b9c4343780c34e4f6ec7c5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x141c8a030_FUN_141c8a030.c",
+      "bytes": 388,
+      "sha256": "ba8428c6c86c09a2d68e94c9874ee22a8d4f5445caf386c9361de7d3df5a18e4",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x141c8b230_FUN_141c8b230.c",
+      "bytes": 495,
+      "sha256": "cb2e09452db3a9ca6ebf0cf7c1a7158cb83cb37f727ce806ee0fad36cd27f9c2",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x1424e5cb0_FUN_1424e5cb0.c",
+      "bytes": 2460,
+      "sha256": "ad3c5ff812f39064f85bc90a7e72e1f063f32fdce52339154483c923df3863f3",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x142f17840_FUN_142f17840.c",
+      "bytes": 754,
+      "sha256": "82e924271d866d28a52554491ebb6f11246a2335bb98b876e1d56211c8ce9bab",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x142f29af0_FUN_142f29af0.c",
+      "bytes": 12640,
+      "sha256": "f0522dbb6be32cf69324a303e0b93bbe7ce510bb009e2ecef4652c24111f218a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x145eec7f0_FUN_145eec7f0.c",
+      "bytes": 1320,
+      "sha256": "be7fa279bc1e05b0327c9cc539a19de8fbd6ec0a1f376795913c23489d0af7fe",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x145eec970_FUN_145eec970.c",
+      "bytes": 5110,
+      "sha256": "31e0d62736763d121524e9c67ba8570c69e9f3603c48d7827b7f717dd29b94e1",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_travel_core/0x1484304d0_FUN_1484304d0.c",
+      "bytes": 10276,
+      "sha256": "3a370ccc150ad5cb61db9a02081987059a404f44fbc4e9af6bdadc10b45303d5",
+      "failed": false
+    }
+  ],
+  "expected_targets": 14,
+  "successful_exports": 14
+}

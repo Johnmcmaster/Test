@@ -1,0 +1,21 @@
+{
+  "exe_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "function_va": "0x145e587b0",
+  "end_exclusive": "0x145e58d61",
+  "code_sha256": "8ceb067f40c06b77abb2e67776530a51b263de80949aa95a7050f6e3df2f2276",
+  "case_count": 3000,
+  "applied_cases": 2688,
+  "mismatches": 0,
+  "first_failures": [],
+  "shims": [
+    "allocator returns temporary synthetic memory",
+    "memcpy byte copying",
+    "free and diagnostic no-ops",
+    "component getter returns synthetic already-present tag storage"
+  ],
+  "limits": [
+    "Original code in Unicorn; synthetic valid ECS inputs and geometry",
+    "Finite randomized cases only, MXCSR0x1F80",
+    "No shape acquisition, system gates, live server or client validation"
+  ]
+}

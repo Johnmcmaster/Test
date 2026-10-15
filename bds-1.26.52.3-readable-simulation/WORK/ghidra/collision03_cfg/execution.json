@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/collision03",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/collision03/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/collision03/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/collision03_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T18:06:54.845721+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/collision03",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T18:07:03.096604+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/collision03/0x1424e1840_FUN_1424e1840.c",
+      "bytes": 4536,
+      "sha256": "2b1f0baa28959634ad7caf4df8ea27e2b46ed1e1771692154dc05a2b1128fde8",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/collision03/0x142eab580_FUN_142eab580.c",
+      "bytes": 5403,
+      "sha256": "62077470942ae9aa590a631f4f2927a597afbcccb0c1c6b7cd06ca66cc89220e",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/collision03/0x142f77210_FUN_142f77210.c",
+      "bytes": 6470,
+      "sha256": "5ac05667bbc09fdd554d41aff22550512ca9a22b6fb6e0bdd7c9b4c02452f481",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/collision03/0x145e58350_FUN_145e58350.c",
+      "bytes": 3204,
+      "sha256": "2119d3e614804818720003da4d17e48e470f897ae0583b285c6d4bfd9ed2180f",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/collision03/0x1483a7a60_FUN_1483a7a60.c",
+      "bytes": 1876,
+      "sha256": "dfd423080c1860d6bc070b5a5383cd82f226c3385409e5fd8f4594c16a5f2411",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

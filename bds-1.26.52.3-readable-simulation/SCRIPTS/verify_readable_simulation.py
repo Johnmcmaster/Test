@@ -122,13 +122,13 @@ class SimMachine(native.Machine):
                 regs.update({UC_X86_REG_RCX:D+0x300,UC_X86_REG_RDX:D,UC_X86_REG_R8:D+0x40,UC_X86_REG_R9:D+0x60})
                 stack=[D+0x80,D+0x100,D+0x140,D+0x280,D+0x2a0,D+0x180,D+0x200,D+0x7000]
         elif mode in [1,2]:
-            nav,has,over,a,b,arg6,arg8,attr30,p34,attr40,p44,negative,vx,vy,vz=row
-            self.membership(D+0x1000,nav);self.membership(D+0x2000,has,payload=over);self.reference(D,D+0x1000);self.reference(D+0x40,D+0x2000)
+            member7,has,over,a,b,arg6,arg8,attr30,p34,attr40,p44,negative,vx,vy,vz=row
+            self.membership(D+0x1000,member7);self.membership(D+0x2000,has,payload=over);self.reference(D,D+0x1000);self.reference(D+0x40,D+0x2000)
             u.mem_write(D+0x11c,struct.pack('<I',a));u.mem_write(D+0x124,bytes([arg8]));u.mem_write(D+0x1b0,struct.pack('<I',attr30));u.mem_write(D+0x1b4,bytes([p34]));u.mem_write(D+0x1c0,struct.pack('<I',attr40));u.mem_write(D+0x1c4,bytes([p44]));u.mem_write(D+0x208,struct.pack('<Q',0x8000000000000000 if negative else 0));u.mem_write(D+0x298,struct.pack('<3I',vx,vy,vz))
             if mode==1:regs.update({UC_X86_REG_RDX:D+0x100,UC_X86_REG_R8:D,UC_X86_REG_R9:D+0x40});stack=[D+0x180,D+0x200,D+0x280]
             else:
                 regs.update({UC_X86_REG_RCX:D+0x200,UC_X86_REG_RDX:D+0x180,UC_X86_REG_R8:D+0x2200 if has else 0,UC_X86_REG_XMM3:a})
-                stack=[b,arg6,nav,arg8,D+0x280]
+                stack=[b,arg6,member7,arg8,D+0x280]
         elif mode==3:
             member,has,over,flags,scalar,level,maximum,vx,vy,vz=row
             self.membership(D+0x1000,member);self.membership(D+0x2000,has,payload=over);self.reference(D,D+0x1000);self.reference(D+0x40,D+0x2000)
@@ -194,6 +194,7 @@ class SimMachine(native.Machine):
         regs.update({UC_X86_REG_RSP:sp,UC_X86_REG_MXCSR:0x1f80})
         for reg,value in regs.items():u.reg_write(reg,value)
         u.emu_start(RANGES[mode][0],STOP,count=10000)
+        assert u.reg_read(UC_X86_REG_RIP)==STOP, "Native entry did not return within the bounded instruction budget"
         if mode in [0,6]:
             result=list(struct.unpack('<3I',u.mem_read(D+0x218,12)))+[struct.unpack('<I',u.mem_read(D+0x19c,4))[0],struct.unpack('<I',u.mem_read(D+0x2a0,4))[0],len(self.queries)]
             result.extend(q for v in self.queries for q in v)

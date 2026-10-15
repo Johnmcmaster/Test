@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/root_correction_codec",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_correction_codec/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_correction_codec/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_correction_codec_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T20:55:36.290935+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/root_correction_codec",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T20:55:41.320960+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_correction_codec/0x143141390_FUN_143141390.c",
+      "bytes": 4203,
+      "sha256": "40488df3a2579a19c8f406651e4785011a623ca1416f24b44ed711cf21a5efd9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_correction_codec/0x1431415d0_FUN_1431415d0.c",
+      "bytes": 6460,
+      "sha256": "5cacfee6a54e20c1f1f5983d094545505f85133e2dc0d035a070b1517ed7ffe2",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_correction_codec/0x143141ba0_FUN_143141ba0.c",
+      "bytes": 2844,
+      "sha256": "f3bbab79403818df4c9ca441f695c34e126fcdc783ff4220df691abd8388c0e3",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_correction_codec/0x143141f90_FUN_143141f90.c",
+      "bytes": 2919,
+      "sha256": "abd105d915118711f54e36d36939f24bb9cc550b08fa87dc5c4fc26a14053e9d",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_correction_codec/0x143142230_FUN_143142230.c",
+      "bytes": 36992,
+      "sha256": "18c1217dc74f62739d29c2600770f6e670dac43a45ae1f7e9929fff2bf3ebec5",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

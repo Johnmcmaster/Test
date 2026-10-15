@@ -1,0 +1,70 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/root_filters_tracker",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_filters_tracker/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_filters_tracker/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_filters_tracker/headless.log"
+  ],
+  "started_utc": "2026-10-15T18:20:11.196645+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/root_filters_tracker",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T18:20:23.145021+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/root_filters_tracker/0x141924800_FUN_141924800.c",
+      "bytes": 2187,
+      "sha256": "9303bde1d828aa9aaeb3700873d6820c08f11210a6bed8083e153f588eda4da0",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_filters_tracker/0x141963110_FUN_141963110.c",
+      "bytes": 1422,
+      "sha256": "2206d1f2d034d344366b3a5e142f0be94f8dd6c0a35131ba013bf52350084255",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_filters_tracker/0x145e64e60_FUN_145e64e60.c",
+      "bytes": 2941,
+      "sha256": "5039fe38cc3669ba4a957c3dd401ae45f0e48188a384e21f8acf242379db8c2e",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_filters_tracker/0x145e65ea0_FUN_145e65ea0.c",
+      "bytes": 1879,
+      "sha256": "b181c0a927e1e28d1cb5d31b49119521b7f78f763f2c412789fd795b9fbe2e12",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_filters_tracker/0x148267d70_FUN_148267d70.c",
+      "bytes": 25891,
+      "sha256": "ba5f30f4f39071e9074b35f4814450e6fafe9711ce29a6387a90e0e2cc030c55",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_filters_tracker/0x14826de30_FUN_14826de30.c",
+      "bytes": 35278,
+      "sha256": "8f2a0c650f985a74fbd52d9ee1a6d983729909dff5d27e16a911ba9eead5451b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_filters_tracker/0x14826f150_FUN_14826f150.c",
+      "bytes": 3689,
+      "sha256": "f1575717548b0c610b24ea4e7d2ed2bdef4167139bfe17671d2156b8a3874f26",
+      "failed": false
+    }
+  ],
+  "expected_targets": 7,
+  "successful_exports": 7
+}

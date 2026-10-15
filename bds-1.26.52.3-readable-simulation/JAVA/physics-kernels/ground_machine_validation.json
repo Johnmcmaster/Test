@@ -1,0 +1,29 @@
+{
+  "exe_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "function_ranges": [
+    {
+      "va": "0x1484454b0",
+      "end_exclusive": "0x1484457f2",
+      "code_sha256": "c87fd888a3d4040d0f530fb73de43abb8e20c6470d451cb4058e82fa708cf0f8"
+    },
+    {
+      "va": "0x148447b00",
+      "end_exclusive": "0x148447e42",
+      "code_sha256": "4ccc3527d29a57b4297d570f8f88e2a856e4e486f62bc0b10a83d96ba4d8e4f5"
+    }
+  ],
+  "case_count": 6432,
+  "mismatches": 0,
+  "nan_payload_differences": 0,
+  "first_failures": [],
+  "shims": [
+    "Block query virtual+0x10 returns supplied synthetic block/material",
+    "Component39CF8D64 getter returns valid synthetic sparse/payload storage"
+  ],
+  "limits": [
+    "Cached PlayerComponent and6DA32DD7 lookups with actual membership instructions",
+    "Block identity/default global/friction fields synthetic, no terrain name or world shape claim",
+    "Component creation, query coordinate correctness and whole walking/friction integration untested",
+    "Unicorn MXCSR0x1F80; NaN payloads/FP exception flags not guaranteed"
+  ]
+}

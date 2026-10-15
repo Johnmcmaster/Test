@@ -1,0 +1,85 @@
+# Readable native movement reconstruction
+
+`NativeMovement.cpp` is compilable C++20 reconstructed from the verified BDS
+1.26.52.3 instructions. It contains actual movement-stage calculations and data
+transfers. This collection still needs the remaining environment implementations,
+mode/authority rules and scheduler connections to become a full simulator.
+
+The interfaces in `NativeMovement.h` are research interfaces, not Mojang's
+original declarations. Unknown fields keep their offsets. World results,
+component membership, optional effects and native trigonometric results are
+explicit inputs. `NativeBlock`, callback objects and STL containers in this API
+are adapters; their C++ layouts are not asserted to be native layouts.
+
+## Recovered routines
+
+| Native entry | Readable function | Verified behavior |
+| --- | --- | --- |
+| `144832A50` | `default_move_144832a50` | Normalize/scale input, yaw-rotate acceleration, update motion, select block-dependent friction scalar |
+| `144832CA0` | shared helper plus `ground_air_post_144832ca0` | Ground/air composition, powder-snow membership and raw actor/block-dependent Y rules |
+| `141C72700` | `ground_friction_141c72700` | Ground friction, Vex branch, optional override/attribute fields, tiny-motion handling |
+| `141C5B3C0` | `friction_141c5b3c0` | Air/flying friction arithmetic with distinct raw control arguments |
+| `141C67400` | `water_drag_141c67400` | Water horizontal interpolation and vertical drag |
+| `142F17840` | `intent_142f17840` | Local input scaling, MobRotation scalar scaling, copy into MobTravel |
+| `145E36020` | `jump_modifier_145e36020` | Effect-dependent vertical impulse, optional horizontal impulse, consumed scalar |
+| `14661F790` | `ground_jump_14661f790` | Ground jump, block query, Jump Boost record, optional control, request payload |
+| `145EED380` | `travel_type_145eed380` | Flying/water/lava/glide/ground/air tag selection and conditional insertion |
+| `142F78040` | `contract_bounds_142f78040` | AABB contraction and crossed-axis collapse |
+| `14469EE70` | `finalize_move_14469ee70` | Resolved bounds to ordinary position, collision/ground memberships, marker consumption |
+| `143B6FFB0` | `reset_horizontal_143b6ffb0` | Exact flag-byte test and MoveRequest+88 bypass before clearing X/Z |
+| `143B70F80` | `reset_vertical_143b70f80` | Clear Y after the enclosing ECS view selects an entity |
+| `143B54A00` | `copy_fields_143b54a00` | MoveInput+24/+28 to LocalMoveVelocity X/Z; middle field preserved |
+| `145EEC7F0` | `travel_request_145eec7f0` | Save ordinary position, add motion to request, retain motion X/Z |
+| `1415F65E0` | `block_at_1415f65e0` | Signed height bounds, chunk/section selection, native packed block index and fallback |
+
+These 16 comparison variants include one composed wrapper/helper execution.
+They are not 16 independent whole-tick algorithms. See
+[`READABLE_SIMULATION_VALIDATION.json`](../DATA/READABLE_SIMULATION_VALIDATION.json)
+for exact entry/end ranges, original code hashes, source hashes, counts and shims.
+
+## Build and verify
+
+On Linux x86-64, install Python dependencies from `SCRIPTS/requirements.txt` and
+use a compiler with C++20/SSE support. The harness checks the exact EXE SHA-256
+before executing any original instructions:
+
+```sh
+python SCRIPTS/verify_readable_simulation.py /path/bedrock_server.exe --cases 4000
+```
+
+The harness compiles the readable code and compares it against original entry
+bodies in Unicorn. The saved run has **64,621 cases, zero mismatches and zero
+NaN-payload differences**. Component insertion/erasure, world providers and
+trigonometric dependencies have documented fixture backends. Native block/chunk
+coordinates, lookup indexes, query order, inserted component IDs, output vectors
+and relevant marker membership are compared where applicable.
+
+Compile directly, without executing the server:
+
+```sh
+g++ -std=c++20 -O2 -fno-fast-math -ffp-contract=off \
+  READABLE_SIMULATION/NativeMovement.cpp \
+  READABLE_SIMULATION/NativeMovementCli.cpp -o /tmp/bds-readable-movement
+```
+
+`NativeMovementCli.cpp` is a hexadecimal fixture driver, not a client or a
+server extension. The retained Java kernels and Geyser source hook remain under
+`JAVA/`; these new C++ routines are not silently substituted into that hook.
+
+## Interpretation limits
+
+- Native imported trig results and jump-LUT values are supplied explicitly.
+  Matching a substituted math library has not been established.
+- Finalizer fixtures use finite, ordinary box positions. Its diagnostic/error
+  reporting branches are preserved in the Ghidra exports, not recreated in this
+  C++ API. The original code writes XYZ before those diagnostics.
+- Block lookup fixtures supply valid chunk/section structures and a non-null
+  fallback registry. They do not exercise real chunk streaming or world lifetime.
+- Mode tags are added by the selector. A separately registered cleanup group
+  removes them; its cadence relative to every server-player path remains open.
+- Sparse membership fixtures are synthetic. Allocation, network transport,
+  whole-tick ordering and a live BDS/Geyser world are outside this comparison.
+
+The complete evidence discussion is in
+[`FULL_SIM_CONTINUATION.md`](../REPORTS/FULL_SIM_CONTINUATION.md) and
+[`WORLD_COLLISION_QUERY.md`](../REPORTS/WORLD_COLLISION_QUERY.md).

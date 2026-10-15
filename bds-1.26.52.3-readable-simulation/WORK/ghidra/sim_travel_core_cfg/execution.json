@@ -1,0 +1,116 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_travel_core",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_travel_core/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_travel_core/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_travel_core_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:18:12.780795+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_travel_core",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:18:16.868203+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x141c67400_FUN_141c67400.c",
+      "bytes": 2843,
+      "sha256": "9c3f5e138d3a303a63a2fc25a97d29ac89c60a90451d8519ecfd7f82a7c2feb5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x141c69880_FUN_141c69880.c",
+      "bytes": 1329,
+      "sha256": "541110a4757c1c1414190693deaad1aee4ddc5b157a909005d03b6536ae8e038",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x141c72700_FUN_141c72700.c",
+      "bytes": 4121,
+      "sha256": "ffc0f645c5098e3bedfbe8880b17a979f8c69cf1044eec105afffae1faa636fd",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x141c74c30_FUN_141c74c30.c",
+      "bytes": 1780,
+      "sha256": "512c7858d780e60b0e7f16cdfdc10ff658d89a2beefe2eb45c2f000412613da5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x141c785b0_FUN_141c785b0.c",
+      "bytes": 3470,
+      "sha256": "4f4d927e41ec539f801faa7b3485551e8f5d1968026a9c600d9a34400e413a49",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x141c88c60_FUN_141c88c60.c",
+      "bytes": 1259,
+      "sha256": "243f03f558ac94633cc4b5faac619b551fd2ca509f696f5c4dd76a0aff684b1b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x141c8a030_FUN_141c8a030.c",
+      "bytes": 526,
+      "sha256": "d3223ebe8187699c07a46698feb464d10e4f1d90efd9aaaf5603ebcda9418950",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x141c8b230_FUN_141c8b230.c",
+      "bytes": 633,
+      "sha256": "e2f8f92a0a96a9c8b685a9527c96debb135dc2476c846e253bdc21a227147616",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x1424e5cb0_FUN_1424e5cb0.c",
+      "bytes": 2716,
+      "sha256": "67642aff06e4e7dab3a9dffc524dd213dcc3ad8e0e2eaf0a35cdfd3a40448f8a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x142f17840_FUN_142f17840.c",
+      "bytes": 892,
+      "sha256": "7ebdb4fc5230cce82c0cec1c1a19c99474fb423b110a5762a523b4ced2a8aeca",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x142f29af0_FUN_142f29af0.c",
+      "bytes": 12778,
+      "sha256": "3b28a768cffedc87070aff7a5b22f8dafc499beac26a6b05477569c8e7c1dbc2",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x145eec7f0_FUN_145eec7f0.c",
+      "bytes": 1458,
+      "sha256": "f0c7898dfa541ce24a01fc4d07691f0887fb9b182a65d3c0afe5e672a5ec58b3",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x145eec970_FUN_145eec970.c",
+      "bytes": 5248,
+      "sha256": "b5b435f68ea3713ad3869ce8e6a5f417de3cdf8c521d1d3f82e728aad2d2455b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_travel_core/0x1484304d0_FUN_1484304d0.c",
+      "bytes": 10969,
+      "sha256": "259918457df0f97d5bd844e350c26a621562dfae9b73d7d386767912223e5c92",
+      "failed": false
+    }
+  ],
+  "expected_targets": 14,
+  "successful_exports": 14
+}

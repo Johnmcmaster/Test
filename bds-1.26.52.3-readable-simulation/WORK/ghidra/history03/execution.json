@@ -1,0 +1,52 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/history03",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/history03/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/history03/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/history03/headless.log"
+  ],
+  "started_utc": "2026-10-15T17:55:15.826373+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/history03",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T17:55:26.584831+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/history03/0x144866840_FUN_144866840.c",
+      "bytes": 13807,
+      "sha256": "482c4f53403ee5e86665dcddeacf1b81131548b0da0d7fcc376fd0f882d0052c",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/history03/0x148388ab0_FUN_148388ab0.c",
+      "bytes": 22037,
+      "sha256": "ea2138dcfaf25dba0f151b0c09c4cae6870b52354ca553c34ad9c4559090217b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/history03/0x14839f300_FUN_14839f300.c",
+      "bytes": 11686,
+      "sha256": "6943e433b7020b11d1e66934775726cfc20a1ff743e2da21c848043033ff3b90",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/history03/0x1483a7b60_FUN_1483a7b60.c",
+      "bytes": 13743,
+      "sha256": "996fe2278719bdc2678bcb4cf4ea66f8acf29a61228b3b468328ae75bbec1c93",
+      "failed": false
+    }
+  ],
+  "expected_targets": 4,
+  "successful_exports": 4
+}

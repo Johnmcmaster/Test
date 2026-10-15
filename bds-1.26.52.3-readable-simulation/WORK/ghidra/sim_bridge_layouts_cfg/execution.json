@@ -1,0 +1,56 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_bridge_layouts",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_bridge_layouts/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_bridge_layouts/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_bridge_layouts_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:44:55.690025+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_bridge_layouts",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:44:59.593289+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_bridge_layouts/0x141c67ca0_FUN_141c67ca0.c",
+      "bytes": 2105,
+      "sha256": "923d68148eeb2891a52bae846b504488e4a100b6bd109afdfaabf40a5ba3b6a1",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_bridge_layouts/0x141c72a90_FUN_141c72a90.c",
+      "bytes": 2104,
+      "sha256": "5551139c0cb5ab0ddc7c29ec351507e0d853934b3b3185d04fc5d2350ef52abf",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_bridge_layouts/0x142c28d30_FUN_142c28d30.c",
+      "bytes": 1709,
+      "sha256": "56b9d4a796ebbf6b1633e554be2b48730ad1c0210c1c7c15db006e57c18c5853",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_bridge_layouts/0x14843d8d0_FUN_14843d8d0.c",
+      "bytes": 1620,
+      "sha256": "66327eee23fbec1755920a1b2c7c9c4836af1af9ee1eae863f8a2c3e4f18a8be",
+      "failed": false
+    }
+  ],
+  "expected_targets": 4,
+  "successful_exports": 4
+}

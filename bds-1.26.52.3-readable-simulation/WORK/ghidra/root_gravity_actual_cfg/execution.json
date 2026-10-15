@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/root_gravity_actual",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_gravity_actual/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_gravity_actual/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_gravity_actual_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T20:40:54.039603+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/root_gravity_actual",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T20:40:58.456593+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_gravity_actual/0x141c5c370_FUN_141c5c370.c",
+      "bytes": 3636,
+      "sha256": "dbbe8a8292d60b4092168b4ac48a7cd8618f98b126dba65142dda77594c2b29d",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_gravity_actual/0x141c5c610_FUN_141c5c610.c",
+      "bytes": 4080,
+      "sha256": "bb190fe8df909a67d5db00f9aa019d8d81631425f64f588e4152a30e0001c4f9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_gravity_actual/0x141c7a690_FUN_141c7a690.c",
+      "bytes": 940,
+      "sha256": "be7ccb2f5da865de17164ea7e403717b8f40854d703ecc0c5c54342d6ea1788d",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_gravity_actual/0x141c7d610_FUN_141c7d610.c",
+      "bytes": 1118,
+      "sha256": "20e3621e283cd05b6c2b77655cf1676d02459a2ba6bade4ce9874faeec3cde14",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_gravity_actual/0x141c81cd0_FUN_141c81cd0.c",
+      "bytes": 1384,
+      "sha256": "a1ce8b53f586c4608159c08ac38eac7ec62ce5f79fcd0871a3c45c670ce9c685",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

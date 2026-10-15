@@ -1,0 +1,43 @@
+{
+  "exe_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "machine": "x86_64",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "java": "openjdk version \"21.0.12.1\" 2026-08-18 LTS\nOpenJDK Runtime Environment Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS)\nOpenJDK 64-Bit Server VM Temurin-21.0.12.1+1 (build 21.0.12.1+1-LTS, mixed mode, sharing)",
+  "cap_slice": {
+    "start": "0x142f1923b",
+    "end_exclusive": "0x142f192a9",
+    "byte_count": 110,
+    "original_slice_sha256": "176b868faaf759b52e8328cc16a8ebf1738befa3f563ab7a3b32ebd910f7e1ea",
+    "rip_relocations": [
+      {
+        "instruction": "0x142f1926a",
+        "constant_va": "0x14a6567f0",
+        "constant_bytes": "00008043"
+      },
+      {
+        "instruction": "0x142f19283",
+        "constant_va": "0x14a6fef14",
+        "constant_bytes": "00008041"
+      }
+    ]
+  },
+  "sweep_slice": {
+    "start": "0x142f192a9",
+    "end_exclusive": "0x142f1939a",
+    "byte_count": 241,
+    "original_slice_sha256": "1601c1eb0d3b3a0f1563504276dd354c1ce4b73f432ba2d4b7c0967192ae06a2",
+    "rip_relocations": []
+  },
+  "random_seed": "0x142f191b0",
+  "cap_cases": 15832,
+  "sweep_cases": 20000,
+  "total_cases": 35832,
+  "mismatch_count_excluding_nan_payloads": 0,
+  "nan_payload_differences": 0,
+  "first_mismatches": [],
+  "limits": [
+    "Default host MXCSR; not exhaustive across FTZ/DAZ/rounding modes.",
+    "NaN payload/sign differences are separately counted and not claimed equivalent.",
+    "These are two local arithmetic regions, not end-to-end simulation validation."
+  ]
+}

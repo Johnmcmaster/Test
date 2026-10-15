@@ -77,7 +77,7 @@ ROLES={
 0x141e7e060:'Resolve/cache world query; constructs fixed-table object at cache+8 when refreshed',
 0x1415f33f0:'Cached world-query constructor installs table14A753900',
 0x1415fe590:'World-query virtualB0 implementation; clears output and calls shape enumeration',
-0x1415fe680:'World collision-shape enumeration; block/chunk/actor virtual dependencies remain',
+0x1415fe680:'World collision-shape enumeration; block/chunk/secondary virtual dependencies remain',
 0x1415f65e0:'Block-coordinate lookup: height bounds, chunk/section selection, packed local index, fallback',
 0x1415f67d0:'Secondary coordinate lookup through chunk+1390 map; semantic object type remains limited',
 0x1415f5900:'Cached chunk provider lookup; weak ownership and raw chunk-state eligibility',
@@ -182,5 +182,11 @@ def main():
     data=a.root/'DATA';(data/'FULL_SIM_TABLE_POINTERS.json').write_text(json.dumps({'binary_sha256':digest,'bindings':tables},indent=2)+'\n')
     (data/'FULL_SIM_ROLES.json').write_text(json.dumps({hex(k):v for k,v in ROLES.items()},indent=2)+'\n')
     (data/'FULL_SIM_CLAIMS.json').write_text(json.dumps(claims,indent=2)+'\n')
+    bindings={
+      '0x143b56d32':dict(target_va='0x143b4c860',resolution='resolved_captured_callback',scope='Callback cell supplied by143B570F0 on the reviewed wrapper path',evidence='WORK/predicted/evidence.csv; DATA/cfg_dispatch_proof.json'),
+      '0x142f1b4dc':dict(target_va='0x142cc7330',resolution='conditional_known_target',scope='Only the independently installed default table14A7D46C0; other implementations remain unresolved',evidence='DATA/FULL_SIM_TABLE_POINTERS.json; ASSEMBLY/00000001411F41E0.asm'),
+      '0x142f19739':dict(target_va='0x1415fe590',resolution='conditional_known_target',scope='Constructed/cache-refreshed receiver from142F310A0; arbitrary alternate callers/receivers not asserted',evidence='DATA/COLLISION_WORLD_BINDING.json'),
+    }
+    (data/'FULL_SIM_INDIRECT_BINDINGS.json').write_text(json.dumps(bindings,indent=2)+'\n')
     print(json.dumps({'reviewed_classifications':len(ROLES),'instruction_claims':len(claims),'verified_table_slots':len(tables)},indent=2))
 if __name__=='__main__':main()

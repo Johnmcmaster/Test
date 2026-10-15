@@ -1,0 +1,46 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_velocity_views",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_velocity_views/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_velocity_views/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_velocity_views/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:54:26.732946+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_velocity_views",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:54:32.652282+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_velocity_views/0x143b6ffe0_FUN_143b6ffe0.c",
+      "bytes": 1711,
+      "sha256": "8b26eb3bedd46aaebc0e422f3e07030ac89ab28d5b08ce07f7ad790a35edf924",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_velocity_views/0x143b70f90_FUN_143b70f90.c",
+      "bytes": 1711,
+      "sha256": "bc3698162ea5daa488044882b74bbad45c0cffa658cc7ff2e28c7f84a519989c",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_velocity_views/0x143b75820_FUN_143b75820.c",
+      "bytes": 13567,
+      "sha256": "91e97ba1783e43ab71000ed4178cee4aca3f254f94bae9bf3c875f6002771925",
+      "failed": false
+    }
+  ],
+  "expected_targets": 3,
+  "successful_exports": 3
+}

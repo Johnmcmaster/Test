@@ -161,6 +161,8 @@ def main():
                 if pe.read_va(i['va'],len(i['data']))!=i['data']:checks['byte_mismatches'].append({'source':str(z['path'].relative_to(root)),'site':hex(i['va'])})
             f=pe.func_at_va(z['start'])
             if '.pdata' in z['header'] and f and (f[0]!=z['start'] or f[1]!=z['end']):checks['boundary_mismatches'].append({'source':str(z['path'].relative_to(root)),'saved':[hex(z['start']),hex(z['end'])],'pdata':[hex(f[0]),hex(f[1])]})
+    binding_file=root/'DATA/FULL_SIM_INDIRECT_BINDINGS.json'
+    bindings=json.loads(binding_file.read_text()) if binding_file.exists() else {}
     calls=[];callers=defaultdict(set);callees=defaultdict(set);indirect=defaultdict(list)
     for va,z in sorted(chosen.items()):
         for i in z['instructions']:
@@ -169,6 +171,10 @@ def main():
             # Local unconditional branches are not inter-function dependencies.
             if i['mnemonic']=='jmp' and target is not None and z['start']<=target<z['end']:continue
             row=dict(function_va=hex(va),instruction_va=hex(i['va']),kind=i['mnemonic'],target_va=hex(target) if target is not None else '',operand=i['operand'],resolution='direct' if direct else 'indirect_unresolved',source_artifact=str(z['path'].relative_to(root)),source_line=i['line'])
+            row.update(binding_scope='',binding_evidence='')
+            if not direct and hex(i['va']) in bindings:
+                b=bindings[hex(i['va'])]
+                row.update(target_va=b['target_va'],resolution=b['resolution'],binding_scope=b['scope'],binding_evidence=b['evidence'])
             calls.append(row)
             if direct:callers[target].add(va);callees[va].add(target)
             else:indirect[va].append(i['va'])
@@ -305,10 +311,10 @@ def main():
         d=json.loads(p.read_text());evidence.append(dict(finding_id='TEST-'+p.stem,confidence='confirmed',function_va=str(d.get('function_va',d.get('function',''))),instruction_va='',evidence_kind='original-instruction fixture result',claim='Saved native/Java comparison report: '+p.stem,data_flow=json.dumps(d,sort_keys=True),source_artifact=str(p.relative_to(root)),source_location='entire JSON; harness source alongside report',supporting_artifacts='',provenance='current_fixture_verification',instruction_excerpt=''))
     write_csv(root/'FUNCTION_INDEX.csv',index,list(index[0]) if index else [])
     write_csv(root/'DIRECT_CALLS.csv',calls,list(calls[0]) if calls else [])
-    write_csv(root/'UNRESOLVED_INDIRECT_CALLS.csv',[x for x in calls if x['resolution']!='direct'],list(calls[0]) if calls else [])
+    write_csv(root/'UNRESOLVED_INDIRECT_CALLS.csv',[x for x in calls if x['resolution'] not in ['direct','resolved_captured_callback']],list(calls[0]) if calls else [])
     write_csv(root/'EVIDENCE.csv',evidence,list(evidence[0]) if evidence else [])
     checks['missing_source_artifacts']=[x['source_artifact'] for x in evidence if not(root/x['source_artifact']).exists()]
-    checks['review_status_counts']=dict(__import__('collections').Counter(x['review_status'] for x in index));checks['evidence_rows']=len(evidence);checks['direct_call_rows']=sum(x['resolution']=='direct' for x in calls);checks['unresolved_indirect_rows']=sum(x['resolution']!='direct' for x in calls)
+    checks['review_status_counts']=dict(__import__('collections').Counter(x['review_status'] for x in index));checks['evidence_rows']=len(evidence);checks['direct_call_rows']=sum(x['resolution']=='direct' for x in calls);checks['raw_indirect_rows']=sum(x['resolution']!='direct' for x in calls);checks['unresolved_or_conditional_indirect_rows']=sum(x['resolution'] not in ['direct','resolved_captured_callback'] for x in calls)
     (root/'DATA/catalog_verification.json').write_text(json.dumps(checks,indent=2)+'\n');print(json.dumps({k:v for k,v in checks.items() if not isinstance(v,list)},indent=2));print('byte mismatches:',len(checks['byte_mismatches']),'boundary mismatches:',len(checks['boundary_mismatches']),'missing anchors:',len(checks['missing_evidence_anchors']))
     if checks['byte_mismatches']:raise SystemExit('Saved instruction bytes do not match target')
 if __name__=='__main__':main()

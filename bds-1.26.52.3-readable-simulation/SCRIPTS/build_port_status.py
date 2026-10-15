@@ -81,6 +81,33 @@ def main():
     }
     for item in ROWS:
         if item['mechanic'] in updates:item.update(updates[item['mechanic']])
+    # Native/C++ recovery is separate from the older Java implementation status.
+    cpp={
+      'Walking':('partial_acceleration_and_friction','0x144832A50;0x144832CA0;0x141C72700','Ordinary acceleration/friction reconstructed; authority, attributes and complete tick composition remain'),
+      'Jumping':('partial_ground_and_modifier_bodies','0x14661F790;0x145E36020','Two actual impulse/request bodies tested; complete jump eligibility and MobJump composition remain'),
+      'Ground friction':('bounded_body_verified','0x141C72700;0x141C5B3C0','Block-dependent scalar, Vex/override/attribute branches; no full terrain-specific model'),
+      'Air drag':('partial_horizontal_and_vertical_stages','0x141C5B3C0;0x141C6A570','Horizontal C++ and prior vertical Java stages recovered; complete invocation/flag ownership remains'),
+      'Swimming':('partial_water_drag_and_existing_acceleration','0x141C67400;0x14845B3C0','Water drag and prior coefficient/acceleration recovered; pose, currents and complete tick remain'),
+      'Creative flight':('partial_default_acceleration_and_friction','0x144832A50;0x144832FC0;0x141C5B3C0','Default flying callback recovered; permission and complete mode authority remain external'),
+      'Collision boxes':('partial_concrete_lookup_and_finalization','0x1415F65E0;0x1415FE680;0x14469EE70','Constructed world receiver/lookup resolved; per-block shape implementations remain'),
+      'Position correction and client synchronization':('partial_internal_request_and_finalization','0x145EEC7F0;0x14469EE70','Internal ordinary-state transfer is not proof of network replication'),
+    }
+    for item in ROWS:
+        item['readable_cpp_status']='not_in_new_cpp_collection'
+        item['readable_cpp_functions']=''
+        if item['mechanic'] in cpp:
+            status,functions,limit=cpp[item['mechanic']]
+            item.update(readable_cpp_status=status,readable_cpp_functions=functions,
+                        native_analysis_status='partial_verified_readable_stages',claim_limit=limit)
+            item['evidence_artifacts']+='; REPORTS/FULL_SIM_CONTINUATION.md; DATA/READABLE_SIMULATION_VALIDATION.json'
+        if item['mechanic']=='Sneaking':
+            item.update(native_analysis_status='partial_callback_exported',native_functions='0x1483D2A80',claim_limit='Actual sneak callback exported; full eligibility and terrain/provider behavior remain unported')
+        if item['mechanic']=='Slow falling':
+            item.update(native_analysis_status='effect_identity_and_conditional_gravity_verified',java_port_status='partial_gravity_request_kernel',native_functions='0x141C5C910;0x141C53840',evidence_artifacts='DATA/EFFECT_BINDINGS.json; JAVA/physics-kernels/gravity_machine_validation.json',blocking_dependencies='Effect producer/authority, raw actor flags and complete tick composition',claim_limit='Constructor/indexed store proves effectID27/global14CCB6D50; conditional gravity is recovered, not full fall mechanics')
+        if item['mechanic']=='Levitation':
+            item['blocking_dependencies']='Effect producer/authority, recordField20 semantics and scheduling; ID/global identity now independently proved'
+        if item['mechanic']=='No-clip and solid-block traversal':
+            item['blocking_dependencies']='Per-block collision-shape provider implementation, environment/lifetime and system-selection proofs'
     for output in (ROOT / "PORT_STATUS.csv", ROOT / "DATA" / "PORT_STATUS.csv"):
         with output.open("w", newline="") as f:
             writer = csv.DictWriter(f, fieldnames=list(ROWS[0]))

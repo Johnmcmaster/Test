@@ -1,0 +1,46 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_fluid_geometry",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_fluid_geometry/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_fluid_geometry/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_fluid_geometry/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:36:30.728704+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_fluid_geometry",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:36:35.415882+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_fluid_geometry/0x1415f33f0_FUN_1415f33f0.c",
+      "bytes": 3009,
+      "sha256": "6ce6c78a320bfc858debad82cf95e3d9dbd2ed799e93588317fb2c475f729681",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_fluid_geometry/0x141c645e0_FUN_141c645e0.c",
+      "bytes": 1218,
+      "sha256": "648f4540709f95061d9a5ff4cabb9c87f415b64940d3d2f4b18c506b460bf791",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_fluid_geometry/0x142f78040_FUN_142f78040.c",
+      "bytes": 1870,
+      "sha256": "f92b4cc60f46cdd89eabb883af24474315b18ac01d9553e934f09000aa57e5ad",
+      "failed": false
+    }
+  ],
+  "expected_targets": 3,
+  "successful_exports": 3
+}

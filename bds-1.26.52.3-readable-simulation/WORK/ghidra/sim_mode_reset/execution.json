@@ -1,0 +1,58 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_mode_reset",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_mode_reset/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_mode_reset/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_mode_reset/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:44:28.416668+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_mode_reset",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:44:32.670307+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_mode_reset/0x14192cd30_FUN_14192cd30.c",
+      "bytes": 3554,
+      "sha256": "5bf8d90c892328676942624c2fea82b9bad18ca2cc63e21d16d88d8e2f67a5cc",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_mode_reset/0x14192d2d0_FUN_14192d2d0.c",
+      "bytes": 3441,
+      "sha256": "e5a5a0859f828ade0bb0219f5ea71cadc8c0e149517012f588949721cd302155",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_mode_reset/0x14192f4f0_FUN_14192f4f0.c",
+      "bytes": 4870,
+      "sha256": "ccca0727d65332ffb90cb359b39446b2bb4f78a89c679d67c5a13fe70ebb61d4",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_mode_reset/0x14192f810_FUN_14192f810.c",
+      "bytes": 8185,
+      "sha256": "7444bc774bba11ef373d19e611ddc16c656a162c6c916a03b98695f831fa4d8c",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_mode_reset/0x14192ff20_FUN_14192ff20.c",
+      "bytes": 17301,
+      "sha256": "e96c2442c361ec69c18ac5424bd8ea4d963e85f47eaafb90276a6762e47200b0",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

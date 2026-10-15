@@ -1,0 +1,110 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_composition",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_composition/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_composition/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_composition_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:22:34.114260+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_composition",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:22:38.829752+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x141c646a0_FUN_141c646a0.c",
+      "bytes": 3000,
+      "sha256": "5be3e0a518fe64d5524340a2dbbf2a5e4f160b77c5e02d779da2528eacf047db",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x141c64ce0_FUN_141c64ce0.c",
+      "bytes": 3478,
+      "sha256": "c58aa4bce67e81e5c947a363c1aadad3a4ef3776661d5c74a88de5f160c4bb5f",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x141c675c0_FUN_141c675c0.c",
+      "bytes": 2815,
+      "sha256": "739c87917502dcac87ffe5c7eac08833235f10ebf99b4a6b1dfc06d61c72ed77",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x141c72950_FUN_141c72950.c",
+      "bytes": 2923,
+      "sha256": "2884514d53f3de4d586c69eb6d4cc474b00ad1c443ba48fd532f9a1748cad609",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x141c74d50_FUN_141c74d50.c",
+      "bytes": 2923,
+      "sha256": "634da02f5a894d65525519106b7da4db21353114cb99d7a2133318df230cdb69",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x1424e4be0_FUN_1424e4be0.c",
+      "bytes": 3002,
+      "sha256": "a6332d8be518b5a1d942f2e1c31c7c61f4577d7e26395bc95ad2623266d36864",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x1424e4df0_FUN_1424e4df0.c",
+      "bytes": 3166,
+      "sha256": "7b49c9203626612ae6532b580f8015a77dd827d9d86716dd592b6b84fa5fa7f0",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x142f1cef0_FUN_142f1cef0.c",
+      "bytes": 1622,
+      "sha256": "adbb0eb3ef3b3c4c01ebad23a29e885907ce2cb030448a2fa00a7d27260fd293",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x1436bc8d0_FUN_1436bc8d0.c",
+      "bytes": 1770,
+      "sha256": "d0823e8e51dc607bd586b45b058b52b4a41c72cd058546ed4fae9874944f63ce",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x14469f670_FUN_14469f670.c",
+      "bytes": 13664,
+      "sha256": "5326a36fbdf845214d965ffe03c18bbf1b88ec5c971a7f4a64b2fab0bc505a60",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x14661f790_FUN_14661f790.c",
+      "bytes": 4103,
+      "sha256": "7d38b9dceeead8fab6c05edc7c315aa556883c0592af985bfdc2f9b918133e2f",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x146620c10_FUN_146620c10.c",
+      "bytes": 2537,
+      "sha256": "4edcb09ccc493660e91f47e48f1bcc0cdc17c0e4411534afd827835dba1e0fb7",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_composition/0x14845c0a0_FUN_14845c0a0.c",
+      "bytes": 1149,
+      "sha256": "d5ea61adf5556771a41f515495083824b1c8eb88f196baea68e494d340d56df3",
+      "failed": false
+    }
+  ],
+  "expected_targets": 13,
+  "successful_exports": 13
+}

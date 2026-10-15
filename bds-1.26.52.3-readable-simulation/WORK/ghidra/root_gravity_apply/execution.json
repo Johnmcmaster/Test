@@ -1,0 +1,40 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/root_gravity_apply",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_gravity_apply/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_gravity_apply/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_gravity_apply/headless.log"
+  ],
+  "started_utc": "2026-10-15T20:42:22.182522+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/root_gravity_apply",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T20:42:26.906159+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/root_gravity_apply/0x141c853c0_FUN_141c853c0.c",
+      "bytes": 2302,
+      "sha256": "0ff03ce6c3fbdb7c886e400e19b4e72a4943b80e4646608aa37ca569810b6da4",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_gravity_apply/0x141c867b0_FUN_141c867b0.c",
+      "bytes": 492,
+      "sha256": "d81006fabab659059a236b07a31fb98ed3c623a4df34e5710b111114e9b16515",
+      "failed": false
+    }
+  ],
+  "expected_targets": 2,
+  "successful_exports": 2
+}
