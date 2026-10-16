@@ -2,8 +2,8 @@
 
 Download both independent ZIPs and extract them into the same directory:
 
-- [1.zip — 7,374,922 bytes](https://raw.githubusercontent.com/Johnmcmaster/Test/bds-readable-simulation-20261015/bds-1.26.52.3-readable-simulation/DOWNLOADS/1.zip)
-- [2.zip — 4,065,751 bytes](https://raw.githubusercontent.com/Johnmcmaster/Test/bds-readable-simulation-20261015/bds-1.26.52.3-readable-simulation/DOWNLOADS/2.zip)
+- [1.zip — 7,374,922 bytes](https://raw.githubusercontent.com/Johnmcmaster/Test/72eae07e838f4c49826a75223dc4661ad240a000/bds-1.26.52.3-readable-simulation/DOWNLOADS/1.zip)
+- [2.zip — 4,065,751 bytes](https://raw.githubusercontent.com/Johnmcmaster/Test/72eae07e838f4c49826a75223dc4661ad240a000/bds-1.26.52.3-readable-simulation/DOWNLOADS/2.zip)
 
 Each package is below 8,000,000 bytes. CRC and all file hashes were verified.
 No concatenation is required. The extracted folder is
