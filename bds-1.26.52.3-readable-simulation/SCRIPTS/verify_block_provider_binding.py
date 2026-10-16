@@ -42,6 +42,14 @@ CHECKS=[
  (0x1425f41e0,0x14260b511,'lea','r9, [rip + 0x83b01ad]'),
  (0x1425f41e0,0x14260b518,'mov','edx, 0x15'),
  (0x1425f41e0,0x14260b51d,'call','0x1400bc5a0'),
+ (0x1425f41e0,0x14260e54c,'lea','rcx, [rip + 0xa6d5cc5]'),
+ (0x1425f41e0,0x14260e553,'mov','qword ptr [rip + 0xa6d5cd2], 0xf'),
+ (0x1425f41e0,0x14260e55e,'mov','qword ptr [rip + 0xa6d5ccf], 0'),
+ (0x1425f41e0,0x14260e569,'movabs','rax, 0x93e2bb1cb7f99fc6'),
+ (0x1425f41e0,0x14260e573,'mov','qword ptr [rip + 0xa6d5c96], rax'),
+ (0x1425f41e0,0x14260e57a,'lea','r9, [rip + 0x841c05b]'),
+ (0x1425f41e0,0x14260e581,'mov','edx, 0x13'),
+ (0x1425f41e0,0x14260e586,'call','0x1400bc5a0'),
 ]
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('binary',type=Path);p.add_argument('root',type=Path);a=p.parse_args()
@@ -62,11 +70,13 @@ def main():
     first=(0x66617263656e696d).to_bytes(8,'little');second=(0x7269613a74666172).to_bytes(8,'little')
     text=bytearray(13);text[:8]=first;text[5:13]=second;assert text==b'minecraft:air'
     assert im.pe.read_va(0x14a9bb6c5,21)==b'minecraft:powder_snow'
-    data=dict(binary_sha256=digest,confidence='confirmed base implementation; conditional at polymorphic enumeration call',
+    assert im.pe.read_va(0x14aa2a5dc,19)==b'minecraft:soul_sand'
+    data=dict(binary_sha256=digest,confidence='confirmed',scope='base implementation; conditional at polymorphic enumeration call',
         base_table='0x14a763920',instruction_checks=rows,table_checks=pointers,
         local_bounds_leaf=dict(va='0x141653c90',bytes=im.pe.read_va(0x141653c90,8).hex(),behavior='return receiver+1B8'),
         named_identifiers=[dict(name='minecraft:air',global_va='0x14ccf9950',key='0xbd584baf00003448',initializer='0x142d0cba0'),
-                           dict(name='minecraft:powder_snow',global_va='0x14ccdb6e0',key='0x03d847a02ce3b2fb',instruction_va='0x14260b500',name_va='0x14a9bb6c5')],
+                           dict(name='minecraft:powder_snow',global_va='0x14ccdb6e0',key='0x03d847a02ce3b2fb',instruction_va='0x14260b500',name_va='0x14a9bb6c5'),
+                           dict(name='minecraft:soul_sand',global_va='0x14cce4210',key='0x93e2bb1cb7f99fc6',instruction_va='0x14260e569',name_va='0x14aa2a5dc',name_length=19)],
         limits=['Derived block classes may replace the base vtable; no full block override set claimed',
             'Base table installation proved from constructor141A1FEF0; concrete runtime per-block selection remains separate',
             'Names bound from actual constant-string initialization, not recomputed type or block hashes',

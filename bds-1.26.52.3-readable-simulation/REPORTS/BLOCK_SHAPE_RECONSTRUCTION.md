@@ -22,7 +22,7 @@ the provider uses the base table.** Derived constructors may overwrite the table
 this is not proof that every block uses this implementation. The NativeShapes
 fixtures execute the real table and helpers rather than a substituted cube test.
 
-`SCRIPTS/verify_block_provider_binding.py` verifies32 exact instructions,3 table
+`SCRIPTS/verify_block_provider_binding.py` verifies40 exact instructions,3 table
 pointers, the local leaf bytes and unit bounds. Its output records scope and
 byte-level evidence in`DATA/BLOCK_PROVIDER_BINDING.json`.
 
@@ -90,7 +90,7 @@ sample using floor(sample*float(count)) and denominatorfloat(wrapped32(count-1))
 The native unsigned conversions, operation order and unordered paths are kept.
 These are recovered geometry offsets, not a generic random replacement.
 
-## Two previously opaque identifiers independently named
+## Previously opaque identifiers independently named
 
 The default acceleration comparison against14CCF9950 is **minecraft:air**.
 Initializer142D0CBA0 stores keyBD584BAF00003448 at142D0CBD7/BE1, length13 atBE8,
@@ -105,6 +105,15 @@ the21-byte literal14A9BB6C5;B518/B51D passes length21 to its string constructor.
 Only these targeted instructions in the large initializer1425F41E0 were reviewed.
 These associations follow actual name/key stores, not hash recomputation. They
 do not establish raw actor flag meanings or permission rules.
+
+The ground-travel special key93E2BB1CB7F99FC6 is **minecraft:soul_sand**.
+At14260E569/E573 the initializer installs that key at14CCE4210. E54C selects its
+string destination+8, E57A supplies literal14AA2A5DC, E581 length19, and E586
+calls1400BC5A0. Thus1484456BD..56E8 and148447D0D..D31 select a named block type.
+Their B0 field and optional1.225 multiplication already have native-compared
+Java arithmetic. SoulSpeedEnchantFlag membership is separately type-bound;
+enchantment authority and a complete terrain tick remain unproved. No name was
+inferred from an isolated hash value.
 
 ## Validation and reproduction
 

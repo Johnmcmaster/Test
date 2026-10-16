@@ -1,5 +1,12 @@
 # Resolved collision world-query path
 
+Later continuation: [BLOCK_SHAPE_RECONSTRUCTION.md](BLOCK_SHAPE_RECONSTRUCTION.md)
+binds base provider14A763920 and reconstructs its virtual20/30/50 implementations.
+The polymorphic enumeration call remains conditional on that provider table;
+derived block overrides and full enumeration comparisons remain open. The
+[environment continuation](ENVIRONMENT_CONTINUATION.md) separately resolves the
+constructed NoClip availability callback through the same world table.
+
 ## Result and scope
 
 The MoveCollision acquisition callback's `virtual+0xB0` now has a **confirmed

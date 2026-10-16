@@ -1,6 +1,7 @@
 {
   "binary_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
-  "confidence": "confirmed base implementation; conditional at polymorphic enumeration call",
+  "confidence": "confirmed",
+  "scope": "base implementation; conditional at polymorphic enumeration call",
   "base_table": "0x14a763920",
   "instruction_checks": [
     {
@@ -226,6 +227,62 @@
       "instruction": "call 0x1400bc5a0",
       "bytes": "e87e10abfd",
       "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e54c",
+      "instruction": "lea rcx, [rip + 0xa6d5cc5]",
+      "bytes": "488d0dc55c6d0a",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e553",
+      "instruction": "mov qword ptr [rip + 0xa6d5cd2], 0xf",
+      "bytes": "48c705d25c6d0a0f000000",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e55e",
+      "instruction": "mov qword ptr [rip + 0xa6d5ccf], 0",
+      "bytes": "48c705cf5c6d0a00000000",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e569",
+      "instruction": "movabs rax, 0x93e2bb1cb7f99fc6",
+      "bytes": "48b8c69ff9b71cbbe293",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e573",
+      "instruction": "mov qword ptr [rip + 0xa6d5c96], rax",
+      "bytes": "488905965c6d0a",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e57a",
+      "instruction": "lea r9, [rip + 0x841c05b]",
+      "bytes": "4c8d0d5bc04108",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e581",
+      "instruction": "mov edx, 0x13",
+      "bytes": "ba13000000",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e586",
+      "instruction": "call 0x1400bc5a0",
+      "bytes": "e815e0aafd",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
     }
   ],
   "table_checks": [
@@ -266,6 +323,14 @@
       "key": "0x03d847a02ce3b2fb",
       "instruction_va": "0x14260b500",
       "name_va": "0x14a9bb6c5"
+    },
+    {
+      "name": "minecraft:soul_sand",
+      "global_va": "0x14cce4210",
+      "key": "0x93e2bb1cb7f99fc6",
+      "instruction_va": "0x14260e569",
+      "name_va": "0x14aa2a5dc",
+      "name_length": 19
     }
   ],
   "limits": [

@@ -33,6 +33,8 @@ CLAIMS=[
  'At144832C4C..C60 providerE0 is compared to global14CCF9950. Initializer142D0CBA0 stores keyBD584BAF00003448, overlapping string stores for minecraft:air andlength13. That name is not inferred by hash recomputation.'),
 ('SHAPE-POWDER-NAME',0x14842b540,'Lava/ground clamp material comparison is a named block identifier',
  'The compared global14CCDB6E0 is initialized with key03D847A02CE3B2FB at14260B500/50A and the21-byte literalminecraft:powder_snow via1400BC5A0. It is a block type identifier; the comparison does not independently prove raw actor flag names.'),
+('SHAPE-SOUL-NAME',0x1484454b0,'Ground travel special identifier is independently bound to minecraft:soul_sand',
+ '14260E569/E573 initializes key93E2BB1CB7F99FC6 at14CCE4210; E54C selects its string destination+8, E57A supplies literal14AA2A5DC, E581 length19 and E586 the string constructor. Ground bodies1484454B0/148447B00 compare this exact key and apply their recovered B0/scalar arithmetic, with the separately verified SoulSpeedEnchantFlag membership. Name binding does not establish enchantment authority or a full soul-sand movement tick.'),
 ]
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('binary',type=Path);p.add_argument('root',type=Path);a=p.parse_args()
