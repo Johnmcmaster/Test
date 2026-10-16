@@ -1,0 +1,56 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_derived_shape_helpers",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shape_helpers/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shape_helpers/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shape_helpers_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-16T19:17:09.850891+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_derived_shape_helpers",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T19:17:13.740428+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shape_helpers/0x1465f8ec0_FUN_1465f8ec0.c",
+      "bytes": 6003,
+      "sha256": "1afccd5a3fea2dccefb7d570a7a31929e3d6bd0f54cba375551be5ad3d97578a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shape_helpers/0x146614a70_FUN_146614a70.c",
+      "bytes": 6019,
+      "sha256": "4d6a31315aa44e7a3766a9c0956ce7f0869d3822d10d578d49a0147327110b5f",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shape_helpers/0x147152aa0_FUN_147152aa0.c",
+      "bytes": 9816,
+      "sha256": "8b8682dd7aec32eeac9b4102269536a9f9fe4dd9ee5f8b27cd4e5a9c82bdefa1",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shape_helpers/0x148b33800_FUN_148b33800.c",
+      "bytes": 7617,
+      "sha256": "da674ff89534950a09df42efaa050083ca83902bf2427b40bc73501b8c9f8e0b",
+      "failed": false
+    }
+  ],
+  "expected_targets": 4,
+  "successful_exports": 4
+}

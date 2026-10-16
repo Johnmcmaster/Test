@@ -368,12 +368,38 @@ custom_shapes=function('145825460','Custom24-byte AABB emission')
 block_offset=function('144C50EB0','Deterministic block-position offset')
 block_property=function('142CEA4B0','Instance/type offset-property lookup')
 shape_enum=function('1415FE680','World collision-shape enumeration')
-edge(shape_enum,base_shapes,'resolved_indirect','conditional base table14A763920+30; overrides open','DATA/BLOCK_PROVIDER_BINDING.json',confidence='confirmed conditional base table',site='0x1415FF16D')
+edge(shape_enum,base_shapes,'resolved_indirect','conditional base table14A763920+30; other providers separate','DATA/BLOCK_PROVIDER_BINDING.json',site='0x1415FF16D')
 edge(base_shapes,base_bounds,'resolved_indirect','base table virtual20','DATA/BLOCK_PROVIDER_BINDING.json',site='0x141A22FF0')
 edge(base_bounds,local_shape,'resolved_indirect','base table virtual50','DATA/BLOCK_PROVIDER_BINDING.json',site='0x141A22C90')
 for source,target in [(base_shapes,custom_shapes),(base_shapes,block_property),(base_shapes,block_offset),(base_bounds,block_property),(base_bounds,block_offset)]:
     call(source,target)
 edge(base_shapes,'move_request','data_flow','geometry dependency via candidate enumeration, not guaranteed tick order','REPORTS/BLOCK_SHAPE_RECONSTRUCTION.md')
+
+connected_shapes=function('147153270','Connected block collision boxes')
+connection_fields=function('147152AA0','Four packed/fallback Boolean properties')
+gated_shapes=function('1487E5140','World / object dependent shape gate')
+zero_shapes=function('148A2E2C0','Emit base shapes and return zero')
+forward_shapes=function('141A2CA60','Forward virtual38; return one')
+forward_target=function('146614A70','Verified forward target; full shape composition open')
+world_secondary=function('1415F67D0','World secondary object lookup')
+world_metadata=function('1415F4380','World metadata delegation')
+for target,table in [(connected_shapes,'14A8E4D10'),(gated_shapes,'14A92E540'),
+                     (zero_shapes,'14A940230'),(forward_shapes,'14A8BC7B0')]:
+    edge(shape_enum,target,'resolved_indirect','conditional provider '+table+'+30','DATA/DERIVED_BLOCK_BINDING.json',site='0x1415FF16D')
+call(connected_shapes,connection_fields)
+call(gated_shapes,base_shapes)
+call(zero_shapes,base_shapes)
+edge(forward_shapes,forward_target,'resolved_indirect','conditional14A8BC7B0+38','DATA/DERIVED_BLOCK_BINDING.json',site='0x141A2CA75')
+edge(gated_shapes,world_secondary,'resolved_indirect','constructed world14A753900+18','DATA/DERIVED_BLOCK_BINDING.json',site='0x1487E517F')
+edge(gated_shapes,world_metadata,'resolved_indirect','constructed world14A753900+90','DATA/DERIVED_BLOCK_BINDING.json',site='0x1487E51C5')
+node('shape_gate_receivers','Returned object virtual80; argument7 virtual48/50\nConcrete objects unresolved','unknown')
+node('world_metadata_receiver','World+30 receiver virtual10\nConcrete type unresolved','unknown')
+edge(gated_shapes,'shape_gate_receivers','unresolved','raw gates known; object authority unresolved','ASSEMBLY/00000001487E5140.asm',confidence='unresolved',site='0x1487E51AA;0x1487E51DB;0x1487E51EF')
+edge(world_metadata,'world_metadata_receiver','unresolved','output-pointer delegation; class unresolved','ASSEMBLY/00000001415F4380.asm',confidence='unresolved',site='0x1415F4393')
+node('shape_vector','24-byte shape vector\nEmitter return discarded at1415FF16D','storage')
+for source in [connected_shapes,gated_shapes,zero_shapes]:
+    edge(source,'shape_vector','data_flow','append selected boxes; independent of return byte','REPORTS/DERIVED_BLOCK_SHAPES.md')
+edge('shape_vector',shape_enum,'data_flow','vector begin/end selects48-byte record iteration','ASSEMBLY/00000001415FE680.asm',site='0x1415FF173;0x1415FF176;0x1415FF17E')
 
 def main():
     output = ROOT / "DATA" / "CALL_GRAPH_EDGES.csv"

@@ -1,0 +1,104 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_derived_shapes",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shapes/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shapes/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shapes_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-16T19:15:59.394356+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_derived_shapes",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T19:16:04.944274+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x140076010_FUN_140076010.c",
+      "bytes": 438,
+      "sha256": "4ca4c698089f1151e48ce2267181e5e0ce17331c93041cd524afd6402cd45fbf",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x140216e60_FUN_140216e60.c",
+      "bytes": 532,
+      "sha256": "3680ca77df032fcb997f51d34f4eae25dfecb09efcb4c0e786581b7be0fd061c",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x141a2ca60_FUN_141a2ca60.c",
+      "bytes": 581,
+      "sha256": "f33814b04845d889bac493ca1e1c6a447a2f3e28481b44b580089ababfdf7103",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x141a2e090_FUN_141a2e090.c",
+      "bytes": 1290,
+      "sha256": "35ff33be8df4ad339ddc51d355d4830eba265512d7d68f4f8afabdec51d0434c",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x1465f8960_FUN_1465f8960.c",
+      "bytes": 8041,
+      "sha256": "736705fabbf2c76acc6338fa6dd6c55a017b482d302177fd3036521018c9b7af",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x146612ef0_FUN_146612ef0.c",
+      "bytes": 2138,
+      "sha256": "3ce491f73766227a983fa532af0114a2655d00a30802907b5e8e7521b1bae40a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x147153270_FUN_147153270.c",
+      "bytes": 5344,
+      "sha256": "ca5e5fe5af7b6c2cb951b4fc9f9749ae5aa459469bb9d07c96f9f7aaad92c2d7",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x1487cdeb0_FUN_1487cdeb0.c",
+      "bytes": 27265,
+      "sha256": "f4aad0848488508583f7afa1429f0a5a8be2af0e56854bf27b788acceaa23783",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x1487e5140_FUN_1487e5140.c",
+      "bytes": 1423,
+      "sha256": "348ebcfc3ecaf9345a8d5755d28e8a6424d1aee02a365c9fe2a1d9158cb5a0ed",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x148a2e2c0_FUN_148a2e2c0.c",
+      "bytes": 457,
+      "sha256": "dd615226a948579869915435c19d6ca64e1fd961d5c45c3d51a0834388e63ea5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x148b31700_FUN_148b31700.c",
+      "bytes": 1208,
+      "sha256": "d5aa225e69637f5ca4eb2b0408c1fbe9308a65d7c68843eb358222d030dee4a4",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_derived_shapes/0x148b59a00_FUN_148b59a00.c",
+      "bytes": 1612,
+      "sha256": "f653a7dbbc9c5fad2f6b27d86a9a2529e57218b8b9ef3d8cf53a5b4e858afe66",
+      "failed": false
+    }
+  ],
+  "expected_targets": 12,
+  "successful_exports": 12
+}

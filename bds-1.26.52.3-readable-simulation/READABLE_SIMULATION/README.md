@@ -115,6 +115,29 @@ python SCRIPTS/verify_native_shapes.py /path/bedrock_server.exe --cases 2400
 ```
 
 See[BLOCK_SHAPE_RECONSTRUCTION.md](../REPORTS/BLOCK_SHAPE_RECONSTRUCTION.md).
-Across the three readable C++ suites,107,933 bounded cases pass across34 variants;
-seven NaN payload differences occur in the environment suite. Full ticks and
-complete block/mechanic coverage remain unfinished.
+The base suite's exact dependency backends and source/code hashes are retained
+separately from the later derived-provider continuation below.
+
+## Selected derived providers
+
+`NativeShapeOverrides.cpp` adds actual connected collision boxes, packed/fallback
+Boolean-property extraction, a world/object emission gate, a base-call wrapper
+that always returnszero, and virtual38 argument forwarding. Selected receiver
+tables are independently bound through constructor and registry stores.
+
+```sh
+python SCRIPTS/verify_shape_overrides.py /path/bedrock_server.exe --cases 3000
+```
+
+The suite passes12,821 original-entry comparisons across five variants, with
+zero mismatches and zero observed NaN payload differences. It compares output
+boxes, preserved vector entries, raw return bytes and backend call order. Unknown
+receiver replies, fallback getters and the forwarded child-shape body remain
+explicit fixture backends. See
+[DERIVED_BLOCK_SHAPES.md](../REPORTS/DERIVED_BLOCK_SHAPES.md).
+
+Across all four readable C++ suites,120,754 bounded comparisons pass across39
+variants. Seven NaN payload differences occur in the environment suite. These
+counts are not unique server states, full ticks or a coverage percentage. The
+remaining derived providers, complete world/authority model and scheduler/replay
+connections still prevent a complete simulator or production Geyser port.

@@ -71,7 +71,9 @@ def main():
     text=bytearray(13);text[:8]=first;text[5:13]=second;assert text==b'minecraft:air'
     assert im.pe.read_va(0x14a9bb6c5,21)==b'minecraft:powder_snow'
     assert im.pe.read_va(0x14aa2a5dc,19)==b'minecraft:soul_sand'
-    data=dict(binary_sha256=digest,confidence='confirmed',scope='base implementation; conditional at polymorphic enumeration call',
+    boundaries={hex(owner):dict(start=hex(owner),end_exclusive=hex(im.pe.func_at_va(owner)[1]),
+        size=im.pe.func_at_va(owner)[1]-owner,basis='.pdata unwind range; reviewed instruction windows only')for owner,_,_,_ in CHECKS}
+    data=dict(binary_sha256=digest,confidence='confirmed',scope='base implementation; conditional at polymorphic enumeration call',function_boundaries=boundaries,
         base_table='0x14a763920',instruction_checks=rows,table_checks=pointers,
         local_bounds_leaf=dict(va='0x141653c90',bytes=im.pe.read_va(0x141653c90,8).hex(),behavior='return receiver+1B8'),
         named_identifiers=[dict(name='minecraft:air',global_va='0x14ccf9950',key='0xbd584baf00003448',initializer='0x142d0cba0'),

@@ -77,6 +77,12 @@ B.extend([
 ('OffsetAxisConfigArray',0x144c50eb0,0x144c50fa0,0x144c50fb1,'rcx',0x24,'Offset property payload from142CEA4B0; float low/high00/04 and uint32count08.'),
 ('OffsetAxisConfigArray',0x144c50eb0,0x144c51028,0x144c5103c,'rcx',0x24,'Same offset payload; second12-byte axis fields0C/10/14.'),
 ('OffsetAxisConfigArray',0x144c50eb0,0x144c510b0,0x144c510c9,'rcx',0x24,'Same offset payload; third12-byte axis fields18/1C/20.'),
+('NativeBlockStateAccessPrefix',0x147152aa0,0x147152b0d,0x147152b0d,'rsi',0x128,'First block argument saved inRSI; unsigned16 packed-state read at120.'),
+('BlockPropertyProviderAccessPrefix',0x147152aa0,0x147152ac9,0x147152ac9,'r8',0x330,'R8 loaded fromblock68 at2ABE; key-tree header pointer1D8.'),
+('BlockPropertyProviderAccessPrefix',0x147152aa0,0x147152b1a,0x147152b21,'r8',0x330,'Same provider; fallback16-byte entry range320/328.'),
+('PackedPropertyNodeAccessPrefix',0x147152aa0,0x147152af3,0x147152b07,'rdx',0x38,'RDX is tree node, seeded fromheader root; reads key20, child00/10 andsentinel19.'),
+('PackedPropertyNodeAccessPrefix',0x147152aa0,0x147152eba,0x147152ebd,'rcx',0x38,'Verified matching node; width2C andend30 DWORDs read beforeRCX isoverwritten.'),
+('ShapeGateReturnedAccessPrefix',0x1487e5140,0x1487e518e,0x1487e518e,'rax',0x18,'Non-null object returned by world18; actualbyte14 testedagainst18hex.'),
 ])
 rows=[]
 for component,va,start,end,reg,limit,proof in B:

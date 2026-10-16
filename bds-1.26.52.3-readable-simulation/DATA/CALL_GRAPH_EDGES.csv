@@ -155,7 +155,7 @@ f141c69960,state_motion,data_flow,verified stage; scheduler composition remains 
 f14842b540,state_motion,data_flow,verified stage; scheduler composition remains separate,confirmed,,REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json
 f141c88c60,mob_travel,data_flow,verified stage; scheduler composition remains separate,confirmed,,REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json
 f142f17890,mob_travel,data_flow,verified stage; scheduler composition remains separate,confirmed,,REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json
-f1415fe680,f141a22f50,resolved_indirect,conditional base table14A763920+30; overrides open,confirmed conditional base table,0x1415FF16D,DATA/BLOCK_PROVIDER_BINDING.json
+f1415fe680,f141a22f50,resolved_indirect,conditional base table14A763920+30; other providers separate,confirmed,0x1415FF16D,DATA/BLOCK_PROVIDER_BINDING.json
 f141a22f50,f141a22b80,resolved_indirect,base table virtual20,confirmed,0x141A22FF0,DATA/BLOCK_PROVIDER_BINDING.json
 f141a22b80,f141653c90,resolved_indirect,base table virtual50,confirmed,0x141A22C90,DATA/BLOCK_PROVIDER_BINDING.json
 f141a22f50,f145825460,direct_call,direct call,confirmed,0x141A23106,ASSEMBLY/0000000141A22F50.asm
@@ -164,3 +164,19 @@ f141a22f50,f144c50eb0,direct_call,direct call,confirmed,0x141A22FB6,ASSEMBLY/000
 f141a22b80,f142cea4b0,direct_call,direct call,confirmed,0x141A22C9C;0x141A22DA6,ASSEMBLY/0000000141A22B80.asm
 f141a22b80,f144c50eb0,direct_call,direct call,confirmed,0x141A22CB1;0x141A22DBB,ASSEMBLY/0000000141A22B80.asm
 f141a22f50,move_request,data_flow,"geometry dependency via candidate enumeration, not guaranteed tick order",confirmed,,REPORTS/BLOCK_SHAPE_RECONSTRUCTION.md
+f1415fe680,f147153270,resolved_indirect,conditional provider 14A8E4D10+30,confirmed,0x1415FF16D,DATA/DERIVED_BLOCK_BINDING.json
+f1415fe680,f1487e5140,resolved_indirect,conditional provider 14A92E540+30,confirmed,0x1415FF16D,DATA/DERIVED_BLOCK_BINDING.json
+f1415fe680,f148a2e2c0,resolved_indirect,conditional provider 14A940230+30,confirmed,0x1415FF16D,DATA/DERIVED_BLOCK_BINDING.json
+f1415fe680,f141a2ca60,resolved_indirect,conditional provider 14A8BC7B0+30,confirmed,0x1415FF16D,DATA/DERIVED_BLOCK_BINDING.json
+f147153270,f147152aa0,direct_call,direct call,confirmed,0x14715329D,ASSEMBLY/0000000147153270.asm
+f1487e5140,f141a22f50,direct_call,direct call,confirmed,0x1487E521C,ASSEMBLY/00000001487E5140.asm
+f148a2e2c0,f141a22f50,direct_call,direct call,confirmed,0x148A2E2D8,ASSEMBLY/0000000148A2E2C0.asm
+f141a2ca60,f146614a70,resolved_indirect,conditional14A8BC7B0+38,confirmed,0x141A2CA75,DATA/DERIVED_BLOCK_BINDING.json
+f1487e5140,f1415f67d0,resolved_indirect,constructed world14A753900+18,confirmed,0x1487E517F,DATA/DERIVED_BLOCK_BINDING.json
+f1487e5140,f1415f4380,resolved_indirect,constructed world14A753900+90,confirmed,0x1487E51C5,DATA/DERIVED_BLOCK_BINDING.json
+f1487e5140,shape_gate_receivers,unresolved,raw gates known; object authority unresolved,unresolved,0x1487E51AA;0x1487E51DB;0x1487E51EF,ASSEMBLY/00000001487E5140.asm
+f1415f4380,world_metadata_receiver,unresolved,output-pointer delegation; class unresolved,unresolved,0x1415F4393,ASSEMBLY/00000001415F4380.asm
+f147153270,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
+f1487e5140,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
+f148a2e2c0,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
+shape_vector,f1415fe680,data_flow,vector begin/end selects48-byte record iteration,confirmed,0x1415FF173;0x1415FF176;0x1415FF17E,ASSEMBLY/00000001415FE680.asm

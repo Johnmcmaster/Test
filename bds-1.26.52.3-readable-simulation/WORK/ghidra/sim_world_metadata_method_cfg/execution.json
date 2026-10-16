@@ -1,0 +1,38 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_world_metadata_method",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_world_metadata_method/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_world_metadata_method/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_world_metadata_method_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-16T19:28:00.100316+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_world_metadata_method",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T19:28:04.183141+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_world_metadata_method/0x1415f4380_FUN_1415f4380.c",
+      "bytes": 628,
+      "sha256": "1a4dbbfc8f30cfc4345b20a4e36d534cef7db942c892d5dbc47e23ba935df911",
+      "failed": false
+    }
+  ],
+  "expected_targets": 1,
+  "successful_exports": 1
+}

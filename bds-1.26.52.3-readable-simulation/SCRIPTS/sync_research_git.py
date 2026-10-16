@@ -45,6 +45,10 @@ def main():
         selected.update(p for p in (root / name).rglob('*') if p.is_file())
     selected.update(p for p in root.iterdir() if p.is_file())
     for name in ['WORK/full_sim/shapes_smoke.json',
+                 'WORK/full_sim/overrides_smoke.json',
+                 'WORK/full_sim/derived_block_candidates.json',
+                 'WORK/full_sim/derived_block_table_refs.json',
+                 'WORK/full_sim/connection_property_refs.json',
                  'WORK/history_writer/snapshot_copy_candidates.json',
                  'WORK/history_writer/snapshot_copy_review.json']:
         if (root / name).is_file():

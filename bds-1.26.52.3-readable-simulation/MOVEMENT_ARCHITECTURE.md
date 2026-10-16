@@ -8,7 +8,7 @@ Native code separates client input, simulation state, geometry requests, residua
 | Current work | ServerPlayerMovement0x48 queue, CurrentMovement0x108 payload | Full action-to-ECS and authoritative tick advancement |
 | Sample interpolation | Resolved143B56D32 target143B4C860; timestamped shared samples | Server-player ownership and full simulation dispatch |
 | Numerical movement stages | Default ground/air/flying acceleration144832A50; ground/shared friction141C72700/141C5B3C0; water drag141C67400; lava14842B540/141C69960; fluid gravity; speed-source142F17890; jump14661F790/145E36020; earlier gravity/glide/flight stages | Complete authority, attributes/impulses, remaining mechanics and composition |
-| Geometry | Candidate acquisition142F191B0; constructed query1415FE590→1415FE680; block lookup1415F65E0; base shape provider141A22F50 and helpers; contact/path/auto-step | Derived block shape-provider overrides, full enumeration composition, live chunk/lifetime state and selection gates |
+| Geometry | Candidate acquisition142F191B0; constructed query1415FE590→1415FE680; block lookup1415F65E0; base provider141A22F50; selected derived connected geometry147153270, properties147152AA0 and gates1487E5140; contact/path/auto-step | Remaining derived providers, full enumeration composition, live chunk/lifetime state and unresolved receiver authority |
 | Position application | Position-request chain; bounds application148265630; finalizer14469EE70; separate collision reset callbacks | Complete event/selection paths, restitution and exact phase order |
 | Reconciliation | Concrete residual selector1411750C0; tag1 tail adjustment and tag2 correction payload | Independent complete reference simulation and runtime configuration ownership |
 | History/replay | Optional0x60 storage,0x48 record allocations, snapshot-interface consumers, category dispatch | Writer/concrete snapshot, server-active ownership, restore/resimulation and termination |
@@ -28,6 +28,15 @@ ordinary bounds or custom24-byte boxes, using property lookup142CEA4B0 and
 deterministic offset144C50EB0. The recovered emitter is a conditional target at
 1415FF16D; derived providers may override it. See the environment and block-shape
 reports for exact constructor/call sites and composed native comparisons.
+
+Selected derived tables are now independently installed by actual constructors
+and registry stores. Connected-box emission147153270 calls packed/fallback
+Boolean-property extraction147152AA0. Gate1487E5140 delegates to the real base
+emitter after raw world/object checks. Wrapper148A2E2C0 calls that emitter and
+then returnszero. Enumeration1415FF16D consumes the resulting vector and discards
+the return byte atFF176. These control/data relationships are native-verified;
+the target's block name, full provider set, remaining gate objects and scheduler
+placement are separate. See REPORTS/DERIVED_BLOCK_SHAPES.md.
 
 The new verified input data path is MoveInput24/28→LocalMoveVelocity0/8→scaled MobTravel input→motion18→MoveRequest3C. Current-input bridge142C142B0 saves server XYZ separately at CurrentMovementE8. Travel selector145EED380 adds mode tags; separate group-clear14192F4F0 removes them. The complete cadence/ownership of those passes remains separate. See REPORTS/FULL_SIM_CONTINUATION.md.
 

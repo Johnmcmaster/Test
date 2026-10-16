@@ -7,11 +7,13 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
 
 ## Proven since the previous checkpoint
 
+- Selected derived provider constructors and registry stores now bind tables14A8E4D10,14A92E540,14A940230,14A8BC7B0,14A764E40 and14A94F170. Readable connected boxes, packed/fallback properties, emission gates and wrappers pass12,821 original-entry comparisons. Enumeration1415FF16D demonstrably discards the return byte and consumes the vector. Complete provider coverage and named block ownership remain separate. See REPORTS/DERIVED_BLOCK_SHAPES.md.
+
 - Base block provider table14A763920 is independently installed by141A1FEF0.
   Its collision emission141A22F50, bounds141A22B80, property lookup142CEA4B0,
   deterministic offset144C50EB0 and custom boxes145825460 have readable code
   and12,308 passing original-entry comparisons. This is conditional at
-  enumeration1415FF16D; derived block overrides are not resolved. Air and powder
+  enumeration1415FF16D; other derived block overrides remain open. Air and powder
   snow identifier globals are independently named from initialization stores.
 - Environment continuation: the constructed NoClip/NoBlock receiver is now bound
   through contextCA3EE50E, factory14A75DB78 and instance14A75DB88 to world
@@ -32,8 +34,8 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
   the temporary block-shape vector has24-byte AABBs.
 - Effect constructor/indexed stores independently identify Jump Boost8,
   Levitation24 and Slow Falling27. The reduced-gravity slot is no longer unnamed.
-- The three readable C++ suites pass 107,933 bounded comparisons across 34
-  variants. The full Ghidra index has 508 exports/291 entry VAs; successful export
+- The four readable C++ suites pass 120,754 bounded comparisons across 39
+  variants. The full Ghidra index has 544 exports/309 entry VAs; successful export
   is not semantic completeness. The 64,621-case core suite was rerun after the
   shared component-header additions and remains passing.
 
@@ -41,7 +43,7 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
 
 1. **Bind derived block collision providers.** The base provider14A763920+30 is
    now verified as141A22F50 and its complete helper composition is native-tested.
-   World enumeration1415FE680 exposes the polymorphic call at1415FF16D and
+   Selected derived providers are now verified and native-compared; continue moving three-part emitter1465F8960 with helper1465F8EC0, forward target146614A70 and its146614190/146614640 helpers, and property-dependent148B33800. The271-table shared-callback pool is heuristic and can miss providers overriding all seed slots. World enumeration1415FE680 exposes the polymorphic call at1415FF16D and
    section provider18 at1415FF0BD. Trace registry-selected concrete overrides
    for representative blocks, then compare full candidate output. Optional
    receiver40 at1415FEA39, dimension/world receiverBD0 at1415FEA55 and secondary
@@ -60,7 +62,7 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
    crawl, equipment/permission and external-impulse ownership remain incomplete.
 3. **Remaining fluids and legitimate mechanics.** LavaMove14842B540, LavaDrag
    141C69960, fluid gravity141C5C370/141C5C610/141C81CD0 and related helpers are
-   now have readable, native-compared bodies. Compose their actual gates with raw Navigation/actor/world
+   readable, native-compared bodies. Compose their actual gates with raw Navigation/actor/world
    data and water provider maximum from[14CCB6788]+38 virtual28. Recover currents,
    terrain-specific effects, firework/riptide and vehicle motion. Existing bounce
    arithmetic is not a full slime/honey mechanic. Effect identities are proven;

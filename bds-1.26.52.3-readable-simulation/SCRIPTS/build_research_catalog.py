@@ -132,7 +132,7 @@ def read_asm(path):
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('project',nargs='?',default=str(Path(__file__).resolve().parent.parent));ap.add_argument('--binary');ap.add_argument('--baseline-source',default='/workspace/bedrock_anticheat_part6_1.26.52.3');a=ap.parse_args();root=Path(a.project).resolve(); prior=Path(a.baseline_source)
     # Explicitly curated continuation, never a promotion based on export success.
-    for extra_roles in [root/'DATA/FULL_SIM_ROLES.json',root/'DATA/ENVIRONMENT_ROLES.json',root/'DATA/SHAPES_ROLES.json']:
+    for extra_roles in [root/'DATA/FULL_SIM_ROLES.json',root/'DATA/ENVIRONMENT_ROLES.json',root/'DATA/SHAPES_ROLES.json',root/'DATA/DERIVED_SHAPES_ROLES.json']:
         if extra_roles.exists():ROLES.update({int(k,0):v for k,v in json.loads(extra_roles.read_text()).items()})
     # Make previous evidence anchors self-contained without overwriting existing analysis.
     baseline=list(csv.DictReader((root/'BASELINE/EVIDENCE.csv').open())) if (root/'BASELINE/EVIDENCE.csv').exists() else []
@@ -167,6 +167,8 @@ def main():
     if environment_bindings.exists():bindings.update(json.loads(environment_bindings.read_text()))
     shape_bindings=root/'DATA/SHAPES_INDIRECT_BINDINGS.json'
     if shape_bindings.exists():bindings.update(json.loads(shape_bindings.read_text()))
+    derived_bindings=root/'DATA/DERIVED_SHAPES_INDIRECT_BINDINGS.json'
+    if derived_bindings.exists():bindings.update(json.loads(derived_bindings.read_text()))
     calls=[];callers=defaultdict(set);callees=defaultdict(set);indirect=defaultdict(list)
     for va,z in sorted(chosen.items()):
         for i in z['instructions']:
@@ -208,6 +210,34 @@ def main():
         else:role='Exported candidate; semantic review not established';status='exported_unreviewed';confidence='unresolved'
         basis=z['header'].split(';',2)[-1].strip() if ';' in z['header'] else 'saved assembly header'
         index.append(dict(va=hex(va),rva=hex(va-BASE),end_va=hex(z['end']),size_bytes=z['size'],decoded_bytes=sum(len(x['data']) for x in z['instructions']),boundary_basis=basis,review_status=status,classification=role,confidence=confidence,direct_callers=';'.join(hex(v) for v in sorted(callers[va])),direct_callees=';'.join(hex(v) for v in sorted(callees[va])),indirect_sites=';'.join(hex(v) for v in indirect[va]),caller_scope='saved exported ranges only',assembly=';'.join(str(x['path'].relative_to(root)) for x in groups[va]),decompilation=';'.join(cexports[va])))
+    # A few large initializer/registry owners are deliberately represented by
+    # verified instruction windows, not multi-megabyte assembly/C exports.
+    # Keep them in the index with explicit partial scope and native boundaries.
+    window_owners={}
+    for source in ['DATA/BLOCK_PROVIDER_BINDING.json','DATA/DERIVED_BLOCK_BINDING.json']:
+        path=root/source
+        if not path.exists():continue
+        d=json.loads(path.read_text())
+        for owner,bound in d.get('function_boundaries',{}).items():
+            va=int(owner,0)
+            if va in chosen:continue
+            observations=[i for i in d['instruction_checks'] if int(i['function_va'],0)==va]
+            if observations:window_owners[va]=(source,bound,observations)
+    for va,(source,bound,observations)in sorted(window_owners.items()):
+        callees=set()
+        for i in observations:
+            m=re.fullmatch(r'call (0x[0-9a-f]+)',i['instruction'])
+            if m:callees.add(m[1])
+        index.append(dict(va=hex(va),rva=hex(va-BASE),end_va=bound['end_exclusive'],
+            size_bytes=bound['size'],decoded_bytes=sum(len(bytes.fromhex(i['bytes']))for i in observations),
+            boundary_basis=bound['basis'],review_status='reviewed_windows',
+            classification='Targeted identifier/derived-provider initialization stores; remaining body unreviewed',
+            confidence='confirmed',direct_callers='',direct_callees=';'.join(sorted(callees)),indirect_sites='',
+            caller_scope='reviewed proof instruction windows only; no complete function call audit',
+            assembly=source,decompilation=''))
+    index.sort(key=lambda x:int(x['va'],0))
+    checks['targeted_window_functions']=len(window_owners)
+    checks['function_index_rows']=len(index)
     evidence=[]
     def add(id,va,start,end,claim,detail,confidence='confirmed',kind='instructions',extra=''):
         z=chosen.get(va)
@@ -294,7 +324,7 @@ def main():
 ('NET-003',0x14322F420,0x14322F420,0x14322F572,'Payload manager is lifecycle/copy dispatch, not a proved byte encoder','Operation-code switch handles typeinfo, copy, identity comparison and0x38allocation/copy; appears incodeccontext butdoesnotbyitselfserializebytes.'),
 ]
     for x in claims:add(*x)
-    for extra_claims in [root/'DATA/FULL_SIM_CLAIMS.json',root/'DATA/ENVIRONMENT_CLAIMS.json',root/'DATA/SHAPES_CLAIMS.json']:
+    for extra_claims in [root/'DATA/FULL_SIM_CLAIMS.json',root/'DATA/ENVIRONMENT_CLAIMS.json',root/'DATA/SHAPES_CLAIMS.json',root/'DATA/DERIVED_SHAPES_CLAIMS.json']:
         if extra_claims.exists():
             for x in json.loads(extra_claims.read_text()):
                 add(x['id'],int(x['va'],0),int(x['start'],0),int(x['end'],0),x['claim'],x['detail'],confidence=x.get('confidence','confirmed'),extra=x.get('supporting_artifacts',''))
@@ -328,6 +358,7 @@ def main():
     if (root/'DATA/READABLE_SIMULATION_VALIDATION.json').exists():test_reports.append(root/'DATA/READABLE_SIMULATION_VALIDATION.json')
     if (root/'DATA/ENVIRONMENT_STAGES_VALIDATION.json').exists():test_reports.append(root/'DATA/ENVIRONMENT_STAGES_VALIDATION.json')
     if (root/'DATA/NATIVE_SHAPES_VALIDATION.json').exists():test_reports.append(root/'DATA/NATIVE_SHAPES_VALIDATION.json')
+    if (root/'DATA/SHAPE_OVERRIDES_VALIDATION.json').exists():test_reports.append(root/'DATA/SHAPE_OVERRIDES_VALIDATION.json')
     for p in test_reports:
         d=json.loads(p.read_text());evidence.append(dict(finding_id='TEST-'+p.stem,confidence='confirmed',function_va=str(d.get('function_va',d.get('function',''))),instruction_va='',evidence_kind='original-instruction fixture result',claim='Saved original-instruction comparison report: '+p.stem,data_flow=json.dumps(d,sort_keys=True),source_artifact=str(p.relative_to(root)),source_location='entire JSON; harness source alongside report',supporting_artifacts='',provenance='current_fixture_verification',instruction_excerpt=''))
     write_csv(root/'FUNCTION_INDEX.csv',index,list(index[0]) if index else [])

@@ -1,0 +1,51 @@
+{
+  "start": "0x148a2e2c0",
+  "rva": "0x8a2e2c0",
+  "end": "0x148a2e2e4",
+  "size": 36,
+  "requested_va_is_range_start": true,
+  "decoded_bytes": 36,
+  "calls_and_jumps": [
+    {
+      "site": "0x148a2e2d8",
+      "kind": "call",
+      "target": "0x141a22f50",
+      "operand": "0x141a22f50",
+      "resolved": true
+    }
+  ],
+  "memory_operands": [
+    {
+      "site": "0x148a2e2c4",
+      "instruction": "movaps xmm0, xmmword ptr [rsp + 0x60]",
+      "base": "rsp",
+      "disp": "0x60",
+      "size": 16,
+      "rip_target": ""
+    },
+    {
+      "site": "0x148a2e2c9",
+      "instruction": "mov rax, qword ptr [rsp + 0x70]",
+      "base": "rsp",
+      "disp": "0x70",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x148a2e2ce",
+      "instruction": "mov qword ptr [rsp + 0x30], rax",
+      "base": "rsp",
+      "disp": "0x30",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x148a2e2d3",
+      "instruction": "movups xmmword ptr [rsp + 0x20], xmm0",
+      "base": "rsp",
+      "disp": "0x20",
+      "size": 16,
+      "rip_target": ""
+    }
+  ]
+}
