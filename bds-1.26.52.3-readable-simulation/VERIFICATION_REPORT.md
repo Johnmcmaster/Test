@@ -4,6 +4,14 @@ The delivered Java kernels were compared with the original BDS machine code, not
 
 ## Readable C++ continuation verification
 
+The environment extension separately passes **31,004 original-entry cases across13
+variants**, with zero mismatches and seven NaN payload differences under the
+documented comparison. Its ranges, source hashes and dependency backends are in
+`DATA/ENVIRONMENT_STAGES_VALIDATION.json`. The constructed NoClip world route is
+verified by39 instruction and8 table checks. See`REPORTS/ENVIRONMENT_CONTINUATION.md`.
+The prior64,621-case suite was rerun after the new component-view assertions and
+still passes. Neither suite is a full tick.
+
 `DATA/READABLE_SIMULATION_VALIDATION.json` separately records **64,621 native comparisons across16 variants**, with zero mismatches and zero observed NaN-payload differences. Each original entry must return to the harness sentinel within the instruction budget. The new C++ is compiled withC++20, `-O2 -fno-fast-math -ffp-contract=off`; source hashes include the component header and oracle. Exact native code ranges/hashes and fixture backends are in that report.
 
 The variants cover default acceleration and its ground/air wrapper, ground/shared friction, water drag, input intent, two jump bodies, mode-tag selection, AABB contraction, finalization, horizontal/vertical reset, local input copy, motion-to-request transfer and concrete block-coordinate lookup. The4,080 finalizer cases include targeted unordered/epsilon/signed-zero cases;4,199 block-lookup cases cover height/coordinate/section/fallback behavior. Synthetic membership/world backends and supplied trig/LUT results remain limits, described inREADABLE_SIMULATION/README.md.
@@ -12,7 +20,7 @@ The first broad finalizer comparison found32 mismatches because the decompiler s
 
 Constructor/table checks independently bind the default movement-control method and concrete collision-world query. Effect constructor/indexed stores bind Jump Boost, Levitation and Slow Falling. The selected type audit has49 independent regular record writers and12,234 distinct bracket-extracted spellings with no collisions in that extracted set. Recomputing FNV-1a alone is not treated as independent registration proof or a claim that all possible runtime names are collision-free.
 
-The current index contains444 Ghidra exports/251 entry VAs, with zero decompile failures and444 continuous linear decodes. Of these,406 match PE unwind ranges; the remaining explicit ranges are checked separately. The saved-instruction catalog audit checks771 assembly files/656 unique ranges with zero byte/boundary mismatches and no missing evidence sources/anchors. Exported candidates remain distinguishable from manually reviewed functions. Catalog counts include preserved baseline material and do not measure full semantic coverage.
+The current index contains478 Ghidra exports/273 entry VAs, with zero decompile failures and478 continuous linear decodes. Of these,440 match PE unwind ranges; the remaining explicit ranges are checked separately. The saved-instruction catalog audit checks793 assembly files/678 unique ranges with zero byte/boundary mismatches and no missing evidence sources/anchors. Exported candidates remain distinguishable from manually reviewed functions. Catalog counts include preserved baseline material and do not measure full semantic coverage.
 
 `DATA/verification_summary.json` records the executable/JAR identities, commands, exit codes, per-suite counts, log hashes, and report hashes. `DATA/verification/` preserves compiler and oracle output. New kernels added during investigation are listed in that manifest when their final checks finish.
 

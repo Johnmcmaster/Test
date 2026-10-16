@@ -1,0 +1,58 @@
+{
+  "start": "0x14191f490",
+  "rva": "0x191f490",
+  "end": "0x14191f4d2",
+  "size": 66,
+  "requested_va_is_range_start": true,
+  "decoded_bytes": 66,
+  "calls_and_jumps": [
+    {
+      "site": "0x14191f4b2",
+      "kind": "call",
+      "target": "0x1415f37b0",
+      "operand": "0x1415f37b0",
+      "resolved": true
+    },
+    {
+      "site": "0x14191f4c3",
+      "kind": "call",
+      "target": "0x14a0f9b60",
+      "operand": "0x14a0f9b60",
+      "resolved": true
+    }
+  ],
+  "memory_operands": [
+    {
+      "site": "0x14191f49b",
+      "instruction": "lea rax, [rip + 0x8e3e6e6]",
+      "base": "rip",
+      "disp": "0x8e3e6e6",
+      "size": 8,
+      "rip_target": "0x14a75db88"
+    },
+    {
+      "site": "0x14191f4a2",
+      "instruction": "mov qword ptr [rcx], rax",
+      "base": "rcx",
+      "disp": "0x0",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14191f4a5",
+      "instruction": "cmp byte ptr [rcx + 0x188], 1",
+      "base": "rcx",
+      "disp": "0x188",
+      "size": 1,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14191f4ae",
+      "instruction": "lea rcx, [rsi + 0x10]",
+      "base": "rsi",
+      "disp": "0x10",
+      "size": 8,
+      "rip_target": ""
+    }
+  ]
+}

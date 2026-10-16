@@ -132,8 +132,8 @@ def read_asm(path):
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('project',nargs='?',default=str(Path(__file__).resolve().parent.parent));ap.add_argument('--binary');ap.add_argument('--baseline-source',default='/workspace/bedrock_anticheat_part6_1.26.52.3');a=ap.parse_args();root=Path(a.project).resolve(); prior=Path(a.baseline_source)
     # Explicitly curated continuation, never a promotion based on export success.
-    extra_roles=root/'DATA/FULL_SIM_ROLES.json'
-    if extra_roles.exists():ROLES.update({int(k,0):v for k,v in json.loads(extra_roles.read_text()).items()})
+    for extra_roles in [root/'DATA/FULL_SIM_ROLES.json',root/'DATA/ENVIRONMENT_ROLES.json']:
+        if extra_roles.exists():ROLES.update({int(k,0):v for k,v in json.loads(extra_roles.read_text()).items()})
     # Make previous evidence anchors self-contained without overwriting existing analysis.
     baseline=list(csv.DictReader((root/'BASELINE/EVIDENCE.csv').open())) if (root/'BASELINE/EVIDENCE.csv').exists() else []
     for row in baseline:
@@ -163,6 +163,8 @@ def main():
             if '.pdata' in z['header'] and f and (f[0]!=z['start'] or f[1]!=z['end']):checks['boundary_mismatches'].append({'source':str(z['path'].relative_to(root)),'saved':[hex(z['start']),hex(z['end'])],'pdata':[hex(f[0]),hex(f[1])]})
     binding_file=root/'DATA/FULL_SIM_INDIRECT_BINDINGS.json'
     bindings=json.loads(binding_file.read_text()) if binding_file.exists() else {}
+    environment_bindings=root/'DATA/ENVIRONMENT_INDIRECT_BINDINGS.json'
+    if environment_bindings.exists():bindings.update(json.loads(environment_bindings.read_text()))
     calls=[];callers=defaultdict(set);callees=defaultdict(set);indirect=defaultdict(list)
     for va,z in sorted(chosen.items()):
         for i in z['instructions']:
@@ -290,10 +292,10 @@ def main():
 ('NET-003',0x14322F420,0x14322F420,0x14322F572,'Payload manager is lifecycle/copy dispatch, not a proved byte encoder','Operation-code switch handles typeinfo, copy, identity comparison and0x38allocation/copy; appears incodeccontext butdoesnotbyitselfserializebytes.'),
 ]
     for x in claims:add(*x)
-    extra_claims=root/'DATA/FULL_SIM_CLAIMS.json'
-    if extra_claims.exists():
-        for x in json.loads(extra_claims.read_text()):
-            add(x['id'],int(x['va'],0),int(x['start'],0),int(x['end'],0),x['claim'],x['detail'],confidence=x.get('confidence','confirmed'),extra=x.get('supporting_artifacts',''))
+    for extra_claims in [root/'DATA/FULL_SIM_CLAIMS.json',root/'DATA/ENVIRONMENT_CLAIMS.json']:
+        if extra_claims.exists():
+            for x in json.loads(extra_claims.read_text()):
+                add(x['id'],int(x['va'],0),int(x['start'],0),int(x['end'],0),x['claim'],x['detail'],confidence=x.get('confidence','confirmed'),extra=x.get('supporting_artifacts',''))
     for t in type_rows:
         va=int(t['initializer'],16);add('TYPE-'+t['name'],va,int(t['hash_store'],16),int(t['length_store'],16),'Independent component ID/name record: '+t['name'],f"Initializer stores {t['hash']} with embedded name pointer {t['name_va']} and length{t['name_length']}; distinct from recomputing FNV-1a.",extra=t['source'])
     if pe:
@@ -307,8 +309,9 @@ def main():
         write_csv(root/'DATA/TABLE_POINTERS.csv',table_rows,list(table_rows[0]))
     test_reports=sorted((root/'JAVA').rglob('*validation.json'))
     if (root/'DATA/READABLE_SIMULATION_VALIDATION.json').exists():test_reports.append(root/'DATA/READABLE_SIMULATION_VALIDATION.json')
+    if (root/'DATA/ENVIRONMENT_STAGES_VALIDATION.json').exists():test_reports.append(root/'DATA/ENVIRONMENT_STAGES_VALIDATION.json')
     for p in test_reports:
-        d=json.loads(p.read_text());evidence.append(dict(finding_id='TEST-'+p.stem,confidence='confirmed',function_va=str(d.get('function_va',d.get('function',''))),instruction_va='',evidence_kind='original-instruction fixture result',claim='Saved native/Java comparison report: '+p.stem,data_flow=json.dumps(d,sort_keys=True),source_artifact=str(p.relative_to(root)),source_location='entire JSON; harness source alongside report',supporting_artifacts='',provenance='current_fixture_verification',instruction_excerpt=''))
+        d=json.loads(p.read_text());evidence.append(dict(finding_id='TEST-'+p.stem,confidence='confirmed',function_va=str(d.get('function_va',d.get('function',''))),instruction_va='',evidence_kind='original-instruction fixture result',claim='Saved original-instruction comparison report: '+p.stem,data_flow=json.dumps(d,sort_keys=True),source_artifact=str(p.relative_to(root)),source_location='entire JSON; harness source alongside report',supporting_artifacts='',provenance='current_fixture_verification',instruction_excerpt=''))
     write_csv(root/'FUNCTION_INDEX.csv',index,list(index[0]) if index else [])
     write_csv(root/'DIRECT_CALLS.csv',calls,list(calls[0]) if calls else [])
     write_csv(root/'UNRESOLVED_INDIRECT_CALLS.csv',[x for x in calls if x['resolution'] not in ['direct','resolved_captured_callback']],list(calls[0]) if calls else [])

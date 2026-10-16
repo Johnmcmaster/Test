@@ -7,6 +7,13 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
 
 ## Proven since the previous checkpoint
 
+- Environment continuation: the constructed NoClip/NoBlock receiver is now bound
+  through contextCA3EE50E, factory14A75DB78 and instance14A75DB88 to world
+  table14A753900 virtual80=1415F6180. That predicate delegates to1415F5EC0 and
+  chunk lookup; it checks availability, not block penetration. Both filter paths
+  and additional lava/fluid/flying/speed bodies have readable C++ and31,004
+  passing original-entry comparisons (seven NaN payload differences). See
+  REPORTS/ENVIRONMENT_CONTINUATION.md and DATA/NOCLIP_WORLD_BINDING.json.
 - Installed default MoveControl table14A7D46C0+10 is142CC7330, with constructor
   and shared-ownership stores independently checked.
 - Default ground/air/flying acceleration, horizontal friction, water drag, two
@@ -69,13 +76,12 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
    1457BB5C0. Complete missing-input, delayed/accumulated input and authoritative
    tick advancement rules remain open. Separate script queue14116FEF0 is not
    retained movement history.
-7. **NoClip/NoBlock alternate path.** Body148265630 bit0-clear branch is tested.
-   Its virtual80 call at1482658B7 still needs receiver ownership from14826F150
-   and the context service returned by14826DA50. Known world table14A753900+80
-   points to1415F6180 (a region/chunk predicate that delegates tovirtual70), but
-   that is a candidate for this call until the actual service return is bound.
-   Do not equate the named filter with a cheating classifier or assign the raw
-   ActorDataFlag bit a game-mode meaning without independent evidence.
+7. **NoClip/NoBlock remaining ownership.** Constructed virtual80 is now bound to
+   1415F6180 through the installed context/factory chain, and both body branches
+   are compared against original execution. Remaining gaps are alternate factory
+   installation, activation/teardown cadence, chunk152C producer and ActorDataFlag
+   byte06 bit0 authority. Do not assign that raw bit a game-mode meaning or turn
+   the availability gate into a cheating classifier.
 8. **Synchronization and exact protocol integration.** Correction field visitor
    143141390, wrappers143141BA0/1431415D0/143141F90, result/decode143142230 and
    helper14322F9E0 are exported. 14322F420 is payload lifecycle management, not a

@@ -1,5 +1,10 @@
 # Native movement simulation reconstruction — current checkpoint
 
+The new[environment continuation](REPORTS/ENVIRONMENT_CONTINUATION.md) resolves
+the constructed NoClip world callback and reconstructs more lava/fluid/flying
+and speed-source code. It adds31,004 native comparisons with zero mismatches and
+seven NaN payload differences. Full simulator composition remains open.
+
 Status: **new native stages reconstructed into compilable readable C++; full simulator, anti-cheat and complete Geyser port remain unfinished**. This continuation used targeted Ghidra, Capstone and original-instruction harnesses directly, without agents. It preserves the earlier kernels and precise unresolved dependencies.
 
 ## New readable simulation source

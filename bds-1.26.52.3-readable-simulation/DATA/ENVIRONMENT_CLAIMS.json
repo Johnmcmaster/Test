@@ -1,0 +1,202 @@
+[
+  {
+    "id": "ENV-REGION",
+    "va": "0x1415f6180",
+    "start": "0x1415f6180",
+    "end": "0x1415f6267",
+    "claim": "World region predicate iterates chunk coordinates, not collision shapes",
+    "detail": "Uses wrapped32 (X/Z +/- radius)>>4, product of inclusive dimensions, X-fast traversal, early zero-AL exit and exact last AL result. NoClip supplies radius0 and flag1.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-CHUNK",
+    "va": "0x1415f5ec0",
+    "start": "0x1415f5ec0",
+    "end": "0x1415f5ef3",
+    "claim": "Concrete chunk gate uses existence and chunk byte152C",
+    "detail": "Virtual148 supplies chunk; null returns AL0. Otherwise AL=(flag&chunkByte152C)^1. Arbitrary byte values are preserved rather than normalized into a guessed Boolean state.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FILTER",
+    "va": "0x148265630",
+    "start": "0x148265630",
+    "end": "0x1482659ff",
+    "claim": "NoClipOrNoBlockMoveFilter has two distinct processing paths",
+    "detail": "ActorDataFlag byte06 bit0 clear: translate main/sub bounds by request3C, derive ordinary XYZ, then erase request if present. Bit0 set: floor currentXYZ, call constructed-world region80 with radius0/flag1, retain request on nonzero; erase on zero. Finite-coordinate native fixtures run complete original body and translation helper.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FLUID-A",
+    "va": "0x141c5c370",
+    "start": "0x141c5c370",
+    "end": "0x141c5c608",
+    "claim": "Fluid gravity is a conditional ApplyGravity write with paired world queries",
+    "detail": "Optional Navigation field01 bit4, separate membership and actor byte06 bit1 select whether to query world60 twice. Query Y values round float(double(positionY)+/-double(motionY)*0.5); both nonzero byte results suppress write. Otherwise stores bitsBCA3D70A (-0.02) to ApplyGravity+00, preserving its other byte fields.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FLUID-B",
+    "va": "0x141c5c610",
+    "start": "0x141c5c610",
+    "end": "0x141c5c905",
+    "claim": "Second fluid gravity body adds a Navigation signed-byte early return",
+    "detail": "Navigation field00 sign bit set returns before world queries or gravity storage. The remaining data flow agrees with141C5C370, verified by separate original-entry fixtures.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-LAVA-GRAV",
+    "va": "0x141c81cd0",
+    "start": "0x141c81cd0",
+    "end": "0x141c81d71",
+    "claim": "Lava gravity stores the binary -0.005 scalar behind a raw flag gate",
+    "detail": "ActorDataFlag+07 bit1 set returns without a write. Otherwise ensure/existing ApplyGravity payload+00 gets BBA3D70A; no general enforcement threshold is inferred.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-LAVA-MOVE",
+    "va": "0x14842b540",
+    "start": "0x14842b540",
+    "end": "0x14842b8ae",
+    "claim": "Lava move preserves unconditional acceleration and conditional Navigation tail",
+    "detail": "Actual epsilon/MAXSS/yaw acceleration executes first. The rest requires present Navigation with negative field00. Raw actor40000/80000, membership9/10, block flag33/material and flag34 helper select scalar clear, negativeY clamp and optionalYzero. Only this signed-Navigation tail multipliesY by0.5.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-LAVA-DRAG",
+    "va": "0x141c69960",
+    "start": "0x141c69960",
+    "end": "0x141c69dc5",
+    "claim": "Lava drag half-motion update has a Navigation bypass",
+    "detail": "Original complete ECS loop executes with one intersecting entity; absent Navigation or nonnegative field00 multiplies motionXYZ by0.5, negative field00 preserves values. Allocation/instrumentation interfaces are fixture backends, not inferred simulator behavior.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-BLOCK-FLAG",
+    "va": "0x141c645e0",
+    "start": "0x141c645e0",
+    "end": "0x141c64695",
+    "claim": "Lava helper queries a raw block-provider flag at floor coordinates",
+    "detail": "Inline CVTTSS2SI/floor correction uses StateVectorX/Z and bounds.minY; world10 supplies block; provider+134 bit2 (aggregate flag34) becomes result. Native helper also executes within LavaMove fixtures.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FLY-SPEED-A",
+    "va": "0x141c88c60",
+    "start": "0x141c88c60",
+    "end": "0x141c88cd9",
+    "claim": "Player-flying speed coefficient uses an indexed ability value",
+    "detail": "Walks static MSVC hash-map bucket for integer key6, loads ability-array08+4*index or +0 if absent, multiplies by exact2/1 from14A777290 selected by raw actor flags00 bit3; stores MobTravel+0C. Ability authority/name remain external.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FLY-SPEED-B",
+    "va": "0x141c8a030",
+    "start": "0x141c8a030",
+    "end": "0x141c8a03a",
+    "claim": "One player-flying coefficient body copies a supplied scalar",
+    "detail": "Copies input+00 to MobTravel+0C with no arithmetic, selected by enclosing systems not reconstructed here.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FLY-SPEED-C",
+    "va": "0x141c8b230",
+    "start": "0x141c8b230",
+    "end": "0x141c8b252",
+    "claim": "Alternate player-flying coefficient uses two exact compiled constants",
+    "detail": "Raw bit3 selects table14A777298 bits3CD4FDF3 or3CA3D70A; no generic walking speed limit is derived.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-SPEED-UPDATE",
+    "va": "0x142f17890",
+    "start": "0x142f17890",
+    "end": "0x142f17a4f",
+    "claim": "Travel speed update has real input-generation and optional-value gates",
+    "detail": "Sign-extends index byte, bounds checks16-byte record span, requires raw actor byte05 bit4. Cache-generation match+member9 select optionalfield6 or previousfield7; writesfield5=selected*0.1. External selected-record lookup, member8 and actorbyte0D bit4 control extra+0.1 infield7. Record-key fixture checks verify selected record data.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeEnvironment.cpp; DATA/ENVIRONMENT_STAGES_VALIDATION.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-TYPE",
+    "va": "0x1482663c0",
+    "start": "0x1482663f1",
+    "end": "0x148266409",
+    "claim": "Context type identity has independent name/hash/length stores",
+    "detail": "CA3EE50E and50-byte nameVanillaSystems::BlockSourceFactoryAdapterComponent are stored together; this is independent binary registration evidence, beyond FNV recomputation.",
+    "confidence": "confirmed for installed/constructed route",
+    "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FACTORY-INSTALL",
+    "va": "0x1418b1760",
+    "start": "0x1418b18e5",
+    "end": "0x1418b197c",
+    "claim": "Movement registration installs a concrete world factory",
+    "detail": "Constructs14A75DB78 object, saves it into14A925310 configuration+10, whose virtual08 installer148266460 allocates16-byte adapter and copies pointer toadapter00.",
+    "confidence": "confirmed for installed/constructed route",
+    "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FACTORY-ACTIVATE",
+    "va": "0x1482652a0",
+    "start": "0x14826533b",
+    "end": "0x148265362",
+    "claim": "Adapter activation creates and owns the per-context world factory instance",
+    "detail": "Loadsadapter00, invokesvirtual08=14191F260 for installedtable14A75DB78, stores newinstanceatadapter08, destroys oldownership if present.",
+    "confidence": "confirmed for installed/constructed route",
+    "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FACTORY-CREATE",
+    "va": "0x14191f260",
+    "start": "0x14191f32d",
+    "end": "0x14191f355",
+    "claim": "Factory creates a1B0 object whose virtual08 supplies world receivers",
+    "detail": "Loads external registry service, allocates1B0, installs14A75DB88, provider190 andregistry198. Its virtual08 target is14191F4E0.",
+    "confidence": "confirmed for installed/constructed route",
+    "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FACTORY-GET",
+    "va": "0x14191f4e0",
+    "start": "0x14191f506",
+    "end": "0x14191f5af",
+    "claim": "Per-entity factory returns the same constructed world table proved in collision processing",
+    "detail": "Dimension-type membership selects value, calls141E7E060 at object08, returnsobject10. Refresh constructs receiver14A753900 at cacheheader+8; absent membership returnsnull.",
+    "confidence": "confirmed for installed/constructed route",
+    "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-NOCLIP-RECEIVER",
+    "va": "0x14826f150",
+    "start": "0x14826f31f",
+    "end": "0x14826f408",
+    "claim": "NoClip entity entry receives the bound constructed world object",
+    "detail": "adapter08 virtual08 dispatch at14826F32F resolves14191F4E0 on installed route, and returnednonnullreceiver becomes finalargument to148265630; virtual80 resolves1415F6180, not collision-shape enumeration.",
+    "confidence": "confirmed for installed/constructed route",
+    "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  },
+  {
+    "id": "ENV-FACTORY-DESTROY",
+    "va": "0x1482653e0",
+    "start": "0x14826547b",
+    "end": "0x14826547b",
+    "claim": "Adapter teardown clears the instance pointer before destruction",
+    "detail": "Readsadapter08, writeszero at14826547B and invokes priorinstance destructor when nonnull. Scheduler lifecycle order remains unproved.",
+    "confidence": "confirmed for installed/constructed route",
+    "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
+  }
+]

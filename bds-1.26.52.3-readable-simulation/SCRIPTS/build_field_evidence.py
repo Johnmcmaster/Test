@@ -60,6 +60,17 @@ B=[
 ('WorldShapeRecord',0x1415fe680,0x1415fed00,0x1415fed22,'r14',0x30,'Nonallocating append output pointer; stored owner,24-byte AABB,12-byte block position and byte2C.'),
 ('WorldShapeRecord',0x1415fe680,0x1415ff1a2,0x1415ff1c2,'rbx',0x30,'Second nonallocating append route; same48-byte record layout.'),
 ]
+B.extend([
+('BlockSourceFactoryAdapterAccessView',0x148266460,0x1482671cb,0x1482671d7,'rax',0x10,'Ten-hex-byte allocation at1482671AF..1BA; CA3EE50E context payload receives factory00 and zero instance08.'),
+('BlockSourceFactoryAdapterAccessView',0x1482652a0,0x14826533b,0x148265366,'rsi',0x10,'CA3EE50E context payload: factory00 virtual08 constructs instance; transferred result stored08.'),
+('BlockSourceFactoryAdapterAccessView',0x1482653e0,0x148265477,0x14826547b,'rax',0x10,'CA3EE50E payload; read then clear08 before destruction.'),
+('ConstructedBlockSourceFactoryAccessView',0x14191f260,0x14191f347,0x14191f36e,'rsi',0x1b0,'One-B0 allocation at14191F32D; original installs14A75DB88 and initializes listed fields.'),
+('ConstructedBlockSourceFactoryAccessView',0x14191f4e0,0x14191f510,0x14191f517,'rsi',0x1b0,'Installed14A75DB88 virtual08 receiver saved inRSI atF4EA; cache fields1A0/1A8.'),
+('ConstructedBlockSourceFactoryAccessView',0x14191f4e0,0x14191f591,0x14191f5a6,'rsi',0x1b0,'Same receiver; clear cached entity, loadprovider190, form cache-header08.'),
+('ApplyGravityComponent',0x141c5c370,0x141c5c5e8,0x141c5c5e8,'rax',8,'ApplyGravity storage lookup/ensure result; actual scalar00=-0.02 write.'),
+('StateVectorComponent',0x14842b540,0x14842b623,0x14842b64e,'rsi',0x24,'Eighth argument is StateVector; acceleration stores motion18/1C/20.'),
+('StateVectorComponent',0x14842b540,0x14842b830,0x14842b880,'rsi',0x24,'Same StateVector; Navigation-dependent negativeY clamp/zero/factor.'),
+])
 rows=[]
 for component,va,start,end,reg,limit,proof in B:
  paths=list((a.root/'ASSEMBLY').rglob(f'{va:016X}.asm'))+list((a.root/'BASELINE/DECOMPILATION').rglob(f'{va:016X}.asm'))

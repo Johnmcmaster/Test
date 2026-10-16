@@ -10,6 +10,7 @@ The original Windows executable was independently verified: 223,223,112 bytes, i
 
 ## New recovered behavior
 
+- The environment continuation adds readable lava movement/drag, fluid gravity, flying coefficients, speed-source updates and both NoClip/NoBlock filter branches. Its constructed world receiver is independently bound to the actual region/chunk predicates. **31,004 additional native comparisons pass**, with seven NaN payload differences recorded. See [ENVIRONMENT_CONTINUATION.md](REPORTS/ENVIRONMENT_CONTINUATION.md). The two readable C++ suites total95,625 bounded cases across29 variants; they do not measure whole-tick completeness.
 - The new C++ collection covers default ground/air/flying acceleration, horizontal friction, water drag, ground jump/modifier bodies, travel-mode tags, input intent, motion-to-request transfer, final position/collision state, velocity reset and concrete block-coordinate lookup. It passes **64,621 original-instruction comparisons** with documented dependency shims.
 - One installed MoveControl callback is independently resolved to `0x142CC7330` through its constructor and table. Alternate runtime implementations remain separate.
 - Collision acquisition's constructed world receiver is now resolved through table `0x14A753900` to `0x1415FE590` and actual chunk/block shape enumeration `0x1415FE680`. Per-block provider implementations remain open; see [WORLD_COLLISION_QUERY.md](REPORTS/WORLD_COLLISION_QUERY.md).
@@ -58,7 +59,3 @@ For the new C++ collection, run `python SCRIPTS/verify_readable_simulation.py /p
 ## Scope and remaining work
 
 `UNRESOLVED.md` lists exact targets and the next prioritized investigations. `PORT_STATUS.csv` distinguishes the native recovery, new readable C++, existing Java kernels and incomplete mechanics. Per-block shape providers, complete mode/permission and attribute/impulse ownership, remaining fluid/vehicle/boost mechanics, tick scheduling and full replay remain unresolved. These gaps prevent a faithful production anti-cheat. No guessed movement thresholds or substitute generic detectors are supplied.
-
-## Downloadable packages
-
-[Download the two verified ZIPs and read extraction instructions](DOWNLOADS/README.md). Each ZIP is smaller than8MB. The consolidated TXT is retained inside the ZIPs; the Git tree omits its large uncompressed copy.

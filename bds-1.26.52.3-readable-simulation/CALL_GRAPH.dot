@@ -32,7 +32,7 @@ digraph BedrockMovement {
   shape_receiver [label="Constructed cached world-query receiver\ntable 0x14A753900",shape=component,color="#7047a8"];
   f1415fe590 [label="Resolved world-query virtual+0xB0\n0x1415FE590"];
   f1415fe680 [label="Concrete chunk/block collision-shape enumeration\n0x1415FE680"];
-  f141e7e060 [label="World-query cache refresh\n0x141E7E060"];
+  f141e7e060 [label="Refresh cached world receiver\n0x141E7E060"];
   f1415f33f0 [label="World-query constructor / table install\n0x1415F33F0"];
   candidate_aabbs [label="Candidate AABB vector\nMoveRequest+0x58",shape=cylinder,color="#1765a0"];
   move_request [label="MoveRequestComponent\nselected vector+0x3C / bounds",shape=cylinder,color="#1765a0"];
@@ -40,7 +40,7 @@ digraph BedrockMovement {
   f148267d70 [label="NoClipOrNoBlock named system construction\n0x148267D70"];
   f14826de30 [label="Named filter bulk method\n0x14826DE30"];
   f14826f150 [label="Named filter entity method\n0x14826F150"];
-  f148265630 [label="Move/bounds application or alternate world branch\n0x148265630"];
+  f148265630 [label="Flag-selected bounds update / request availability gate\n0x148265630"];
   f142535850 [label="Translate AABB and sub-bounds\n0x142535850"];
   filter_table [label="NoClipOrNoBlockMoveFilterSystem\ntable 0x14A9254B0",shape=component,color="#7047a8"];
   state_position [label="StateVectorComponent\nposition +0x00/+0x04/+0x08",shape=cylinder,color="#1765a0"];
@@ -68,7 +68,7 @@ digraph BedrockMovement {
   f142c47700 [label="VerticalFlySpeedControl bulk method\n0x142C47700"];
   f142c19020 [label="Ported vertical-fly numerical callback\n0x142C19020"];
   f14842bc20 [label="LavaMove bulk method\n0x14842BC20"];
-  f14842b540 [label="LavaMove callback\n0x14842B540"];
+  f14842b540 [label="Lava acceleration/tail\n0x14842B540"];
   f141c87d40 [label="LevitateSystem bulk method\n0x141C87D40"];
   f141c5eb90 [label="Ported levitation numerical callback\n0x141C5EB90"];
   f141c88390 [label="Levitate entity method\n0x141C88390"];
@@ -135,6 +135,20 @@ digraph BedrockMovement {
   mob_travel [label="MobTravelComponent\ninput00 / coefficient0C / position10 / scalar1C",shape=cylinder,color="#1765a0"];
   mode_tags [label="Travel-mode component memberships\nselector adds; separate group clear",shape=cylinder,color="#1765a0"];
   collision_flags [label="Horizontal / vertical / on-ground\ncollision marker memberships",shape=cylinder,color="#1765a0"];
+  f148266460 [label="Install context world factory adapter\n0x148266460"];
+  f1482652a0 [label="Create adapter instance08\n0x1482652A0"];
+  f14191f260 [label="Construct1B0 world factory instance\n0x14191F260"];
+  f14191f4e0 [label="Per-entity cached world receiver\n0x14191F4E0"];
+  f1415f6180 [label="World chunk-region availability predicate\n0x1415F6180"];
+  f1415f5ec0 [label="Chunk pointer/raw byte152C gate\n0x1415F5EC0"];
+  f1415f5900 [label="External chunk cache/provider lookup\n0x1415F5900"];
+  world_adapter [label="BlockSourceFactoryAdapter context\nCA3EE50E factory00 / instance08",shape=cylinder,color="#1765a0"];
+  f141c5c370 [label="Fluid gravity request\n0x141C5C370"];
+  f141c5c610 [label="Fluid gravity / Navigation bypass\n0x141C5C610"];
+  f141c81cd0 [label="Lava gravity request\n0x141C81CD0"];
+  f141c69960 [label="Lava drag\n0x141C69960"];
+  f141c88c60 [label="Ability-dependent flying coefficient\n0x141C88C60"];
+  f142f17890 [label="Travel speed source update\n0x142F17890"];
   f1409a5710 -> f14116f050 [label="direct call\n0x1409A5BBF", color="#252525",style=solid];
   f14116f050 -> f14116ee60 [label="direct call\n0x14116F1BD", color="#252525",style=solid];
   f1409a5710 -> f1457bb0a0 [label="conditional call\n0x1409A5CD7", color="#252525",style=solid];
@@ -276,4 +290,19 @@ digraph BedrockMovement {
   collision_flags -> f143b70f80 [label="vertical marker under filtered view", color="#1765a0",style=dotted];
   f143b6ffb0 -> state_motion [label="clear X/Z unless request88 bypasses", color="#1765a0",style=dotted];
   f143b70f80 -> state_motion [label="clear Y; bounce/order separate", color="#1765a0",style=dotted];
+  f148266460 -> world_adapter [label="install verified14A75DB78 factory", color="#1765a0",style=dotted];
+  world_adapter -> f1482652a0 [label="factory00 ->virtual08; storeinstance08", color="#1765a0",style=dotted];
+  f1482652a0 -> f14191f260 [label="installed factory14A75DB78+08\n0x14826534A", color="#087f3e",style=bold];
+  world_adapter -> f14191f4e0 [label="constructed instance14A75DB88+08\n0x14826F32F", color="#087f3e",style=bold];
+  f14191f4e0 -> f141e7e060 [label="direct call\n0x14191F5AA", color="#252525",style=solid];
+  f148265630 -> f1415f6180 [label="constructed14A753900+80; radius0/flag1\n0x1482658B7", color="#087f3e",style=bold];
+  f1415f6180 -> f1415f5ec0 [label="constructed world table+70\n0x1415F620F", color="#087f3e",style=bold];
+  f1415f5ec0 -> f1415f5900 [label="constructed world table+148\n0x1415F5ED2", color="#087f3e",style=bold];
+  f141c5c370 -> gravity_component [label="verified stage; scheduler composition remains separate", color="#1765a0",style=dotted];
+  f141c5c610 -> gravity_component [label="verified stage; scheduler composition remains separate", color="#1765a0",style=dotted];
+  f141c81cd0 -> gravity_component [label="verified stage; scheduler composition remains separate", color="#1765a0",style=dotted];
+  f141c69960 -> state_motion [label="verified stage; scheduler composition remains separate", color="#1765a0",style=dotted];
+  f14842b540 -> state_motion [label="verified stage; scheduler composition remains separate", color="#1765a0",style=dotted];
+  f141c88c60 -> mob_travel [label="verified stage; scheduler composition remains separate", color="#1765a0",style=dotted];
+  f142f17890 -> mob_travel [label="verified stage; scheduler composition remains separate", color="#1765a0",style=dotted];
 }

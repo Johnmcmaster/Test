@@ -83,3 +83,21 @@ server extension. The retained Java kernels and Geyser source hook remain under
 The complete evidence discussion is in
 [`FULL_SIM_CONTINUATION.md`](../REPORTS/FULL_SIM_CONTINUATION.md) and
 [`WORLD_COLLISION_QUERY.md`](../REPORTS/WORLD_COLLISION_QUERY.md).
+
+## Environment and fluid continuation
+
+`NativeEnvironment.cpp` adds region/chunk predicates, both NoClip/NoBlock
+branches, fluid gravity, lava acceleration/drag, the block-flag helper, flying
+coefficients and travel-speed updates. Its13 comparison variants run31,004 cases
+with zero mismatches and seven NaN payload differences. The original LavaDrag
+loop is exercised for one entity; the readable function is its per-entity update.
+
+```sh
+python SCRIPTS/verify_environment_stages.py /path/bedrock_server.exe --cases 2400
+```
+
+See[`ENVIRONMENT_CONTINUATION.md`](../REPORTS/ENVIRONMENT_CONTINUATION.md),
+[`NOCLIP_WORLD_BINDING.json`](../DATA/NOCLIP_WORLD_BINDING.json) and
+[`ENVIRONMENT_STAGES_VALIDATION.json`](../DATA/ENVIRONMENT_STAGES_VALIDATION.json).
+The native oracle executes the now-bound region/chunk methods with explicit
+external chunk data. Full-tick composition and remaining mechanics remain open.

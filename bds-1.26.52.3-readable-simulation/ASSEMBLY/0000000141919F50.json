@@ -1,0 +1,59 @@
+{
+  "start": "0x141919f50",
+  "rva": "0x1919f50",
+  "end": "0x141919f71",
+  "size": 33,
+  "requested_va_is_range_start": true,
+  "decoded_bytes": 33,
+  "calls_and_jumps": [
+    {
+      "site": "0x141919f65",
+      "kind": "call",
+      "target": "",
+      "operand": "qword ptr [rip + 0x94902b5]",
+      "resolved": false
+    }
+  ],
+  "memory_operands": [
+    {
+      "site": "0x141919f54",
+      "instruction": "mov qword ptr [rsp + 0x20], rdx",
+      "base": "rsp",
+      "disp": "0x20",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x141919f59",
+      "instruction": "mov rax, qword ptr [rcx]",
+      "base": "rcx",
+      "disp": "0x0",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x141919f5c",
+      "instruction": "mov rax, qword ptr [rax + 0x30]",
+      "base": "rax",
+      "disp": "0x30",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x141919f60",
+      "instruction": "lea rdx, [rsp + 0x20]",
+      "base": "rsp",
+      "disp": "0x20",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x141919f65",
+      "instruction": "call qword ptr [rip + 0x94902b5]",
+      "base": "rip",
+      "disp": "0x94902b5",
+      "size": 8,
+      "rip_target": "0x14adaa220"
+    }
+  ]
+}

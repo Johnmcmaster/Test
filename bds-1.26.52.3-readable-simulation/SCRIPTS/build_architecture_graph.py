@@ -336,6 +336,31 @@ edge('collision_flags',reset_y,'data_flow','vertical marker under filtered view'
 edge(reset_xz,'state_motion','data_flow','clear X/Z unless request88 bypasses','ASSEMBLY/0000000143B6FFB0.asm')
 edge(reset_y,'state_motion','data_flow','clear Y; bounce/order separate','ASSEMBLY/0000000143B70F80.asm')
 
+adapter_install=function('148266460','Install context world factory adapter')
+adapter_activate=function('1482652A0','Create adapter instance08')
+world_factory_create=function('14191F260','Construct1B0 world factory instance')
+world_factory_get=function('14191F4E0','Per-entity cached world receiver')
+region_gate=function('1415F6180','World chunk-region availability predicate')
+chunk_gate=function('1415F5EC0','Chunk pointer/raw byte152C gate')
+chunk_backend=function('1415F5900','External chunk cache/provider lookup')
+env_filter=function('148265630','Flag-selected bounds update / request availability gate')
+node('world_adapter','BlockSourceFactoryAdapter context\nCA3EE50E factory00 / instance08','storage')
+edge(adapter_install,'world_adapter','data_flow','install verified14A75DB78 factory','DATA/NOCLIP_WORLD_BINDING.json')
+edge('world_adapter',adapter_activate,'data_flow','factory00 ->virtual08; storeinstance08','DATA/NOCLIP_WORLD_BINDING.json')
+edge(adapter_activate,world_factory_create,'resolved_indirect','installed factory14A75DB78+08','DATA/NOCLIP_WORLD_BINDING.json',site='0x14826534A')
+edge('world_adapter',world_factory_get,'resolved_indirect','constructed instance14A75DB88+08','DATA/NOCLIP_WORLD_BINDING.json',site='0x14826F32F')
+factory_refresh=function('141E7E060','Refresh cached world receiver')
+call(world_factory_get,factory_refresh)
+edge(env_filter,region_gate,'resolved_indirect','constructed14A753900+80; radius0/flag1','DATA/NOCLIP_WORLD_BINDING.json',site='0x1482658B7')
+edge(region_gate,chunk_gate,'resolved_indirect','constructed world table+70','DATA/NOCLIP_WORLD_BINDING.json',site='0x1415F620F')
+edge(chunk_gate,chunk_backend,'resolved_indirect','constructed world table+148','DATA/NOCLIP_WORLD_BINDING.json',site='0x1415F5ED2')
+for va,label in [('141C5C370','Fluid gravity request'),('141C5C610','Fluid gravity / Navigation bypass'),
+                 ('141C81CD0','Lava gravity request'),('141C69960','Lava drag'),('14842B540','Lava acceleration/tail'),
+                 ('141C88C60','Ability-dependent flying coefficient'),('142F17890','Travel speed source update')]:
+    fn=function(va,label)
+    edge(fn,'state_motion' if va in ['141C69960','14842B540'] else 'mob_travel' if va in ['141C88C60','142F17890'] else 'gravity_component',
+         'data_flow','verified stage; scheduler composition remains separate','REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json')
+
 def main():
     output = ROOT / "DATA" / "CALL_GRAPH_EDGES.csv"
     with output.open("w", newline="") as f:

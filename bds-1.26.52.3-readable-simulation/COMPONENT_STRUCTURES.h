@@ -71,6 +71,21 @@ struct WorldShapeRecordView { //1415FED00..D27,1415FF1A2..1C6; vector stride0x30
     std::int32_t blockX20,blockY24,blockZ28;
     std::uint8_t field2c,unknown2d[3]; //field2c explicitly initialized0 in these append paths
 };
+struct BlockSourceFactoryAdapterAccessView { //allocation0x10 at1482671AF; contextCA3EE50E
+    std::uint64_t factory00; //1482671CB; factory's virtual08 creates instance
+    std::uint64_t instance08; //148265362;14826F31F/326 dispatches its virtual08
+};
+struct ConstructedBlockSourceFactoryAccessView { //14191F32D allocation1B0; table14A75DB88
+    std::uint64_t vptr00;
+    std::uint8_t unknown08[0x188]; //cache header08, constructed world receiver10; not fully modeled
+    std::uint64_t provider190,registry198,dimensionPool1a0;
+    std::uint32_t cachedEntity1a8;
+    std::uint8_t unknown1ac[4];
+};
+static_assert(sizeof(BlockSourceFactoryAdapterAccessView)==0x10);
+static_assert(offsetof(ConstructedBlockSourceFactoryAccessView,provider190)==0x190);
+static_assert(offsetof(ConstructedBlockSourceFactoryAccessView,dimensionPool1a0)==0x1a0);
+static_assert(sizeof(ConstructedBlockSourceFactoryAccessView)==0x1b0);
 struct MoveVectorSpan { std::uint64_t count00,data08; };
 struct ServerPlayerMovementComponentView { // stride0x48; pending work, not proven history
     std::uint32_t mode00;
