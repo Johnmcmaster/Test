@@ -1,9 +1,19 @@
 # Native movement simulation reconstruction — current checkpoint
 
-The new[environment continuation](REPORTS/ENVIRONMENT_CONTINUATION.md) resolves
+The new [base block geometry reconstruction](REPORTS/BLOCK_SHAPE_RECONSTRUCTION.md)
+recovers the actual base-provider bounds, custom collision boxes, property lookup
+and deterministic offsets. It adds 12,308 original-entry comparisons, including
+composed execution of the real base table and its helpers. Air and powder-snow
+identifier globals are independently bound through initialization stores.
+Derived block overrides and whole-world enumeration remain separate targets.
+
+The new [environment continuation](REPORTS/ENVIRONMENT_CONTINUATION.md) resolves
 the constructed NoClip world callback and reconstructs more lava/fluid/flying
 and speed-source code. It adds31,004 native comparisons with zero mismatches and
 seven NaN payload differences. Full simulator composition remains open.
+
+The three readable C++ suites total 107,933 bounded comparisons across 34 variants.
+These counts describe finite fixtures, not a measured percentage of the simulator.
 
 Status: **new native stages reconstructed into compilable readable C++; full simulator, anti-cheat and complete Geyser port remain unfinished**. This continuation used targeted Ghidra, Capstone and original-instruction harnesses directly, without agents. It preserves the earlier kernels and precise unresolved dependencies.
 

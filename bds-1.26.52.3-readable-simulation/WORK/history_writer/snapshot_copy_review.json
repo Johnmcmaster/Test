@@ -1,0 +1,241 @@
+{
+  "candidate_va": "0x1438d7680",
+  "end_exclusive": "0x1438d773a",
+  "rejected_interpretation": "Snapshot virtual88 tracker restoration",
+  "reason": "RDX and R8 are indices, shifted right10/masked3FF then multiplied64 to address pool pages fromreceiver50; exchanges fields at0..38 between twoelements. It does not accept an unmodified component destination pointer. The candidate table boundary was heuristic.",
+  "instruction_evidence": [
+    {
+      "va": "0x1438d7680",
+      "bytes": "488b4150",
+      "instruction": "mov rax, qword ptr [rcx + 0x50]"
+    },
+    {
+      "va": "0x1438d7684",
+      "bytes": "4c89c1",
+      "instruction": "mov rcx, r8"
+    },
+    {
+      "va": "0x1438d7687",
+      "bytes": "48c1e90a",
+      "instruction": "shr rcx, 0xa"
+    },
+    {
+      "va": "0x1438d768b",
+      "bytes": "4181e0ff030000",
+      "instruction": "and r8d, 0x3ff"
+    },
+    {
+      "va": "0x1438d7692",
+      "bytes": "41c1e006",
+      "instruction": "shl r8d, 6"
+    },
+    {
+      "va": "0x1438d7696",
+      "bytes": "4c0304c8",
+      "instruction": "add r8, qword ptr [rax + rcx*8]"
+    },
+    {
+      "va": "0x1438d769a",
+      "bytes": "4889d1",
+      "instruction": "mov rcx, rdx"
+    },
+    {
+      "va": "0x1438d769d",
+      "bytes": "48c1e90a",
+      "instruction": "shr rcx, 0xa"
+    },
+    {
+      "va": "0x1438d76a1",
+      "bytes": "81e2ff030000",
+      "instruction": "and edx, 0x3ff"
+    },
+    {
+      "va": "0x1438d76a7",
+      "bytes": "c1e206",
+      "instruction": "shl edx, 6"
+    },
+    {
+      "va": "0x1438d76aa",
+      "bytes": "480314c8",
+      "instruction": "add rdx, qword ptr [rax + rcx*8]"
+    },
+    {
+      "va": "0x1438d76ae",
+      "bytes": "4c39c2",
+      "instruction": "cmp rdx, r8"
+    },
+    {
+      "va": "0x1438d76b1",
+      "bytes": "0f8482000000",
+      "instruction": "je 0x1438d7739"
+    },
+    {
+      "va": "0x1438d76b7",
+      "bytes": "f30f1002",
+      "instruction": "movss xmm0, dword ptr [rdx]"
+    },
+    {
+      "va": "0x1438d76bb",
+      "bytes": "f3410f1008",
+      "instruction": "movss xmm1, dword ptr [r8]"
+    },
+    {
+      "va": "0x1438d76c0",
+      "bytes": "f30f110a",
+      "instruction": "movss dword ptr [rdx], xmm1"
+    },
+    {
+      "va": "0x1438d76c4",
+      "bytes": "f3410f1100",
+      "instruction": "movss dword ptr [r8], xmm0"
+    },
+    {
+      "va": "0x1438d76c9",
+      "bytes": "488b4208",
+      "instruction": "mov rax, qword ptr [rdx + 8]"
+    },
+    {
+      "va": "0x1438d76cd",
+      "bytes": "498b4808",
+      "instruction": "mov rcx, qword ptr [r8 + 8]"
+    },
+    {
+      "va": "0x1438d76d1",
+      "bytes": "48894a08",
+      "instruction": "mov qword ptr [rdx + 8], rcx"
+    },
+    {
+      "va": "0x1438d76d5",
+      "bytes": "49894008",
+      "instruction": "mov qword ptr [r8 + 8], rax"
+    },
+    {
+      "va": "0x1438d76d9",
+      "bytes": "488b4210",
+      "instruction": "mov rax, qword ptr [rdx + 0x10]"
+    },
+    {
+      "va": "0x1438d76dd",
+      "bytes": "498b4810",
+      "instruction": "mov rcx, qword ptr [r8 + 0x10]"
+    },
+    {
+      "va": "0x1438d76e1",
+      "bytes": "48894a10",
+      "instruction": "mov qword ptr [rdx + 0x10], rcx"
+    },
+    {
+      "va": "0x1438d76e5",
+      "bytes": "49894010",
+      "instruction": "mov qword ptr [r8 + 0x10], rax"
+    },
+    {
+      "va": "0x1438d76e9",
+      "bytes": "488b4218",
+      "instruction": "mov rax, qword ptr [rdx + 0x18]"
+    },
+    {
+      "va": "0x1438d76ed",
+      "bytes": "498b4818",
+      "instruction": "mov rcx, qword ptr [r8 + 0x18]"
+    },
+    {
+      "va": "0x1438d76f1",
+      "bytes": "48894a18",
+      "instruction": "mov qword ptr [rdx + 0x18], rcx"
+    },
+    {
+      "va": "0x1438d76f5",
+      "bytes": "49894018",
+      "instruction": "mov qword ptr [r8 + 0x18], rax"
+    },
+    {
+      "va": "0x1438d76f9",
+      "bytes": "488b4220",
+      "instruction": "mov rax, qword ptr [rdx + 0x20]"
+    },
+    {
+      "va": "0x1438d76fd",
+      "bytes": "498b4820",
+      "instruction": "mov rcx, qword ptr [r8 + 0x20]"
+    },
+    {
+      "va": "0x1438d7701",
+      "bytes": "48894a20",
+      "instruction": "mov qword ptr [rdx + 0x20], rcx"
+    },
+    {
+      "va": "0x1438d7705",
+      "bytes": "49894020",
+      "instruction": "mov qword ptr [r8 + 0x20], rax"
+    },
+    {
+      "va": "0x1438d7709",
+      "bytes": "488b4228",
+      "instruction": "mov rax, qword ptr [rdx + 0x28]"
+    },
+    {
+      "va": "0x1438d770d",
+      "bytes": "498b4828",
+      "instruction": "mov rcx, qword ptr [r8 + 0x28]"
+    },
+    {
+      "va": "0x1438d7711",
+      "bytes": "48894a28",
+      "instruction": "mov qword ptr [rdx + 0x28], rcx"
+    },
+    {
+      "va": "0x1438d7715",
+      "bytes": "49894028",
+      "instruction": "mov qword ptr [r8 + 0x28], rax"
+    },
+    {
+      "va": "0x1438d7719",
+      "bytes": "488b4230",
+      "instruction": "mov rax, qword ptr [rdx + 0x30]"
+    },
+    {
+      "va": "0x1438d771d",
+      "bytes": "498b4830",
+      "instruction": "mov rcx, qword ptr [r8 + 0x30]"
+    },
+    {
+      "va": "0x1438d7721",
+      "bytes": "48894a30",
+      "instruction": "mov qword ptr [rdx + 0x30], rcx"
+    },
+    {
+      "va": "0x1438d7725",
+      "bytes": "49894030",
+      "instruction": "mov qword ptr [r8 + 0x30], rax"
+    },
+    {
+      "va": "0x1438d7729",
+      "bytes": "488b4238",
+      "instruction": "mov rax, qword ptr [rdx + 0x38]"
+    },
+    {
+      "va": "0x1438d772d",
+      "bytes": "498b4838",
+      "instruction": "mov rcx, qword ptr [r8 + 0x38]"
+    },
+    {
+      "va": "0x1438d7731",
+      "bytes": "48894a38",
+      "instruction": "mov qword ptr [rdx + 0x38], rcx"
+    },
+    {
+      "va": "0x1438d7735",
+      "bytes": "49894038",
+      "instruction": "mov qword ptr [r8 + 0x38], rax"
+    },
+    {
+      "va": "0x1438d7739",
+      "bytes": "c3",
+      "instruction": "ret "
+    }
+  ],
+  "producer_or_server_ownership_proved": false,
+  "other_candidates": "Unreviewed heuristic candidates; no snapshot binding promoted",
+  "source_search": "SCRIPTS/find_snapshot_copy_candidates.py"
+}

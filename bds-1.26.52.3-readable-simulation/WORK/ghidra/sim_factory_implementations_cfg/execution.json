@@ -1,0 +1,56 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_factory_implementations",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_factory_implementations/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_factory_implementations/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_factory_implementations_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-16T17:55:14.017368+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_factory_implementations",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T17:55:18.272793+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_factory_implementations/0x14191f170_FUN_14191f170.c",
+      "bytes": 1814,
+      "sha256": "5b51c2a5efdbea7398acf50633d1037081781aa5f4b501a8e5e5aea417f866f9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_factory_implementations/0x14191f260_FUN_14191f260.c",
+      "bytes": 2417,
+      "sha256": "d9629778cf1160edc6a95758ef56ef294e12ac08f3588a623c463642fb1a1588",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_factory_implementations/0x14191f490_FUN_14191f490.c",
+      "bytes": 646,
+      "sha256": "5c19ae12b717599d7c4a8a89419fe23c5ece6cd4f285bc424a16a977cf988f01",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_factory_implementations/0x14191f4e0_FUN_14191f4e0.c",
+      "bytes": 1597,
+      "sha256": "0b5d1a99a814bbc7b634dfd97093608a1c06bb9dfb7c243e91b3add0400b0478",
+      "failed": false
+    }
+  ],
+  "expected_targets": 4,
+  "successful_exports": 4
+}

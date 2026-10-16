@@ -70,6 +70,13 @@ B.extend([
 ('ApplyGravityComponent',0x141c5c370,0x141c5c5e8,0x141c5c5e8,'rax',8,'ApplyGravity storage lookup/ensure result; actual scalar00=-0.02 write.'),
 ('StateVectorComponent',0x14842b540,0x14842b623,0x14842b64e,'rsi',0x24,'Eighth argument is StateVector; acceleration stores motion18/1C/20.'),
 ('StateVectorComponent',0x14842b540,0x14842b830,0x14842b880,'rsi',0x24,'Same StateVector; Navigation-dependent negativeY clamp/zero/factor.'),
+('BaseBlockProviderAccessPrefix',0x141a1fef0,0x141a1ff1a,0x141a1ff1a,'rcx',0x1d0,'Base constructor installs table14A763920; derived final tables remain separate.'),
+('BaseBlockProviderAccessPrefix',0x141a1fef0,0x141a200b1,0x141a200b1,'rcx',0x1d0,'Copies16 bytes of native unit localbox into receiver1B8; other eight bytes stored at1C8.'),
+('NativeBlockAccessPrefix',0x141a22f50,0x141a22f8e,0x141a22f8e,'rdx',0x88,'Second argument from world shape enumerator is block; custom-shape pointer80.'),
+('CustomCollisionShapeAccessPrefix',0x145825460,0x14582548f,0x14582549f,'rcx',0x30,'First argument is custom-shape object; kind00 byte and vector20/28 pointers.'),
+('OffsetAxisConfigArray',0x144c50eb0,0x144c50fa0,0x144c50fb1,'rcx',0x24,'Offset property payload from142CEA4B0; float low/high00/04 and uint32count08.'),
+('OffsetAxisConfigArray',0x144c50eb0,0x144c51028,0x144c5103c,'rcx',0x24,'Same offset payload; second12-byte axis fields0C/10/14.'),
+('OffsetAxisConfigArray',0x144c50eb0,0x144c510b0,0x144c510c9,'rcx',0x24,'Same offset payload; third12-byte axis fields18/1C/20.'),
 ])
 rows=[]
 for component,va,start,end,reg,limit,proof in B:

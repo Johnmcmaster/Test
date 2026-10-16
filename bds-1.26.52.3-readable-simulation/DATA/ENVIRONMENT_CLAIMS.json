@@ -136,7 +136,7 @@
     "end": "0x148266409",
     "claim": "Context type identity has independent name/hash/length stores",
     "detail": "CA3EE50E and50-byte nameVanillaSystems::BlockSourceFactoryAdapterComponent are stored together; this is independent binary registration evidence, beyond FNV recomputation.",
-    "confidence": "confirmed for installed/constructed route",
+    "confidence": "confirmed",
     "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
   },
   {
@@ -146,7 +146,7 @@
     "end": "0x1418b197c",
     "claim": "Movement registration installs a concrete world factory",
     "detail": "Constructs14A75DB78 object, saves it into14A925310 configuration+10, whose virtual08 installer148266460 allocates16-byte adapter and copies pointer toadapter00.",
-    "confidence": "confirmed for installed/constructed route",
+    "confidence": "confirmed",
     "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
   },
   {
@@ -156,7 +156,7 @@
     "end": "0x148265362",
     "claim": "Adapter activation creates and owns the per-context world factory instance",
     "detail": "Loadsadapter00, invokesvirtual08=14191F260 for installedtable14A75DB78, stores newinstanceatadapter08, destroys oldownership if present.",
-    "confidence": "confirmed for installed/constructed route",
+    "confidence": "confirmed",
     "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
   },
   {
@@ -166,7 +166,7 @@
     "end": "0x14191f355",
     "claim": "Factory creates a1B0 object whose virtual08 supplies world receivers",
     "detail": "Loads external registry service, allocates1B0, installs14A75DB88, provider190 andregistry198. Its virtual08 target is14191F4E0.",
-    "confidence": "confirmed for installed/constructed route",
+    "confidence": "confirmed",
     "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
   },
   {
@@ -176,7 +176,7 @@
     "end": "0x14191f5af",
     "claim": "Per-entity factory returns the same constructed world table proved in collision processing",
     "detail": "Dimension-type membership selects value, calls141E7E060 at object08, returnsobject10. Refresh constructs receiver14A753900 at cacheheader+8; absent membership returnsnull.",
-    "confidence": "confirmed for installed/constructed route",
+    "confidence": "confirmed",
     "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
   },
   {
@@ -186,7 +186,7 @@
     "end": "0x14826f408",
     "claim": "NoClip entity entry receives the bound constructed world object",
     "detail": "adapter08 virtual08 dispatch at14826F32F resolves14191F4E0 on installed route, and returnednonnullreceiver becomes finalargument to148265630; virtual80 resolves1415F6180, not collision-shape enumeration.",
-    "confidence": "confirmed for installed/constructed route",
+    "confidence": "confirmed",
     "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
   },
   {
@@ -196,7 +196,7 @@
     "end": "0x14826547b",
     "claim": "Adapter teardown clears the instance pointer before destruction",
     "detail": "Readsadapter08, writeszero at14826547B and invokes priorinstance destructor when nonnull. Scheduler lifecycle order remains unproved.",
-    "confidence": "confirmed for installed/constructed route",
+    "confidence": "confirmed",
     "supporting_artifacts": "DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md"
   }
 ]

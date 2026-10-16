@@ -361,6 +361,20 @@ for va,label in [('141C5C370','Fluid gravity request'),('141C5C610','Fluid gravi
     edge(fn,'state_motion' if va in ['141C69960','14842B540'] else 'mob_travel' if va in ['141C88C60','142F17890'] else 'gravity_component',
          'data_flow','verified stage; scheduler composition remains separate','REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json')
 
+base_shapes=function('141A22F50','Base block-provider shape emission')
+base_bounds=function('141A22B80','Base world bounds / custom union')
+local_shape=function('141653C90','Base local box at receiver1B8')
+custom_shapes=function('145825460','Custom24-byte AABB emission')
+block_offset=function('144C50EB0','Deterministic block-position offset')
+block_property=function('142CEA4B0','Instance/type offset-property lookup')
+shape_enum=function('1415FE680','World collision-shape enumeration')
+edge(shape_enum,base_shapes,'resolved_indirect','conditional base table14A763920+30; overrides open','DATA/BLOCK_PROVIDER_BINDING.json',confidence='confirmed conditional base table',site='0x1415FF16D')
+edge(base_shapes,base_bounds,'resolved_indirect','base table virtual20','DATA/BLOCK_PROVIDER_BINDING.json',site='0x141A22FF0')
+edge(base_bounds,local_shape,'resolved_indirect','base table virtual50','DATA/BLOCK_PROVIDER_BINDING.json',site='0x141A22C90')
+for source,target in [(base_shapes,custom_shapes),(base_shapes,block_property),(base_shapes,block_offset),(base_bounds,block_property),(base_bounds,block_offset)]:
+    call(source,target)
+edge(base_shapes,'move_request','data_flow','geometry dependency via candidate enumeration, not guaranteed tick order','REPORTS/BLOCK_SHAPE_RECONSTRUCTION.md')
+
 def main():
     output = ROOT / "DATA" / "CALL_GRAPH_EDGES.csv"
     with output.open("w", newline="") as f:

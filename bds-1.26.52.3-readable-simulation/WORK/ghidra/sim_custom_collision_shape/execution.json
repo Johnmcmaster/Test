@@ -1,0 +1,46 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_custom_collision_shape",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_custom_collision_shape/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_custom_collision_shape/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_custom_collision_shape/headless.log"
+  ],
+  "started_utc": "2026-10-16T18:46:13.513292+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_custom_collision_shape",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T18:46:17.323123+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_custom_collision_shape/0x142cea4b0_FUN_142cea4b0.c",
+      "bytes": 4825,
+      "sha256": "59db9783e8d4e124a8693de4806cdbc99d9d656cd9d346dfee42826811eeef91",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_custom_collision_shape/0x144c50eb0_FUN_144c50eb0.c",
+      "bytes": 3234,
+      "sha256": "b6a3855d99e872ecc1ce023c696c723b0db5dfcc92e59b2c93c45d644a302f96",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_custom_collision_shape/0x145825460_FUN_145825460.c",
+      "bytes": 2976,
+      "sha256": "6fa7678a921ce2c69c2e533e3f9382eae267a6ce044a67a014a97a1360c6df6f",
+      "failed": false
+    }
+  ],
+  "expected_targets": 3,
+  "successful_exports": 3
+}

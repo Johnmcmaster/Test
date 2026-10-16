@@ -39,7 +39,7 @@ Newly bound stages are listed in `WORK/full_sim/system_callbacks.json`, with31 c
 
 The selector145EED380 ensures travel-mode memberships and does not erase old tags. Registered group table14A75E5D0 has bulk clear14192F4F0 and per-entity removal14192F810. A list of descriptor registrations is insufficient to prove mode exclusivity across server ticks or replay passes. The group/category invocation must still be followed.
 
-Finalizer14469EE70 writes position and collision markers; reset views143B6FFE0/143B70F90 require those markers, MoveRequest and StateVector. Motion-to-request145EEC7F0 and the bounds-derived writes establish storage dependencies, while restitution and guaranteed player-specific phase order remain open. The graph has141 curated edges with edge kinds/provenance and preserves this distinction.
+Finalizer14469EE70 writes position and collision markers; reset views143B6FFE0/143B70F90 require those markers, MoveRequest and StateVector. Motion-to-request145EEC7F0 and the bounds-derived writes establish storage dependencies, while restitution and guaranteed player-specific phase order remain open. The graph has165 curated edges with edge kinds/provenance and preserves this distinction.
 
 Newly recovered gravity/drag child factories show additional concrete data dependencies:0x141C5CA50 builds named gravity stages;0x141C5C910 produces ApplyGravity,0x141C853C0 can consume it through bounce correction, and0x141C867B0 applies the remaining scalar.0x141C5A400 builds vertical-drag stages. These bodies and factory descriptors establish who reads/writes data; a guaranteed player-tick ordering still requires proving their enclosing groups/categories and invocation paths. Their listing in one factory is not promoted to universal phase order.
 

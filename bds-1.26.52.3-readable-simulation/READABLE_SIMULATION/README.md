@@ -101,3 +101,20 @@ See[`ENVIRONMENT_CONTINUATION.md`](../REPORTS/ENVIRONMENT_CONTINUATION.md),
 [`ENVIRONMENT_STAGES_VALIDATION.json`](../DATA/ENVIRONMENT_STAGES_VALIDATION.json).
 The native oracle executes the now-bound region/chunk methods with explicit
 external chunk data. Full-tick composition and remaining mechanics remain open.
+
+## Base block geometry
+
+`NativeShapes.cpp` reconstructs the actual base block-provider implementation,
+custom AABB emission, property lookup, bounds and deterministic offsets. Its five
+original-entry variants pass12,308 cases with zero mismatches/NaN payload
+differences. The composed native fixtures execute the real base table and helpers.
+Derived block overrides remain separate from this base implementation.
+
+```sh
+python SCRIPTS/verify_native_shapes.py /path/bedrock_server.exe --cases 2400
+```
+
+See[BLOCK_SHAPE_RECONSTRUCTION.md](../REPORTS/BLOCK_SHAPE_RECONSTRUCTION.md).
+Across the three readable C++ suites,107,933 bounded cases pass across34 variants;
+seven NaN payload differences occur in the environment suite. Full ticks and
+complete block/mechanic coverage remain unfinished.

@@ -11,3 +11,30 @@ The only direct E8/E9 callers found for the clear helper in the scoped whole-.te
 `SCRIPTS/history_writer_scan.py` expands two levels from known ReplayState consumers and hash-reference candidates. It ranks base-register offset patterns; those scores are candidate selection, not object-type proof. `WORK/history_writer/candidate_scan.csv`, direct_refs.csv and filtered JSON lists retain results. An additional broad0x48-allocation scan generated many unrelated candidates; that scan did not identify a verified writer. Large raw candidate caches remain in the workspace and are omitted from the compact delivery, with counts/digests recorded by packaging.
 
 Next: identify a concrete object installed at record+0x38, then verify its +0x88/+0x58 methods and the exact append/capture path into storage.map10. Server-player runtime reachability and populated storage must be proven separately from shared/vehicle/client-linked code. No next-tick replay, fixed10-state policy, client broadcast of historical XYZ, or full restoration loop is asserted.
+
+## Additional direct-copy candidate search
+
+`SCRIPTS/find_snapshot_copy_candidates.py` examines small unwind ranges and
+conservatively delimited leaves after INT3 padding, then looks for RCX-relative
+source reads and wide RDX-relative writes. It checked6,476 owners, including162
+leaf candidates, retained23 possible copy routines, and found9 possible slot88
+placements with3 RIP references. These are heuristic candidates; code pointers
+alone do not establish table boundaries or snapshot ownership.
+
+Candidate1438D7680..1438D773A was rejected after reviewing every instruction.
+At7680 it loads receiver+50. The following shifts/masks transform RDX and R8
+into page/element indices: >>10, &3FF, <<6. It then swaps fields at0..38 between
+two64-byte elements. It does not accept the unmodified40-byte tracker destination
+required by the retained consumer. This rejects the hypothesized association;
+it does not identify the true snapshot class. The byte-checked negative result is
+in`WORK/history_writer/snapshot_copy_review.json`; remaining candidates are in
+`snapshot_copy_candidates.json` and remain unreviewed.
+
+```sh
+python SCRIPTS/find_snapshot_copy_candidates.py /path/bedrock_server.exe "$PWD"
+```
+
+Register-renamed writers, different destination sizes, larger restore bodies and
+indirect ownership paths are outside this search. A subsequent decompile request
+using an incorrect short end for the rejected candidate was stopped at range
+validation before Ghidra execution; no result from that failed request is used.

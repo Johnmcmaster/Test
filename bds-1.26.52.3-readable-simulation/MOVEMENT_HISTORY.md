@@ -55,4 +55,12 @@ The snapshot source hashes are `C67426F3`, `8D94DB14`, `5E1FD06D`, `5ACD5A3E` an
 
 ## Remaining proof
 
+The additional direct-copy search examined6,476 small unwind/verified-leaf owners
+and retained23 heuristic candidates. One plausible table candidate was checked
+instruction by instruction:1438D7680 transforms RDX/R8 into page/element indices
+and swaps64-byte elements. It is not a callback restoring the supplied40-byte
+BlockPosTracker destination. Exact bytes and the rejected interpretation are in
+WORK/history_writer/snapshot_copy_review.json. No remaining candidate is promoted
+to a concrete snapshot class. The candidate scan itself is not a producer proof.
+
 The next necessary work is the record producer, snapshot allocation/vtable, actual restore methods and runtime role. Code linked into a BDS binary can include shared/client-oriented paths. No assertion is made that historical positions are sent directly to clients, that replay occurs on the next tick, or that this storage is populated for every server player.

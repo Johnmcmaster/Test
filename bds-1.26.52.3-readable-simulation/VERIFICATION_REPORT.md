@@ -4,13 +4,23 @@ The delivered Java kernels were compared with the original BDS machine code, not
 
 ## Readable C++ continuation verification
 
-The environment extension separately passes **31,004 original-entry cases across13
+The base block geometry extension passes **12,308 original-entry cases across five
+variants**, with zero mismatches and zero observed NaN payload differences. It
+executes the original property lookup, deterministic offset and base-table
+composition. Vector growth, valid TLS/property records and finite floorf import
+results are explicit fixture backends. Exact source/code hashes and limits are in
+`DATA/NATIVE_SHAPES_VALIDATION.json`. Base constructor/table and air/powder-snow
+identifier checks are in `DATA/BLOCK_PROVIDER_BINDING.json` (32 instructions,
+three table pointers). Derived block overrides are not covered.
+
+The environment extension separately passes **31,004 original-entry cases across 13
 variants**, with zero mismatches and seven NaN payload differences under the
 documented comparison. Its ranges, source hashes and dependency backends are in
 `DATA/ENVIRONMENT_STAGES_VALIDATION.json`. The constructed NoClip world route is
 verified by39 instruction and8 table checks. See`REPORTS/ENVIRONMENT_CONTINUATION.md`.
 The prior64,621-case suite was rerun after the new component-view assertions and
-still passes. Neither suite is a full tick.
+still passes. The three C++ suites total **107,933 bounded comparisons across 34
+variants**. None is a full tick. Their source hashes match the delivered sources.
 
 `DATA/READABLE_SIMULATION_VALIDATION.json` separately records **64,621 native comparisons across16 variants**, with zero mismatches and zero observed NaN-payload differences. Each original entry must return to the harness sentinel within the instruction budget. The new C++ is compiled withC++20, `-O2 -fno-fast-math -ffp-contract=off`; source hashes include the component header and oracle. Exact native code ranges/hashes and fixture backends are in that report.
 
@@ -20,7 +30,7 @@ The first broad finalizer comparison found32 mismatches because the decompiler s
 
 Constructor/table checks independently bind the default movement-control method and concrete collision-world query. Effect constructor/indexed stores bind Jump Boost, Levitation and Slow Falling. The selected type audit has49 independent regular record writers and12,234 distinct bracket-extracted spellings with no collisions in that extracted set. Recomputing FNV-1a alone is not treated as independent registration proof or a claim that all possible runtime names are collision-free.
 
-The current index contains478 Ghidra exports/273 entry VAs, with zero decompile failures and478 continuous linear decodes. Of these,440 match PE unwind ranges; the remaining explicit ranges are checked separately. The saved-instruction catalog audit checks793 assembly files/678 unique ranges with zero byte/boundary mismatches and no missing evidence sources/anchors. Exported candidates remain distinguishable from manually reviewed functions. Catalog counts include preserved baseline material and do not measure full semantic coverage.
+The current index contains 508 Ghidra exports/291 entry VAs, with zero decompile failures and 508 continuous linear decodes. Of these, 469 match PE unwind ranges; the remaining explicit ranges are checked separately. The saved-instruction catalog audit checks 811 assembly files/696 unique ranges with zero byte/boundary mismatches and no missing evidence sources/anchors. The catalog contains 358 evidence rows. Its separate field-access ledger contains 257 observations from 61 register-binding windows. Exported candidates remain distinguishable from manually reviewed functions. Catalog counts include preserved baseline material and do not measure full semantic coverage.
 
 `DATA/verification_summary.json` records the executable/JAR identities, commands, exit codes, per-suite counts, log hashes, and report hashes. `DATA/verification/` preserves compiler and oracle output. New kernels added during investigation are listed in that manifest when their final checks finish.
 

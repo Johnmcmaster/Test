@@ -7,6 +7,12 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
 
 ## Proven since the previous checkpoint
 
+- Base block provider table14A763920 is independently installed by141A1FEF0.
+  Its collision emission141A22F50, bounds141A22B80, property lookup142CEA4B0,
+  deterministic offset144C50EB0 and custom boxes145825460 have readable code
+  and12,308 passing original-entry comparisons. This is conditional at
+  enumeration1415FF16D; derived block overrides are not resolved. Air and powder
+  snow identifier globals are independently named from initialization stores.
 - Environment continuation: the constructed NoClip/NoBlock receiver is now bound
   through contextCA3EE50E, factory14A75DB78 and instance14A75DB88 to world
   table14A753900 virtual80=1415F6180. That predicate delegates to1415F5EC0 and
@@ -26,15 +32,18 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
   the temporary block-shape vector has24-byte AABBs.
 - Effect constructor/indexed stores independently identify Jump Boost8,
   Levitation24 and Slow Falling27. The reduced-gravity slot is no longer unnamed.
-- The current readable suite passes64,621 cases. The full Ghidra index has444
-  exports/251 entry VAs; successful export is not semantic completeness.
+- The three readable C++ suites pass 107,933 bounded comparisons across 34
+  variants. The full Ghidra index has 508 exports/291 entry VAs; successful export
+  is not semantic completeness. The 64,621-case core suite was rerun after the
+  shared component-header additions and remains passing.
 
 ## Next prioritized investigations and exact targets
 
-1. **Bind block collision providers.** World enumeration1415FE680 now exposes
-   per-block provider virtual30 at1415FF16D and section provider18 at1415FF0BD.
-   Trace their concrete constructor/registry tables for representative blocks,
-   then compare full candidate output against the original entry. Optional
+1. **Bind derived block collision providers.** The base provider14A763920+30 is
+   now verified as141A22F50 and its complete helper composition is native-tested.
+   World enumeration1415FE680 exposes the polymorphic call at1415FF16D and
+   section provider18 at1415FF0BD. Trace registry-selected concrete overrides
+   for representative blocks, then compare full candidate output. Optional
    receiver40 at1415FEA39, dimension/world receiverBD0 at1415FEA55 and secondary
    provider20 at1415FEC3F remain distinct unknown receivers. Chunk lookup/cache
    1415F5900 still depends on external source interfaces and raw availability
@@ -44,12 +53,14 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
    cadence/category membership and server-player reachability. Follow
    MobTravelUpdateSpeeds142F17890, CameraInputTransform1483B4E60, MobJump146620E20,
    FlyTrigger1446CCC00/1446CF440, player-flying speed leaves141C88C60/141C8A030/
-   141C8B230, and installed MoveControl142CC7330. Its alternate objects and actual
+   141C8B230, and installed MoveControl142CC7330. The speed-update/flying leaves
+   now have readable, native-compared bodies; their caller-owned attributes and
+   permission inputs still need binding. Alternate MoveControl objects and actual
    player selection are not resolved by the default table proof. Sprint, sneak,
    crawl, equipment/permission and external-impulse ownership remain incomplete.
 3. **Remaining fluids and legitimate mechanics.** LavaMove14842B540, LavaDrag
    141C69960, fluid gravity141C5C370/141C5C610/141C81CD0 and related helpers are
-   already exported. Compose their actual gates with raw Navigation/actor/world
+   now have readable, native-compared bodies. Compose their actual gates with raw Navigation/actor/world
    data and water provider maximum from[14CCB6788]+38 virtual28. Recover currents,
    terrain-specific effects, firework/riptide and vehicle motion. Existing bounce
    arithmetic is not a full slime/honey mechanic. Effect identities are proven;
@@ -70,7 +81,11 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
    146625040/1466272B0 and lending146619C30 are known. Optional retained storage
    is not universal server-player history. No fixed10-state ring or next-tick
    replay claim is adopted. The large prior allocation-candidate scan was
-   inconclusive; its scripts/results remain inWORK/history_writer.
+   inconclusive; its scripts/results remain inWORK/history_writer. A new scoped
+   direct-copy search covers6,476 small unwind/verified-leaf owners, retaining23
+   heuristic candidates. Candidate1438D7680/table14A71AA30 was rejected: it treats
+   RDX/R8 as indices and swaps64-byte pool elements, not a40-byte tracker restore.
+   The exact rejection and remaining candidate limits are recorded separately.
 6. **Native input ticks and delays.** Continue1409A5710, ingress14116F050/
    14116EE60, selector14116EC10, consumer1457BA650 and drain helpers1457BB0A0/
    1457BB5C0. Complete missing-input, delayed/accumulated input and authoritative

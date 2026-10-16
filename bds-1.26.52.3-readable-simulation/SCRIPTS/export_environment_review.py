@@ -100,7 +100,7 @@ def main():
         relevant=[r for r in binding['instruction_checks']if int(r['function_va'],0)==va]
         assert relevant
         claims.append(dict(id=id,va=hex(va),start=relevant[0]['instruction_va'],end=relevant[-1]['instruction_va'],claim=title,detail=detail,
-            confidence='confirmed for installed/constructed route',supporting_artifacts='DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md'))
+            confidence='confirmed',supporting_artifacts='DATA/NOCLIP_WORLD_BINDING.json; DATA/COLLISION_WORLD_BINDING.json; REPORTS/ENVIRONMENT_CONTINUATION.md'))
     indirect={}
     for site,target,scope in [(0x14826534a,0x14191f260,'Adapter00 from installed14A75DB78 factory'),
         (0x14826f32f,0x14191f4e0,'Adapter08 constructed with14A75DB88'),

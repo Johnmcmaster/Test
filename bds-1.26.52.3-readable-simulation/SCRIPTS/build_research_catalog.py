@@ -132,7 +132,7 @@ def read_asm(path):
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('project',nargs='?',default=str(Path(__file__).resolve().parent.parent));ap.add_argument('--binary');ap.add_argument('--baseline-source',default='/workspace/bedrock_anticheat_part6_1.26.52.3');a=ap.parse_args();root=Path(a.project).resolve(); prior=Path(a.baseline_source)
     # Explicitly curated continuation, never a promotion based on export success.
-    for extra_roles in [root/'DATA/FULL_SIM_ROLES.json',root/'DATA/ENVIRONMENT_ROLES.json']:
+    for extra_roles in [root/'DATA/FULL_SIM_ROLES.json',root/'DATA/ENVIRONMENT_ROLES.json',root/'DATA/SHAPES_ROLES.json']:
         if extra_roles.exists():ROLES.update({int(k,0):v for k,v in json.loads(extra_roles.read_text()).items()})
     # Make previous evidence anchors self-contained without overwriting existing analysis.
     baseline=list(csv.DictReader((root/'BASELINE/EVIDENCE.csv').open())) if (root/'BASELINE/EVIDENCE.csv').exists() else []
@@ -165,6 +165,8 @@ def main():
     bindings=json.loads(binding_file.read_text()) if binding_file.exists() else {}
     environment_bindings=root/'DATA/ENVIRONMENT_INDIRECT_BINDINGS.json'
     if environment_bindings.exists():bindings.update(json.loads(environment_bindings.read_text()))
+    shape_bindings=root/'DATA/SHAPES_INDIRECT_BINDINGS.json'
+    if shape_bindings.exists():bindings.update(json.loads(shape_bindings.read_text()))
     calls=[];callers=defaultdict(set);callees=defaultdict(set);indirect=defaultdict(list)
     for va,z in sorted(chosen.items()):
         for i in z['instructions']:
@@ -292,10 +294,25 @@ def main():
 ('NET-003',0x14322F420,0x14322F420,0x14322F572,'Payload manager is lifecycle/copy dispatch, not a proved byte encoder','Operation-code switch handles typeinfo, copy, identity comparison and0x38allocation/copy; appears incodeccontext butdoesnotbyitselfserializebytes.'),
 ]
     for x in claims:add(*x)
-    for extra_claims in [root/'DATA/FULL_SIM_CLAIMS.json',root/'DATA/ENVIRONMENT_CLAIMS.json']:
+    for extra_claims in [root/'DATA/FULL_SIM_CLAIMS.json',root/'DATA/ENVIRONMENT_CLAIMS.json',root/'DATA/SHAPES_CLAIMS.json']:
         if extra_claims.exists():
             for x in json.loads(extra_claims.read_text()):
                 add(x['id'],int(x['va'],0),int(x['start'],0),int(x['end'],0),x['claim'],x['detail'],confidence=x.get('confidence','confirmed'),extra=x.get('supporting_artifacts',''))
+    snapshot_review=root/'WORK/history_writer/snapshot_copy_review.json'
+    if snapshot_review.exists():
+        x=json.loads(snapshot_review.read_text());observations=x['instruction_evidence']
+        if pe:
+            for i in observations:
+                raw=bytes.fromhex(i['bytes'])
+                assert pe.read_va(int(i['va'],0),len(raw))==raw,('snapshot review byte mismatch',i['va'])
+        evidence.append(dict(finding_id='HIST-REJECTED-COPY',confidence='confirmed',
+            function_va=x['candidate_va'],instruction_va=observations[0]['va']+'..'+observations[-1]['va'],
+            evidence_kind='scoped candidate rejection',
+            claim='Candidate1438D7680 does not restore the supplied40-byte BlockPosTracker destination',
+            data_flow=x['reason'],source_artifact=str(snapshot_review.relative_to(root)),
+            source_location='instruction_evidence array; exact bytes independently checked when --binary is supplied',
+            supporting_artifacts='SCRIPTS/find_snapshot_copy_candidates.py; WORK/history_writer/snapshot_copy_candidates.json; REPORTS/HISTORY_WRITER.md',
+            provenance='current_negative_candidate_review',instruction_excerpt=' | '.join(i['va']+': '+i['instruction']for i in observations[:13])))
     for t in type_rows:
         va=int(t['initializer'],16);add('TYPE-'+t['name'],va,int(t['hash_store'],16),int(t['length_store'],16),'Independent component ID/name record: '+t['name'],f"Initializer stores {t['hash']} with embedded name pointer {t['name_va']} and length{t['name_length']}; distinct from recomputing FNV-1a.",extra=t['source'])
     if pe:
@@ -310,6 +327,7 @@ def main():
     test_reports=sorted((root/'JAVA').rglob('*validation.json'))
     if (root/'DATA/READABLE_SIMULATION_VALIDATION.json').exists():test_reports.append(root/'DATA/READABLE_SIMULATION_VALIDATION.json')
     if (root/'DATA/ENVIRONMENT_STAGES_VALIDATION.json').exists():test_reports.append(root/'DATA/ENVIRONMENT_STAGES_VALIDATION.json')
+    if (root/'DATA/NATIVE_SHAPES_VALIDATION.json').exists():test_reports.append(root/'DATA/NATIVE_SHAPES_VALIDATION.json')
     for p in test_reports:
         d=json.loads(p.read_text());evidence.append(dict(finding_id='TEST-'+p.stem,confidence='confirmed',function_va=str(d.get('function_va',d.get('function',''))),instruction_va='',evidence_kind='original-instruction fixture result',claim='Saved original-instruction comparison report: '+p.stem,data_flow=json.dumps(d,sort_keys=True),source_artifact=str(p.relative_to(root)),source_location='entire JSON; harness source alongside report',supporting_artifacts='',provenance='current_fixture_verification',instruction_excerpt=''))
     write_csv(root/'FUNCTION_INDEX.csv',index,list(index[0]) if index else [])

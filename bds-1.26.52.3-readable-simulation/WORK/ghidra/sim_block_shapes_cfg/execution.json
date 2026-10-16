@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_block_shapes",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_block_shapes/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_block_shapes/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_block_shapes_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-16T18:54:37.106526+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_block_shapes",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T18:54:40.962089+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_block_shapes/0x141a228b0_FUN_141a228b0.c",
+      "bytes": 4373,
+      "sha256": "1efe129fd01dfb4851804faedd71339d146007985537a2315bda471e85cd6662",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_block_shapes/0x141a22eb0_FUN_141a22eb0.c",
+      "bytes": 1516,
+      "sha256": "32caa50accccf22dde1eb660adf9da29e672f3f86267346734946182886e3932",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_block_shapes/0x141a22f50_FUN_141a22f50.c",
+      "bytes": 3199,
+      "sha256": "64ad8550fa94c65abd2b3a8d762efcea47c0d08fed38ffc93ac9355b17ae2695",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_block_shapes/0x141a23320_FUN_141a23320.c",
+      "bytes": 2977,
+      "sha256": "fcabe321e26226b4a1b091c32d75362cc5705471fe84f03ae833a0d06e8afc57",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_block_shapes/0x141a23510_FUN_141a23510.c",
+      "bytes": 3763,
+      "sha256": "12c898693df8788556622144e4e980aabd0a6dcaa5316871b43934d4a1633201",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}
