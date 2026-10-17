@@ -1,0 +1,43 @@
+{
+  "start": "0x1430b85b0",
+  "rva": "0x30b85b0",
+  "end": "0x1430b85cd",
+  "size": 29,
+  "requested_va_is_range_start": true,
+  "decoded_bytes": 29,
+  "calls_and_jumps": [
+    {
+      "site": "0x1430b85bf",
+      "kind": "call",
+      "target": "0x141cd2970",
+      "operand": "0x141cd2970",
+      "resolved": true
+    }
+  ],
+  "memory_operands": [
+    {
+      "site": "0x1430b85b8",
+      "instruction": "movzx edx, byte ptr [rdx]",
+      "base": "rdx",
+      "disp": "0x0",
+      "size": 1,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1430b85bb",
+      "instruction": "lea rcx, [r8 + 8]",
+      "base": "r8",
+      "disp": "0x8",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1430b85c4",
+      "instruction": "mov byte ptr [rsi], 0",
+      "base": "rsi",
+      "disp": "0x0",
+      "size": 1,
+      "rip_target": ""
+    }
+  ]
+}

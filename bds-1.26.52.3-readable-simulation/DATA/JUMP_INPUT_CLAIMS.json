@@ -1,0 +1,232 @@
+[
+  {
+    "id": "JI-INPUT",
+    "va": "0x148408460",
+    "start": "0x148408465",
+    "end": "0x14840859c",
+    "claim": "Jump input produces an ECS MobIsJumping flag rather than an impulse",
+    "detail": "Wanted=((MoveInput byte60&30hex)!=0 || (MoveInput byte00&20hex)!=0) && (MovementAbilities byte04&1)==0. Typed pool8FD20E98 is independently named MobIsJumpingFlagComponent. Insert only if absent; remove through storage virtual10 only if present. Exhaustive byte60/selected input and ability cases plus full bulk fixtures execute original code.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-INPUT-VIEW",
+    "va": "0x148427f70",
+    "start": "0x148427fe0",
+    "end": "0x1484281cc",
+    "claim": "JumpInputSystem binds three typed pools and a concrete callback cell",
+    "detail": "Local cell gets148408460 at7FE0/7FE7. Required getter148427B30 requests MovementAbilities6DE78DC5,MoveInput018B1887,PlayerInputRequest6B04A058. Bulk dense strides10hex/64hex/28hex; adapter14193BCE0 forwards abilities/input payloads and registry. Request payload is a required membership but is not read by148408460. Reverse selected-pool order, intersection, hooks and counts are native-compared.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-END-VIEW",
+    "va": "0x1484235c0",
+    "start": "0x1484235c0",
+    "end": "0x148423704",
+    "claim": "JumpEnd binds StateVector, dirty flags, duration, JumpTicks, MobJump and movement-tick membership",
+    "detail": "Getter IDs1B5D5238,C131F6A8,5E1FD06D,AC923948,C52C8F78,94154CCE are distinct types, with independent record-writer evidence for the payload names. In148423AE0 first-pivot payloads are forwarded in matching order to148423710. MobJump field10 and JumpTicks DWORD00 are separate counters.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-DURATION",
+    "va": "0x148423710",
+    "start": "0x1484237b9",
+    "end": "0x148423895",
+    "claim": "JumpEnd compares signed counter to sign-extended duration byte, without resetting the counter",
+    "detail": "MOVSX ECX,byte[RSI] and signed JGE compare JumpTicks DWORD00. If counter<signed duration, increment only counter. Otherwise invoke141C64F50 only when duration byte is nonzero. All256 duration patterns and signed32 boundary counters execute in the native suite; before/after entity hooks remain bracketed around either path.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-FINISH-CLEAR",
+    "va": "0x141c64f50",
+    "start": "0x141c64f75",
+    "end": "0x141c65020",
+    "claim": "Finish clears nonzero duration, marks dirty bit and removes owner MobIsJumping membership",
+    "detail": "Byte duration00 is set0 and dirty byte01 OR4 only if duration was nonzero. Independent removal of8FD20E98 checks sparse membership and passes dense iterator range through storage virtual10. No reset of JumpTicks00, MobJump10 or ordinary XYZ occurs here.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-PASSENGER-FILTER",
+    "va": "0x141cb0720",
+    "start": "0x141cb0720",
+    "end": "0x141cb07f4",
+    "claim": "Jump cleanup requires Passenger and ParrotFlag membership for affected vehicle entries",
+    "detail": "Actual two-pool getter requests98E40C0E andD0EBC272; independent record writers name PassengerComponent and ParrotFlagComponent.141C64F50 walks16-byte Vehicle entries in vector order, requires entry DWORD04==registry160, both memberships and a selected-pool active-prefix check. This is not an all-passenger dismount rule.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-PASSENGER-Y",
+    "va": "0x141c64f50",
+    "start": "0x141c651b3",
+    "end": "0x141c652a6",
+    "claim": "Qualified passenger cleanup depends on ordinary StateVectorY minus saved MobJumpY",
+    "detail": "SUBSS compares StateVector04 minus MobJump04 against0. Negative or unordered(NaN) skips. For nonnegative result, ensure StopRidingRequestFE184424 then ExitFromPassengerAE2A71E8 on each qualified entity, suppressing duplicate insertions. These are tag requests; final vehicle detachment is a separate consumer.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-STATIC-CONSTRUCT",
+    "va": "0x141bf96b0",
+    "start": "0x141bf979e",
+    "end": "0x141bf97ac",
+    "claim": "Static jump configuration installs the actual callback object in JumpControl50",
+    "detail": "Factory checks first-selection label, names minecraft:jump.static and installs8-byte receiver table14A7F2A90; component has observed stride58hex. Actual table28=1430B85D0, which loads float component04. This independently binds an implementation beyond the generic optional callback wrapper; live player selection remains open.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-DYNAMIC-CONSTRUCT",
+    "va": "0x141bf9880",
+    "start": "0x141bf996e",
+    "end": "0x141bf997c",
+    "claim": "Dynamic jump configuration installs a different callback table",
+    "detail": "Same first-selection mechanism names minecraft:jump.dynamic, installs14A7D4650 in component50, and copies descriptor values. Table18=142CC6F40,28=142CC6FA0,40=142CC6FD0. Static wrapper141BF9520 visits static descriptor3F0 before dynamic descriptor3E8; no source-level enum names assigned to index08.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-STATIC-TRIGGER",
+    "va": "0x1430b85b0",
+    "start": "0x1430b85b8",
+    "end": "0x1430b85c4",
+    "claim": "Static controller forwards its request byte then clears it",
+    "detail": "MOVZX EDX,byte[RDX] calls141CD2970 on actor context+8. Any nonzero byte selects tag insertion there; zero selects removal. Then component00 is zeroed.141CD2970 is native-executed in the composition, not replaced by an assumed callback.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-DYNAMIC-TRIGGER",
+    "va": "0x142cc6f40",
+    "start": "0x142cc6f49",
+    "end": "0x142cc6f76",
+    "claim": "Dynamic trigger accepts exactly byte1, selects record2 and invokes its update method",
+    "detail": "CMP byte[RDX],1; other byte patterns skip update/setJumping yet all clear byte00. Exact1 writes index08=2, calls constructed receiver40=142CC6FD0, then calls141CD2970 with1. Native suite tests0/1/2/255 and arbitrary bytes; indices are not interpreted as speed or cheat thresholds.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-DYNAMIC-VALUE",
+    "va": "0x142cc6fa0",
+    "start": "0x142cc6fa0",
+    "end": "0x142cc6fae",
+    "claim": "Dynamic impulse coefficient is read from selected component record",
+    "detail": "MOVSXD index08, SHL4, MOVSS component10+index*10hex. Static getter1430B85D0 is a distinct six-byte load from04. Original impulse146620C10 executes both real tables/getters and adds independently bound JumpBoost slot8. Only backed0..2 indices are tested; native setters/getters do not establish a safe bounds contract.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-DYNAMIC-UPDATE",
+    "va": "0x142cc6fd0",
+    "start": "0x142cc6fdc",
+    "end": "0x142cc7021",
+    "claim": "Dynamic update connects selected scalar to movement components and optional jump duration",
+    "detail": "Reads selected record0C, multiplies by exact float literal14A656798 bits3FC00000(1.5), calls1429EBE10. When byte01==0, tail-jumps1425360D0 with selected record byte18; otherwise returns. These scalar/duration meanings are based on actual consumers, not guessed fly/speed constants.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-MOVEMENT-SCALAR",
+    "va": "0x1429ebe10",
+    "start": "0x1429ebe10",
+    "end": "0x1429ebfc9",
+    "claim": "Dynamic jump update writes separate Navigation and MoveControl scalar fields when present",
+    "detail": "Original raw EnTT hash lookups useBB725EBE NavigationComponent and15AE4A44 MoveControlComponent. Conditional writes target Navigation+14(stride60hex) and MoveControl+18(stride30hex). Both execute in fixtures with independent missing/present memberships; no new component is constructed by this helper.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-DURATION-SET",
+    "va": "0x1425360d0",
+    "start": "0x1425361dd",
+    "end": "0x1425361fa",
+    "claim": "Duration setter dirties the field only when its byte changes",
+    "detail": "Typed lookups C131F6A8 and5E1FD06D establish dirty/duration payloads; CMP byte[duration],BL then conditional write and OR byte[dirty+1],4. Tested with every new byte, representative prior bytes and dirty-bit patterns. Missing-storage constructors are exported but fixtures use existing payloads.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-INIT",
+    "va": "0x140e4a7e0",
+    "start": "0x140e4a80f",
+    "end": "0x140e4a854",
+    "claim": "MobJump insertion clears the complete observed20-byte payload",
+    "detail": "After insertion140111130 and dense getter140E3A390, XORPS/MOVUPS zero16 bytes and MOV DWORD+10,0. Dense page addressing multiplies index by5 then4. This independently verifies initialization of observed byte0C and counter10; it adds no ActorSetPositionRequest pending field.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-INPUT-REPLAY",
+    "va": "0x1418ea270",
+    "start": "0x1418ecb0f",
+    "end": "0x1418ecb5e",
+    "claim": "JumpInputSystem worker is registered through the replay-inclusive default wrapper",
+    "detail": "Table14A92B040 is stored to worker atEC B16, JumpInputSystem literal14A9FD74B supplied withlength15 and descriptor148427C70, flags1 to1418E7270 atECB5E. Previously verified wrapper\u2192141924530 includes1044. Table10/28=141919F20/148427F70. Membership is confirmed, guaranteed ordering/tick cadence is not.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-END-REPLAY",
+    "va": "0x1418eeea0",
+    "start": "0x1418efad0",
+    "end": "0x1418efb1f",
+    "claim": "JumpEndSystem worker is also registered in replay-inclusive categories",
+    "detail": "Worker table14A92AFC0, literalJumpEndSystem14AA0016E length13, descriptor148423950 and flags1 to1418E7270. Table28=148423AE0. Data producers/consumers suggest a jump lifecycle, but the registration sites alone do not prove relative scheduling.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-EXHAUSTION-REG",
+    "va": "0x1418eeea0",
+    "start": "0x1418f061d",
+    "end": "0x1418f068e",
+    "claim": "Separate JumpExhaustion worker is constructed and registered; its queued event is not a proved network packet",
+    "detail": "Table14A92B000 and literal14A9F198A JumpExhaustion length14 are supplied with descriptor148426110 then replay-inclusive14469CCD0. Tick1484262A0 captures148408340; that callback is exported for continued event-storage analysis. No outbound dispatch or anti-cheat speed limit inferred.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-TICKS-SETTER",
+    "va": "0x1429ebfd0",
+    "start": "0x1429ebfd0",
+    "end": "0x1429ec09e",
+    "claim": "A separate required-component helper writes JumpTicks from a supplied DWORD",
+    "detail": "Raw AC923948 hash/storage lookup reaches MOV DWORD[RAX+R8*4],EDX at1429EC09E. Missing storage, invalid generation or null payload branches to1400BC590/INT3 rather than constructing it. This helper is instruction-reviewed; it is not included in the new11 numerical variants.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-TICKS-RESET-CONTROL",
+    "va": "0x1430b73d0",
+    "start": "0x1430b76ef",
+    "end": "0x1430b7719",
+    "claim": "Controller-update code resets JumpTicks outside the JumpEnd callback",
+    "detail": "XOR EDX,EDX before1429EBFD0 at1430B76F4, then141CD2970(true) and optional JumpControl50 virtual40. A second zero setter occurs at1430B7B56/58 after tag activation. Both are observed paths in the1938-byte body; their complete eligibility/ownership is not reconstructed.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-TICKS-RESET-EVENT",
+    "va": "0x1446f7130",
+    "start": "0x1446f7218",
+    "end": "0x1446f723e",
+    "claim": "An event-prefix path separately resets JumpTicks when duration is signed-positive",
+    "detail": "EarlierCMP EDX,0A gates this275-byte prefix. Signed byte duration>0 calls1429EC0B0, then zeroesEDX and calls1429EBFD0 at1446F722E. The routine finally tail-jumps140D4F250 with original event value. Event10 is left unnamed and no network-send conclusion follows. Ghidra follows this tail into a much larger unrelated body; bounded assembly is the authority.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  },
+  {
+    "id": "JI-EVENT-FORWARDER",
+    "va": "0x1429ec0b0",
+    "start": "0x1429ec0b0",
+    "end": "0x1429ec1b2",
+    "claim": "Reset-related helper forwards actor and recovered values through unresolved receiver interfaces",
+    "detail": "After141CD3970 and raw numeric state gates, actor1D8 provides calls via460/A70 and a receiver at510. Actor1C8/1D0 shared handles lead to another virtual60 result. Final tail1429EC1B2 dispatches receiver08 with actor and returned values. All six indirect sites remain conditional/unresolved; no concrete packet type, XYZ payload, serializer or socket send is established by this helper.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json; REPORTS/JUMP_INPUT_AND_CONTROLLERS.md"
+  }
+]

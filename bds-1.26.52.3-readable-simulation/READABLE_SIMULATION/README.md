@@ -1,5 +1,14 @@
 # Readable native movement reconstruction
 
+`NativeJumpInput.{h,cpp}` now recovers input-to-MobIsJumping membership, signed
+JumpTicks/duration processing, qualified Passenger+Parrot cleanup, constructor-bound
+static/dynamic controller values/triggers, duration dirtying, and real optional
+Navigation/MoveControl scalar writes. The observed access layouts are in
+`NativeJumpInput.h`; each new field has instruction evidence in the field ledger.
+Run `python SCRIPTS/verify_jump_input.py /path/bedrock_server.exe --cases 2000`.
+All34,340 bounded cases pass across11 variants. See
+[the new report](../REPORTS/JUMP_INPUT_AND_CONTROLLERS.md) for exact boundaries.
+
 `NativeMovement.cpp` is compilable C++20 reconstructed from the verified BDS
 1.26.52.3 instructions. It contains actual movement-stage calculations and data
 transfers. This collection still needs the remaining environment implementations,
@@ -198,7 +207,7 @@ python SCRIPTS/verify_replay_category.py /path/bedrock_server.exe --cases 2000
 See[SCHEDULER_CONTINUATION.md](../REPORTS/SCHEDULER_CONTINUATION.md) for conditions
 and remaining history/scheduler gaps.
 
-Across all nine readable C++ suites,198,852 bounded comparisons pass across66
+Across all ten readable C++ suites,233,192 bounded comparisons pass across77
 variants. Seven NaN payload differences occur in the environment suite. These
 counts are not unique server states, full ticks or a coverage percentage. The
 remaining derived providers, complete world/authority model and scheduler/replay

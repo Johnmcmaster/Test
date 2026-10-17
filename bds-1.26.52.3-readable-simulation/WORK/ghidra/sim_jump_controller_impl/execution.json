@@ -1,0 +1,46 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_jump_controller_impl",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_jump_controller_impl/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_jump_controller_impl/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_jump_controller_impl/headless.log"
+  ],
+  "started_utc": "2026-10-17T14:17:25.976675+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_jump_controller_impl",
+  "exit_code": 0,
+  "completed_utc": "2026-10-17T14:17:29.598875+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_jump_controller_impl/0x141bf9520_FUN_141bf9520.c",
+      "bytes": 1738,
+      "sha256": "8e69135b92b624e84857d404e7b87492d0b377bd88da5d0068f97852df400e3a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_jump_controller_impl/0x141bf96b0_FUN_141bf96b0.c",
+      "bytes": 2958,
+      "sha256": "ed3c7dd9bf1f39277e52e368c10e0129fef0005303b1c06553431e9bb8be7d8c",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_jump_controller_impl/0x141ccf880_FUN_141ccf880.c",
+      "bytes": 1859,
+      "sha256": "00c119c6b497e699732c67c84cffe0de935c13c510b2d2611d7e73692a1e8b7f",
+      "failed": false
+    }
+  ],
+  "expected_targets": 3,
+  "successful_exports": 3
+}

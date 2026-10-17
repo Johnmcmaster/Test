@@ -1,5 +1,12 @@
 # Movement architecture at this checkpoint
 
+The jump continuation now connects MovementAbilities/MoveInput to MobIsJumping
+membership, constructor-bound static/dynamic JumpControl objects to146620C10,
+and selected dynamic records to Navigation14/MoveControl18 plus duration00.
+JumpEnd uses a separate JumpTicks counter, clears duration and requests qualified
+Parrot passenger exits. These are data-flow links, not guaranteed phase order.
+Exact evidence and readable sources: REPORTS/JUMP_INPUT_AND_CONTROLLERS.md.
+
 Selected replay workers are now bound to concrete virtual28 movement systems.
 Readable MobJump decisions and actual control/effect impulse, area-query helper
 and ground-request tail preserve the distinction between requesting a jump and

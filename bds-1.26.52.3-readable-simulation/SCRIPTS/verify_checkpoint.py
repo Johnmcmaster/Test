@@ -37,7 +37,7 @@ def main():
                  'MULTIPART_SHAPES_VALIDATION.json',
                  'FORWARDED_SHAPES_VALIDATION.json',
                  'REPLAY_CATEGORY_VALIDATION.json',
-                 'REGISTRATION_VALIDATION.json','JUMP_CONTROLLER_VALIDATION.json']:
+                 'REGISTRATION_VALIDATION.json','JUMP_CONTROLLER_VALIDATION.json','JUMP_INPUT_VALIDATION.json']:
         path = a.root / 'DATA' / name
         d = json.loads(path.read_text())
         assert d['binary_sha256'] == EXPECTED and d['mismatches'] == 0

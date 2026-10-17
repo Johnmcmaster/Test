@@ -1,5 +1,11 @@
 # Internal state and client-facing synchronization
 
+The reset-related helper1429EC0B0 now has a261-byte export. It forwards actor
+and returned values through unresolved receiver interfaces; neither its raw
+upstream event value10 nor the final virtual08 tail establishes a movement
+packet, serializer, broadcast frequency or socket transmission. Input/JumpEnd
+registration evidence is internal ECS processing. See REPORTS/JUMP_INPUT_AND_CONTROLLERS.md.
+
 Internal StateVector, pending movement records, interpolation samples, ReplayState and metadata trackers are separate from packet objects.
 
 ## Recovered packet facts

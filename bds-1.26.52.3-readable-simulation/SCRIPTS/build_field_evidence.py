@@ -106,6 +106,27 @@ B.extend([
 ('MobJumpComponent',0x1466520d0,0x146652552,0x146652563,'r12',0x14,'Third pivot: same native20-byte element stride andDWORD+10 read; write uses separately computed field pointer.'),
 ('SwimAmountComponent',0x146620e20,0x146620f1a,0x146620f1a,'r10',4,'Argument12 from SwimAmountCF19787C required payload; scalar00 feeds strict0<value<1 early-return guard.'),
 ])
+B.extend([
+('MovementAbilitiesComponent',0x148408460,0x148408476,0x14840847a,'rdx',0x10,'148427B30 pool0=6DE78DC5; bulk stride10hex and14193BCE0 forwards payload asRDX to concrete148408460.'),
+('MoveInputComponent',0x148408460,0x148408465,0x148408470,'r8',0x64,'148427B30 pool1=018B1887; bulk stride64hex; adapter forwards asR8. Reads are actualbyte60/00.'),
+('JumpTicksComponent',0x148423710,0x1484237b9,0x1484237c6,'r13',4,'Record+10 pointer saved inR13 at14842373A;1484235C0 required pool3=AC923948, DWORDstride4 in bulk.'),
+('ActorDataJumpDurationComponent',0x148423710,0x1484237b9,0x1484237b9,'rsi',1,'Record+18 pointer saved inRSI at14842373E; required pool2=5E1FD06D. MOVSXsignextends byte00.'),
+('ActorDataJumpDurationComponent',0x141c64f50,0x141c64f75,0x141c64f7b,'r8',1,'Third argument is forwarded duration pointer; conditional nonzero clear before any registry helper.'),
+('ActorDataDirtyFlagsComponent',0x141c64f50,0x141c64f7f,0x141c64f7f,'r9',0x18,'Fourth argument fromC131F6A8; ORbyte01,4. Duration pointer is a separate component.'),
+('StateVectorComponent',0x141c64f50,0x141c651bb,0x141c651bb,'rax',0x24,'Fifth argument StateVector recovered from stackF0 at651B3, beforeRAX overwritten at651C0; scalarY04.'),
+('MobJumpComponent',0x141c64f50,0x141c651c5,0x141c651c5,'rax',0x14,'Second argument saved in stack40 at4F68 and restored651C0; savedY04 used by SUBSS, not current packet position.'),
+('JumpControlComponent',0x1430b85d0,0x1430b85d0,0x1430b85d0,'rdx',0x58,'Constructed static14A7F2A90 slot28; actual146620C10 passes typed JumpControl payload inRDX.'),
+('JumpControlComponent',0x142cc6fa0,0x142cc6fa0,0x142cc6fa8,'rdx',0x58,'Constructed dynamic14A7D4650 slot28; signed index08 and indexedfloat10 with16-byte offset. Index validity not inferred.'),
+('JumpControlComponent',0x142cc6f40,0x142cc6f49,0x142cc6f49,'rdx',0x58,'Dynamic virtual18 second argument; byte00 exact1 guard before further callback.'),
+('JumpControlComponent',0x142cc6f40,0x142cc6f4e,0x142cc6f76,'rsi',0x58,'RDX saved inRSI at6F46; writes index08=2 and clears byte00 after callbacks.'),
+('JumpControlComponent',0x142cc6fd0,0x142cc6fdc,0x142cc6fe4,'rdx',0x58,'Dynamic virtual40 second argument; signed index08 and selectedfloat0C, then multiply verifiedliteral1.5.'),
+('JumpControlComponent',0x142cc6fd0,0x142cc6ffa,0x142cc700f,'rdi',0x58,'Payload saved inRDI at6FD9 acrosscall1429EBE10; byte01 skip and selectedbyte18 duration read.'),
+('ActorDataJumpDurationComponent',0x1425360d0,0x1425361f4,0x1425361f8,'rax',1,'Typed5E1FD06D lookup/ensure result RAX; compare beforebyte write.'),
+('ActorDataDirtyFlagsComponent',0x1425360d0,0x1425361fa,0x1425361fa,'rsi',0x18,'TypedC131F6A8 lookup/ensure result savedRSI at6166; dirty01 OR4 only on changed duration.'),
+('NavigationComponent',0x1429ebe10,0x1429ebee7,0x1429ebee7,'r11',0x60,'BB725EBE hash lookup independently namedNavigation;R11 dense page andRAX index*60hex, scalar14write.'),
+('MoveControlComponent',0x1429ebe10,0x1429ebfbe,0x1429ebfbe,'rax',0x30,'Second hash15AE4A44 independently namedMoveControl;RAX densepage andRCX index*30hex, scalar18write.'),
+('JumpTicksComponent',0x1429ebfd0,0x1429ec09e,0x1429ec09e,'rax',4,'Explicit AC923948 hash lookup, RAX densepage/R8 denseindex; DWORDstride4 write ofsuppliedEDX. Required-existing-storage helper, not numerical-suite promotion.'),
+])
 rows=[]
 for component,va,start,end,reg,limit,proof in B:
  paths=list((a.root/'ASSEMBLY').rglob(f'{va:016X}.asm'))+list((a.root/'BASELINE/DECOMPILATION').rglob(f'{va:016X}.asm'))+list((a.root/'WORK/scheduler_continuation/ASSEMBLY').rglob(f'{va:016X}.asm'))

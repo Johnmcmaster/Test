@@ -1,5 +1,41 @@
 # Precise continuation checkpoint
 
+## Latest verified checkpoint and immediate continuation
+
+Jump input148408460/148427F70, signed duration148423710, finish141C64F50,
+static/dynamic controllers1430B85D0/142CC6FA0/142CC6F40/142CC6FD0 and movement
+scalar writes1429EBE10 now have readable code and34,340 passing native cases.
+MobJump insertion zeros20 bytes. Counter reset sites1430B76F4/1430B7B58/1446F722E
+are instruction-reviewed; they are not extra numerical variants.
+
+Highest-value next targets:
+
+1. Complete1938-byte controller update1430B73D0, its actual owner/call path and
+   actor gates. It sets JumpControl indices through virtual38, has two counter
+   resets, and invokes virtual40; only reset windows are currently promoted.
+2. Resolve261-byte reset-related1429EC0B0 receiver calls at1429EC0DF/118/15D/174/
+   184 and tail1B2. Actor1D8 interfaces460/A70, receiver510 virtual08 and
+   actor1C8/1D0 interface60 are not concrete network-send implementations.
+3. Trace MovementAbilities04 bit0 and MoveInput00/60 producers from the actual
+   packet/action path. JumpInput's proven local predicate is not complete
+   player permission or authority logic. Bind live-player controller selection
+   beyond config factories141BF96B0/141BF9880.
+4. Recover JumpExhaustion callback148408340 event-storage type4AD4B57F and consumer;
+   no packet/transmit claim exists. Separate final consumers for StopRidingRequest
+   FE184424 and ExitFromPassengerAE2A71E8 from request creation.
+5. Continue outer scheduler/dependency sorting and live history producer/snapshot
+   restoration14839F2A0→virtual88 at14839F2F2. No ten-entry history ring,
+   guaranteed next-tick replay or direct historical-position transmission is proved.
+
+Attempts retained: raw/CFG Ghidra batches sim_jump_*, exact assembly and direct
+E8/E9 searches,22 independent type record writers, two constructed controller
+vptrs, full input iteration and duration/Parrot fixtures. Ghidra follows
+1446F7130's tail into other handlers; use its275-byte assembly and bounded
+annotated export. Reproduce with verify_jump_input.py, export_jump_input_review.py,
+verify_checkpoint.py and commands in REPORTS/JUMP_INPUT_AND_CONTROLLERS.md.
+The original binary and Ghidra tooling remain available; this is a resource-bounded
+continuation checkpoint, not a claim that further binary analysis is impossible.
+
 The full native movement simulator and production Geyser port remain unfinished.
 The original executable, mapped Ghidra program, previous research and current
 exports remain available. The earlier version of this document is retained in
@@ -10,9 +46,8 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
 - Selected replay workers now resolve through141919F20 to actual collision,
   MobJump and default ground/air/flying bulk methods. Membership/registration
   flags pass3,280 original comparisons. MobJump146620E20 and helpers146620C10/
-  141C64CE0 pass25,182, including tail146620D90 marker creation. Raw input/flag
-  ownership, real JumpControl objects, field10 decrement cadence and outer history remain
-  open. See REPORTS/REGISTRATION_AND_JUMP.md.
+  141C64CE0 pass25,182, including tail146620D90 marker creation. Input bit/authority ownership, live-player selection of now-bound static/dynamic
+  JumpControl objects, field10 decrement cadence and outer history remain open. See REPORTS/REGISTRATION_AND_JUMP.md.
 
 - New factory140794160 constructs server/client-labeled ticking collections via
   14256D570/14469BAD0. The actual untimed replay chain now has readable code and
@@ -61,8 +96,8 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
   the temporary block-shape vector has24-byte AABBs.
 - Effect constructor/indexed stores independently identify Jump Boost8,
   Levitation24 and Slow Falling27. The reduced-gravity slot is no longer unnamed.
-- The nine readable C++ suites pass 198,852 bounded comparisons across 66
-  variants. The full Ghidra index has 641 exports/361 entry VAs; successful export
+- The ten readable C++ suites pass 233,192 bounded comparisons across 77
+  variants. The current Ghidra index is in DATA/GHIDRA_EXPORT_INDEX.csv; successful export
   is not semantic completeness. The 64,621-case core suite was rerun after the
   shared component-header additions and remains passing.
 

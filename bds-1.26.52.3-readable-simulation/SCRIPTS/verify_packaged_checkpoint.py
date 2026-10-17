@@ -40,7 +40,7 @@ def main():
    subprocess.run([sys.executable,'SCRIPTS/verify_checkpoint.py',str(a.binary.resolve()),str(root)],cwd=root,check=True)
    record['integrity_audit']=json.loads(check.read_text())
   finally:check.write_bytes(saved)
-  for script,name in [('verify_multipart_shapes.py','multipart'),('verify_forwarded_shapes.py','forwarded'),('verify_replay_category.py','category'),('verify_registration.py','registration'),('verify_jump_controller.py','jump')]:
+  for script,name in [('verify_multipart_shapes.py','multipart'),('verify_forwarded_shapes.py','forwarded'),('verify_replay_category.py','category'),('verify_registration.py','registration'),('verify_jump_controller.py','jump'),('verify_jump_input.py','jump_input')]:
    output=base/f'extracted_{name}_validation.json'
    subprocess.run([sys.executable,'SCRIPTS/'+script,str(a.binary.resolve()),'--cases','0','--output',str(output)],cwd=root,check=True,env=os.environ.copy())
    d=json.loads(output.read_text());assert d['mismatches']==0

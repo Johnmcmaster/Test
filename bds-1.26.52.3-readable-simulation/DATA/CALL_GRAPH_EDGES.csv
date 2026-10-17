@@ -229,3 +229,30 @@ f1465f8960,shape_vector,data_flow,append selected boxes; independent of return b
 f146614a70,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
 f148b33800,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
 shape_vector,f1415fe680,data_flow,vector begin/end selects48-byte record iteration,confirmed,0x1415FF173;0x1415FF176;0x1415FF17E,ASSEMBLY/00000001415FE680.asm
+f148427f70,f14193bce0,direct_call,direct call,confirmed,0x1484281CC;0x148428347;0x1484284B6,ASSEMBLY/0000000148427F70.asm
+f14193bce0,f148408460,resolved_indirect,148427FE0 local callback cell; original composition executes,confirmed,0x14193BD71,DATA/JUMP_INPUT_BINDING.json
+f148408460,mob_is_jumping,data_flow,input00/60 andabilities04 insert/remove tag,confirmed,,DATA/JUMP_INPUT_VALIDATION.json
+mob_is_jumping,f146620e20,data_flow,queried membership in actualMobJump view; scheduler phase separate,confirmed,,ASSEMBLY/0000000146656250.asm
+f148423ae0,f148423710,direct_call,direct call,confirmed,0x148423ED0;0x14842415F;0x1484243F9;0x148424699;0x148424939;0x148424BE7,ASSEMBLY/0000000148423AE0.asm
+f148423710,f141c64f50,direct_call,direct call,confirmed,0x148423895,ASSEMBLY/0000000148423710.asm
+jump_duration,f148423710,data_flow,signed counter < sign-extended duration,confirmed,,DATA/JUMP_INPUT_BINDING.json
+f141c64f50,mob_is_jumping,data_flow,conditionally remove existing owner membership,confirmed,,DATA/JUMP_INPUT_VALIDATION.json
+f141c64f50,jump_duration,data_flow,clear nonzero duration; counter unchanged,confirmed,,DATA/JUMP_INPUT_VALIDATION.json
+f141c64f50,jump_passenger_requests,data_flow,nonnegative ordinaryY-savedY and qualified entries,confirmed,,DATA/JUMP_INPUT_BINDING.json
+mob_jump_data,f141c64f50,data_flow,"savedY04 subtractand, distinct from ordinaryStateY",confirmed,,DATA/JUMP_INPUT_BINDING.json
+f146620c10,f1430b85d0,resolved_indirect,actual constructor-bound JumpControl50 table+28,confirmed,0x146620D05,DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json
+f146620c10,f142cc6fa0,resolved_indirect,actual constructor-bound JumpControl50 table+28,confirmed,0x146620D05,DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json
+f1430b85b0,f141cd2970,direct_call,direct call,confirmed,0x1430B85BF,ASSEMBLY/00000001430B85B0.asm
+f142cc6f40,f141cd2970,direct_call,direct call,confirmed,0x142CC6F71,ASSEMBLY/0000000142CC6F40.asm
+f142cc6f40,f142cc6fd0,resolved_indirect,"constructed14A7D4650+40, after index08=2",confirmed,0x142CC6F62,DATA/JUMP_INPUT_BINDING.json
+f142cc6fd0,f1429ebe10,direct_call,direct call,confirmed,0x142CC6FF5,ASSEMBLY/0000000142CC6FD0.asm
+f142cc6fd0,f1425360d0,direct_call,tail JMP whenbyte01 iszero,confirmed,0x142CC7021,ASSEMBLY/0000000142CC6FD0.asm
+f1425360d0,jump_duration,data_flow,selected byte18 ->duration00; changed-byte dirty bit,confirmed,,DATA/JUMP_INPUT_VALIDATION.json
+f141cd2970,mob_is_jumping,data_flow,membership checks before insert/remove,confirmed,,ASSEMBLY/0000000141CD2970.asm
+f141919f20,f148427f70,resolved_indirect,"constructor/name-bound table28, replay-inclusive registration",confirmed,0x141919F35,DATA/JUMP_INPUT_BINDING.json
+f141919f20,f148423ae0,resolved_indirect,"constructor/name-bound table28, replay-inclusive registration",confirmed,0x141919F35,DATA/JUMP_INPUT_BINDING.json
+f1430b73d0,f1429ebfd0,direct_call,direct call,confirmed,0x1430B76F4;0x1430B7B58,ASSEMBLY/00000001430B73D0.asm
+f1446f7130,f1429ebfd0,direct_call,direct call,confirmed,0x1446F722E,ASSEMBLY/00000001446F7130.asm
+f1446f7130,f1429ec0b0,direct_call,direct call,confirmed,0x1446F7224,ASSEMBLY/00000001446F7130.asm
+f1429ebfd0,jump_duration,data_flow,separate counter reset; native setter writes suppliedDWORD,confirmed,,DATA/JUMP_INPUT_BINDING.json
+f1429ec0b0,jump_event_receivers,unresolved,final receiver08 tail and earlier returned-value dependencies,unresolved,0x1429EC1B2,ASSEMBLY/00000001429EC0B0.asm

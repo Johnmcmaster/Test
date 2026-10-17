@@ -1,0 +1,74 @@
+{
+  "start": "0x142cc6fd0",
+  "rva": "0x2cc6fd0",
+  "end": "0x142cc7026",
+  "size": 86,
+  "requested_va_is_range_start": true,
+  "decoded_bytes": 86,
+  "calls_and_jumps": [
+    {
+      "site": "0x142cc6ff5",
+      "kind": "call",
+      "target": "0x1429ebe10",
+      "operand": "0x1429ebe10",
+      "resolved": true
+    },
+    {
+      "site": "0x142cc7021",
+      "kind": "jmp",
+      "target": "0x1425360d0",
+      "operand": "0x1425360d0",
+      "resolved": true
+    }
+  ],
+  "memory_operands": [
+    {
+      "site": "0x142cc6fdc",
+      "instruction": "movsxd rax, dword ptr [rdx + 8]",
+      "base": "rdx",
+      "disp": "0x8",
+      "size": 4,
+      "rip_target": ""
+    },
+    {
+      "site": "0x142cc6fe4",
+      "instruction": "movss xmm1, dword ptr [rdx + rax + 0xc]",
+      "base": "rdx",
+      "disp": "0xc",
+      "size": 4,
+      "rip_target": ""
+    },
+    {
+      "site": "0x142cc6fea",
+      "instruction": "mulss xmm1, dword ptr [rip + 0x798f7a6]",
+      "base": "rip",
+      "disp": "0x798f7a6",
+      "size": 4,
+      "rip_target": "0x14a656798"
+    },
+    {
+      "site": "0x142cc6ffa",
+      "instruction": "cmp byte ptr [rdi + 1], 0",
+      "base": "rdi",
+      "disp": "0x1",
+      "size": 1,
+      "rip_target": ""
+    },
+    {
+      "site": "0x142cc7007",
+      "instruction": "movsxd rax, dword ptr [rdi + 8]",
+      "base": "rdi",
+      "disp": "0x8",
+      "size": 4,
+      "rip_target": ""
+    },
+    {
+      "site": "0x142cc700f",
+      "instruction": "movzx edx, byte ptr [rdi + rax + 0x18]",
+      "base": "rdi",
+      "disp": "0x18",
+      "size": 1,
+      "rip_target": ""
+    }
+  ]
+}

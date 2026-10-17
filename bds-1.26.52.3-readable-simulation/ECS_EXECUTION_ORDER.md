@@ -1,5 +1,12 @@
 # ECS execution order: verified constraints and unknown edges
 
+JumpInputSystem14A92B040→148427F70 and JumpEndSystem14A92AFC0→148423AE0 are now
+constructor/name bound to1418E7270→141924530 with flags1, including replay1044.
+JumpExhaustion14A92B000→1484262A0 registers through14469CCD0. This confirms
+category membership; relative sorting, actual per-player invocation and real-time
+cadence remain unproved. In particular, JumpTicks increment is per callback,
+not evidence of one increment per wall-clock server tick. See the new jump report.
+
 Registration order is used as execution evidence only where the actual dispatcher semantics support it.
 
 ## Dispatcher semantics retained and checked

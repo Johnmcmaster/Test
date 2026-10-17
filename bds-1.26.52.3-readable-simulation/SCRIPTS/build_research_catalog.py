@@ -132,7 +132,7 @@ def read_asm(path):
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('project',nargs='?',default=str(Path(__file__).resolve().parent.parent));ap.add_argument('--binary');ap.add_argument('--baseline-source',default='/workspace/bedrock_anticheat_part6_1.26.52.3');a=ap.parse_args();root=Path(a.project).resolve(); prior=Path(a.baseline_source)
     # Explicitly curated continuation, never a promotion based on export success.
-    for extra_roles in [root/'DATA/FULL_SIM_ROLES.json',root/'DATA/ENVIRONMENT_ROLES.json',root/'DATA/SHAPES_ROLES.json',root/'DATA/DERIVED_SHAPES_ROLES.json',root/'DATA/MULTIPART_ROLES.json',root/'DATA/FORWARDED_ROLES.json',root/'DATA/SCHEDULER_ROLES.json',root/'DATA/REGISTRATION_JUMP_ROLES.json']:
+    for extra_roles in [root/'DATA/FULL_SIM_ROLES.json',root/'DATA/ENVIRONMENT_ROLES.json',root/'DATA/SHAPES_ROLES.json',root/'DATA/DERIVED_SHAPES_ROLES.json',root/'DATA/MULTIPART_ROLES.json',root/'DATA/FORWARDED_ROLES.json',root/'DATA/SCHEDULER_ROLES.json',root/'DATA/REGISTRATION_JUMP_ROLES.json',root/'DATA/JUMP_INPUT_ROLES.json']:
         if extra_roles.exists():ROLES.update({int(k,0):v for k,v in json.loads(extra_roles.read_text()).items()})
     # Make previous evidence anchors self-contained without overwriting existing analysis.
     baseline=list(csv.DictReader((root/'BASELINE/EVIDENCE.csv').open())) if (root/'BASELINE/EVIDENCE.csv').exists() else []
@@ -141,7 +141,7 @@ def main():
         if src.is_file() and not dest.exists():dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dest)
     if (prior/'FUNCTION_INDEX.csv').exists() and not (root/'BASELINE/FUNCTION_INDEX.csv').exists():shutil.copy2(prior/'FUNCTION_INDEX.csv',root/'BASELINE/FUNCTION_INDEX.csv')
     asm=[]
-    for directory in ['ASSEMBLY','BASELINE/DECOMPILATION','WORK/physics/ASSEMBLY','WORK/type_metadata/exports','WORK/movement_types/exports','WORK/gravity_types/exports','WORK/history_writer/types/exports','WORK/full_sim/types/exports','WORK/scheduler_continuation/ASSEMBLY','WORK/registration_continuation/ASSEMBLY','WORK/registration_continuation/types/exports']:
+    for directory in ['ASSEMBLY','BASELINE/DECOMPILATION','WORK/physics/ASSEMBLY','WORK/type_metadata/exports','WORK/movement_types/exports','WORK/gravity_types/exports','WORK/history_writer/types/exports','WORK/full_sim/types/exports','WORK/scheduler_continuation/ASSEMBLY','WORK/registration_continuation/ASSEMBLY','WORK/registration_continuation/types/exports','WORK/jump_input_continuation/ASSEMBLY','WORK/jump_input_continuation/types/exports']:
         if (root/directory).exists():
             for p in sorted((root/directory).rglob('*.asm')):
                 z=read_asm(p)
@@ -177,6 +177,8 @@ def main():
     if scheduler_bindings.exists():bindings.update(json.loads(scheduler_bindings.read_text()))
     registration_bindings=root/'DATA/REGISTRATION_JUMP_INDIRECT_BINDINGS.json'
     if registration_bindings.exists():bindings.update(json.loads(registration_bindings.read_text()))
+    jump_input_bindings=root/'DATA/JUMP_INPUT_INDIRECT_BINDINGS.json'
+    if jump_input_bindings.exists():bindings.update(json.loads(jump_input_bindings.read_text()))
     calls=[];callers=defaultdict(set);callees=defaultdict(set);indirect=defaultdict(list)
     for va,z in sorted(chosen.items()):
         for i in z['instructions']:
@@ -196,7 +198,7 @@ def main():
     if (root/'BASELINE/FUNCTION_INDEX.csv').exists():
         oldindex={int(x['va'],16):x for x in csv.DictReader((root/'BASELINE/FUNCTION_INDEX.csv').open())}
     pred={int(x['va'],16):x for x in csv.DictReader((root/'WORK/predicted/function_index.csv').open())} if (root/'WORK/predicted/function_index.csv').exists() else {}
-    type_sources=[root/p for p in ['WORK/type_metadata/verified_registration_records.csv','WORK/movement_types/verified_registration_records.csv','WORK/gravity_types/verified_registration_records.csv','WORK/history_writer/types/verified_registration_records.csv','WORK/full_sim/types/verified_registration_records.csv','WORK/registration_continuation/types/verified_registration_records.csv']]
+    type_sources=[root/p for p in ['WORK/type_metadata/verified_registration_records.csv','WORK/movement_types/verified_registration_records.csv','WORK/gravity_types/verified_registration_records.csv','WORK/history_writer/types/verified_registration_records.csv','WORK/full_sim/types/verified_registration_records.csv','WORK/registration_continuation/types/verified_registration_records.csv','WORK/jump_input_continuation/types/verified_registration_records.csv']]
     type_rows=[];seen_types=set()
     for source in type_sources:
         if not source.exists():continue
@@ -208,6 +210,12 @@ def main():
     for p in (root/'DECOMPILATION').rglob('*'):
         if p.suffix.lower() not in ['.c','.cpp']:continue
         match=re.search(r'(?:0x|_)(1[4-9a-f][0-9a-f]{7})',p.name,re.I)
+        if match:cexports[int(match[1],16)].append(str(p.relative_to(root)))
+    # Hand-reviewed bounded pseudocode is linked separately from Ghidra exports.
+    # Its filename starts with the exact VA but intentionally lacks Ghidra's0x
+    # prefix/header, so it never inflates the Ghidra export audit.
+    for p in sorted((root/'DECOMPILATION/readable_annotated').glob('*.c')):
+        match=re.match(r'([0-9a-f]{9})_',p.name,re.I)
         if match:cexports[int(match[1],16)].append(str(p.relative_to(root)))
     index=[]
     for va,z in sorted(chosen.items()):
@@ -353,7 +361,7 @@ def main():
 ('NET-003',0x14322F420,0x14322F420,0x14322F572,'Payload manager is lifecycle/copy dispatch, not a proved byte encoder','Operation-code switch handles typeinfo, copy, identity comparison and0x38allocation/copy; appears incodeccontext butdoesnotbyitselfserializebytes.'),
 ]
     for x in claims:add(*x)
-    for extra_claims in [root/'DATA/FULL_SIM_CLAIMS.json',root/'DATA/ENVIRONMENT_CLAIMS.json',root/'DATA/SHAPES_CLAIMS.json',root/'DATA/DERIVED_SHAPES_CLAIMS.json',root/'DATA/MULTIPART_CLAIMS.json',root/'DATA/FORWARDED_CLAIMS.json',root/'DATA/SCHEDULER_CLAIMS.json',root/'DATA/REGISTRATION_JUMP_CLAIMS.json']:
+    for extra_claims in [root/'DATA/FULL_SIM_CLAIMS.json',root/'DATA/ENVIRONMENT_CLAIMS.json',root/'DATA/SHAPES_CLAIMS.json',root/'DATA/DERIVED_SHAPES_CLAIMS.json',root/'DATA/MULTIPART_CLAIMS.json',root/'DATA/FORWARDED_CLAIMS.json',root/'DATA/SCHEDULER_CLAIMS.json',root/'DATA/REGISTRATION_JUMP_CLAIMS.json',root/'DATA/JUMP_INPUT_CLAIMS.json']:
         if extra_claims.exists():
             for x in json.loads(extra_claims.read_text()):
                 add(x['id'],int(x['va'],0),int(x['start'],0),int(x['end'],0),x['claim'],x['detail'],confidence=x.get('confidence','confirmed'),extra=x.get('supporting_artifacts',''))
@@ -391,7 +399,7 @@ def main():
     if (root/'DATA/MULTIPART_SHAPES_VALIDATION.json').exists():test_reports.append(root/'DATA/MULTIPART_SHAPES_VALIDATION.json')
     if (root/'DATA/FORWARDED_SHAPES_VALIDATION.json').exists():test_reports.append(root/'DATA/FORWARDED_SHAPES_VALIDATION.json')
     if (root/'DATA/REPLAY_CATEGORY_VALIDATION.json').exists():test_reports.append(root/'DATA/REPLAY_CATEGORY_VALIDATION.json')
-    for name in ['REGISTRATION_VALIDATION.json','JUMP_CONTROLLER_VALIDATION.json']:
+    for name in ['REGISTRATION_VALIDATION.json','JUMP_CONTROLLER_VALIDATION.json','JUMP_INPUT_VALIDATION.json']:
         if (root/'DATA'/name).exists():test_reports.append(root/'DATA'/name)
     for p in test_reports:
         d=json.loads(p.read_text());evidence.append(dict(finding_id='TEST-'+p.stem,confidence='confirmed',function_va=str(d.get('function_va',d.get('function',''))),instruction_va='',evidence_kind='original-instruction fixture result',claim='Saved original-instruction comparison report: '+p.stem,data_flow=json.dumps(d,sort_keys=True),source_artifact=str(p.relative_to(root)),source_location='entire JSON; harness source alongside report',supporting_artifacts='',provenance='current_fixture_verification',instruction_excerpt=''))

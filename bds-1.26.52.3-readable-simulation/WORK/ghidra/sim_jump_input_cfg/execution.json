@@ -1,0 +1,56 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_jump_input",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_jump_input/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_jump_input/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_jump_input_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-17T14:15:14.500237+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_jump_input",
+  "exit_code": 0,
+  "completed_utc": "2026-10-17T14:15:18.601503+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_jump_input/0x140e4a7e0_FUN_140e4a7e0.c",
+      "bytes": 1014,
+      "sha256": "c152185959c8404f3221659221e92b1872ed6b70c38039ffbfbc74212f433c2e",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_jump_input/0x14665fd30_FUN_14665fd30.c",
+      "bytes": 19394,
+      "sha256": "46b28931898eda263bcbc7578d4b5b9e9ac3f2bf5faeaef3ec8b84e21b45e247",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_jump_input/0x148424f70_FUN_148424f70.c",
+      "bytes": 17639,
+      "sha256": "167c760e663ec3c7f0f69d2af4787245728dd63792bc78dd718536b8e8eed083",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_jump_input/0x148427f70_FUN_148427f70.c",
+      "bytes": 8840,
+      "sha256": "1184bd7cabc5419aa2eb63b48849e175fe722228d617ed688aee401070e39645",
+      "failed": false
+    }
+  ],
+  "expected_targets": 4,
+  "successful_exports": 4
+}

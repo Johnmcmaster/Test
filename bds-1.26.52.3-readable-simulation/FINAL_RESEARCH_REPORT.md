@@ -1,5 +1,15 @@
 # Native movement simulation reconstruction — current checkpoint
 
+The latest [jump input and controller reconstruction](REPORTS/JUMP_INPUT_AND_CONTROLLERS.md)
+adds readable input-tag generation, signed duration cleanup, qualified parrot
+passenger requests, concrete static/dynamic controllers and their actual
+Navigation/MoveControl writes. Its11 original-entry variants pass34,340 cases.
+The complete simulator, player authority and history integration remain unfinished.
+
+The new reset audit also proves separate JumpTicks zero writes at1430B76F4,
+1430B7B58 and1446F722E. The latter's event10 prefix is bounded separately from
+its base-handler tail; its receiver forwarder is not a proved packet sender.
+
 The [registration and jump continuation](REPORTS/REGISTRATION_AND_JUMP.md) binds
 selected replay workers through141919F20 to actual collision/jump/default movement
 methods. Registration passes3,280 comparisons; MobJump and its two helpers pass
@@ -39,7 +49,7 @@ the constructed NoClip world callback and reconstructs more lava/fluid/flying
 and speed-source code. It adds31,004 native comparisons with zero mismatches and
 seven NaN payload differences. Full simulator composition remains open.
 
-The nine readable C++ suites total 198,852 bounded comparisons across 66 variants.
+The ten readable C++ suites total 233,192 bounded comparisons across 77 variants.
 These counts describe finite fixtures, not a measured percentage of the simulator.
 
 Status: **new native stages reconstructed into compilable readable C++; full simulator, anti-cheat and complete Geyser port remain unfinished**. This continuation used targeted Ghidra, Capstone and original-instruction harnesses directly, without agents. It preserves the earlier kernels and precise unresolved dependencies.
