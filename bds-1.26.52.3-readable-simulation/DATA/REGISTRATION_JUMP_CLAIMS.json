@@ -85,7 +85,37 @@
     "start": "0x141c64d39",
     "end": "0x141c64eeb",
     "claim": "Jump area predicate queries contracted/collapsed bounds before ordered SubBBs",
-    "detail": "ImmuneToLavaDrag membership bypasses queries and returns false. Otherwise it contracts X/Z by0.1 andY by0.4, collapses crossed axes to original midpoint, applies native MINSS/MAXSS ordering, queries world virtual40(selector6), then stops on the first true SubBBs query. Constructed14A753900+40 resolves141600A50; that body performs material-byte cuboid scanning, not solid-block collision.",
+    "detail": "ImmuneToLavaDrag membership bypasses queries and returns false. Otherwise it contracts X/Z by0.1 andY by0.4, collapses crossed axes to original midpoint, applies native MINSS/MAXSS ordering, queries world virtual40(selector6), then stops on the first true SubBBs query. Constructed14A753900+40 resolves141600A50; native variant4 executes that original material cuboid body with fixture block lookups.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "JUMP-WORLD-SCAN",
+    "va": "0x141600a50",
+    "start": "0x141600a8a",
+    "end": "0x141600c95",
+    "claim": "Constructed material predicate scans a floor/reordered inclusive cuboid Z-first, thenY andX",
+    "detail": "Floors six float endpoints and converts to int32, orders endpoints by signed comparisons, scans until first matching byte atblock68->28->00. Selector5 chooses140327560 tail adapter/world28; other selectors use140AE1B70/world10. Selector25 performs one lookup then accepts without the byte comparison. Original callbacks and actual14A753900 virtual40 chain execute in variants3/4; only block lookup replies remain supplied. Finite/in-range bounded fixtures do not establish all world/chunk mechanics.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "JUMP-DELAY-UPDATE",
+    "va": "0x1466520d0",
+    "start": "0x1466522a0",
+    "end": "0x1466522bd",
+    "claim": "MobJump field10 has an independently registered signed-positive decrement system with observed storage stride14hex",
+    "detail": "Factory1418F021C/223 installs14A8BE400 andpassesnameDecrementNoJumpDelaySystem atF022D; virtual28=1466520D0. Getter146651B80 bindsMobJumpC52C8F78,ActorMovementTickNeeded94154CCE andMob14EA24A2. Allthree iterator branches multiply dense index by5 then4 andread/writeDWORD+10; signed JLE guards DEC. Zero and negative signed values remain unchanged. Native variants5/6 verify entire three-pool body, hooks, reverse order, payload preservation and processed count; no tick cadence inferred.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "JUMP-DELAY-PIVOT",
+    "va": "0x146651b80",
+    "start": "0x146651b8e",
+    "end": "0x146651c51",
+    "claim": "Delay view keeps a valid cached selection or chooses the shortest of three required pools with deterministic ties",
+    "detail": "Invalid selection3 or null selected pool triggers typed pool lookup. Unsigned dense byte lengths choose1 only whenpool1<pool0, then2 only whenpool2<that minimum; tiesprefer0,then1,then2. Native variant6 executes actual view builder with fixture typed getters. Actual1466520D0 then traverses the selected dense IDs backwards andchecks remaining memberships; accounting14256CEA0 andlookup providers remain explicit boundaries.",
     "confidence": "confirmed",
     "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
   }

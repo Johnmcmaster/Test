@@ -162,6 +162,7 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x1402c99d0,0x1402ca1b2,call,,r11,indirect_unresolved,WORK/physics/ASSEMBLY/00000001402C99D0.asm,448,,
 0x1402c99d0,0x1402ca289,call,,qword ptr [rip + 0xaae65c1],indirect_unresolved,WORK/physics/ASSEMBLY/00000001402C99D0.asm,502,,
 0x1402f6570,0x1402f6637,call,,qword ptr [rip + 0xaab3be3],indirect_unresolved,BASELINE/DECOMPILATION/00000001402F6570.asm,58,,
+0x140327560,0x14032756e,jmp,0x1415f69e0,r10,conditional_known_target,ASSEMBLY/0000000140327560.asm,5,CFG dispatch through receiver28 when installed world table is14A753900; lookup entry is backend in composed tests,DATA/JUMP_CONTROLLER_VALIDATION.json; ASSEMBLY/0000000140327560.asm
 0x14074fe40,0x14074ff3d,call,,qword ptr [rip + 0xa65a2dd],indirect_unresolved,WORK/physics/ASSEMBLY/000000014074FE40.asm,53,,
 0x14074fe40,0x14074ffa2,call,,qword ptr [rip + 0xa65a278],indirect_unresolved,WORK/physics/ASSEMBLY/000000014074FE40.asm,73,,
 0x14074fe40,0x14075000d,call,,qword ptr [rip + 0xa65a20d],indirect_unresolved,WORK/physics/ASSEMBLY/000000014074FE40.asm,95,,
@@ -374,6 +375,7 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x1409a5710,0x1409a5747,call,,qword ptr [rip + 0xa404ad3],indirect_unresolved,ASSEMBLY/00000001409A5710.asm,18,,
 0x1409a5710,0x1409a575a,call,,qword ptr [rip + 0xa404ac0],indirect_unresolved,ASSEMBLY/00000001409A5710.asm,23,,
 0x1409cecb0,0x1409ced77,call,,qword ptr [rip + 0xa3db4a3],indirect_unresolved,BASELINE/DECOMPILATION/00000001409CECB0.asm,58,,
+0x140ae1b70,0x140ae1b7e,jmp,0x1415f65e0,r10,conditional_known_target,ASSEMBLY/0000000140AE1B70.asm,5,CFG dispatch through receiver10 when installed world table is14A753900; lookup entry is backend in composed tests,DATA/JUMP_CONTROLLER_VALIDATION.json; ASSEMBLY/0000000140AE1B70.asm
 0x140d2bdb0,0x140d2bf04,call,,r14,indirect_unresolved,WORK/physics/ASSEMBLY/0000000140D2BDB0.asm,77,,
 0x140d2bdb0,0x140d2bf59,call,,r14,indirect_unresolved,WORK/physics/ASSEMBLY/0000000140D2BDB0.asm,95,,
 0x140d31da0,0x140d31dd8,call,,qword ptr [rip + 0xa078442],indirect_unresolved,ASSEMBLY/history/replay_candidates/0000000140D31DA0.asm,16,,
@@ -645,7 +647,7 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x1415fe680,0x1415ff2ef,call,,qword ptr [rip + 0x97aaf2b],indirect_unresolved,ASSEMBLY/00000001415FE680.asm,777,,
 0x1415fe680,0x1415ff320,call,,qword ptr [rip + 0x97aaefa],indirect_unresolved,ASSEMBLY/00000001415FE680.asm,789,,
 0x1415fe680,0x1415ff43f,call,,qword ptr [rip + 0x97b140b],indirect_unresolved,ASSEMBLY/00000001415FE680.asm,867,,
-0x141600a50,0x141600c0f,call,,qword ptr [rip + 0x97a960b],indirect_unresolved,ASSEMBLY/0000000141600A50.asm,119,,
+0x141600a50,0x141600c0f,call,0x140ae1b70;0x140327560,qword ptr [rip + 0x97a960b],conditional_known_target,ASSEMBLY/0000000141600A50.asm,119,"Selector5 uses140327560, other selectors use140AE1B70; original conditional pointer selection and both bounded native tail adapters execute",DATA/JUMP_CONTROLLER_VALIDATION.json; ASSEMBLY/0000000141600A50.asm
 0x141602f30,0x141602f65,call,,qword ptr [rip + 0x97a72b5],indirect_unresolved,ASSEMBLY/0000000141602F30.asm,15,,
 0x14187f9c0,0x14187fa39,call,,qword ptr [rip + 0x952a7e1],indirect_unresolved,WORK/physics/ASSEMBLY/000000014187F9C0.asm,29,,
 0x14187f9c0,0x14187fa68,call,,qword ptr [rip + 0x952a7b2],indirect_unresolved,WORK/physics/ASSEMBLY/000000014187F9C0.asm,37,,
@@ -1451,7 +1453,7 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x141901a60,0x1419063ac,call,,qword ptr [rip + 0x94a3e6e],indirect_unresolved,WORK/physics/ASSEMBLY/0000000141901A60.asm,3550,,
 0x141901a60,0x14190641c,call,,qword ptr [rip + 0x94a3dfe],indirect_unresolved,WORK/physics/ASSEMBLY/0000000141901A60.asm,3574,,
 0x141901a60,0x141906f91,call,,qword ptr [rip + 0x94a98b9],indirect_unresolved,WORK/physics/ASSEMBLY/0000000141901A60.asm,4259,,
-0x141919f20,0x141919f35,call,0x142f2fcb0;0x146656840;0x14484f1b0;0x144851f00;0x144854df0,qword ptr [rip + 0x94902e5],conditional_known_target,ASSEMBLY/0000000141919F20.asm,7,Observed installed tables respectively MoveCollision/MobJump/default ground/default air/default flying. Registry pointer is wrapped by address; this is not one universal target.,DATA/REGISTRATION_AND_JUMP_BINDING.json
+0x141919f20,0x141919f35,call,0x142f2fcb0;0x146656840;0x14484f1b0;0x144851f00;0x144854df0;0x1466520d0,qword ptr [rip + 0x94902e5],conditional_known_target,ASSEMBLY/0000000141919F20.asm,7,Observed installed tables respectively MoveCollision/MobJump/default ground/default air/default flying/DecrementNoJumpDelay. Registry pointer is wrapped by address; this is not one universal target.,DATA/REGISTRATION_AND_JUMP_BINDING.json
 0x141919f50,0x141919f65,call,,qword ptr [rip + 0x94902b5],indirect_unresolved,ASSEMBLY/0000000141919F50.asm,7,,
 0x141919f80,0x141919faf,call,,qword ptr [rip + 0x949026b],indirect_unresolved,BASELINE/DECOMPILATION/hash_registration/0000000141919F80.asm,13,,
 0x14191f170,0x14191f23b,call,,qword ptr [rip + 0x948afdf],indirect_unresolved,ASSEMBLY/000000014191F170.asm,60,,
@@ -1841,7 +1843,7 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x141c646a0,0x141c64745,call,,qword ptr [rip + 0x9145ad5],indirect_unresolved,ASSEMBLY/0000000141C646A0.asm,36,,
 0x141c646a0,0x141c647bc,call,,qword ptr [rip + 0x9145a5e],indirect_unresolved,ASSEMBLY/0000000141C646A0.asm,64,,
 0x141c646a0,0x141c647fd,call,,qword ptr [rip + 0x9145a1d],indirect_unresolved,ASSEMBLY/0000000141C646A0.asm,77,,
-0x141c64ce0,0x141c64e8d,call,0x141600a50,qword ptr [rip + 0x914538d],conditional_known_target,ASSEMBLY/0000000141C64CE0.asm,97,Constructed/cached world receiver table14A753900; native jump tests currently supply query fixture backend,DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/COLLISION_WORLD_BINDING.json
+0x141c64ce0,0x141c64e8d,call,0x141600a50,qword ptr [rip + 0x914538d],conditional_known_target,ASSEMBLY/0000000141C64CE0.asm,97,"Constructed/cached world receiver table14A753900; native variant4 executes actual target and real slot table, with10/28 block entry backends",DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/JUMP_CONTROLLER_VALIDATION.json; DATA/COLLISION_WORLD_BINDING.json
 0x141c64ce0,0x141c64ee1,call,,qword ptr [rip + 0x9145339],indirect_unresolved,ASSEMBLY/0000000141C64CE0.asm,120,,
 0x141c67400,0x141c67517,call,,qword ptr [rip + 0x9142d03],indirect_unresolved,ASSEMBLY/0000000141C67400.asm,75,,
 0x141c67ca0,0x141c67cff,call,,qword ptr [rip + 0x914251b],indirect_unresolved,ASSEMBLY/0000000141C67CA0.asm,31,,
@@ -3278,7 +3280,7 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x1446b3800,0x1446b4812,call,,qword ptr [rip + 0x66f5a08],indirect_unresolved,WORK/registration_continuation/types/exports/00000001446B3800.asm,668,,
 0x1446b3800,0x1446b4c6c,call,,qword ptr [rip + 0x66fbbde],indirect_unresolved,WORK/registration_continuation/types/exports/00000001446B3800.asm,929,,
 0x1446b7ac0,0x1446b7afe,call,,qword ptr [rip + 0x66f271c],indirect_unresolved,BASELINE/DECOMPILATION/00000001446B7AC0.asm,21,,
-0x1446b7ac0,0x1446b7b1d,call,0x141919f20,qword ptr [rip + 0x66f26fd],conditional_known_target,BASELINE/DECOMPILATION/00000001446B7AC0.asm,29,Selected constructor/factory-bound movement workers14A7E5390/14A8BE440 and default child tables; other registered worker tables remain separate,DATA/REGISTRATION_AND_JUMP_BINDING.json
+0x1446b7ac0,0x1446b7b1d,call,0x141919f20,qword ptr [rip + 0x66f26fd],conditional_known_target,BASELINE/DECOMPILATION/00000001446B7AC0.asm,29,Selected constructor/factory-bound movement workers14A7E5390/14A8BE440/14A8BE400 and default child tables; other registered worker tables remain separate,DATA/REGISTRATION_AND_JUMP_BINDING.json
 0x1446b7ac0,0x1446b7b3d,call,,qword ptr [rip + 0x66f26dd],indirect_unresolved,BASELINE/DECOMPILATION/00000001446B7AC0.asm,37,,
 0x1446bc240,0x1446bc291,call,,r8,indirect_unresolved,WORK/registration_continuation/types/exports/00000001446BC240.asm,18,,
 0x1446bc240,0x1446bc30d,call,,r8,indirect_unresolved,WORK/registration_continuation/types/exports/00000001446BC240.asm,41,,
@@ -3977,6 +3979,16 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x14664f1d0,0x1466503c2,call,,r8,indirect_unresolved,WORK/registration_continuation/types/exports/000000014664F1D0.asm,737,,
 0x14664f1d0,0x14665043a,call,,qword ptr [rip + 0x4759de0],indirect_unresolved,WORK/registration_continuation/types/exports/000000014664F1D0.asm,758,,
 0x14664f1d0,0x146650501,call,,qword ptr [rip + 0x4760349],indirect_unresolved,WORK/registration_continuation/types/exports/000000014664F1D0.asm,804,,
+0x146651e20,0x146651ebc,call,,qword ptr [rip + 0x475835e],indirect_unresolved,ASSEMBLY/0000000146651E20.asm,44,,
+0x146651e20,0x146651ee4,call,,qword ptr [rip + 0x4758336],indirect_unresolved,ASSEMBLY/0000000146651E20.asm,54,,
+0x146651e20,0x146651f7b,call,,qword ptr [rip + 0x475829f],indirect_unresolved,ASSEMBLY/0000000146651E20.asm,85,,
+0x146651e20,0x146651fd3,call,,qword ptr [rip + 0x4758247],indirect_unresolved,ASSEMBLY/0000000146651E20.asm,104,,
+0x1466520d0,0x146652293,call,,qword ptr [rip + 0x4757f87],indirect_unresolved,ASSEMBLY/00000001466520D0.asm,135,,
+0x1466520d0,0x1466522eb,call,,qword ptr [rip + 0x4757f2f],indirect_unresolved,ASSEMBLY/00000001466520D0.asm,159,,
+0x1466520d0,0x1466523e7,call,,qword ptr [rip + 0x4757e33],indirect_unresolved,ASSEMBLY/00000001466520D0.asm,222,,
+0x1466520d0,0x146652441,call,,qword ptr [rip + 0x4757dd9],indirect_unresolved,ASSEMBLY/00000001466520D0.asm,245,,
+0x1466520d0,0x146652546,call,,qword ptr [rip + 0x4757cd4],indirect_unresolved,ASSEMBLY/00000001466520D0.asm,308,,
+0x1466520d0,0x14665259c,call,,qword ptr [rip + 0x4757c7e],indirect_unresolved,ASSEMBLY/00000001466520D0.asm,331,,
 0x1466563f0,0x146656463,call,,qword ptr [rip + 0x4753db7],indirect_unresolved,ASSEMBLY/00000001466563F0.asm,31,,
 0x1466563f0,0x146656783,call,,r10,indirect_unresolved,ASSEMBLY/00000001466563F0.asm,184,,
 0x1466563f0,0x1466567af,call,,qword ptr [rip + 0x4753a6b],indirect_unresolved,ASSEMBLY/00000001466563F0.asm,194,,

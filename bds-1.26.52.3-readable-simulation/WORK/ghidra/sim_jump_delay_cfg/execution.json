@@ -1,0 +1,44 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_jump_delay",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_jump_delay/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_jump_delay/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_jump_delay_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-17T06:13:41.552893+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_jump_delay",
+  "exit_code": 0,
+  "completed_utc": "2026-10-17T06:13:45.299469+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_jump_delay/0x146651e20_FUN_146651e20.c",
+      "bytes": 3423,
+      "sha256": "d32a284668f85f9849827f234926b4b28c8c771221b58c001aecb0f85a637d26",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_jump_delay/0x1466520d0_FUN_1466520d0.c",
+      "bytes": 8097,
+      "sha256": "de76ccce12eedee7f9313db005913134882572b6bdbe16c7d5032c351dc37abc",
+      "failed": false
+    }
+  ],
+  "expected_targets": 2,
+  "successful_exports": 2
+}

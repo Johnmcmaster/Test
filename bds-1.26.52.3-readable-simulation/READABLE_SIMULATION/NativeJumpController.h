@@ -11,11 +11,31 @@ struct MobJumpAccessView {
 };
 static_assert(offsetof(MobJumpAccessView,byte0c)==0xc);
 static_assert(offsetof(MobJumpAccessView,field10)==0x10);
+static_assert(sizeof(MobJumpAccessView)==0x14); // Observed dense stride in1466520D0.
+using JumpDelayHook=std::function<void(std::uint32_t)>;
+// Valid nonnull cached pool selections are retained; absent cache selects the
+// shortest dense list, with ties preferring0, then1, then2 (146651B80).
+unsigned jump_delay_pivot_146651b80(const std::array<std::vector<std::uint32_t>,3>&,
+    std::optional<unsigned> validCachedSelection);
+// Actual1466520D0 processing after its three-pool view is selected. Traverses
+// chosen dense list backwards, intersects MobJump/ActorMovementTickNeeded/Mob,
+// decrements only positive signed field10, and brackets each visit with hooks.
+// Returns processed-entity count passed to14256CEA0; registry accounting and
+// view selection are separate native dependencies.
+std::uint64_t decrement_no_jump_delay_1466520d0(
+    const std::array<std::vector<std::uint32_t>,3>& denseLists,unsigned selectedPivot,
+    std::span<std::uint32_t> fields10,const JumpDelayHook& before,const JumpDelayHook& after);
 struct JumpMemberships {
     bool jumpControl,onGround,player,squid,wasInWater,headInWater;
     bool canStandOnPowderSnow,canStandOnPowderSnowFromEquipment,immuneToLavaDrag;
 };
 using JumpControlValue=std::function<float()>;
+using MaterialByteQuery=std::function<std::uint8_t(std::array<std::int32_t,3>,bool alternateLookup)>;
+// Constructed world40 implementation141600A50: inclusive floor/reordered cuboid,
+// Z thenY thenX traversal; selector5 changes lookup, selector25 accepts after
+// one lookup. Caller supplies finite in-int32-range endpoints and world data.
+bool material_query_141600a50(const bds_research::Bounds&,std::uint8_t selector,
+    const MaterialByteQuery&);
 // 141C64CE0: actual bounds contraction/collapse, world40 query and SubBBs order.
 // A world query reports only its Boolean response; material semantics come from
 // the separately bound provider, not from an invented all-solid-block predicate.

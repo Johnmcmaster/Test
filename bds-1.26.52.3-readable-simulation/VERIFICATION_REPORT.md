@@ -1,9 +1,9 @@
 # Verification checkpoint
 
-New registration/jump suites pass3,280 and14,830 original-entry comparisons.
+New registration/jump suites pass3,280 and25,182 original-entry comparisons.
 Actual native metadata handling and MobJump numerical/query/tail-request helpers
 execute with explicit external backends. DATA/REGISTRATION_AND_JUMP_BINDING.json
-independently verifies27 instructions,12 table slots and14 reviewed windows.
+independently verifies34 instructions,16 table slots and17 reviewed windows.
 See REPORTS/REGISTRATION_AND_JUMP.md and both new validation JSONs.
 
 The delivered Java kernels were compared with the original BDS machine code, not only with reconstructed C++. The native suites described below passed. This establishes bounded numerical/control-flow equivalence for the supplied fixtures; it does not establish a complete Bedrock simulator or a deployable anti-cheat.
@@ -53,7 +53,7 @@ documented comparison. Its ranges, source hashes and dependency backends are in
 `DATA/ENVIRONMENT_STAGES_VALIDATION.json`. The constructed NoClip world route is
 verified by39 instruction and8 table checks. See`REPORTS/ENVIRONMENT_CONTINUATION.md`.
 The prior64,621-case suite was rerun after the new component-view assertions and
-still passes. The nine C++ suites total **188,500 bounded comparisons across 62
+still passes. The nine C++ suites total **198,852 bounded comparisons across 66
 variants**. None is a full tick. Their source hashes match the delivered sources.
 
 `DATA/READABLE_SIMULATION_VALIDATION.json` separately records **64,621 native comparisons across16 variants**, with zero mismatches and zero observed NaN-payload differences. Each original entry must return to the harness sentinel within the instruction budget. The new C++ is compiled withC++20, `-O2 -fno-fast-math -ffp-contract=off`; source hashes include the component header and oracle. Exact native code ranges/hashes and fixture backends are in that report.
@@ -64,7 +64,7 @@ The first broad finalizer comparison found32 mismatches because the decompiler s
 
 Constructor/table checks independently bind the default movement-control method and concrete collision-world query. Effect constructor/indexed stores bind Jump Boost, Levitation and Slow Falling. The selected type audit has49 independent regular record writers and12,234 distinct bracket-extracted spellings with no collisions in that extracted set. Recomputing FNV-1a alone is not treated as independent registration proof or a claim that all possible runtime names are collision-free.
 
-The current index contains 623 Ghidra exports/352 entry VAs, with zero decompile failures and 623 continuous linear decodes. Of these, 578 match PE unwind ranges; the remaining explicit ranges are checked separately. The saved-instruction catalog audit checks 959 assembly files/827 unique ranges with zero byte/boundary mismatches and no missing evidence sources/anchors. The catalog contains 411 evidence rows. Its separate field-access ledger contains 302 observations from 85 register-binding windows. FUNCTION_INDEX.csv also contains two large initializer/registry owners represented by byte-verified instruction windows and native boundaries, with the rest of each body explicitly unreviewed. Exported candidates remain distinguishable from manually reviewed functions. The collection includes eight byte-identical prior raw C exports reused for scheduler review; those are not newly decompiled functions. Catalog counts include preserved baseline material and do not measure full semantic coverage.
+The current index contains 641 Ghidra exports/361 entry VAs, with zero decompile failures and 641 continuous linear decodes. Of these, 596 match PE unwind ranges; the remaining explicit ranges are checked separately. The saved-instruction catalog audit checks 970 assembly files/838 unique ranges with zero byte/boundary mismatches and no missing evidence sources/anchors. The catalog contains 414 evidence rows. Its separate field-access ledger contains 308 observations from 89 register-binding windows. FUNCTION_INDEX.csv also contains two large initializer/registry owners represented by byte-verified instruction windows and native boundaries, with the rest of each body explicitly unreviewed. Exported candidates remain distinguishable from manually reviewed functions. The collection includes eight byte-identical prior raw C exports reused for scheduler review; those are not newly decompiled functions. Catalog counts include preserved baseline material and do not measure full semantic coverage.
 
 `DATA/verification_summary.json` records the executable/JAR identities, commands, exit codes, per-suite counts, log hashes, and report hashes. `DATA/verification/` preserves compiler and oracle output. New kernels added during investigation are listed in that manifest when their final checks finish.
 

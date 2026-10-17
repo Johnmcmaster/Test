@@ -101,6 +101,10 @@ B.extend([
 ('StateVectorComponent',0x146620e20,0x14662126b,0x146621288,'r12',0x24,'Increment path reads ordinaryXYZ and motionY then updatesY; no predicted/client position substituted.'),
 ('MobJumpComponent',0x146620d90,0x146620e12,0x146620e12,'rsi',0x14,'Tail target saves its second argument toRSI atD96; field10=10 after ensuring JumpFromGroundRequest storage.'),
 ('StateVectorComponent',0x146620c10,0x146620d7e,0x146620d7e,'rsi',0x24,'Fifth argument StateVector saved inRSI; final motionY=control/effect result store.'),
+('MobJumpComponent',0x1466520d0,0x1466522a0,0x1466522b3,'r12',0x14,'First-pool payload page; dense index is multiplied by5 then used atscale4, proving stride14hex. Indexed DWORD+10 read precedes signed-positive decrement.'),
+('MobJumpComponent',0x1466520d0,0x1466523f4,0x146652405,'r13',0x14,'Second pivot: sparse-to-dense lookup resolves MobJump page; index*5*4 withDWORD+10 read. Same typed C52C8F78 view, distinct iterator branch.'),
+('MobJumpComponent',0x1466520d0,0x146652552,0x146652563,'r12',0x14,'Third pivot: same native20-byte element stride andDWORD+10 read; write uses separately computed field pointer.'),
+('SwimAmountComponent',0x146620e20,0x146620f1a,0x146620f1a,'r10',4,'Argument12 from SwimAmountCF19787C required payload; scalar00 feeds strict0<value<1 early-return guard.'),
 ])
 rows=[]
 for component,va,start,end,reg,limit,proof in B:

@@ -2,7 +2,7 @@
 
 The latest [registration and MobJump continuation](REPORTS/REGISTRATION_AND_JUMP.md)
 resolves selected replay workers to concrete movement methods and adds readable
-MobJump decisions, impulse and area-query helpers. Its two suites pass18,110
+MobJump decisions, impulse and area-query helpers. Its two suites pass28,462
 original-instruction comparisons. Full tick/history/authority remain unfinished.
 
 This project contains **readable, compilable C++ reconstructed from native BDS movement stages**, targeted Ghidra decompilations, verified Java kernels and a Geyser source hook. The full simulator remains unfinished and reports `SimulationResult.Unavailable`. Start with [READABLE_SIMULATION/README.md](READABLE_SIMULATION/README.md) and [REPORTS/FULL_SIM_CONTINUATION.md](REPORTS/FULL_SIM_CONTINUATION.md).
@@ -17,7 +17,7 @@ The original Windows executable was independently verified: 223,223,112 bytes, i
 
 - The actual untimed replay category chain now has readable C++ and **2,060 passing native comparisons**. New factory evidence binds labeled server/client ticking collections to their constructed dispatcher interfaces. See [SCHEDULER_CONTINUATION.md](REPORTS/SCHEDULER_CONTINUATION.md). Historical restoration and resimulation remain unresolved.
 
-- Two forwarded geometry bodies and their local helpers now have readable C++ and **34,944 passing original-entry comparisons**. The actual installed dispatch paths execute in the tests. See [FORWARDED_COLLISION_SHAPES.md](REPORTS/FORWARDED_COLLISION_SHAPES.md). The nine readable C++ suites total **188,500 bounded comparisons across 62 variants**; these are fixtures, not full ticks or a coverage percentage.
+- Two forwarded geometry bodies and their local helpers now have readable C++ and **34,944 passing original-entry comparisons**. The actual installed dispatch paths execute in the tests. See [FORWARDED_COLLISION_SHAPES.md](REPORTS/FORWARDED_COLLISION_SHAPES.md). The nine readable C++ suites total **198,852 bounded comparisons across 66 variants**; these are fixtures, not full ticks or a coverage percentage.
 
 - Moving multipart collision emission has readable C++, its concrete virtual258 callback, direction-table initialization and constructor/table proof. **12,632 original-entry comparisons pass** with zero mismatches. See [MULTIPART_COLLISION_SHAPES.md](REPORTS/MULTIPART_COLLISION_SHAPES.md). Seven NaN payload differences remain confined to the earlier environment suite.
 

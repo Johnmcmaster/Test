@@ -155,6 +155,54 @@ responses. A numeric selector is not relabeled as a solid-block/no-clip test.
 
 ## Verified scope and reproduction
 
+### World predicate and no-jump delay continuation
+
+The earlier three-variant checkpoint below is extended to **25,182 original-entry
+comparisons across seven variants**, with zero mismatches/NaN payload differences.
+
+`material_query_141600a50` is now readable C++, and variants3/4 execute original
+141600A50 plus bounded17-byte lookup adapters140AE1B70 and140327560. The actual
+constructed table14A753900 supplies virtual40,10 and28. Only the two block lookup
+entry bodies are backends. Native scan ordering is Z first, thenY, thenX, over
+signed-ordered inclusive floored endpoints. Matching stops the scan; selector5
+selects world28 and selector19hex accepts after one lookup without reading the
+comparison byte. The report's earlier Boolean-query fixtures remain as variants0/2.
+“Material” describes the provider selector byte; no unsupported enum identity or
+generic solid-block test is substituted.
+
+The field10 writer search is saved in WORK/registration_continuation:
+32 decoded immediate references toC52C8F78 and10 direct storage-getter callers
+led to table14A8BE400. The actual factory1418F021C/223 installs that table, passes
+literal14A9FD681=`DecrementNoJumpDelaySystem` to descriptor builder146651E20,
+and registers through replay-inclusive14469CCD0 at1418F0286 with flags1.
+The installed virtual28 implementation is**1466520D0..1466525AD**,1245bytes,
+RVA66520D0. Its three required pools are MobJumpC52C8F78,
+ActorMovementTickNeeded94154CCE and Mob14EA24A2.
+
+Actual view builder**146651B80..146651CB2**,306bytes, retains a valid nonnull
+cached pivot. Otherwise it chooses the shortest dense list; equal lengths prefer
+pool0, then1, then2. The bulk body walks that list backwards, intersects the
+other two memberships, invokes optional registry1A0/1E0 hooks around each entity,
+and decrements field10 only when its**signed32-bit value is positive**. Zero and
+negative values stay unchanged. All three branches compute dense element stride
+`5*4=0x14` and read/write DWORD10. This independently establishes the observed
+20-byte MobJump storage stride, distinct from JumpTicksComponentAC923948.
+
+Variant5 executes the entire bulk body with a supplied three-pool view. Variant6
+also executes the real view builder with typed pool lookup backends. Fixtures
+cover every pivot, optional hooks, cached/refreshed selections, arbitrary valid
+dense orders, missing memberships and signed counter boundaries. They compare
+every counter, visit order and processed-entity count passed to14256CEA0, and
+assert that the other16 bytes of each present MobJump payload stay unchanged.
+View/storage lifetime, generation churn, mutation/reentrancy,14256CEA0 accounting
+and actual pass cadence remain outside that proof. **The decrement operation is
+now resolved; its cadence is not.** No guaranteed frame/tick cooldown or position
+history is inferred from the field or system name.
+
+The binding ledger now checks34 exact instructions,16 table slots,17 reviewed
+windows and the delay-system literal. The following14,830-case paragraph records
+the earlier subset and is not added again to the25,182 total.
+
 **14,830 comparisons across3 variants pass, with zero mismatches and zero NaN
 payload differences.** Main146620E20 executes original146620C10,141C64CE0 and
 tail146620D90 together. Fixtures compare motion, saved ordinary XYZ, byte0C,
@@ -175,7 +223,7 @@ MobJump offsets00/0C/10 without claiming a complete native component size. Its
 field10 is not mislabeled as JumpTicksComponent or as a replay/pending flag.
 The function/evidence catalogs retain actual addresses and confidence levels.
 
-Still open: input and permission producers, raw flag meanings, counter decrement,
+Still open: input and permission producers, raw flag meanings, decrement cadence,
 all JumpControl implementations, active collection ownership, category-list
 finalization/dependencies, historical record producer/restoration, network flush
 and complete Java/Geyser simulation integration. Concrete memberships resolve

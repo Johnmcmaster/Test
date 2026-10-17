@@ -1,6 +1,7 @@
 #include "NativeJumpController.h"
 #include <bit>
 #include <cmath>
+#include <algorithm>
 namespace bds_research::readable {
 namespace {
 float f(std::uint32_t b){return std::bit_cast<float>(b);}
@@ -17,6 +18,47 @@ bds_research::Bounds contracted(const bds_research::Bounds& input){
     }
     return {out[0],out[1],out[2],out[3],out[4],out[5]};
 }
+}
+bool material_query_141600a50(const bds_research::Bounds& box,std::uint8_t selector,
+    const MaterialByteQuery& query){
+    std::int32_t a[3]{std::int32_t(std::floor(box.x0)),std::int32_t(std::floor(box.y0)),std::int32_t(std::floor(box.z0))};
+    std::int32_t b[3]{std::int32_t(std::floor(box.x1)),std::int32_t(std::floor(box.y1)),std::int32_t(std::floor(box.z1))};
+    for(unsigned i=0;i<3;++i)if(b[i]<a[i])std::swap(a[i],b[i]);
+    for(std::int32_t x=a[0];;){
+        for(std::int32_t y=a[1];;){
+            for(std::int32_t z=a[2];;){
+                auto material=query({x,y,z},selector==5);
+                if(selector==25 || material==selector)return true;
+                if(z==b[2])break;++z;
+            }
+            if(y==b[1])break;++y;
+        }
+        if(x==b[0])break;++x;
+    }
+    return false;
+}
+std::uint64_t decrement_no_jump_delay_1466520d0(
+    const std::array<std::vector<std::uint32_t>,3>& lists,unsigned pivot,
+    std::span<std::uint32_t> fields,const JumpDelayHook& before,const JumpDelayHook& after){
+    if(pivot>=3)return 0;
+    std::uint64_t count=0;
+    for(auto it=lists[pivot].rbegin();it!=lists[pivot].rend();++it){
+        auto id=*it;bool present=true;
+        for(const auto& list:lists)if(std::find(list.begin(),list.end(),id)==list.end()){present=false;break;}
+        if(!present)continue;
+        if(before)before(id);
+        if(std::bit_cast<std::int32_t>(fields[id])>0)--fields[id];
+        if(after)after(id);
+        ++count;
+    }
+    return count;
+}
+unsigned jump_delay_pivot_146651b80(const std::array<std::vector<std::uint32_t>,3>& lists,
+    std::optional<unsigned> cached){
+    if(cached && *cached<3)return *cached;
+    unsigned result=lists[1].size()<lists[0].size()?1:0;
+    if(lists[2].size()<lists[result].size())result=2;
+    return result;
 }
 bool jump_area_141c64ce0(bool immune,const bds_research::Bounds& bounds,
     std::span<const bds_research::Bounds> subs,const AreaQuery& query){

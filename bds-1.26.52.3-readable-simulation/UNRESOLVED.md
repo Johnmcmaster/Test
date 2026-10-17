@@ -10,14 +10,14 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
 - Selected replay workers now resolve through141919F20 to actual collision,
   MobJump and default ground/air/flying bulk methods. Membership/registration
   flags pass3,280 original comparisons. MobJump146620E20 and helpers146620C10/
-  141C64CE0 pass14,830, including tail146620D90 marker creation. Raw input/flag
-  ownership, real JumpControl objects, field10 decrement and outer history remain
+  141C64CE0 pass25,182, including tail146620D90 marker creation. Raw input/flag
+  ownership, real JumpControl objects, field10 decrement cadence and outer history remain
   open. See REPORTS/REGISTRATION_AND_JUMP.md.
 
 - New factory140794160 constructs server/client-labeled ticking collections via
   14256D570/14469BAD0. The actual untimed replay chain now has readable code and
   2,060 passing original-entry comparisons, including stored order, duplicate-ID
-  behavior and hook arguments. Concrete registered workers, historical restoration
+  behavior and hook arguments. Other registered workers, historical restoration
   and outer player phases remain unresolved. See REPORTS/SCHEDULER_CONTINUATION.md.
 
 - Forwarded body146614A70, helpers146614190/146614640 and separate148B33800 now
@@ -61,8 +61,8 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
   the temporary block-shape vector has24-byte AABBs.
 - Effect constructor/indexed stores independently identify Jump Boost8,
   Levitation24 and Slow Falling27. The reduced-gravity slot is no longer unnamed.
-- The nine readable C++ suites pass 188,500 bounded comparisons across 49
-  variants. The full Ghidra index has 623 exports/352 entry VAs; successful export
+- The nine readable C++ suites pass 198,852 bounded comparisons across 49
+  variants. The full Ghidra index has 641 exports/361 entry VAs; successful export
   is not semantic completeness. The 64,621-case core suite was rerun after the
   shared component-header additions and remains passing.
 
@@ -178,3 +178,12 @@ simulator. Direct binary/Ghidra evidence is available; the gaps above are not
 being attributed to a missing executable or an unavailable decompiler. Further
 work requires additional receiver/producer binding and integrated execution
 proof. No guessed mechanics or automatic enforcement fills those gaps.
+
+## Latest exact continuation targets
+
+- Jump input and legitimate eligibility:1484235C0/148424F70 and14665DFC0/14665FD30 now have new targeted exports. These build StateVector/JumpDuration/MobJump/JumpTicks views; their actual consuming bodies and raw flag producers still need tracing. MobJump field10 decrement is resolved as1466520D0, with view146651B80; do not restart that search. Its real pass cadence is open.
+- JumpControl dense+50 virtual28 at146620D05 remains an object-implementation boundary. Resolve its constructors and actual player selection; do not replace valid callbacks with the0.42 fallback.
+- World material query141600A50 and its tail adapters are now reconstructed and native-compared, including the actual14A753900+40 chain. Live block lookup1415F65E0/1415F69E0 and complete material/block data remain the boundary for that composition.
+- Historical producer/snapshot implementation at14839F2F2, outer replay scheduling/termination and outbound sender1457D5A0F remain separate high-value targets.
+
+The new seven-variant jump suite plus registration suite adds28,462 original-entry comparisons over the prior checkpoint. Those counts describe bounded fixtures, not full tick coverage. Reproduce with SCRIPTS/verify_jump_controller.py --cases 4000 and SCRIPTS/verify_registration.py --cases 3000 (pass the verified EXE before the flags). This continuation has reached its analysis checkpoint; the full simulator remains unfinished.
