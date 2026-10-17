@@ -61,7 +61,7 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
   the temporary block-shape vector has24-byte AABBs.
 - Effect constructor/indexed stores independently identify Jump Boost8,
   Levitation24 and Slow Falling27. The reduced-gravity slot is no longer unnamed.
-- The nine readable C++ suites pass 198,852 bounded comparisons across 49
+- The nine readable C++ suites pass 198,852 bounded comparisons across 66
   variants. The full Ghidra index has 641 exports/361 entry VAs; successful export
   is not semantic completeness. The 64,621-case core suite was rerun after the
   shared component-header additions and remains passing.

@@ -3,26 +3,26 @@
   "archives": [
     {
       "file": "1.zip",
-      "bytes": 7367998,
-      "sha256": "6c5eeae41e6f503599dc73fb5648f15e93161c33af7f7a82300065ef2b47193b",
-      "entries": 2121,
+      "bytes": 7380375,
+      "sha256": "8e9808f8d37d1f2e098d88dff9a64d0c4050e91e55def4b242e1a1f1c327cdd1",
+      "entries": 2046,
       "crc_verified": true,
       "contents_sha256_verified": true
     },
     {
       "file": "2.zip",
-      "bytes": 4611180,
-      "sha256": "d1381c4122dee5f7755b2d170790cbb4004eca4eb27f604686ac44a0ea40dfd8",
-      "entries": 2221,
+      "bytes": 5775107,
+      "sha256": "c4cba816f6ae45e302b116af53e15bcb9bc51399294810540a28ba432e2debf1",
+      "entries": 2747,
       "crc_verified": true,
       "contents_sha256_verified": true
     }
   ],
-  "file_count": 4342,
-  "current_targeted_ghidra_c": 568,
+  "file_count": 4793,
+  "current_targeted_ghidra_c": 641,
   "historical_ghidra_c": 173,
-  "omitted_files": 7360,
-  "omitted_bytes": 1401749632,
+  "omitted_files": 7361,
+  "omitted_bytes": 1407456688,
   "missing_evidence_paths": [],
   "full_simulator_status": "incomplete; Unavailable",
   "numeric_machine_cases": 104028,
@@ -82,10 +82,26 @@
       "mismatches": 0,
       "nan_payload_differences": 0,
       "source_hashes_verified": true
+    },
+    {
+      "report": "DATA/REGISTRATION_VALIDATION.json",
+      "case_count": 3280,
+      "variants": 10,
+      "mismatches": 0,
+      "nan_payload_differences": 0,
+      "source_hashes_verified": true
+    },
+    {
+      "report": "DATA/JUMP_CONTROLLER_VALIDATION.json",
+      "case_count": 25182,
+      "variants": 7,
+      "mismatches": 0,
+      "nan_payload_differences": 0,
+      "source_hashes_verified": true
     }
   ],
-  "readable_cpp_machine_cases": 170390,
-  "readable_cpp_variants": 49,
+  "readable_cpp_machine_cases": 198852,
+  "readable_cpp_variants": 66,
   "duplicate_groups": {
     "e7bd5eeea9a393171199133f31f617813d733be40e635fbc7fcf94eb17f2f72b": [
       "ASSEMBLY/00000001409A5710.asm",
@@ -156,6 +172,16 @@
       "ASSEMBLY/collision/00000001418E7490.json",
       "ASSEMBLY/predicted/00000001418E7490.json",
       "WORK/physics/ASSEMBLY/00000001418E7490.json"
+    ],
+    "c60e1d7eb40a59378fea452e75c2ec27fbd2c7509a722d1108ed9a23d1202d20": [
+      "ASSEMBLY/00000001418EEEA0.asm",
+      "WORK/full_sim/mobtravel_refs/00000001418EEEA0.asm",
+      "WORK/physics/ASSEMBLY/00000001418EEEA0.asm"
+    ],
+    "1cc3aa6dbe913856db20fd8e3800f90bcb33b8fd9b2601f2450c818e528b45cc": [
+      "ASSEMBLY/00000001418EEEA0.json",
+      "WORK/full_sim/mobtravel_refs/00000001418EEEA0.json",
+      "WORK/physics/ASSEMBLY/00000001418EEEA0.json"
     ],
     "37ac10d74769516aab25f401bb526fa4fc2af56bcf0c47f8b38830d8aef04eae": [
       "ASSEMBLY/000000014192CD30.asm",
@@ -453,6 +479,22 @@
       "ASSEMBLY/00000001424E5CB0.json",
       "WORK/full_sim/factories/ASSEMBLY/00000001424E5CB0.json"
     ],
+    "6b810b51c26240be0a17e663ddbc88458bf1379ccb96507ad7bf6454d266fa11": [
+      "ASSEMBLY/000000014256E1C0.asm",
+      "WORK/registration_continuation/ASSEMBLY/000000014256E1C0.asm"
+    ],
+    "09ffc2687e8e015e93c49eb27baeb15b65a5b680dcfcc38a733c79311288d16c": [
+      "ASSEMBLY/000000014256E1C0.json",
+      "WORK/registration_continuation/ASSEMBLY/000000014256E1C0.json"
+    ],
+    "63fae3ec86f991a13ba76942af599a07019c4330aebac07e0b3c1c24c8bcedbe": [
+      "ASSEMBLY/000000014256FDD0.asm",
+      "WORK/registration_continuation/ASSEMBLY/000000014256FDD0.asm"
+    ],
+    "975e5a51eadcc9c2bd3cc6e5dfd1c32042c8634770d1a8397ede492353dca876": [
+      "ASSEMBLY/000000014256FDD0.json",
+      "WORK/registration_continuation/ASSEMBLY/000000014256FDD0.json"
+    ],
     "b1d9cfac3e6d4cd2051a58117d7bdf7b086fed47d9d1454513f4fe6c02f6e1ff": [
       "ASSEMBLY/0000000142C19020.asm",
       "ASSEMBLY/walking_flight/0000000142C19020.asm"
@@ -580,6 +622,14 @@
     "262027e718fed4d02e82a75825eee4b30b1893b8048f121ef2526e10408c7c97": [
       "ASSEMBLY/0000000143B570F0.json",
       "ASSEMBLY/predicted/0000000143B570F0.json"
+    ],
+    "cdc3ae0c562cd6aa6bf3ceb4b83a4dd588367a5ea8c9860579f872fc7d08550d": [
+      "ASSEMBLY/000000014469CCD0.asm",
+      "WORK/registration_continuation/ASSEMBLY/000000014469CCD0.asm"
+    ],
+    "4fff386e4dfa479214afda2bb9d018303c95518160cbb007cbe7a7103f1e3519": [
+      "ASSEMBLY/000000014469CCD0.json",
+      "WORK/registration_continuation/ASSEMBLY/000000014469CCD0.json"
     ],
     "c4ba584d09556b77093e4f2ba93f60e661a2324781c1c872630a782919b32119": [
       "ASSEMBLY/00000001446C60D0.asm",
@@ -1209,6 +1259,14 @@
       "ASSEMBLY/history/replay_candidates/0000000146628140.json",
       "WORK/history_writer/candidates/0000000146628140.json"
     ],
+    "a303fb8ea1095147746380f11d7850e02e4b89dc1c3951bfd01fc50ac9c8fd38": [
+      "ASSEMBLY/history/replay_candidates/00000001466283C0.asm",
+      "WORK/registration_continuation/types/exports/00000001466283C0.asm"
+    ],
+    "336516b576097fc5ba3174b1b529dcc2a9f6f350ae8730ca927685a2948a3ada": [
+      "ASSEMBLY/history/replay_candidates/00000001466283C0.json",
+      "WORK/registration_continuation/types/exports/00000001466283C0.json"
+    ],
     "e9a75e88bb973d7f09c20cbad7fd1117114d8ac141b94d490d52611a62fa8a63": [
       "ASSEMBLY/history/replay_candidates/0000000148393160.asm",
       "WORK/history_writer/candidates/0000000148393160.asm"
@@ -1216,6 +1274,14 @@
     "666260a00ab5659fe7ad24485dcf5005028a0470c054da78cbafd1169b67eb11": [
       "ASSEMBLY/history/replay_candidates/0000000148393160.json",
       "WORK/history_writer/candidates/0000000148393160.json"
+    ],
+    "c8a89618c393cc5e89346cc2d907be42939a66d1426bb4fc3cda691167b2ce20": [
+      "ASSEMBLY/history/replay_candidates/0000000148393A50.asm",
+      "WORK/registration_continuation/types/exports/0000000148393A50.asm"
+    ],
+    "34da12859cc8d356b5f771765f519e33f1ad13a28bb588862db6d11ba2a1ac52": [
+      "ASSEMBLY/history/replay_candidates/0000000148393A50.json",
+      "WORK/registration_continuation/types/exports/0000000148393A50.json"
     ],
     "e625183cf88ee4df3520aba21e9a5a0b91320814e20e8e9934e5f7cb385a098c": [
       "ASSEMBLY/history/replay_candidates/000000014839EFA0.asm",
@@ -1293,6 +1359,14 @@
       "ASSEMBLY/walking_flight/00000001484469F0.json",
       "WORK/full_sim/acceleration_factories/ASSEMBLY/00000001484469F0.json"
     ],
+    "21fb897a96b339520d777fb998ce8742db63152eec6a212ffffa10a28aecb5e5": [
+      "ASSEMBLY/walking_flight/0000000148446E00.asm",
+      "WORK/registration_continuation/types/exports/0000000148446E00.asm"
+    ],
+    "4bc738e42677f3369de56259851079481e040611cafd52a44b4f8b377a7dda9b": [
+      "ASSEMBLY/walking_flight/0000000148446E00.json",
+      "WORK/registration_continuation/types/exports/0000000148446E00.json"
+    ],
     "78b1bc27623e9db9139a326f40742b00076b16162202675491b0c7a09a6b4b6b": [
       "ASSEMBLY/walking_flight/0000000148447E50.asm",
       "WORK/full_sim/acceleration_factories/ASSEMBLY/0000000148447E50.asm"
@@ -1317,6 +1391,14 @@
       "ASSEMBLY/walking_flight/000000014845BDE0.json",
       "WORK/full_sim/mobtravel_refs/000000014845BDE0.json"
     ],
+    "2971ded5ef501ad0f00af008042cd31ab4dbf480a2698ec23eb7e0ffd2064e8f": [
+      "ASSEMBLY/walking_flight/0000000148460480.asm",
+      "WORK/registration_continuation/types/exports/0000000148460480.asm"
+    ],
+    "c4af39f5f5fa3c35f2e66e5dd7d6cdca7ff68acadb1908986b0bd23708ea1922": [
+      "ASSEMBLY/walking_flight/0000000148460480.json",
+      "WORK/registration_continuation/types/exports/0000000148460480.json"
+    ],
     "058a97e7cba77c7607460428351dd98495448b461ec7cc931df3d468bea5dd6a": [
       "BASELINE/DECOMPILATION/hash_registration/00000001402DA100.asm",
       "WORK/full_sim/types/exports/00000001402DA100.asm",
@@ -1324,6 +1406,7 @@
       "WORK/history_writer/types/exports/00000001402DA100.asm",
       "WORK/movement_types/exports/00000001402DA100.asm",
       "WORK/physics/type_verification/exports/00000001402DA100.asm",
+      "WORK/registration_continuation/types/exports/00000001402DA100.asm",
       "WORK/type_metadata/exports/00000001402DA100.asm"
     ],
     "879d6a6b3f661619ab4867b3cefd1ce686837f75deb1724f334987e6e7d8d5e3": [
@@ -1341,7 +1424,12 @@
       "WORK/history_writer/types/exports/00000001402E2130.asm",
       "WORK/movement_types/exports/00000001402E2130.asm",
       "WORK/physics/type_verification/exports/00000001402E2130.asm",
+      "WORK/registration_continuation/types/exports/00000001402E2130.asm",
       "WORK/type_metadata/exports/00000001402E2130.asm"
+    ],
+    "6dcbfe6945d7db49ed905a40a065a5f50a02ddd04104d6227f5adef0bc18dd27": [
+      "BASELINE/DECOMPILATION/hash_registration/00000001402EF5A0.asm",
+      "WORK/registration_continuation/types/exports/00000001402EF5A0.asm"
     ],
     "59a70f515ffb5858963c8e90b74c9d9d7e859555cd6ea9c35e29e367f9fea9c7": [
       "BASELINE/DECOMPILATION/hash_registration/00000001402F16A0.asm",
@@ -1350,6 +1438,7 @@
       "WORK/history_writer/types/exports/00000001402F16A0.asm",
       "WORK/movement_types/exports/00000001402F16A0.asm",
       "WORK/physics/type_verification/exports/00000001402F16A0.asm",
+      "WORK/registration_continuation/types/exports/00000001402F16A0.asm",
       "WORK/type_metadata/exports/00000001402F16A0.asm"
     ],
     "6f3a1bb3d9261144ae06fd78251031c2c3ced200ee4767723f663ede2061ed21": [
@@ -1359,6 +1448,7 @@
       "WORK/history_writer/types/exports/00000001407852B0.asm",
       "WORK/movement_types/exports/00000001407852B0.asm",
       "WORK/physics/type_verification/exports/00000001407852B0.asm",
+      "WORK/registration_continuation/types/exports/00000001407852B0.asm",
       "WORK/type_metadata/exports/00000001407852B0.asm"
     ],
     "49e04bbd35f61ffa8da408c0b5531247d9e4d274fcbdd2f4504b37b7a29945fa": [
@@ -1372,6 +1462,7 @@
       "WORK/history_writer/types/exports/0000000141945E00.asm",
       "WORK/movement_types/exports/0000000141945E00.asm",
       "WORK/physics/type_verification/exports/0000000141945E00.asm",
+      "WORK/registration_continuation/types/exports/0000000141945E00.asm",
       "WORK/type_metadata/exports/0000000141945E00.asm"
     ],
     "b15879b10b236d97d6761acbc7fb3c0f549f1d38889c454e7e7697d675f7595e": [
@@ -1385,7 +1476,12 @@
       "WORK/history_writer/types/exports/0000000142503410.asm",
       "WORK/movement_types/exports/0000000142503410.asm",
       "WORK/physics/type_verification/exports/0000000142503410.asm",
+      "WORK/registration_continuation/types/exports/0000000142503410.asm",
       "WORK/type_metadata/exports/0000000142503410.asm"
+    ],
+    "51eb94f88fbbf2cf0b7c07696175401a1bc34ee5ea8f07a32baaab68d39be215": [
+      "DATA/PORT_STATUS.csv",
+      "PORT_STATUS.csv"
     ],
     "2fee74e3283b5d76538f01bb8e9a5e946d58f0fcdfa34817ddc1deaf2fd15877": [
       "DATA/geyser_patch_verification.json",
@@ -1394,6 +1490,28 @@
     "ac635ed7d1919b099040962085d0cd93f5e12cfff9ec0dd6c4b19bf592787913": [
       "DATA/verification/glide-rerun.log",
       "JAVA/physics-kernels/glide_machine_validation.json"
+    ],
+    "7d0d3870b4a31f781c579321cf633c278881d3ab967050403352e96f29edca1d": [
+      "DECOMPILATION/baseline/0x1418e98a0_FUN_1418e98a0.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/first/0x1418e98a0_FUN_1418e98a0.c"
+    ],
+    "4f914a824850f81c2afe8b249f9dd7f0bd98d722cdd6002b01787672d5f26f9e": [
+      "DECOMPILATION/baseline/0x141932310_FUN_141932310.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/dispatcher/0x141932310_FUN_141932310.c"
+    ],
+    "ac70d31f2347a55ff73165998322a62d4842c288b7eafc729b63cf5703a81f5f": [
+      "DECOMPILATION/baseline/0x14256e1c0_FUN_14256e1c0.c",
+      "DECOMPILATION/ghidra/sim_registration_adapters/0x14256e1c0_FUN_14256e1c0.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/dispatcher/0x14256e1c0_FUN_14256e1c0.c"
+    ],
+    "7a36c2a486aa610112e68c227259e7152ef3db62abcc79edb321ea4fe7e9cc08": [
+      "DECOMPILATION/baseline/0x14256fdd0_FUN_14256fdd0.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/tracker/0x14256fdd0_FUN_14256fdd0.c"
+    ],
+    "857827e0f5faf5ad4a284b02b937f8fa3758445f30440e27f8080b729636b55d": [
+      "DECOMPILATION/baseline/0x14469ccd0_FUN_14469ccd0.c",
+      "DECOMPILATION/ghidra/sim_registration_adapters/0x14469ccd0_FUN_14469ccd0.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/first/0x14469ccd0_FUN_14469ccd0.c"
     ],
     "f135570012542878f83691149ed9e2c418e43ab44e30255cc0cca6ac3b01d7be": [
       "DECOMPILATION/baseline/0x146619a10_FUN_146619a10.c",
@@ -1421,6 +1539,7 @@
     ],
     "656d80ec10d1a07a46119b18c4eccc98cce333aa0857047392d43ee875431574": [
       "DECOMPILATION/ghidra/sim_adapter_init/0x141919f20_FUN_141919f20.c",
+      "DECOMPILATION/ghidra/sim_registration_adapters/0x141919f20_FUN_141919f20.c",
       "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/dispatcher/0x141919f20_FUN_141919f20.c"
     ],
     "853b060fb55cda76ff260ab4ffb894c5f450e5eefa8ef8e92a786255389ee162": [
@@ -1579,6 +1698,8 @@
       "WORK/ghidra/sim_default_math/skipped.json",
       "WORK/ghidra/sim_default_move/reuse.json",
       "WORK/ghidra/sim_default_move/skipped.json",
+      "WORK/ghidra/sim_default_registration_closure/reuse.json",
+      "WORK/ghidra/sim_default_registration_closure/skipped.json",
       "WORK/ghidra/sim_default_views/reuse.json",
       "WORK/ghidra/sim_derived_shape_helpers/reuse.json",
       "WORK/ghidra/sim_derived_shape_helpers/skipped.json",
@@ -1603,6 +1724,11 @@
       "WORK/ghidra/sim_input_bridge/skipped.json",
       "WORK/ghidra/sim_input_filters/reuse.json",
       "WORK/ghidra/sim_input_filters/skipped.json",
+      "WORK/ghidra/sim_jump_delay/skipped.json",
+      "WORK/ghidra/sim_jump_dependencies/skipped.json",
+      "WORK/ghidra/sim_jump_state_writers/skipped.json",
+      "WORK/ghidra/sim_jump_world/reuse.json",
+      "WORK/ghidra/sim_jump_world/skipped.json",
       "WORK/ghidra/sim_mode_reset/reuse.json",
       "WORK/ghidra/sim_mode_reset/skipped.json",
       "WORK/ghidra/sim_movecontrol/reuse.json",
@@ -1615,8 +1741,11 @@
       "WORK/ghidra/sim_multipart_initializer/skipped.json",
       "WORK/ghidra/sim_noclip_receiver/reuse.json",
       "WORK/ghidra/sim_noclip_receiver/skipped.json",
+      "WORK/ghidra/sim_registration_adapters/reuse.json",
+      "WORK/ghidra/sim_registration_more/skipped.json",
       "WORK/ghidra/sim_registry_scheduler_owner/reuse.json",
       "WORK/ghidra/sim_registry_scheduler_owner/skipped.json",
+      "WORK/ghidra/sim_replay_registration/skipped.json",
       "WORK/ghidra/sim_scheduler_factory/reuse.json",
       "WORK/ghidra/sim_scheduler_factory/skipped.json",
       "WORK/ghidra/sim_shape_bounds/reuse.json",
@@ -1671,14 +1800,6 @@
       "WORK/full_sim/mobtravel_hash_refs.json",
       "WORK/walking_flight/mob_travel_hash_refs.json"
     ],
-    "c60e1d7eb40a59378fea452e75c2ec27fbd2c7509a722d1108ed9a23d1202d20": [
-      "WORK/full_sim/mobtravel_refs/00000001418EEEA0.asm",
-      "WORK/physics/ASSEMBLY/00000001418EEEA0.asm"
-    ],
-    "1cc3aa6dbe913856db20fd8e3800f90bcb33b8fd9b2601f2450c818e528b45cc": [
-      "WORK/full_sim/mobtravel_refs/00000001418EEEA0.json",
-      "WORK/physics/ASSEMBLY/00000001418EEEA0.json"
-    ],
     "2c26e68eb22a78cd437bde8e8b95ff6597e221b54073fa40b98266555455485c": [
       "WORK/full_sim/mobtravel_refs/000000014192C9F0.asm",
       "WORK/full_sim/types/exports/000000014192C9F0.asm",
@@ -1705,6 +1826,14 @@
       "WORK/full_sim/mobtravel_refs/0000000141C88CE0.json",
       "WORK/physics/drag_factory/ASSEMBLY/0000000141C88CE0.json"
     ],
+    "fbadc7d8c877fa218daa07e21ef1dd628cc2a6ee12605a1b1ad22f3a75eb37cf": [
+      "WORK/full_sim/mobtravel_refs/0000000141C8ADD0.asm",
+      "WORK/registration_continuation/types/exports/0000000141C8ADD0.asm"
+    ],
+    "7ab1abd0362b4669d7ee67103fcfbccbf317f885c646cfbd8edafb001a99faf5": [
+      "WORK/full_sim/mobtravel_refs/0000000141C8ADD0.json",
+      "WORK/registration_continuation/types/exports/0000000141C8ADD0.json"
+    ],
     "e18814192d43407902376eee17de404fd76402573ba89356afec0a3aa0b8ab36": [
       "WORK/full_sim/mobtravel_refs/0000000141C8B260.asm",
       "WORK/physics/drag_factory/ASSEMBLY/0000000141C8B260.asm"
@@ -1713,12 +1842,21 @@
       "WORK/full_sim/mobtravel_refs/0000000141C8B260.json",
       "WORK/physics/drag_factory/ASSEMBLY/0000000141C8B260.json"
     ],
+    "7b40e86befaa877b5c706470daa4793c3f7256beeeb5e178edbf1ea499bfc895": [
+      "WORK/full_sim/mobtravel_refs/0000000141C8BFC0.asm",
+      "WORK/registration_continuation/types/exports/0000000141C8BFC0.asm"
+    ],
+    "a2de0062f110527333ded6147e25a0481ade5456407e68401d006bee2cc96871": [
+      "WORK/full_sim/mobtravel_refs/0000000141C8BFC0.json",
+      "WORK/registration_continuation/types/exports/0000000141C8BFC0.json"
+    ],
     "98ef2e6f25f1b2c3de27431d21c45fa847e43d13724c9220d559caf4f1b31264": [
       "WORK/full_sim/types/collisions.csv",
       "WORK/gravity_types/collisions.csv",
       "WORK/history_writer/types/collisions.csv",
       "WORK/movement_types/collisions.csv",
       "WORK/physics/type_verification/collisions.csv",
+      "WORK/registration_continuation/types/collisions.csv",
       "WORK/type_metadata/collisions.csv"
     ],
     "4c88919e7f0b774368668d77abdbc1921c7e0d1f967af9ef1d3f26794e801480": [
@@ -1727,6 +1865,7 @@
       "WORK/history_writer/types/decoded_hash_xrefs.csv",
       "WORK/movement_types/decoded_hash_xrefs.csv",
       "WORK/physics/type_verification/decoded_hash_xrefs.csv",
+      "WORK/registration_continuation/types/decoded_hash_xrefs.csv",
       "WORK/type_metadata/decoded_hash_xrefs.csv"
     ],
     "32ae9dbd345134f8567b29530bdf87d82500d0cf3cf6c3a240079bdd25716ff7": [
@@ -1735,6 +1874,7 @@
       "WORK/history_writer/types/exports/00000001402DA100.json",
       "WORK/movement_types/exports/00000001402DA100.json",
       "WORK/physics/type_verification/exports/00000001402DA100.json",
+      "WORK/registration_continuation/types/exports/00000001402DA100.json",
       "WORK/type_metadata/exports/00000001402DA100.json"
     ],
     "e36b87ddc846997a649cd85b2bc6b3639c330a3bce3b68f4c1b7e0f1a0595b04": [
@@ -1743,6 +1883,7 @@
       "WORK/history_writer/types/exports/00000001402E2130.json",
       "WORK/movement_types/exports/00000001402E2130.json",
       "WORK/physics/type_verification/exports/00000001402E2130.json",
+      "WORK/registration_continuation/types/exports/00000001402E2130.json",
       "WORK/type_metadata/exports/00000001402E2130.json"
     ],
     "0bc282036ceb0b02574d3c6253b45ff7d5d2700f2b28ee5257a1207608d5ce70": [
@@ -1751,6 +1892,7 @@
       "WORK/history_writer/types/exports/00000001402F16A0.json",
       "WORK/movement_types/exports/00000001402F16A0.json",
       "WORK/physics/type_verification/exports/00000001402F16A0.json",
+      "WORK/registration_continuation/types/exports/00000001402F16A0.json",
       "WORK/type_metadata/exports/00000001402F16A0.json"
     ],
     "86b55c292c65e4a28d1c914a8fbfe81ff093e79a2f44a1b883c847b85a46d8d7": [
@@ -1759,6 +1901,7 @@
       "WORK/history_writer/types/exports/00000001407852B0.json",
       "WORK/movement_types/exports/00000001407852B0.json",
       "WORK/physics/type_verification/exports/00000001407852B0.json",
+      "WORK/registration_continuation/types/exports/00000001407852B0.json",
       "WORK/type_metadata/exports/00000001407852B0.json"
     ],
     "f91bad9b2c96ad6ed8b5fb34da49cc12dd6c523f7a46071dd867b1894f56ff91": [
@@ -1784,6 +1927,14 @@
     "aff2fc4b65e546f6bfe7b13c75b7a97ec558f37c69283612d264771ac28cc965": [
       "WORK/full_sim/types/exports/0000000140E44E60.json",
       "WORK/type_metadata/exports/0000000140E44E60.json"
+    ],
+    "ff3dc15ae67add420969d5767647c8eaa0dcfd182c0f1a4f8386aecde139656d": [
+      "WORK/full_sim/types/exports/0000000140E4AAE0.asm",
+      "WORK/registration_continuation/types/exports/0000000140E4AAE0.asm"
+    ],
+    "ca08fcf314eb92255869f61717266d512a4498a69537e86f4aba97a9daac4678": [
+      "WORK/full_sim/types/exports/0000000140E4AAE0.json",
+      "WORK/registration_continuation/types/exports/0000000140E4AAE0.json"
     ],
     "230d775aad0130f88caac2965875f7dcfd200f21ab84b9c1488ab9f89222f981": [
       "WORK/full_sim/types/exports/000000014192EF50.asm",
@@ -1815,6 +1966,7 @@
       "WORK/history_writer/types/exports/0000000141945E00.json",
       "WORK/movement_types/exports/0000000141945E00.json",
       "WORK/physics/type_verification/exports/0000000141945E00.json",
+      "WORK/registration_continuation/types/exports/0000000141945E00.json",
       "WORK/type_metadata/exports/0000000141945E00.json"
     ],
     "b4bfa995ce195964af7d56fc223d585b2c6a622db17cdbdc511276f263178a63": [
@@ -1823,6 +1975,7 @@
       "WORK/history_writer/types/exports/0000000142503410.json",
       "WORK/movement_types/exports/0000000142503410.json",
       "WORK/physics/type_verification/exports/0000000142503410.json",
+      "WORK/registration_continuation/types/exports/0000000142503410.json",
       "WORK/type_metadata/exports/0000000142503410.json"
     ],
     "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": [
@@ -1936,6 +2089,14 @@
     "c55318c21e060361bd003875426bfd1b1871e539a8da97d16b5588ca80357ee7": [
       "WORK/physics/drag_factory/ASSEMBLY/0000000141C875C0.json",
       "WORK/physics/gravity_candidates/0000000141C875C0.json"
+    ],
+    "79426c576e80cc734083ee2a973d42b984373c49b5ae92b43f0c742fcdf34d6a": [
+      "WORK/registration_continuation/types/exports/0000000146656CB0.asm",
+      "WORK/type_metadata/exports/0000000146656CB0.asm"
+    ],
+    "1a3e8f2c6e5640eb0e7de0ac3890ba53b0ead700afa834d668091823a0f2bf4a": [
+      "WORK/registration_continuation/types/exports/0000000146656CB0.json",
+      "WORK/type_metadata/exports/0000000146656CB0.json"
     ]
   }
 }

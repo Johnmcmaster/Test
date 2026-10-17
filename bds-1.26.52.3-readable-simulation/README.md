@@ -2,7 +2,7 @@
 
 The latest [registration and MobJump continuation](REPORTS/REGISTRATION_AND_JUMP.md)
 resolves selected replay workers to concrete movement methods and adds readable
-MobJump decisions, impulse and area-query helpers. Its two suites pass28,462
+MobJump decisions, impulses, material queries and delay handling. Its two suites pass28,462
 original-instruction comparisons. Full tick/history/authority remain unfinished.
 
 This project contains **readable, compilable C++ reconstructed from native BDS movement stages**, targeted Ghidra decompilations, verified Java kernels and a Geyser source hook. The full simulator remains unfinished and reports `SimulationResult.Unavailable`. Start with [READABLE_SIMULATION/README.md](READABLE_SIMULATION/README.md) and [REPORTS/FULL_SIM_CONTINUATION.md](REPORTS/FULL_SIM_CONTINUATION.md).
