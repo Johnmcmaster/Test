@@ -1,5 +1,10 @@
 # Movement architecture at this checkpoint
 
+Selected replay workers are now bound to concrete virtual28 movement systems.
+Readable MobJump decisions and actual control/effect impulse, area-query helper
+and ground-request tail preserve the distinction between requesting a jump and
+applying its impulse. See REPORTS/REGISTRATION_AND_JUMP.md for exact evidence.
+
 Native code separates client input, simulation state, geometry requests, residual selection and network messages. The readable C++ stages and recovered Java library preserve those boundaries. A complete simulator remains unavailable while the remaining provider, authority and execution dependencies are missing.
 
 | Layer | Concrete evidence | Remaining dependency |

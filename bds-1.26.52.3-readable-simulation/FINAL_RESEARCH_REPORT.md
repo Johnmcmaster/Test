@@ -1,5 +1,11 @@
 # Native movement simulation reconstruction — current checkpoint
 
+The [registration and jump continuation](REPORTS/REGISTRATION_AND_JUMP.md) binds
+selected replay workers through141919F20 to actual collision/jump/default movement
+methods. Registration passes3,280 comparisons; MobJump and its two helpers pass
+14,830. Ground-request tail146620D90 is separately reconstructed. Full scheduler,
+history, authority and production Geyser integration remain unfinished.
+
 The [scheduler continuation](REPORTS/SCHEDULER_CONTINUATION.md) identifies the
 server/client-labeled collection factory and constructed interfaces. The actual
 untimed replay wrapper/dispatcher/closure chain passes2,060 native comparisons
@@ -33,7 +39,7 @@ the constructed NoClip world callback and reconstructs more lava/fluid/flying
 and speed-source code. It adds31,004 native comparisons with zero mismatches and
 seven NaN payload differences. Full simulator composition remains open.
 
-The seven readable C++ suites total 170,390 bounded comparisons across 49 variants.
+The nine readable C++ suites total 188,500 bounded comparisons across 62 variants.
 These counts describe finite fixtures, not a measured percentage of the simulator.
 
 Status: **new native stages reconstructed into compilable readable C++; full simulator, anti-cheat and complete Geyser port remain unfinished**. This continuation used targeted Ghidra, Capstone and original-instruction harnesses directly, without agents. It preserves the earlier kernels and precise unresolved dependencies.

@@ -7,6 +7,13 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
 
 ## Proven since the previous checkpoint
 
+- Selected replay workers now resolve through141919F20 to actual collision,
+  MobJump and default ground/air/flying bulk methods. Membership/registration
+  flags pass3,280 original comparisons. MobJump146620E20 and helpers146620C10/
+  141C64CE0 pass14,830, including tail146620D90 marker creation. Raw input/flag
+  ownership, real JumpControl objects, field10 decrement and outer history remain
+  open. See REPORTS/REGISTRATION_AND_JUMP.md.
+
 - New factory140794160 constructs server/client-labeled ticking collections via
   14256D570/14469BAD0. The actual untimed replay chain now has readable code and
   2,060 passing original-entry comparisons, including stored order, duplicate-ID
@@ -54,8 +61,8 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
   the temporary block-shape vector has24-byte AABBs.
 - Effect constructor/indexed stores independently identify Jump Boost8,
   Levitation24 and Slow Falling27. The reduced-gravity slot is no longer unnamed.
-- The seven readable C++ suites pass 170,390 bounded comparisons across 49
-  variants. The full Ghidra index has 568 exports/325 entry VAs; successful export
+- The nine readable C++ suites pass 188,500 bounded comparisons across 49
+  variants. The full Ghidra index has 623 exports/352 entry VAs; successful export
   is not semantic completeness. The 64,621-case core suite was rerun after the
   shared component-header additions and remains passing.
 

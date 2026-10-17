@@ -95,6 +95,12 @@ B.extend([
 ('CategoryDispatcherAccessPrefix',0x14256f110,0x14256f114,0x14256f118,'rcx',0x60,'Distinct installed virtual28; alternate category begin50/end58.'),
 ('CategoryRecordAccessPrefix',0x1425705d0,0x142570600,0x142570600,'rdi',0x18,'RDI scans38-byte records from supplied span; WORDtoken00.'),
 ('CategoryRecordAccessPrefix',0x1425705d0,0x1425706b6,0x1425706ba,'rdi',0x18,'First matching category; loadsDWORD-ID begin08/end10.'),
+('MobJumpComponent',0x146620e20,0x146620ecc,0x1466213ce,'rsi',0x14,'Argument16 saved inRSI at146620E78; required view146656250 requests C52C8F78, per-entity adapter1466563F0 forwards MobJump payload. Branches preserve this callee-saved pointer until each epilogue.'),
+('StateVectorComponent',0x146620e20,0x146620ecc,0x146620f84,'r12',0x24,'Argument17 saved inR12; StateVector required-store binding1B5D5238; motionY write before temporary R12 pool-use at0F8C.'),
+('StateVectorComponent',0x146620e20,0x146621033,0x14662103c,'r12',0x24,'State pointer restored at146620FB6 after temporary optional-pool check; guarded motionY zero.'),
+('StateVectorComponent',0x146620e20,0x14662126b,0x146621288,'r12',0x24,'Increment path reads ordinaryXYZ and motionY then updatesY; no predicted/client position substituted.'),
+('MobJumpComponent',0x146620d90,0x146620e12,0x146620e12,'rsi',0x14,'Tail target saves its second argument toRSI atD96; field10=10 after ensuring JumpFromGroundRequest storage.'),
+('StateVectorComponent',0x146620c10,0x146620d7e,0x146620d7e,'rsi',0x24,'Fifth argument StateVector saved inRSI; final motionY=control/effect result store.'),
 ])
 rows=[]
 for component,va,start,end,reg,limit,proof in B:

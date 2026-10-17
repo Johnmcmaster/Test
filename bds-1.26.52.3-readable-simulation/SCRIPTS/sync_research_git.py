@@ -41,7 +41,7 @@ def main():
         if rel.parts[0] != 'DOWNLOADS' and (root / rel).is_file():
             selected.add(root / rel)
     for name in ['READABLE_SIMULATION', 'SCRIPTS', 'REPORTS', 'DATA',
-                 'ASSEMBLY', 'DECOMPILATION', 'WORK/ghidra','WORK/scheduler_continuation']:
+                 'ASSEMBLY', 'DECOMPILATION', 'WORK/ghidra','WORK/scheduler_continuation','WORK/registration_continuation']:
         selected.update(p for p in (root / name).rglob('*') if p.is_file())
     selected.update(p for p in root.iterdir() if p.is_file())
     for name in ['WORK/full_sim/shapes_smoke.json',

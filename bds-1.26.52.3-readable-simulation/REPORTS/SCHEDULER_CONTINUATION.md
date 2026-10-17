@@ -1,5 +1,10 @@
 # Constructed system collections and executable replay category pass
 
+This report preserves the earlier dispatcher checkpoint. Selected workers that
+were unresolved here are now bound to141919F20 and actual virtual28 movement
+methods. See [REGISTRATION_AND_JUMP.md](REGISTRATION_AND_JUMP.md) for that later
+evidence. Historical restoration and the outer replay loop remain unresolved.
+
 This continuation adds two concrete construction functions and a readable,
 compilable version of the **bounded untimed replay category dispatch path**.
 All2,060 original-entry comparisons pass. Actual native wrapper, dispatcher,

@@ -1,5 +1,10 @@
 # Replay and correction architecture
 
+Selected workers at1446B7B1D now resolve through141919F20 to actual collision,
+MobJump and default ground/air/flying virtual28 methods. Their replay-category
+membership is independently traced. See REPORTS/REGISTRATION_AND_JUMP.md.
+The outer historical restoration/resimulation loop remains unresolved.
+
 The bounded untimed replay category path now has readable C++ and2,060 passing
 original-entry comparisons. Actual wrapper, dispatcher, closure and cleanup run
 with explicit registered-worker/hook backends. Construction now has server/client

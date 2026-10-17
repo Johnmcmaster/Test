@@ -4,6 +4,14 @@ Registration order is used as execution evidence only where the actual dispatche
 
 ## Dispatcher semantics retained and checked
 
+The latest registration investigation proves flag0001 appends to38/40 and0100
+to50/58; repeated tokens append repeated DWORD IDs. Ten actual entry/adaptor
+variants pass3,280 comparisons. Selected collision/jump/default-movement workers
+dispatch through141919F20 into concrete virtual28 methods and have independently
+proved replay membership. Dependency callbacks and later list finalization remain
+separate; this does not establish a whole-tick order. See
+REPORTS/REGISTRATION_AND_JUMP.md.
+
 The actual untimed14469C820→14256F0E0→1425705D0→1446B7AC0 chain now passes2,060
 original-entry comparisons against readable C++. First matching category, stored
 DWORD-ID order, repeated IDs and before/worker/after hooks are checked. New

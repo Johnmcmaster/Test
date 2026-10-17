@@ -1,0 +1,50 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_default_registration_closure",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_default_registration_closure/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_default_registration_closure/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_default_registration_closure_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-17T06:02:03.917030+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_default_registration_closure",
+  "exit_code": 0,
+  "completed_utc": "2026-10-17T06:02:07.644069+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_default_registration_closure/0x14086b7b0_FUN_14086b7b0.c",
+      "bytes": 828,
+      "sha256": "6aab0c367c39065c79a7b1a2cab8ec6531dc7d508c90b23acac7e97bd2a46ffe",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_default_registration_closure/0x1419292b0_FUN_1419292b0.c",
+      "bytes": 2933,
+      "sha256": "dece3bb0f083d761e4f2c133bcb40e512a7c0c072e4cd915b2b8d053e07340b0",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_default_registration_closure/0x146620d90_FUN_146620d90.c",
+      "bytes": 1104,
+      "sha256": "b9e914ae72621aaf0d9f5b5d39a9a846d81a2901d1175a941bdb428300eca6a2",
+      "failed": false
+    }
+  ],
+  "expected_targets": 3,
+  "successful_exports": 3
+}

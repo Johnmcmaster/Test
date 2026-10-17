@@ -1,0 +1,68 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_registration_more",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_registration_more/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_registration_more/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_registration_more_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-17T05:57:46.585026+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_registration_more",
+  "exit_code": 0,
+  "completed_utc": "2026-10-17T05:57:50.485995+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_registration_more/0x1418e60f0_FUN_1418e60f0.c",
+      "bytes": 1712,
+      "sha256": "3997ac2e6f6139dfc2a40547f44082714c064234279540403ca4457e03b553dc",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_registration_more/0x1418e7270_FUN_1418e7270.c",
+      "bytes": 1686,
+      "sha256": "3117ab2355b84709014e347c0a9bd69c8a10240c60d8c5ca518d76af64e2527d",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_registration_more/0x1418e9a50_FUN_1418e9a50.c",
+      "bytes": 1686,
+      "sha256": "3ef5e863cee0e44543135acee56e4373c11de3db12c0163c44fcfefcc00d2d8b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_registration_more/0x1418e9b60_FUN_1418e9b60.c",
+      "bytes": 9189,
+      "sha256": "9053009c9dd6eafb829f98c728da7836c6a641325d71b3b2941de6106554ac9f",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_registration_more/0x141926d30_FUN_141926d30.c",
+      "bytes": 2082,
+      "sha256": "13f2e30495e806c0000a8c447433251db994e2482b33844026bc659474efefca",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_registration_more/0x146656840_FUN_146656840.c",
+      "bytes": 5004,
+      "sha256": "76199585b28e7717b38bb3a7140f8347c7503826548f27f810f9c21d63ec8ee6",
+      "failed": false
+    }
+  ],
+  "expected_targets": 6,
+  "successful_exports": 6
+}

@@ -1,0 +1,107 @@
+{
+  "start": "0x14256f1d0",
+  "rva": "0x256f1d0",
+  "end": "0x14256f27e",
+  "size": 174,
+  "requested_va_is_range_start": true,
+  "decoded_bytes": 174,
+  "calls_and_jumps": [
+    {
+      "site": "0x14256f262",
+      "kind": "jmp",
+      "target": "0x14256f26e",
+      "operand": "0x14256f26e",
+      "resolved": true
+    }
+  ],
+  "memory_operands": [
+    {
+      "site": "0x14256f1de",
+      "instruction": "mov r8, qword ptr [rcx + 0x68]",
+      "base": "rcx",
+      "disp": "0x68",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14256f1e2",
+      "instruction": "mov r9, qword ptr [rcx + 0x70]",
+      "base": "rcx",
+      "disp": "0x70",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14256f22e",
+      "instruction": "lea r9, [r8 + r9*8]",
+      "base": "r8",
+      "disp": "0x0",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14256f232",
+      "instruction": "mov r8, qword ptr [rcx + 0x88]",
+      "base": "rcx",
+      "disp": "0x88",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14256f239",
+      "instruction": "nop dword ptr [rax]",
+      "base": "rax",
+      "disp": "0x0",
+      "size": 4,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14256f240",
+      "instruction": "mov rax, qword ptr [r9]",
+      "base": "r9",
+      "disp": "0x0",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14256f24d",
+      "instruction": "lea r9, [r8 + rax]",
+      "base": "r8",
+      "disp": "0x0",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14256f251",
+      "instruction": "cmp dword ptr [r8 + rax + 8], edx",
+      "base": "r8",
+      "disp": "0x8",
+      "size": 4,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14256f25b",
+      "instruction": "mov rcx, qword ptr [rcx + 0x90]",
+      "base": "rcx",
+      "disp": "0x90",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14256f264",
+      "instruction": "mov rcx, qword ptr [rcx + 0x90]",
+      "base": "rcx",
+      "disp": "0x90",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x14256f26e",
+      "instruction": "lea rdx, [r8 + 0x10]",
+      "base": "r8",
+      "disp": "0x10",
+      "size": 8,
+      "rip_target": ""
+    }
+  ]
+}

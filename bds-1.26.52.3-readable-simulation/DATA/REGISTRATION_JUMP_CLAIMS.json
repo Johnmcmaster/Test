@@ -1,0 +1,92 @@
+[
+  {
+    "id": "REG-LISTS",
+    "va": "0x14256e1c0",
+    "start": "0x14256ea50",
+    "end": "0x14256eb26",
+    "claim": "Registration assigns worker ID from the prior16-byte handle count and appends by two independent flag bits",
+    "detail": "SHR4 creates insertedSystemId. Bit0 selects38/40 category span; bit8 selects50/58. Original14256FDD0 finds first token record or constructs a zeroed38-byte record. Repeated input tokens append duplicate DWORD IDs. Empty-dependency metadata path and ten actual entry/adaptor variants pass3280 original-entry cases.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "REG-CONCRETE-WORKER",
+    "va": "0x141919f20",
+    "start": "0x141919f20",
+    "end": "0x141919f35",
+    "claim": "Selected replay-category workers use a concrete adapter through their installed virtual28 tick methods",
+    "detail": "14A7E5390 and14A8BE440 both have slot10=141919F20; actual factory vptr stores and replay-inclusive registration bind MoveCollision and MobJump workers. Adapter saves registry by value on stack then passes its address to virtual28. Full native worker tables are not inferred from a generic callback name.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "REG-MOBJUMP-REPLAY",
+    "va": "0x1418eeea0",
+    "start": "0x1418f036f",
+    "end": "0x1418f03d9",
+    "claim": "MobJumpSystem is supplied to the replay-inclusive four-token helper with primary flags1",
+    "detail": "Vptr14A8BE440 store at1418F0376, worker-handle movement03AF..3C1 and actual14469CCD0 call03D9; helper includes token14CCB1044. Installed virtual28 is146656840. This is category membership, not an outer replay tick schedule.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "REG-DEFAULT-REPLAY",
+    "va": "0x1418eeea0",
+    "start": "0x1418f27ad",
+    "end": "0x1418f2b33",
+    "claim": "Default ground, air and player-flying children use the concrete replay-inclusive registration closure",
+    "detail": "Stores closure table14A75E470 and collection capture atframeFF0/FF8; frame1028 points to that closure. Later14086B7B0/capture argument is passed to144833020 atF2B33. Table10=1419292B0 calls1418E7270(flags1), then141924530 whose span includes1044. Native closure/invocation/registration executes in variants8/9. Unrelated1418E60F0 uses a different helper and must not be substituted for this installed closure.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "JUMP-GUARDS",
+    "va": "0x146620e20",
+    "start": "0x146620ecc",
+    "end": "0x146620f89",
+    "claim": "MobJump consumes byte0C only when exactly1 and has separate guarded zero/0.15 vertical writes",
+    "detail": "Exact1 clears byte0C and selects0.028 instead of0.04. Raw actor bit57 without HeadInWater, or0<SwimAmount00<1, returns after clearing motionY only if WasInWater is present. Two raw masks of actor qword08 select motionY0.15 and field10=10. These masks are not assigned guessed game-mode meanings.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "JUMP-PLAYER-BLOCK",
+    "va": "0x146620e20",
+    "start": "0x14662113b",
+    "end": "0x1466213c5",
+    "claim": "Player-only branches assign motionY0.20 from raw flags and block/powder-snow dependencies",
+    "detail": "After Player membership succeeds, raw actor bit18 immediately selects0.20; bit19 queries floor(StateX,AABBminY,StateZ). Block-type flags130 bit33 also selects0.20. With either powder-snow standing membership, independently named powder_snow identifier14CCDB6E0 can select that write. Other input and permission producers remain unproved.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "JUMP-IMPULSE",
+    "va": "0x146620c10",
+    "start": "0x146620c10",
+    "end": "0x146620d7e",
+    "claim": "Jump impulse records ordinary XYZ and replaces motionY using actual control/effect inputs",
+    "detail": "Copies StateVector00/08 to MobJump00/08, chooses0.20 for Squid or default0.42, with optional JumpControl dense+50 virtual28 for non-Squid. Adds(float(effect20)+1)*0.1 when the slot selected from14CCB6CB8 exists and record00 differs from14CCB6DA8 sentinel; JumpBoost ID8 established separately. Original numerical helper executes inside main and standalone comparisons.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "JUMP-GROUND-MARKER",
+    "va": "0x146620d90",
+    "start": "0x146620d90",
+    "end": "0x146620e12",
+    "claim": "The grounded branch queues/ensures JumpFromGroundRequest and sets MobJump field10 to10",
+    "detail": "MainE20 restores its stack then tail-JMPs to146620D90 at14662131F when OnGround is present and field10 iszero after area predicate false. D90 retrieves4EA8C276 storage, conditionally inserts entity, then writes field10=10. It does not apply the ground impulse. Existing14661F790 is a separate request consumer; guaranteed phase ordering still needs evidence.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  },
+  {
+    "id": "JUMP-AREA",
+    "va": "0x141c64ce0",
+    "start": "0x141c64d39",
+    "end": "0x141c64eeb",
+    "claim": "Jump area predicate queries contracted/collapsed bounds before ordered SubBBs",
+    "detail": "ImmuneToLavaDrag membership bypasses queries and returns false. Otherwise it contracts X/Z by0.1 andY by0.4, collapses crossed axes to original midpoint, applies native MINSS/MAXSS ordering, queries world virtual40(selector6), then stops on the first true SubBBs query. Constructed14A753900+40 resolves141600A50; that body performs material-byte cuboid scanning, not solid-block collision.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/REGISTRATION_VALIDATION.json; DATA/JUMP_CONTROLLER_VALIDATION.json; REPORTS/REGISTRATION_AND_JUMP.md"
+  }
+]

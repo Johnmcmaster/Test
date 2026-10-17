@@ -13,6 +13,19 @@ are adapters; their C++ layouts are not asserted to be native layouts.
 
 ## Recovered routines
 
+`NativeJumpController.{h,cpp}` reconstructs146620E20,146620C10 and141C64CE0,
+including marker-ensure tail146620D90 as an explicit ECS boundary.14,830 original
+comparisons verify composed decisions, writes, query arguments and counters.
+`NativeRegistration.{h,cpp}` passes3,280 comparisons of10 actual entry/adaptor
+variants. See [the report](../REPORTS/REGISTRATION_AND_JUMP.md) for scope.
+
+From the project root:
+
+```sh
+python SCRIPTS/verify_registration.py /path/bedrock_server.exe --cases 3000
+python SCRIPTS/verify_jump_controller.py /path/bedrock_server.exe --cases 4000
+```
+
 | Native entry | Readable function | Verified behavior |
 | --- | --- | --- |
 | `144832A50` | `default_move_144832a50` | Normalize/scale input, yaw-rotate acceleration, update motion, select block-dependent friction scalar |
@@ -185,7 +198,7 @@ python SCRIPTS/verify_replay_category.py /path/bedrock_server.exe --cases 2000
 See[SCHEDULER_CONTINUATION.md](../REPORTS/SCHEDULER_CONTINUATION.md) for conditions
 and remaining history/scheduler gaps.
 
-Across all seven readable C++ suites,170,390 bounded comparisons pass across49
+Across all nine readable C++ suites,188,500 bounded comparisons pass across62
 variants. Seven NaN payload differences occur in the environment suite. These
 counts are not unique server states, full ticks or a coverage percentage. The
 remaining derived providers, complete world/authority model and scheduler/replay

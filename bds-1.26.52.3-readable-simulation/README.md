@@ -1,5 +1,10 @@
 # BDS 1.26.52.3 readable native movement reconstruction
 
+The latest [registration and MobJump continuation](REPORTS/REGISTRATION_AND_JUMP.md)
+resolves selected replay workers to concrete movement methods and adds readable
+MobJump decisions, impulse and area-query helpers. Its two suites pass18,110
+original-instruction comparisons. Full tick/history/authority remain unfinished.
+
 This project contains **readable, compilable C++ reconstructed from native BDS movement stages**, targeted Ghidra decompilations, verified Java kernels and a Geyser source hook. The full simulator remains unfinished and reports `SimulationResult.Unavailable`. Start with [READABLE_SIMULATION/README.md](READABLE_SIMULATION/README.md) and [REPORTS/FULL_SIM_CONTINUATION.md](REPORTS/FULL_SIM_CONTINUATION.md).
 
 Source is committed in [Johnmcmaster/Test, branch bds-readable-simulation-20261015](https://github.com/Johnmcmaster/Test/tree/bds-readable-simulation-20261015/bds-1.26.52.3-readable-simulation). The first pushed source commit is `0fd7c33`; subsequent commits retain the supporting exports and reports. Earlier published artifacts remain intact.
@@ -12,7 +17,7 @@ The original Windows executable was independently verified: 223,223,112 bytes, i
 
 - The actual untimed replay category chain now has readable C++ and **2,060 passing native comparisons**. New factory evidence binds labeled server/client ticking collections to their constructed dispatcher interfaces. See [SCHEDULER_CONTINUATION.md](REPORTS/SCHEDULER_CONTINUATION.md). Historical restoration and resimulation remain unresolved.
 
-- Two forwarded geometry bodies and their local helpers now have readable C++ and **34,944 passing original-entry comparisons**. The actual installed dispatch paths execute in the tests. See [FORWARDED_COLLISION_SHAPES.md](REPORTS/FORWARDED_COLLISION_SHAPES.md). The seven readable C++ suites total **170,390 bounded comparisons across 49 variants**; these are fixtures, not full ticks or a coverage percentage.
+- Two forwarded geometry bodies and their local helpers now have readable C++ and **34,944 passing original-entry comparisons**. The actual installed dispatch paths execute in the tests. See [FORWARDED_COLLISION_SHAPES.md](REPORTS/FORWARDED_COLLISION_SHAPES.md). The nine readable C++ suites total **188,500 bounded comparisons across 62 variants**; these are fixtures, not full ticks or a coverage percentage.
 
 - Moving multipart collision emission has readable C++, its concrete virtual258 callback, direction-table initialization and constructor/table proof. **12,632 original-entry comparisons pass** with zero mismatches. See [MULTIPART_COLLISION_SHAPES.md](REPORTS/MULTIPART_COLLISION_SHAPES.md). Seven NaN payload differences remain confined to the earlier environment suite.
 
