@@ -154,7 +154,23 @@ direction stores, virtual258 and emission arithmetic execute. Indices outside
 the proved native tables are `nullopt` in the research adapter, not a native
 validation policy. See[MULTIPART_COLLISION_SHAPES.md](../REPORTS/MULTIPART_COLLISION_SHAPES.md).
 
-Across all five readable C++ suites,133,386 bounded comparisons pass across42
+## Recovered forwarded bodies
+
+`NativeForwardedShapes.cpp` recovers146614A70 and its two local-box helpers,
+plus the separate148B33800 five-box provider. The native141A2CA60 dispatch chains
+execute with their actual constructor-bound tables in the oracle. Raw property
+selectors retain their observed width and signedness, without guessed names.
+
+```sh
+python SCRIPTS/verify_forwarded_binding.py /path/bedrock_server.exe .
+python SCRIPTS/verify_forwarded_shapes.py /path/bedrock_server.exe --cases 2000
+```
+
+All34,944 cases pass; only property fallback getters and vector growth are
+supplied backends. See[FORWARDED_COLLISION_SHAPES.md](../REPORTS/FORWARDED_COLLISION_SHAPES.md)
+for branch tables, data flow, exact instructions and limits.
+
+Across all six readable C++ suites,168,330 bounded comparisons pass across48
 variants. Seven NaN payload differences occur in the environment suite. These
 counts are not unique server states, full ticks or a coverage percentage. The
 remaining derived providers, complete world/authority model and scheduler/replay

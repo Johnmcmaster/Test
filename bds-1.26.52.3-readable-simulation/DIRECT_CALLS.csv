@@ -4460,7 +4460,7 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x141a23510,0x141a235bb,call,0x142cea4b0,0x142cea4b0,direct,ASSEMBLY/0000000141A23510.asm,45,,
 0x141a23510,0x141a235d0,call,0x144c50eb0,0x144c50eb0,direct,ASSEMBLY/0000000141A23510.asm,51,,
 0x141a23510,0x141a23738,call,0x14a110760,0x14a110760,direct,ASSEMBLY/0000000141A23510.asm,139,,
-0x141a2ca60,0x141a2ca75,call,0x146614a70,qword ptr [rip + 0x937d7a5],conditional_known_target,ASSEMBLY/0000000141A2CA60.asm,7,When receiver uses constructor-bound14A8BC7B0; other forwarding providers remain separate,DATA/DERIVED_BLOCK_BINDING.json
+0x141a2ca60,0x141a2ca75,call,0x146614a70;0x148b33800,qword ptr [rip + 0x937d7a5],conditional_known_targets,ASSEMBLY/0000000141A2CA60.asm,7,Constructor-installed14A8BC7B0/14A949430 virtual38 only; other forwarding providers remain separate,DATA/DERIVED_BLOCK_BINDING.json; DATA/FORWARDED_PROVIDER_BINDING.json
 0x141a2e090,0x141a2e0d3,call,0x141a1fef0,0x141a1fef0,direct,ASSEMBLY/0000000141A2E090.asm,17,,
 0x141a2e090,0x141a2e135,call,0x141a2e180,0x141a2e180,direct,ASSEMBLY/0000000141A2E090.asm,34,,
 0x141a2e090,0x141a2e148,call,0x141a2e700,0x141a2e700,direct,ASSEMBLY/0000000141A2E090.asm,38,,
@@ -9424,6 +9424,14 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x146612ef0,0x146612fc5,call,0x141a28990,0x141a28990,direct,ASSEMBLY/0000000146612EF0.asm,44,,
 0x146612ef0,0x146613004,call,0x14a0f9b60,0x14a0f9b60,direct,ASSEMBLY/0000000146612EF0.asm,61,,
 0x146612ef0,0x14661302a,call,,qword ptr [rip + 0x479d820],indirect_unresolved,ASSEMBLY/0000000146612EF0.asm,75,,
+0x146614190,0x146614281,call,,qword ptr [rip + 0x4795f99],indirect_unresolved,ASSEMBLY/0000000146614190.asm,72,,
+0x146614190,0x14661436b,call,,qword ptr [rip + 0x4795eaf],indirect_unresolved,ASSEMBLY/0000000146614190.asm,134,,
+0x146614190,0x1466144b2,call,,qword ptr [rip + 0x4795d68],indirect_unresolved,ASSEMBLY/0000000146614190.asm,215,,
+0x146614190,0x146614638,call,0x14a110760,0x14a110760,direct,ASSEMBLY/0000000146614190.asm,318,,
+0x146614640,0x146614731,call,,qword ptr [rip + 0x4795ae9],indirect_unresolved,ASSEMBLY/0000000146614640.asm,73,,
+0x146614640,0x14661481d,call,,qword ptr [rip + 0x47959fd],indirect_unresolved,ASSEMBLY/0000000146614640.asm,134,,
+0x146614640,0x1466148ff,call,,qword ptr [rip + 0x479591b],indirect_unresolved,ASSEMBLY/0000000146614640.asm,195,,
+0x146614640,0x146614a67,call,0x14a110760,0x14a110760,direct,ASSEMBLY/0000000146614640.asm,290,,
 0x146614a70,0x146614b97,call,,qword ptr [rip + 0x4795683],indirect_unresolved,ASSEMBLY/0000000146614A70.asm,79,,
 0x146614a70,0x146614c7b,call,0x1404d59a0,0x1404d59a0,direct,ASSEMBLY/0000000146614A70.asm,134,,
 0x146614a70,0x146614c88,call,0x146614190,0x146614190,direct,ASSEMBLY/0000000146614A70.asm,137,,

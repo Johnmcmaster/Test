@@ -7,6 +7,13 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
 
 ## Proven since the previous checkpoint
 
+- Forwarded body146614A70, helpers146614190/146614640 and separate148B33800 now
+  have readable code and34,944 passing original-entry comparisons. Both actual
+  constructor-bound141A2CA60 dispatch chains execute in the suite. First-helper
+  output is independent of its return; the return gates the third box. Integer
+  height conversion in148B33800 is corrected from misleading Ghidra types.
+  See REPORTS/FORWARDED_COLLISION_SHAPES.md.
+
 - Moving multipart emitter1465F8960 and helper1465F8EC0 now have readable code
   and12,632 passing native comparisons. Constructor-installed14A8B6DF0 virtual258
   is1465FA380, which looks up a separate block property and subtracts an actual
@@ -41,8 +48,8 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
   the temporary block-shape vector has24-byte AABBs.
 - Effect constructor/indexed stores independently identify Jump Boost8,
   Levitation24 and Slow Falling27. The reduced-gravity slot is no longer unnamed.
-- The five readable C++ suites pass 133,386 bounded comparisons across 42
-  variants. The full Ghidra index has 552 exports/313 entry VAs; successful export
+- The six readable C++ suites pass 168,330 bounded comparisons across 48
+  variants. The full Ghidra index has 556 exports/315 entry VAs; successful export
   is not semantic completeness. The 64,621-case core suite was rerun after the
   shared component-header additions and remains passing.
 
@@ -51,9 +58,10 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
 1. **Bind derived block collision providers.** The base provider14A763920+30 is
    now verified as141A22F50 and its complete helper composition is native-tested.
    Selected derived providers and moving multipart1465F8960/1465F8EC0 are now
-   verified and native-compared. Continue forward target146614A70 and its
-   146614190/146614640 helpers, property-dependent148B33800, and multipart
-   secondary receiver80/state-field producers. Its separate bounds wrapper
+   verified and native-compared, including146614A70 with146614190/146614640
+   and property-dependent148B33800. Continue remaining forwarding/shape targets,
+   named property and block constructor selection, full enumeration composition,
+   and multipart secondary receiver80/state-field producers. Its separate bounds wrapper
    1465F88E0 is exported and instruction-reviewed, not numerically ported.
    The271-table shared-callback pool is heuristic and can miss providers overriding all seed slots. World enumeration1415FE680 exposes the polymorphic call at1415FF16D and
    section provider18 at1415FF0BD. Trace registry-selected concrete overrides

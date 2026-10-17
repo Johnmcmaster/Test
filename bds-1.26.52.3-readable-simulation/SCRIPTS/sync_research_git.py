@@ -54,6 +54,8 @@ def main():
                  'WORK/full_sim/multipart_direction_refs.json',
                  'WORK/full_sim/multipart_direction_initialization_observation.json',
                  'WORK/full_sim/multipart_initializer_pointer_refs.json',
+                 'WORK/full_sim/forwarded_smoke.json',
+                 'WORK/full_sim/forwarded_core_validation.json',
                  'WORK/history_writer/snapshot_copy_candidates.json',
                  'WORK/history_writer/snapshot_copy_review.json']:
         if (root / name).is_file():

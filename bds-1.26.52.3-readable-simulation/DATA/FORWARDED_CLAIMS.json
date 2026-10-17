@@ -1,0 +1,72 @@
+[
+  {
+    "id": "FORWARD-SELECTORS",
+    "va": "0x146614190",
+    "start": "0x146614190",
+    "end": "0x146614415",
+    "claim": "Two numeric property selectors and a separate Boolean select local geometry",
+    "detail": "Actual keyglobals14CD25070/250D0/26248 are verified by native RIPloads. Provider1D8 tree and320..328 fallback support packed16 numeric masks or Boolean shifted-nonzero tests. First numeric value is compared as full32bits; second useslowbyte. Stable metadata and getter replies are explicit fixture dependencies, not named gameplay properties.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/FORWARDED_PROVIDER_BINDING.json; DATA/FORWARDED_SHAPES_VALIDATION.json; REPORTS/FORWARDED_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "FORWARD-FIRST-BOX",
+    "va": "0x146614190",
+    "start": "0x146614415",
+    "end": "0x146614609",
+    "claim": "First local helper always writes a normalized box and separately reports whether selectorB is neither3 nor4",
+    "detail": "A0 selects X[.5,1], A1 X[0,.5], A2 Z[.5,1], otherA Z[0,.5]. B3/4 clip the perpendicular half according to exact branch table; otherB keepsfull perpendicular axis. C choosesY[0,.5] or[.5,1]. Returnzero onB3/4 doesnot mean invalid or absent box.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/FORWARDED_PROVIDER_BINDING.json; DATA/FORWARDED_SHAPES_VALIDATION.json; REPORTS/FORWARDED_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "FORWARD-THIRD-BOX",
+    "va": "0x146614640",
+    "start": "0x146614832",
+    "end": "0x146614a38",
+    "claim": "Third-box helper returnsfalse without writing when the second selector lowbyte is not1/2",
+    "detail": "LEAEBP,[R14-1],CMPBPL,1 andJA skip Boolean lookup andoutput stores. ValidB1/2 constructs a quarter box; fullA0/1/2/3 branches andotherA behavior remain distinct. Exact table in readable source preserves the native A==3 check at49CF. Native comparisons preserve initial output includingNaN payload bits onfalse paths.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/FORWARDED_PROVIDER_BINDING.json; DATA/FORWARDED_SHAPES_VALIDATION.json; REPORTS/FORWARDED_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "FORWARD-COMPOSITION",
+    "va": "0x146614a70",
+    "start": "0x146614c0c",
+    "end": "0x146614e63",
+    "claim": "Forwarded emitter outputs base then first helper box, and uses its returnonly to gate the optional third box",
+    "detail": "Calls146614190 at4C88, translates/appends itsbox, TESTAL at4D58 thenJEskip. Iftrue calls146614640 at4D68 andtestsitsreturn. Base usesoppositeY half fromlocalhelpers. Eachstage usesordered>= rejection fordegenerate/query bounds and24-byte append, retaining existingoutput. Actual141A2CA60/table14A8BC7B0 chain is native-compared without replacingforwardedbody.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/FORWARDED_PROVIDER_BINDING.json; DATA/FORWARDED_SHAPES_VALIDATION.json; REPORTS/FORWARDED_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "FORWARD-CONTAINER-INSTALL",
+    "va": "0x148b31700",
+    "start": "0x148b31713",
+    "end": "0x148b31746",
+    "claim": "A separate real constructor installs another concrete virtual38 provider",
+    "detail": "ReceiverRCX saved inRSI, actualbase141A1FEF0 called at3173A, LEA14A949430 at3173F andstore[RSI] at31746. Table30=141A2CA60,38=148B33800. No named block assignment or universal provider class is inferred.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/FORWARDED_PROVIDER_BINDING.json; DATA/FORWARDED_SHAPES_VALIDATION.json; REPORTS/FORWARDED_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "FORWARD-CONTAINER-HEIGHT",
+    "va": "0x148b33800",
+    "start": "0x148b338d0",
+    "end": "0x148b33a18",
+    "claim": "Raw integer property selects a floor-like height with two special cases and signed float conversion",
+    "detail": "Propertykeyglobal14CD22828; value0 orinvalid/missingfallback gives0.125; rawvalue8 gives0.9375. Otherraw32bitvalues useCVTSI2SS signed32, thenv+v,ADD(-1),ADD(2),MUL0.0625 withoriginalrounding. Ghidra floating reinterpretation isnot accepted; actualCMPR9D,8 at338F9 andCVTSI2SS at339F7 establish typebehavior.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/FORWARDED_PROVIDER_BINDING.json; DATA/FORWARDED_SHAPES_VALIDATION.json; REPORTS/FORWARDED_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "FORWARD-CONTAINER-BOXES",
+    "va": "0x148b33800",
+    "start": "0x148b33915",
+    "end": "0x148b33d49",
+    "claim": "The second forwarded provider emits five independently query-filtered boxes in native order",
+    "detail": "Floor box spans X/Z0..1 with Ysorted between0 andheight. Four side boxes follow:X0..0.125,Z0..0.125,X0.875..1,Z0.875..1; Y0..1. Each endpoint converts integerposition beforefloataddition. Outputretention, exacttouching/NaNqueryrejection anddirect/growthappend paths native-compared through actualtable14A949430.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/FORWARDED_PROVIDER_BINDING.json; DATA/FORWARDED_SHAPES_VALIDATION.json; REPORTS/FORWARDED_COLLISION_SHAPES.md"
+  }
+]

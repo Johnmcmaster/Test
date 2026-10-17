@@ -132,7 +132,7 @@ def read_asm(path):
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('project',nargs='?',default=str(Path(__file__).resolve().parent.parent));ap.add_argument('--binary');ap.add_argument('--baseline-source',default='/workspace/bedrock_anticheat_part6_1.26.52.3');a=ap.parse_args();root=Path(a.project).resolve(); prior=Path(a.baseline_source)
     # Explicitly curated continuation, never a promotion based on export success.
-    for extra_roles in [root/'DATA/FULL_SIM_ROLES.json',root/'DATA/ENVIRONMENT_ROLES.json',root/'DATA/SHAPES_ROLES.json',root/'DATA/DERIVED_SHAPES_ROLES.json',root/'DATA/MULTIPART_ROLES.json']:
+    for extra_roles in [root/'DATA/FULL_SIM_ROLES.json',root/'DATA/ENVIRONMENT_ROLES.json',root/'DATA/SHAPES_ROLES.json',root/'DATA/DERIVED_SHAPES_ROLES.json',root/'DATA/MULTIPART_ROLES.json',root/'DATA/FORWARDED_ROLES.json']:
         if extra_roles.exists():ROLES.update({int(k,0):v for k,v in json.loads(extra_roles.read_text()).items()})
     # Make previous evidence anchors self-contained without overwriting existing analysis.
     baseline=list(csv.DictReader((root/'BASELINE/EVIDENCE.csv').open())) if (root/'BASELINE/EVIDENCE.csv').exists() else []
@@ -171,6 +171,8 @@ def main():
     if derived_bindings.exists():bindings.update(json.loads(derived_bindings.read_text()))
     multipart_bindings=root/'DATA/MULTIPART_INDIRECT_BINDINGS.json'
     if multipart_bindings.exists():bindings.update(json.loads(multipart_bindings.read_text()))
+    forwarded_bindings=root/'DATA/FORWARDED_INDIRECT_BINDINGS.json'
+    if forwarded_bindings.exists():bindings.update(json.loads(forwarded_bindings.read_text()))
     calls=[];callers=defaultdict(set);callees=defaultdict(set);indirect=defaultdict(list)
     for va,z in sorted(chosen.items()):
         for i in z['instructions']:
@@ -216,7 +218,7 @@ def main():
     # verified instruction windows, not multi-megabyte assembly/C exports.
     # Keep them in the index with explicit partial scope and native boundaries.
     window_owners={}
-    for source in ['DATA/BLOCK_PROVIDER_BINDING.json','DATA/DERIVED_BLOCK_BINDING.json','DATA/MULTIPART_PROVIDER_BINDING.json']:
+    for source in ['DATA/BLOCK_PROVIDER_BINDING.json','DATA/DERIVED_BLOCK_BINDING.json','DATA/MULTIPART_PROVIDER_BINDING.json','DATA/FORWARDED_PROVIDER_BINDING.json']:
         path=root/source
         if not path.exists():continue
         d=json.loads(path.read_text())
@@ -347,7 +349,7 @@ def main():
 ('NET-003',0x14322F420,0x14322F420,0x14322F572,'Payload manager is lifecycle/copy dispatch, not a proved byte encoder','Operation-code switch handles typeinfo, copy, identity comparison and0x38allocation/copy; appears incodeccontext butdoesnotbyitselfserializebytes.'),
 ]
     for x in claims:add(*x)
-    for extra_claims in [root/'DATA/FULL_SIM_CLAIMS.json',root/'DATA/ENVIRONMENT_CLAIMS.json',root/'DATA/SHAPES_CLAIMS.json',root/'DATA/DERIVED_SHAPES_CLAIMS.json',root/'DATA/MULTIPART_CLAIMS.json']:
+    for extra_claims in [root/'DATA/FULL_SIM_CLAIMS.json',root/'DATA/ENVIRONMENT_CLAIMS.json',root/'DATA/SHAPES_CLAIMS.json',root/'DATA/DERIVED_SHAPES_CLAIMS.json',root/'DATA/MULTIPART_CLAIMS.json',root/'DATA/FORWARDED_CLAIMS.json']:
         if extra_claims.exists():
             for x in json.loads(extra_claims.read_text()):
                 add(x['id'],int(x['va'],0),int(x['start'],0),int(x['end'],0),x['claim'],x['detail'],confidence=x.get('confidence','confirmed'),extra=x.get('supporting_artifacts',''))
@@ -383,6 +385,7 @@ def main():
     if (root/'DATA/NATIVE_SHAPES_VALIDATION.json').exists():test_reports.append(root/'DATA/NATIVE_SHAPES_VALIDATION.json')
     if (root/'DATA/SHAPE_OVERRIDES_VALIDATION.json').exists():test_reports.append(root/'DATA/SHAPE_OVERRIDES_VALIDATION.json')
     if (root/'DATA/MULTIPART_SHAPES_VALIDATION.json').exists():test_reports.append(root/'DATA/MULTIPART_SHAPES_VALIDATION.json')
+    if (root/'DATA/FORWARDED_SHAPES_VALIDATION.json').exists():test_reports.append(root/'DATA/FORWARDED_SHAPES_VALIDATION.json')
     for p in test_reports:
         d=json.loads(p.read_text());evidence.append(dict(finding_id='TEST-'+p.stem,confidence='confirmed',function_va=str(d.get('function_va',d.get('function',''))),instruction_va='',evidence_kind='original-instruction fixture result',claim='Saved original-instruction comparison report: '+p.stem,data_flow=json.dumps(d,sort_keys=True),source_artifact=str(p.relative_to(root)),source_location='entire JSON; harness source alongside report',supporting_artifacts='',provenance='current_fixture_verification',instruction_excerpt=''))
     write_csv(root/'FUNCTION_INDEX.csv',index,list(index[0]) if index else [])

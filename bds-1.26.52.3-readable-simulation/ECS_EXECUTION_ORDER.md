@@ -39,7 +39,7 @@ Newly bound stages are listed in `WORK/full_sim/system_callbacks.json`, with31 c
 
 The selector145EED380 ensures travel-mode memberships and does not erase old tags. Registered group table14A75E5D0 has bulk clear14192F4F0 and per-entity removal14192F810. A list of descriptor registrations is insufficient to prove mode exclusivity across server ticks or replay passes. The group/category invocation must still be followed.
 
-Finalizer14469EE70 writes position and collision markers; reset views143B6FFE0/143B70F90 require those markers, MoveRequest and StateVector. Motion-to-request145EEC7F0 and the bounds-derived writes establish storage dependencies, while restitution and guaranteed player-specific phase order remain open. The graph has192 curated edges with edge kinds/provenance and preserves this distinction.
+Finalizer14469EE70 writes position and collision markers; reset views143B6FFE0/143B70F90 require those markers, MoveRequest and StateVector. Motion-to-request145EEC7F0 and the bounds-derived writes establish storage dependencies, while restitution and guaranteed player-specific phase order remain open. The graph has198 curated edges with edge kinds/provenance and preserves this distinction.
 
 Multipart collision1465F8960→1465F8EC0 and its constructor-bound virtual258→1465FA380
 are now concrete call edges. Direction-table initialization and secondary-object

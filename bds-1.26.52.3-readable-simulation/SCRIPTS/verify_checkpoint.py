@@ -34,7 +34,8 @@ def main():
                  'ENVIRONMENT_STAGES_VALIDATION.json',
                  'NATIVE_SHAPES_VALIDATION.json',
                  'SHAPE_OVERRIDES_VALIDATION.json',
-                 'MULTIPART_SHAPES_VALIDATION.json']:
+                 'MULTIPART_SHAPES_VALIDATION.json',
+                 'FORWARDED_SHAPES_VALIDATION.json']:
         path = a.root / 'DATA' / name
         d = json.loads(path.read_text())
         assert d['binary_sha256'] == EXPECTED and d['mismatches'] == 0

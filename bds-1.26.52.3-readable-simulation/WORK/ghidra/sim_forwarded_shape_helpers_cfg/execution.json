@@ -1,0 +1,44 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_forwarded_shape_helpers",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_forwarded_shape_helpers/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_forwarded_shape_helpers/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_forwarded_shape_helpers_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-17T00:14:13.712630+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_forwarded_shape_helpers",
+  "exit_code": 0,
+  "completed_utc": "2026-10-17T00:14:17.753596+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_forwarded_shape_helpers/0x146614190_FUN_146614190.c",
+      "bytes": 7614,
+      "sha256": "8d0eb9d8ba3526319828baa93f41ecf258f2ee16f7a768598a333c6e7c4d9c08",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_forwarded_shape_helpers/0x146614640_FUN_146614640.c",
+      "bytes": 6717,
+      "sha256": "4132ab0c6528ad93f6dd83a7d5bdcedbb6e9a2bdbe09ab75d8f8ef7e23c23e20",
+      "failed": false
+    }
+  ],
+  "expected_targets": 2,
+  "successful_exports": 2
+}

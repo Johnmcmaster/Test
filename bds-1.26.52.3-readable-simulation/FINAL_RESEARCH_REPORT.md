@@ -1,5 +1,11 @@
 # Native movement simulation reconstruction — current checkpoint
 
+The [forwarded-body continuation](REPORTS/FORWARDED_COLLISION_SHAPES.md) recovers
+146614A70, its two actual local-box helpers, and the separate148B33800 five-box
+body. Both constructor-installed forwarding chains execute in34,944 passing
+native comparisons. Property names, runtime block selection and full ticks remain
+unresolved; no substitute generic collision implementation is used.
+
 The [multipart continuation](REPORTS/MULTIPART_COLLISION_SHAPES.md) reconstructs
 the previously unresolved emitter1465F8960, its concrete virtual258 query-position
 callback1465FA380, three local-box tables and actual direction initialization.
@@ -20,7 +26,7 @@ the constructed NoClip world callback and reconstructs more lava/fluid/flying
 and speed-source code. It adds31,004 native comparisons with zero mismatches and
 seven NaN payload differences. Full simulator composition remains open.
 
-The five readable C++ suites total 133,386 bounded comparisons across 42 variants.
+The six readable C++ suites total 168,330 bounded comparisons across 48 variants.
 These counts describe finite fixtures, not a measured percentage of the simulator.
 
 Status: **new native stages reconstructed into compilable readable C++; full simulator, anti-cheat and complete Geyser port remain unfinished**. This continuation used targeted Ghidra, Capstone and original-instruction harnesses directly, without agents. It preserves the earlier kernels and precise unresolved dependencies.

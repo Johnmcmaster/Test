@@ -160,7 +160,10 @@ digraph BedrockMovement {
   f1487e5140 [label="World / object dependent shape gate\n0x1487E5140"];
   f148a2e2c0 [label="Emit base shapes and return zero\n0x148A2E2C0"];
   f141a2ca60 [label="Forward virtual38; return one\n0x141A2CA60"];
-  f146614a70 [label="Verified forward target; full shape composition open\n0x146614A70"];
+  f146614a70 [label="Native-compared half-height base and local-box composition\n0x146614A70"];
+  f146614190 [label="Always-written local box; independent extra-box flag\n0x146614190"];
+  f146614640 [label="Conditional quarter box; false leaves output untouched\n0x146614640"];
+  f148b33800 [label="Property-dependent floor and four side boxes\n0x148B33800"];
   f1415f67d0 [label="World secondary object lookup\n0x1415F67D0"];
   f1415f4380 [label="World metadata delegation\n0x1415F4380"];
   f1465f8960 [label="Moving multipart collision emission\n0x1465F8960"];
@@ -348,6 +351,9 @@ digraph BedrockMovement {
   f1487e5140 -> f141a22f50 [label="direct call\n0x1487E521C", color="#252525",style=solid];
   f148a2e2c0 -> f141a22f50 [label="direct call\n0x148A2E2D8", color="#252525",style=solid];
   f141a2ca60 -> f146614a70 [label="conditional14A8BC7B0+38\n0x141A2CA75", color="#087f3e",style=bold];
+  f141a2ca60 -> f148b33800 [label="conditional constructor-bound14A949430+38\n0x141A2CA75", color="#087f3e",style=bold];
+  f146614a70 -> f146614190 [label="direct call\n0x146614C88", color="#252525",style=solid];
+  f146614a70 -> f146614640 [label="direct call\n0x146614D68", color="#252525",style=solid];
   f1487e5140 -> f1415f67d0 [label="constructed world14A753900+18\n0x1487E517F", color="#087f3e",style=bold];
   f1487e5140 -> f1415f4380 [label="constructed world14A753900+90\n0x1487E51C5", color="#087f3e",style=bold];
   f1415fe680 -> f1465f8960 [label="conditional14A8B6DF0+30\n0x1415FF16D", color="#087f3e",style=bold];
@@ -366,5 +372,8 @@ digraph BedrockMovement {
   f147153270 -> shape_vector [label="append selected boxes; independent of return byte", color="#1765a0",style=dotted];
   f1487e5140 -> shape_vector [label="append selected boxes; independent of return byte", color="#1765a0",style=dotted];
   f148a2e2c0 -> shape_vector [label="append selected boxes; independent of return byte", color="#1765a0",style=dotted];
+  f1465f8960 -> shape_vector [label="append selected boxes; independent of return byte", color="#1765a0",style=dotted];
+  f146614a70 -> shape_vector [label="append selected boxes; independent of return byte", color="#1765a0",style=dotted];
+  f148b33800 -> shape_vector [label="append selected boxes; independent of return byte", color="#1765a0",style=dotted];
   shape_vector -> f1415fe680 [label="vector begin/end selects48-byte record iteration\n0x1415FF173", color="#1765a0",style=dotted];
 }

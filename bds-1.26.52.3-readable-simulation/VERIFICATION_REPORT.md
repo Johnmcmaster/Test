@@ -4,6 +4,15 @@ The delivered Java kernels were compared with the original BDS machine code, not
 
 ## Readable C++ continuation verification
 
+The forwarded-body continuation passes **34,944 original-entry cases across six
+variants**, with zero mismatches and zero NaN payload differences. It executes
+both local-box helpers, the two actual emitter bodies and both constructor-bound
+141A2CA60 forwarding chains. Only fallback property getters and vector growth
+use supplied backends. Independent proof checks35 instructions, four table slots,
+eight scalar literals, a literal vector and eight property-global references.
+See `DATA/FORWARDED_SHAPES_VALIDATION.json`, `DATA/FORWARDED_PROVIDER_BINDING.json`
+and `REPORTS/FORWARDED_COLLISION_SHAPES.md`.
+
 The multipart continuation passes **12,632 original-entry cases across three
 variants**, with zero mismatches and zero NaN payload differences. Actual direction
 initialization,18 original box constructors per cold initialization, numeric
@@ -31,7 +40,7 @@ documented comparison. Its ranges, source hashes and dependency backends are in
 `DATA/ENVIRONMENT_STAGES_VALIDATION.json`. The constructed NoClip world route is
 verified by39 instruction and8 table checks. See`REPORTS/ENVIRONMENT_CONTINUATION.md`.
 The prior64,621-case suite was rerun after the new component-view assertions and
-still passes. The five C++ suites total **133,386 bounded comparisons across 42
+still passes. The six C++ suites total **168,330 bounded comparisons across 48
 variants**. None is a full tick. Their source hashes match the delivered sources.
 
 `DATA/READABLE_SIMULATION_VALIDATION.json` separately records **64,621 native comparisons across16 variants**, with zero mismatches and zero observed NaN-payload differences. Each original entry must return to the harness sentinel within the instruction budget. The new C++ is compiled withC++20, `-O2 -fno-fast-math -ffp-contract=off`; source hashes include the component header and oracle. Exact native code ranges/hashes and fixture backends are in that report.
@@ -42,7 +51,7 @@ The first broad finalizer comparison found32 mismatches because the decompiler s
 
 Constructor/table checks independently bind the default movement-control method and concrete collision-world query. Effect constructor/indexed stores bind Jump Boost, Levitation and Slow Falling. The selected type audit has49 independent regular record writers and12,234 distinct bracket-extracted spellings with no collisions in that extracted set. Recomputing FNV-1a alone is not treated as independent registration proof or a claim that all possible runtime names are collision-free.
 
-The current index contains 552 Ghidra exports/313 entry VAs, with zero decompile failures and 552 continuous linear decodes. Of these, 507 match PE unwind ranges; the remaining explicit ranges are checked separately. The saved-instruction catalog audit checks 833 assembly files/718 unique ranges with zero byte/boundary mismatches and no missing evidence sources/anchors. The catalog contains 379 evidence rows. Its separate field-access ledger contains 274 observations from 70 register-binding windows. FUNCTION_INDEX.csv also contains two large initializer/registry owners represented by byte-verified instruction windows and native boundaries, with the rest of each body explicitly unreviewed. Exported candidates remain distinguishable from manually reviewed functions. Catalog counts include preserved baseline material and do not measure full semantic coverage.
+The current index contains 556 Ghidra exports/315 entry VAs, with zero decompile failures and 556 continuous linear decodes. Of these, 511 match PE unwind ranges; the remaining explicit ranges are checked separately. The saved-instruction catalog audit checks 835 assembly files/720 unique ranges with zero byte/boundary mismatches and no missing evidence sources/anchors. The catalog contains 387 evidence rows. Its separate field-access ledger contains 274 observations from 70 register-binding windows. FUNCTION_INDEX.csv also contains two large initializer/registry owners represented by byte-verified instruction windows and native boundaries, with the rest of each body explicitly unreviewed. Exported candidates remain distinguishable from manually reviewed functions. Catalog counts include preserved baseline material and do not measure full semantic coverage.
 
 `DATA/verification_summary.json` records the executable/JAR identities, commands, exit codes, per-suite counts, log hashes, and report hashes. `DATA/verification/` preserves compiler and oracle output. New kernels added during investigation are listed in that manifest when their final checks finish.
 

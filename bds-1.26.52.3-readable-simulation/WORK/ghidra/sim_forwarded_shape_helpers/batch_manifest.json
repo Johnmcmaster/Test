@@ -1,0 +1,48 @@
+{
+  "batch": "sim_forwarded_shape_helpers",
+  "new_targets": 2,
+  "defined_ranges": 3,
+  "reused": 1,
+  "skipped": 0,
+  "output": "DECOMPILATION/ghidra/sim_forwarded_shape_helpers",
+  "requests": [
+    {
+      "va": "0x146614190",
+      "rva": "0x6614190",
+      "end_exclusive": "0x14661463e",
+      "size": 1198,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/sim_forwarded_shape_helpers/0x146614190_FUN_146614190.c",
+      "assembly": "ASSEMBLY/0000000146614190.asm"
+    },
+    {
+      "va": "0x146614640",
+      "rva": "0x6614640",
+      "end_exclusive": "0x146614a6d",
+      "size": 1069,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/sim_forwarded_shape_helpers/0x146614640_FUN_146614640.c",
+      "assembly": "ASSEMBLY/0000000146614640.asm"
+    },
+    {
+      "va": "0x146614a70",
+      "rva": "0x6614a70",
+      "status": "reused_final",
+      "output": "DECOMPILATION/ghidra/sim_derived_shape_helpers/0x146614a70_FUN_146614a70.c"
+    }
+  ],
+  "execution": {
+    "exit_code": 0,
+    "expected_targets": 2,
+    "successful_exports": 2,
+    "record": "WORK/ghidra/sim_forwarded_shape_helpers/execution.json"
+  },
+  "cfg_execution": {
+    "exit_code": 0,
+    "expected_targets": 2,
+    "successful_exports": 2,
+    "record": "WORK/ghidra/sim_forwarded_shape_helpers_cfg/execution.json"
+  }
+}

@@ -10,7 +10,9 @@ The original Windows executable was independently verified: 223,223,112 bytes, i
 
 ## New recovered behavior
 
-- Moving multipart collision emission now has readable C++, its concrete virtual258 callback, direction-table initialization and constructor/table proof. **12,632 new original-entry comparisons pass** with zero mismatches. See [MULTIPART_COLLISION_SHAPES.md](REPORTS/MULTIPART_COLLISION_SHAPES.md). The five readable C++ suites total **133,386 bounded comparisons across 42 variants**; seven NaN payload differences remain confined to the earlier environment suite.
+- Two forwarded geometry bodies and their local helpers now have readable C++ and **34,944 passing original-entry comparisons**. The actual installed dispatch paths execute in the tests. See [FORWARDED_COLLISION_SHAPES.md](REPORTS/FORWARDED_COLLISION_SHAPES.md). The six readable C++ suites total **168,330 bounded comparisons across 48 variants**; these are fixtures, not full ticks or a coverage percentage.
+
+- Moving multipart collision emission has readable C++, its concrete virtual258 callback, direction-table initialization and constructor/table proof. **12,632 original-entry comparisons pass** with zero mismatches. See [MULTIPART_COLLISION_SHAPES.md](REPORTS/MULTIPART_COLLISION_SHAPES.md). Seven NaN payload differences remain confined to the earlier environment suite.
 
 - Selected derived collision providers have constructor/table proof and readable connected-box, packed-property and emission-gate code. **12,821 native comparisons pass**. See [DERIVED_BLOCK_SHAPES.md](REPORTS/DERIVED_BLOCK_SHAPES.md).
 

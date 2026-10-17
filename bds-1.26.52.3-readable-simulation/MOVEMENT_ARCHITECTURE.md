@@ -48,6 +48,14 @@ compared. Returned-object ownership and state producers remain unresolved. This
 is a geometry dependency, not proof of scheduler placement or a cheat verdict.
 See REPORTS/MULTIPART_COLLISION_SHAPES.md.
 
+Two forwarded geometry bodies are now recovered through installed virtual38
+targets. Table14A8BC7B0 reaches146614A70, which emits a base half plus a local
+box and optional third box from146614190/146614640. Table14A949430 reaches148B33800,
+which emits a property-height floor-like box plus four thin sides. Both wrappers
+returnone independently of filtered output. This closes those specific shape
+bodies; property identity, runtime block selection, other overrides and complete
+candidate enumeration remain separate. See REPORTS/FORWARDED_COLLISION_SHAPES.md.
+
 The new verified input data path is MoveInput24/28→LocalMoveVelocity0/8→scaled MobTravel input→motion18→MoveRequest3C. Current-input bridge142C142B0 saves server XYZ separately at CurrentMovementE8. Travel selector145EED380 adds mode tags; separate group-clear14192F4F0 removes them. The complete cadence/ownership of those passes remains separate. See REPORTS/FULL_SIM_CONTINUATION.md.
 
 AntiCheatRewindFlagComponent has tag-storage evidence and ability-processing view dependencies, not historical payload fields. The existing SyncedPlayerMovementSettings schema binds its history-size setter0x142742770 to offset0 and a separate bool setter0x142742BA0 to offset4; full layout, runtime history-capacity binding and operator configuration remain unresolved. The raw schema-backed prefix and evidence are retained in BASELINE. No guessed extra settings or StateVector members are introduced.

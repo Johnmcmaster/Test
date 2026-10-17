@@ -80,7 +80,7 @@ for n,group in enumerate(groups,1):
   for p in group:assert hashlib.sha256(z.read(str(Path(stage.name)/p.relative_to(stage)))).hexdigest()==sha(p)
  archives.append({'file':name,'bytes':target.stat().st_size,'sha256':sha(target),'entries':len(group),'crc_verified':True,'contents_sha256_verified':True})
 readable=[]
-for name in ['READABLE_SIMULATION_VALIDATION.json','ENVIRONMENT_STAGES_VALIDATION.json','NATIVE_SHAPES_VALIDATION.json','SHAPE_OVERRIDES_VALIDATION.json','MULTIPART_SHAPES_VALIDATION.json']:
+for name in ['READABLE_SIMULATION_VALIDATION.json','ENVIRONMENT_STAGES_VALIDATION.json','NATIVE_SHAPES_VALIDATION.json','SHAPE_OVERRIDES_VALIDATION.json','MULTIPART_SHAPES_VALIDATION.json','FORWARDED_SHAPES_VALIDATION.json']:
  p=stage/'DATA'/name
  if not p.exists():continue
  d=json.loads(p.read_text());assert d['mismatches']==0,(name,d['mismatches'])

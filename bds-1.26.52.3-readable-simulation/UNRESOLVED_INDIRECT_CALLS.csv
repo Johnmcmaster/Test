@@ -1540,7 +1540,7 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x141a22f50,0x141a22ff0,call,0x141a22b80,qword ptr [rip + 0x938722a],conditional_known_target,ASSEMBLY/0000000141A22F50.asm,38,Base table14A763920 virtual20,DATA/BLOCK_PROVIDER_BINDING.json
 0x141a23320,0x141a233bc,call,,qword ptr [rip + 0x9386e5e],indirect_unresolved,ASSEMBLY/0000000141A23320.asm,37,,
 0x141a23510,0x141a235af,call,,qword ptr [rip + 0x9386c6b],indirect_unresolved,ASSEMBLY/0000000141A23510.asm,42,,
-0x141a2ca60,0x141a2ca75,call,0x146614a70,qword ptr [rip + 0x937d7a5],conditional_known_target,ASSEMBLY/0000000141A2CA60.asm,7,When receiver uses constructor-bound14A8BC7B0; other forwarding providers remain separate,DATA/DERIVED_BLOCK_BINDING.json
+0x141a2ca60,0x141a2ca75,call,0x146614a70;0x148b33800,qword ptr [rip + 0x937d7a5],conditional_known_targets,ASSEMBLY/0000000141A2CA60.asm,7,Constructor-installed14A8BC7B0/14A949430 virtual38 only; other forwarding providers remain separate,DATA/DERIVED_BLOCK_BINDING.json; DATA/FORWARDED_PROVIDER_BINDING.json
 0x141a756f0,0x141a75879,call,,qword ptr [rip + 0x93349a1],indirect_unresolved,WORK/physics/ASSEMBLY/0000000141A756F0.asm,90,,
 0x141a756f0,0x141a75e24,call,,qword ptr [rip + 0x933aa26],indirect_unresolved,WORK/physics/ASSEMBLY/0000000141A756F0.asm,404,,
 0x141af48e0,0x141af492d,call,,qword ptr [rip + 0x92b58ed],indirect_unresolved,WORK/physics/ASSEMBLY/0000000141AF48E0.asm,21,,
@@ -3145,6 +3145,12 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x1465ff420,0x1465ff452,call,,qword ptr [rip + 0x47aadc8],indirect_unresolved,ASSEMBLY/00000001465FF420.asm,12,,
 0x1465ff420,0x1465ff4b7,call,,qword ptr [rip + 0x47aad63],indirect_unresolved,ASSEMBLY/00000001465FF420.asm,30,,
 0x146612ef0,0x14661302a,call,,qword ptr [rip + 0x479d820],indirect_unresolved,ASSEMBLY/0000000146612EF0.asm,75,,
+0x146614190,0x146614281,call,,qword ptr [rip + 0x4795f99],indirect_unresolved,ASSEMBLY/0000000146614190.asm,72,,
+0x146614190,0x14661436b,call,,qword ptr [rip + 0x4795eaf],indirect_unresolved,ASSEMBLY/0000000146614190.asm,134,,
+0x146614190,0x1466144b2,call,,qword ptr [rip + 0x4795d68],indirect_unresolved,ASSEMBLY/0000000146614190.asm,215,,
+0x146614640,0x146614731,call,,qword ptr [rip + 0x4795ae9],indirect_unresolved,ASSEMBLY/0000000146614640.asm,73,,
+0x146614640,0x14661481d,call,,qword ptr [rip + 0x47959fd],indirect_unresolved,ASSEMBLY/0000000146614640.asm,134,,
+0x146614640,0x1466148ff,call,,qword ptr [rip + 0x479591b],indirect_unresolved,ASSEMBLY/0000000146614640.asm,195,,
 0x146614a70,0x146614b97,call,,qword ptr [rip + 0x4795683],indirect_unresolved,ASSEMBLY/0000000146614A70.asm,79,,
 0x146619a10,0x146619a43,call,,qword ptr [rip + 0x47907d7],indirect_unresolved,ASSEMBLY/history/replay_candidates/0000000146619A10.asm,17,,
 0x146619a10,0x146619aca,call,,qword ptr [rip + 0x4790750],indirect_unresolved,ASSEMBLY/history/replay_candidates/0000000146619A10.asm,53,,
