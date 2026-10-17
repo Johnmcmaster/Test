@@ -38,6 +38,16 @@ the return byte atFF176. These control/data relationships are native-verified;
 the target's block name, full provider set, remaining gate objects and scheduler
 placement are separate. See REPORTS/DERIVED_BLOCK_SHAPES.md.
 
+Multipart table14A8B6DF0 now has registry installation proof. Its emitter1465F8960
+calls local-box helper1465F8EC0 and concrete virtual258=1465FA380. That callback
+uses world10 to read a second block's numeric property and computes a wrapped
+query-position subtraction. World18 then provides a separate receiver; its
+virtual80(byte12) and rawfloatF4/F8 control the translated three-box output.
+Direction initialization1465FF420 and the full bounded emission body are native
+compared. Returned-object ownership and state producers remain unresolved. This
+is a geometry dependency, not proof of scheduler placement or a cheat verdict.
+See REPORTS/MULTIPART_COLLISION_SHAPES.md.
+
 The new verified input data path is MoveInput24/28→LocalMoveVelocity0/8→scaled MobTravel input→motion18→MoveRequest3C. Current-input bridge142C142B0 saves server XYZ separately at CurrentMovementE8. Travel selector145EED380 adds mode tags; separate group-clear14192F4F0 removes them. The complete cadence/ownership of those passes remains separate. See REPORTS/FULL_SIM_CONTINUATION.md.
 
 AntiCheatRewindFlagComponent has tag-storage evidence and ability-processing view dependencies, not historical payload fields. The existing SyncedPlayerMovementSettings schema binds its history-size setter0x142742770 to offset0 and a separate bool setter0x142742BA0 to offset4; full layout, runtime history-capacity binding and operator configuration remain unresolved. The raw schema-backed prefix and evidence are retained in BASELINE. No guessed extra settings or StateVector members are introduced.

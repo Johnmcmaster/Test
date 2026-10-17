@@ -174,6 +174,17 @@ f148a2e2c0,f141a22f50,direct_call,direct call,confirmed,0x148A2E2D8,ASSEMBLY/000
 f141a2ca60,f146614a70,resolved_indirect,conditional14A8BC7B0+38,confirmed,0x141A2CA75,DATA/DERIVED_BLOCK_BINDING.json
 f1487e5140,f1415f67d0,resolved_indirect,constructed world14A753900+18,confirmed,0x1487E517F,DATA/DERIVED_BLOCK_BINDING.json
 f1487e5140,f1415f4380,resolved_indirect,constructed world14A753900+90,confirmed,0x1487E51C5,DATA/DERIVED_BLOCK_BINDING.json
+f1415fe680,f1465f8960,resolved_indirect,conditional14A8B6DF0+30,confirmed,0x1415FF16D,DATA/MULTIPART_PROVIDER_BINDING.json
+f1465f8960,f1465f8ec0,direct_call,direct call,confirmed,0x1465F8A80,ASSEMBLY/00000001465F8960.asm
+f1465f8960,f1465fa380,resolved_indirect,installed14A8B6DF0+258,confirmed,0x1465F8AAB,DATA/MULTIPART_PROVIDER_BINDING.json
+f1465fa380,f1415f65e0,resolved_indirect,constructed world14A753900+10; fixtures use explicit backend,confirmed,0x1465FA3A9,DATA/MULTIPART_PROVIDER_BINDING.json
+f1465f8960,f1415f67d0,resolved_indirect,constructed world14A753900+18; returned receiver unresolved,confirmed,0x1465F8AC7,DATA/MULTIPART_PROVIDER_BINDING.json
+f1465f8ec0,f142f77110,direct_call,direct call,confirmed,0x1465F902B;0x1465F9081;0x1465F90C8;0x1465F90F8;0x1465F913C;0x1465F9180;0x1465F9227;0x1465F9269;0x1465F92B0;0x1465F92E0;0x1465F9324;0x1465F9354;0x1465F93F5;0x1465F944B;0x1465F9482;0x1465F94B6;0x1465F94EA;0x1465F9528,ASSEMBLY/00000001465F8EC0.asm
+f1465f88e0,f141a22b80,direct_call,direct call,confirmed,0x1465F8939,ASSEMBLY/00000001465F88E0.asm
+f1465ff420,multipart_direction_table,data_flow,native literal loads and direction stores,confirmed,,DATA/MULTIPART_PROVIDER_BINDING.json
+multipart_direction_table,f1465fa380,data_flow,selected by looked-up block propertylowbyte,confirmed,,REPORTS/MULTIPART_COLLISION_SHAPES.md
+multipart_direction_table,f1465f8960,data_flow,selected independently by outer block property,confirmed,,REPORTS/MULTIPART_COLLISION_SHAPES.md
+f1465f8960,multipart_secondary,unresolved,actual object dispatch and two float reads,confirmed,0x1465F8AE8,ASSEMBLY/00000001465F8960.asm
 f1487e5140,shape_gate_receivers,unresolved,raw gates known; object authority unresolved,unresolved,0x1487E51AA;0x1487E51DB;0x1487E51EF,ASSEMBLY/00000001487E5140.asm
 f1415f4380,world_metadata_receiver,unresolved,output-pointer delegation; class unresolved,unresolved,0x1415F4393,ASSEMBLY/00000001415F4380.asm
 f147153270,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md

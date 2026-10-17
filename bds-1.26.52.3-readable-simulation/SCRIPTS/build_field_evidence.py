@@ -83,6 +83,9 @@ B.extend([
 ('PackedPropertyNodeAccessPrefix',0x147152aa0,0x147152af3,0x147152b07,'rdx',0x38,'RDX is tree node, seeded fromheader root; reads key20, child00/10 andsentinel19.'),
 ('PackedPropertyNodeAccessPrefix',0x147152aa0,0x147152eba,0x147152ebd,'rcx',0x38,'Verified matching node; width2C andend30 DWORDs read beforeRCX isoverwritten.'),
 ('ShapeGateReturnedAccessPrefix',0x1487e5140,0x1487e518e,0x1487e518e,'rax',0x18,'Non-null object returned by world18; actualbyte14 testedagainst18hex.'),
+('MovingShapeReturnedAccessPrefix',0x1465f8960,0x1465f8b33,0x1465f8b3c,'rbx',0xfc,'World18 resultRAX saved inRBX at8AD6; rawfloatF4/F8 used in separateSUBSS/ADDSS.'),
+('NumericPropertyBlockAccessPrefix',0x1465fa380,0x1465fa3b6,0x1465fa3fe,'rax',0x128,'Block pointer returned by worldvirtual10 atA3A9; reads provider68 andunsigned16 packed120.'),
+('PackedPropertyNodeAccessPrefix',0x1465fa380,0x1465fa453,0x1465fa462,'r10',0x38,'Confirmed matching numeric property node; DWORDwidth2C/end30 reads, not complete metadata semantics.'),
 ])
 rows=[]
 for component,va,start,end,reg,limit,proof in B:

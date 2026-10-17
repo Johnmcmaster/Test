@@ -1,0 +1,92 @@
+[
+  {
+    "id": "MULTIPART-INSTALL",
+    "va": "0x14849c7e0",
+    "start": "0x1484aa119",
+    "end": "0x1484aa13c",
+    "claim": "Registry construction installs the multipart provider table after base construction",
+    "detail": "SavedRSI receiver survives141A1FEF0, then14A8B6DF0 is stored as its vptr. Verified slots20/30/50/258 select1465F88E0/1465F8960/141653C90/1465FA380. No named block identity or universal runtime table claim.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/MULTIPART_PROVIDER_BINDING.json; DATA/MULTIPART_SHAPES_VALIDATION.json; REPORTS/MULTIPART_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "MULTIPART-DIRECTIONS",
+    "va": "0x1465ff420",
+    "start": "0x1465ff524",
+    "end": "0x1465ff557",
+    "claim": "Original initializer and literal bytes establish the six signed direction vectors",
+    "detail": "Scalar loads zero upper lanes and vector stores populate14CDC1270..12B7. Observed entries are(0,-1,0),(0,1,0),(0,0,1),(0,0,-1),(1,0,0),(-1,0,0). Entire initializer executed with explicit allocator/exit backends; direction writes were native. Pointer14ADAC580 names the routine, but startup dispatcher order is not proved.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/MULTIPART_PROVIDER_BINDING.json; DATA/MULTIPART_SHAPES_VALIDATION.json; REPORTS/MULTIPART_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "MULTIPART-LOCAL-BOXES",
+    "va": "0x1465f8ec0",
+    "start": "0x1465f8f44",
+    "end": "0x1465f8f92",
+    "claim": "Three local AABBs are copied from separately initialized six-entry orientation tables",
+    "detail": "LowR9B is multiplied by24; tables14CDC1080/1120/11C0 provide24-byte copies tothreeoutputs. Cold paths construct18 original boxes through142F77110 with native literals and MSVC guard boundaries. Exact tables are in readable C++ and native comparison report. No bounds check for indices outside0..5 is present.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/MULTIPART_PROVIDER_BINDING.json; DATA/MULTIPART_SHAPES_VALIDATION.json; REPORTS/MULTIPART_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "MULTIPART-NUMERIC",
+    "va": "0x1465fa380",
+    "start": "0x1465fa3af",
+    "end": "0x1465fa495",
+    "claim": "Numeric property extraction has a different result shape from the earlier Boolean helper",
+    "detail": "Keyglobal14CD26368 selects provider1D8 tree node. PackedBlock120 is right-shifted by(end-width+1)&31 and masked byFFFF>>(16-width)&31; fallback320..328 getter yields rawuint32 onlywhenvalidLSBset. Direction indexing uses resultlowbyte. Property name and initializer remain unresolved.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/MULTIPART_PROVIDER_BINDING.json; DATA/MULTIPART_SHAPES_VALIDATION.json; REPORTS/MULTIPART_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "MULTIPART-QUERY",
+    "va": "0x1465fa380",
+    "start": "0x1465fa39f",
+    "end": "0x1465fa4d5",
+    "claim": "Concrete virtual258 computes an adjacent query position using a separately looked-up block",
+    "detail": "Calls worldvirtual10(originalposition) atA3A9, extracts numeric property fromreturnedBlock, subtracts selected integerdirection fromXYZ with32-bit wrap, writesoutput and returnsAL1. In outeremitter the original Block property and looked-up Block property remain independent inputs.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/MULTIPART_PROVIDER_BINDING.json; DATA/MULTIPART_SHAPES_VALIDATION.json; REPORTS/MULTIPART_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "MULTIPART-GATES",
+    "va": "0x1465f8960",
+    "start": "0x1465f8a94",
+    "end": "0x1465f8af0",
+    "claim": "Emission queries a secondary receiver at the callback-computed position",
+    "detail": "Actual14A8B6DF0+258 invokes1465FA380 at8AAB; world18 receives its output at8AC7. Nullreceiver orreturnedvirtual80(byte12hex)==0 returnszero withoutappending. Otherwise the three-box path returnsone even whenallboxesfiltered. The returned receiver concrete type remains unresolved.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/MULTIPART_PROVIDER_BINDING.json; DATA/MULTIPART_SHAPES_VALIDATION.json; REPORTS/MULTIPART_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "MULTIPART-TRANSLATE",
+    "va": "0x1465f8960",
+    "start": "0x1465f8af6",
+    "end": "0x1465f8b65",
+    "claim": "Two raw float fields and the outer orientation determine the common translation",
+    "detail": "ReadsecondaryreceiverF4/F8 and compute scalar=(F4-F8)+F8 as separateSUBSS/ADDSS. Shift=float(queryposition)+float(outerdirection)*scalar, preserving original multiply/add grouping. These raw fields are not assigned progress/velocity semantics. Scalar cancellation is not simplified.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/MULTIPART_PROVIDER_BINDING.json; DATA/MULTIPART_SHAPES_VALIDATION.json; REPORTS/MULTIPART_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "MULTIPART-APPEND",
+    "va": "0x1465f8960",
+    "start": "0x1465f8b6a",
+    "end": "0x1465f8e64",
+    "claim": "Three translated boxes pass ordered rejection tests and append in local-table output order",
+    "detail": "Eachendpoint adds the common shift beforeMINSS/MAXSS with highendpoint as secondoperand. UCOMISS/JAE rejects ordereddegenerate/touching bounds; optionalqueryuses sameordered>= behavior. Existing vectorcontents retained; capacity path calls1404D59A0; outputstride24. Native fixtures coverNaNs,largecoordinates,wrap,cancellation,querytouching andbothappendpaths.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/MULTIPART_PROVIDER_BINDING.json; DATA/MULTIPART_SHAPES_VALIDATION.json; REPORTS/MULTIPART_COLLISION_SHAPES.md"
+  },
+  {
+    "id": "MULTIPART-BOUNDS",
+    "va": "0x1465f88e0",
+    "start": "0x1465f88ee",
+    "end": "0x1465f894e",
+    "claim": "This provider has a separate bounds callback with an optional raw-mask gate",
+    "detail": "Nullable sixth argument receiver virtual20 is called at890E. ReturnDWORD bit400000 selects24zerooutputbytes; other cases delegate to141A22B80. No game-mode semantics or complete alternate receiver implementation is inferred. Instruction-reviewed and exported; not part of multipart numerical C++ comparisons.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/MULTIPART_PROVIDER_BINDING.json; DATA/MULTIPART_SHAPES_VALIDATION.json; REPORTS/MULTIPART_COLLISION_SHAPES.md"
+  }
+]

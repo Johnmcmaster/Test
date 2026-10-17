@@ -10,7 +10,9 @@ The original Windows executable was independently verified: 223,223,112 bytes, i
 
 ## New recovered behavior
 
-- Selected derived collision providers now have constructor/table proof and readable connected-box, packed-property and emission-gate code. **12,821 additional native comparisons pass**. See [DERIVED_BLOCK_SHAPES.md](REPORTS/DERIVED_BLOCK_SHAPES.md). The four readable C++ suites total **120,754 bounded comparisons across 39 variants**; seven NaN payload differences are recorded in the earlier environment suite.
+- Moving multipart collision emission now has readable C++, its concrete virtual258 callback, direction-table initialization and constructor/table proof. **12,632 new original-entry comparisons pass** with zero mismatches. See [MULTIPART_COLLISION_SHAPES.md](REPORTS/MULTIPART_COLLISION_SHAPES.md). The five readable C++ suites total **133,386 bounded comparisons across 42 variants**; seven NaN payload differences remain confined to the earlier environment suite.
+
+- Selected derived collision providers have constructor/table proof and readable connected-box, packed-property and emission-gate code. **12,821 native comparisons pass**. See [DERIVED_BLOCK_SHAPES.md](REPORTS/DERIVED_BLOCK_SHAPES.md).
 
 - Base block collision geometry is now readable: actual base-table dispatch, custom-box emission, property lookup, deterministic offsets and bounds. **12,308 native comparisons pass** with no mismatches. See [BLOCK_SHAPE_RECONSTRUCTION.md](REPORTS/BLOCK_SHAPE_RECONSTRUCTION.md). Other derived block overrides and full ticks remain open.
 - The environment continuation adds readable lava movement/drag, fluid gravity, flying coefficients, speed-source updates and both NoClip/NoBlock filter branches. Its constructed world receiver is independently bound to the actual region/chunk predicates. **31,004 additional native comparisons pass**, with seven NaN payload differences recorded. See [ENVIRONMENT_CONTINUATION.md](REPORTS/ENVIRONMENT_CONTINUATION.md). These are bounded component fixtures, not whole ticks.

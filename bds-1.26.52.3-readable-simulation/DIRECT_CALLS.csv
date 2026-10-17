@@ -1439,7 +1439,7 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x1415fe680,0x1415ff043,call,,qword ptr [rip + 0x97ab1d7],indirect_unresolved,ASSEMBLY/00000001415FE680.asm,622,,
 0x1415fe680,0x1415ff0bd,call,,qword ptr [rip + 0x97ab15d],indirect_unresolved,ASSEMBLY/00000001415FE680.asm,652,,
 0x1415fe680,0x1415ff101,call,0x1402763d0,0x1402763d0,direct,ASSEMBLY/00000001415FE680.asm,664,,
-0x1415fe680,0x1415ff16d,call,0x141a22f50;0x141a2ca60;0x147153270;0x1487e5140;0x148a2e2c0;0x140076010,qword ptr [rip + 0x97ab0ad],conditional_known_targets,ASSEMBLY/00000001415FE680.asm,687,Selected constructor-bound providers only; actual block lookup chooses the receiver and other overrides remain unresolved,DATA/BLOCK_PROVIDER_BINDING.json; DATA/DERIVED_BLOCK_BINDING.json
+0x1415fe680,0x1415ff16d,call,0x141a22f50;0x141a2ca60;0x147153270;0x1487e5140;0x148a2e2c0;0x140076010;0x1465f8960,qword ptr [rip + 0x97ab0ad],conditional_known_targets,ASSEMBLY/00000001415FE680.asm,687,"Selected constructor-bound providers, now including14A8B6DF0; actual world lookup and other providers remain separate",DATA/BLOCK_PROVIDER_BINDING.json; DATA/DERIVED_BLOCK_BINDING.json; DATA/MULTIPART_PROVIDER_BINDING.json
 0x1415fe680,0x1415ff1e7,call,,qword ptr [rip + 0x97ab033],indirect_unresolved,ASSEMBLY/00000001415FE680.asm,717,,
 0x1415fe680,0x1415ff203,call,,qword ptr [rip + 0x97ab017],indirect_unresolved,ASSEMBLY/00000001415FE680.asm,725,,
 0x1415fe680,0x1415ff227,call,,qword ptr [rip + 0x97aaff3],indirect_unresolved,ASSEMBLY/00000001415FE680.asm,734,,
@@ -9376,10 +9376,12 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x1465ee6f0,0x1465eebb9,call,,qword ptr [rip + 0x47bb661],indirect_unresolved,WORK/physics/ASSEMBLY/00000001465EE6F0.asm,273,,
 0x1465ee6f0,0x1465eebcf,call,,qword ptr [rip + 0x47bb64b],indirect_unresolved,WORK/physics/ASSEMBLY/00000001465EE6F0.asm,279,,
 0x1465ee6f0,0x1465eec02,call,,qword ptr [rip + 0x47c1c48],indirect_unresolved,WORK/physics/ASSEMBLY/00000001465EE6F0.asm,293,,
+0x1465f88e0,0x1465f890e,call,,qword ptr [rip + 0x47b190c],indirect_unresolved,ASSEMBLY/00000001465F88E0.asm,18,,
+0x1465f88e0,0x1465f8939,call,0x141a22b80,0x141a22b80,direct,ASSEMBLY/00000001465F88E0.asm,28,,
 0x1465f8960,0x1465f8a60,call,,qword ptr [rip + 0x47b17ba],indirect_unresolved,ASSEMBLY/00000001465F8960.asm,73,,
 0x1465f8960,0x1465f8a80,call,0x1465f8ec0,0x1465f8ec0,direct,ASSEMBLY/00000001465F8960.asm,82,,
-0x1465f8960,0x1465f8aab,call,,qword ptr [rip + 0x47b176f],indirect_unresolved,ASSEMBLY/00000001465F8960.asm,91,,
-0x1465f8960,0x1465f8ac7,call,,qword ptr [rip + 0x47b1753],indirect_unresolved,ASSEMBLY/00000001465F8960.asm,98,,
+0x1465f8960,0x1465f8aab,call,0x1465fa380,qword ptr [rip + 0x47b176f],conditional_known_target,ASSEMBLY/00000001465F8960.asm,91,Constructor-installed14A8B6DF0 virtual258 only,DATA/MULTIPART_PROVIDER_BINDING.json
+0x1465f8960,0x1465f8ac7,call,0x1415f67d0,qword ptr [rip + 0x47b1753],conditional_known_target,ASSEMBLY/00000001465F8960.asm,98,Constructed world14A753900 virtual18; returned receiver80 and state producers unresolved,DATA/MULTIPART_PROVIDER_BINDING.json
 0x1465f8960,0x1465f8ae8,call,,qword ptr [rip + 0x47b1732],indirect_unresolved,ASSEMBLY/00000001465F8960.asm,106,,
 0x1465f8960,0x1465f8c8f,call,0x1404d59a0,0x1404d59a0,direct,ASSEMBLY/00000001465F8960.asm,205,,
 0x1465f8960,0x1465f8d81,call,0x1404d59a0,0x1404d59a0,direct,ASSEMBLY/00000001465F8960.asm,267,,
@@ -9408,6 +9410,15 @@ function_va,instruction_va,kind,target_va,operand,resolution,source_artifact,sou
 0x1465f8ec0,0x1465f94ea,call,0x142f77110,0x142f77110,direct,ASSEMBLY/00000001465F8EC0.asm,260,,
 0x1465f8ec0,0x1465f9528,call,0x142f77110,0x142f77110,direct,ASSEMBLY/00000001465F8EC0.asm,269,,
 0x1465f8ec0,0x1465f9534,call,0x14a0fe4b0,0x14a0fe4b0,direct,ASSEMBLY/00000001465F8EC0.asm,271,,
+0x1465fa380,0x1465fa3a9,call,0x1415f65e0,qword ptr [rip + 0x47afe71],conditional_known_target,ASSEMBLY/00000001465FA380.asm,15,Constructed world14A753900 virtual10; numeric fixtures use an explicit world backend,DATA/MULTIPART_PROVIDER_BINDING.json
+0x1465fa380,0x1465fa480,call,,qword ptr [rip + 0x47afd9a],indirect_unresolved,ASSEMBLY/00000001465FA380.asm,69,,
+0x1465fa380,0x1465fa4df,call,0x14a110760,0x14a110760,direct,ASSEMBLY/00000001465FA380.asm,96,,
+0x1465ff420,0x1465ff452,call,,qword ptr [rip + 0x47aadc8],indirect_unresolved,ASSEMBLY/00000001465FF420.asm,12,,
+0x1465ff420,0x1465ff48d,call,0x14a0f9ba0,0x14a0f9ba0,direct,ASSEMBLY/00000001465FF420.asm,23,,
+0x1465ff420,0x1465ff4b7,call,,qword ptr [rip + 0x47aad63],indirect_unresolved,ASSEMBLY/00000001465FF420.asm,30,,
+0x1465ff420,0x1465ff4eb,call,0x14a0f9ba0,0x14a0f9ba0,direct,ASSEMBLY/00000001465FF420.asm,40,,
+0x1465ff420,0x1465ff577,call,0x1412c12b0,0x1412c12b0,direct,ASSEMBLY/00000001465FF420.asm,63,,
+0x1465ff420,0x1465ff58e,call,0x1412c12b0,0x1412c12b0,direct,ASSEMBLY/00000001465FF420.asm,69,,
 0x146612ef0,0x146612f18,call,0x141a1fef0,0x141a1fef0,direct,ASSEMBLY/0000000146612EF0.asm,15,,
 0x146612ef0,0x146612faa,call,0x1400bc5a0,0x1400bc5a0,direct,ASSEMBLY/0000000146612EF0.asm,39,,
 0x146612ef0,0x146612fc5,call,0x141a28990,0x141a28990,direct,ASSEMBLY/0000000146612EF0.asm,44,,

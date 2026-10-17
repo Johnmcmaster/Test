@@ -33,14 +33,15 @@ def main():
     for name in ['READABLE_SIMULATION_VALIDATION.json',
                  'ENVIRONMENT_STAGES_VALIDATION.json',
                  'NATIVE_SHAPES_VALIDATION.json',
-                 'SHAPE_OVERRIDES_VALIDATION.json']:
+                 'SHAPE_OVERRIDES_VALIDATION.json',
+                 'MULTIPART_SHAPES_VALIDATION.json']:
         path = a.root / 'DATA' / name
         d = json.loads(path.read_text())
         assert d['binary_sha256'] == EXPECTED and d['mismatches'] == 0
         assert d['case_count'] == sum(d['cases_by_variant'].values())
         for source, digest in d['sources'].items():
             assert sha(a.root / source) == digest, ('Stale source', name, source)
-        for r in d['native_ranges']:
+        for r in d['native_ranges'] + d.get('dependency_ranges', []):
             begin, end = int(r['va'], 0), int(r['end_exclusive'], 0)
             assert hashlib.sha256(im.pe.read_va(begin, end-begin)).hexdigest() == r['code_sha256'], r
         suites.append(dict(report='DATA/' + name, report_sha256=sha(path),

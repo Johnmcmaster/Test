@@ -1,5 +1,11 @@
 # Native movement simulation reconstruction — current checkpoint
 
+The [multipart continuation](REPORTS/MULTIPART_COLLISION_SHAPES.md) reconstructs
+the previously unresolved emitter1465F8960, its concrete virtual258 query-position
+callback1465FA380, three local-box tables and actual direction initialization.
+It passes12,632 original-entry comparisons with zero mismatches. Separate block
+properties, raw secondary-object fields and remaining unknown receivers are explicit.
+
 The [derived-provider continuation](REPORTS/DERIVED_BLOCK_SHAPES.md) adds actual constructor bindings, connected collision boxes, packed/fallback property extraction and world/object emission gates. It passes 12,821 original-entry comparisons and proves that enumeration1415FF16D consumes the box vector while discarding the emitter return byte. The remaining provider set and complete tick are unresolved.
 
 The new [base block geometry reconstruction](REPORTS/BLOCK_SHAPE_RECONSTRUCTION.md)
@@ -14,7 +20,7 @@ the constructed NoClip world callback and reconstructs more lava/fluid/flying
 and speed-source code. It adds31,004 native comparisons with zero mismatches and
 seven NaN payload differences. Full simulator composition remains open.
 
-The four readable C++ suites total 120,754 bounded comparisons across 39 variants.
+The five readable C++ suites total 133,386 bounded comparisons across 42 variants.
 These counts describe finite fixtures, not a measured percentage of the simulator.
 
 Status: **new native stages reconstructed into compilable readable C++; full simulator, anti-cheat and complete Geyser port remain unfinished**. This continuation used targeted Ghidra, Capstone and original-instruction harnesses directly, without agents. It preserves the earlier kernels and precise unresolved dependencies.

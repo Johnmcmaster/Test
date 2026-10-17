@@ -136,7 +136,25 @@ receiver replies, fallback getters and the forwarded child-shape body remain
 explicit fixture backends. See
 [DERIVED_BLOCK_SHAPES.md](../REPORTS/DERIVED_BLOCK_SHAPES.md).
 
-Across all four readable C++ suites,120,754 bounded comparisons pass across39
+## Moving multipart geometry
+
+`NativeMultipartShapes.cpp` recovers the actual three-box emitter1465F8960,
+installed query-position callback1465FA380, local boxes1465F8EC0 and independently
+verified direction-table initialization1465FF420. The two queried block properties
+remain distinct, and the secondary receiver's scalar fields retain raw names.
+
+```sh
+python SCRIPTS/verify_multipart_binding.py /path/bedrock_server.exe .
+python SCRIPTS/verify_multipart_shapes.py /path/bedrock_server.exe --cases 2000
+```
+
+All12,632 original-entry cases pass. Guard/allocator/world/object/getter and
+vector-growth backends are explicit; original box construction, property search,
+direction stores, virtual258 and emission arithmetic execute. Indices outside
+the proved native tables are `nullopt` in the research adapter, not a native
+validation policy. See[MULTIPART_COLLISION_SHAPES.md](../REPORTS/MULTIPART_COLLISION_SHAPES.md).
+
+Across all five readable C++ suites,133,386 bounded comparisons pass across42
 variants. Seven NaN payload differences occur in the environment suite. These
 counts are not unique server states, full ticks or a coverage percentage. The
 remaining derived providers, complete world/authority model and scheduler/replay
