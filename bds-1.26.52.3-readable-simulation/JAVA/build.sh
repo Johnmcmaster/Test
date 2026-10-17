@@ -17,6 +17,7 @@ find core/src/test/java -name '*.java' -print | sort > build/core-test-sources.t
 "$compiler" --release 21 -proc:none -Xlint:all -cp build/core -d build/core-test @build/core-test-sources.txt
 "$runner" -ea -cp build/core:build/core-test org.bedrockresearch.movement.CoreContractsTest
 "$runner" -ea -cp build/core:build/core-test org.bedrockresearch.movement.RecoveredResidualSelectorTest
+"$runner" -ea -cp build/core:build/core-test org.bedrockresearch.movement.StateContractsTest
 mkdir -p build/kernel-test
 "$compiler" --release 21 -proc:none -cp build/core -d build/kernel-test physics-kernels/test/GlideKernelTest.java
 "$runner" -ea -cp build/core:build/kernel-test GlideKernelTest physics-kernels/fixtures/glide_native_fixtures.csv
