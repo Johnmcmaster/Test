@@ -1,0 +1,121 @@
+{
+  "archives": [
+    {
+      "file": "1.zip",
+      "sha256": "6c5eeae41e6f503599dc73fb5648f15e93161c33af7f7a82300065ef2b47193b",
+      "crc_verified": true
+    },
+    {
+      "file": "2.zip",
+      "sha256": "d1381c4122dee5f7755b2d170790cbb4004eca4eb27f604686ac44a0ea40dfd8",
+      "crc_verified": true
+    }
+  ],
+  "source_manifest_files_verified": 4341,
+  "prior_research_prefix_preserved": true,
+  "original_executable_excluded": true,
+  "numeric_edge_reports": [
+    {
+      "report": "extracted_multipart_validation.json",
+      "case_count": 6632,
+      "mismatches": 0,
+      "sha256": "6daa325f0a3eafc78c464ac6c774cbdd81bb473bd5f266964b175139dfd76654",
+      "scope": "overlaps primary suites; packaging validation only"
+    },
+    {
+      "report": "extracted_forwarded_validation.json",
+      "case_count": 22944,
+      "mismatches": 0,
+      "sha256": "e555d92d53eac7635e45ef0299460a2566bce6830f23c889172788b541ed92c3",
+      "scope": "overlaps primary suites; packaging validation only"
+    },
+    {
+      "report": "extracted_category_validation.json",
+      "case_count": 60,
+      "mismatches": 0,
+      "sha256": "693dc26ab74bd43e71e2968816c594ec2da6cb633d919a09987895fe54f9c09b",
+      "scope": "overlaps primary suites; packaging validation only"
+    }
+  ],
+  "integrity_audit": {
+    "verified_utc": "2026-10-17T00:38:09.967320+00:00",
+    "binary_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+    "binary_bytes": 223223112,
+    "image_base": "0x140000000",
+    "readable_suites": [
+      {
+        "report": "DATA/READABLE_SIMULATION_VALIDATION.json",
+        "report_sha256": "406d8a40302912c014556c890df72cb8273a6b6b67db948b8e9770cae020b4a2",
+        "case_count": 64621,
+        "variants": 16,
+        "nan_payload_differences": 0,
+        "source_hashes_verified": true,
+        "native_range_hashes_verified": true
+      },
+      {
+        "report": "DATA/ENVIRONMENT_STAGES_VALIDATION.json",
+        "report_sha256": "10dc555e5855515ed746bcb40b16e288de2317703e72513f1093a42cf3c8361d",
+        "case_count": 31004,
+        "variants": 13,
+        "nan_payload_differences": 7,
+        "source_hashes_verified": true,
+        "native_range_hashes_verified": true
+      },
+      {
+        "report": "DATA/NATIVE_SHAPES_VALIDATION.json",
+        "report_sha256": "6bb675aab9ba02c9702763d8ae482a7f053d298a910540051c81aea41eeba690",
+        "case_count": 12308,
+        "variants": 5,
+        "nan_payload_differences": 0,
+        "source_hashes_verified": true,
+        "native_range_hashes_verified": true
+      },
+      {
+        "report": "DATA/SHAPE_OVERRIDES_VALIDATION.json",
+        "report_sha256": "e1bd9fe463aa9f1a69fcba3cfcd2992422b18a960c6bd0f25a0cb3cf5a67e20b",
+        "case_count": 12821,
+        "variants": 5,
+        "nan_payload_differences": 0,
+        "source_hashes_verified": true,
+        "native_range_hashes_verified": true
+      },
+      {
+        "report": "DATA/MULTIPART_SHAPES_VALIDATION.json",
+        "report_sha256": "903ce105d9662dc66742803eb3a9edfc74e0e64874d46d047c2efa50d73ccccd",
+        "case_count": 12632,
+        "variants": 3,
+        "nan_payload_differences": 0,
+        "source_hashes_verified": true,
+        "native_range_hashes_verified": true
+      },
+      {
+        "report": "DATA/FORWARDED_SHAPES_VALIDATION.json",
+        "report_sha256": "123b7dc6616065f65ead68a8d64d06d3cd1e09893de1319a307db1b41f5b6b19",
+        "case_count": 34944,
+        "variants": 6,
+        "nan_payload_differences": 0,
+        "source_hashes_verified": true,
+        "native_range_hashes_verified": true
+      },
+      {
+        "report": "DATA/REPLAY_CATEGORY_VALIDATION.json",
+        "report_sha256": "27bfd9ad6fe2ef2eeb9477b5b20adb258c8340b63b4974dfec23a6284f561b31",
+        "case_count": 2060,
+        "variants": 1,
+        "nan_payload_differences": 0,
+        "source_hashes_verified": true,
+        "native_range_hashes_verified": true
+      }
+    ],
+    "readable_cpp_cases": 170390,
+    "readable_cpp_variants": 49,
+    "ghidra_c_exports": 568,
+    "evidence_rows": 395,
+    "assembly_files": 845,
+    "assembly_ranges": 730,
+    "numeric_suites_rerun_by_this_audit": false,
+    "full_simulator_status": "incomplete; Unavailable",
+    "limits": "Source/range integrity and saved report consistency; not an exhaustive or live-tick equivalence proof"
+  },
+  "source_manifest_still_matches_after_tests": true
+}

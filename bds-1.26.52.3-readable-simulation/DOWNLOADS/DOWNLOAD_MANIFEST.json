@@ -3,26 +3,26 @@
   "archives": [
     {
       "file": "1.zip",
-      "bytes": 7374922,
-      "sha256": "64cdf764c5af93e45e4e181259550b12118b779615709b467dba96d438c7980d",
-      "entries": 2071,
+      "bytes": 7367998,
+      "sha256": "6c5eeae41e6f503599dc73fb5648f15e93161c33af7f7a82300065ef2b47193b",
+      "entries": 2121,
       "crc_verified": true,
       "contents_sha256_verified": true
     },
     {
       "file": "2.zip",
-      "bytes": 4065751,
-      "sha256": "cc5e5a1b2759faf41c07835c8cdd9e3ef64561da20702a710cc86a7ec72db005",
-      "entries": 1948,
+      "bytes": 4611180,
+      "sha256": "d1381c4122dee5f7755b2d170790cbb4004eca4eb27f604686ac44a0ea40dfd8",
+      "entries": 2221,
       "crc_verified": true,
       "contents_sha256_verified": true
     }
   ],
-  "file_count": 4019,
-  "current_targeted_ghidra_c": 508,
+  "file_count": 4342,
+  "current_targeted_ghidra_c": 568,
   "historical_ghidra_c": 173,
-  "omitted_files": 7357,
-  "omitted_bytes": 1401654296,
+  "omitted_files": 7360,
+  "omitted_bytes": 1401749632,
   "missing_evidence_paths": [],
   "full_simulator_status": "incomplete; Unavailable",
   "numeric_machine_cases": 104028,
@@ -50,10 +50,42 @@
       "mismatches": 0,
       "nan_payload_differences": 0,
       "source_hashes_verified": true
+    },
+    {
+      "report": "DATA/SHAPE_OVERRIDES_VALIDATION.json",
+      "case_count": 12821,
+      "variants": 5,
+      "mismatches": 0,
+      "nan_payload_differences": 0,
+      "source_hashes_verified": true
+    },
+    {
+      "report": "DATA/MULTIPART_SHAPES_VALIDATION.json",
+      "case_count": 12632,
+      "variants": 3,
+      "mismatches": 0,
+      "nan_payload_differences": 0,
+      "source_hashes_verified": true
+    },
+    {
+      "report": "DATA/FORWARDED_SHAPES_VALIDATION.json",
+      "case_count": 34944,
+      "variants": 6,
+      "mismatches": 0,
+      "nan_payload_differences": 0,
+      "source_hashes_verified": true
+    },
+    {
+      "report": "DATA/REPLAY_CATEGORY_VALIDATION.json",
+      "case_count": 2060,
+      "variants": 1,
+      "mismatches": 0,
+      "nan_payload_differences": 0,
+      "source_hashes_verified": true
     }
   ],
-  "readable_cpp_machine_cases": 107933,
-  "readable_cpp_variants": 34,
+  "readable_cpp_machine_cases": 170390,
+  "readable_cpp_variants": 49,
   "duplicate_groups": {
     "e7bd5eeea9a393171199133f31f617813d733be40e635fbc7fcf94eb17f2f72b": [
       "ASSEMBLY/00000001409A5710.asm",
@@ -1399,6 +1431,38 @@
       "DECOMPILATION/ghidra/sim_velocity_delegates/0x141c86900_FUN_141c86900.c",
       "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/service02/0x141c86900_FUN_141c86900.c"
     ],
+    "223538d47292648d3faef40d73547503dde017d7c0d2f1746b97b82b645d2633": [
+      "DECOMPILATION/retained_scheduler/0x14256d570_FUN_14256d570.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/first/0x14256d570_FUN_14256d570.c"
+    ],
+    "333097630d0f0ddcb5be27aa0502071f048d4fa522433856f86acabd5dddfed2": [
+      "DECOMPILATION/retained_scheduler/0x14256f0e0_FUN_14256f0e0.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/dispatcher/0x14256f0e0_FUN_14256f0e0.c"
+    ],
+    "4c3b75277d41d8b409e082f5725703e1ae87a3bbdd15ee2c654c7e062a861d31": [
+      "DECOMPILATION/retained_scheduler/0x14256f110_FUN_14256f110.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/dispatcher/0x14256f110_FUN_14256f110.c"
+    ],
+    "d40acc0567e646f0180475ae15ece15d28b9d9e06ec7f70a06961e1b4311accf": [
+      "DECOMPILATION/retained_scheduler/0x1425705d0_FUN_1425705d0.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/core/0x1425705d0_FUN_1425705d0.c"
+    ],
+    "57df4ae779b8151e6a0ae8995b6454b8ffa16142e723d5986b218163200644ed": [
+      "DECOMPILATION/retained_scheduler/0x14469bad0_FUN_14469bad0.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/first/0x14469bad0_FUN_14469bad0.c"
+    ],
+    "5b79503022ce55261e6a27ddfaa24b7d7d37931eb59ae9514c24a6adb10b48c6": [
+      "DECOMPILATION/retained_scheduler/0x14469c6e0_FUN_14469c6e0.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/first/0x14469c6e0_FUN_14469c6e0.c"
+    ],
+    "100a6ff83918be48507d330bbcbd5ebc0557d38a57e40194fac3f8254a9df858": [
+      "DECOMPILATION/retained_scheduler/0x14469cc10_FUN_14469cc10.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/first/0x14469cc10_FUN_14469cc10.c"
+    ],
+    "f7bf3ad003e55f5323b99906cc09abc724c5763ea53c17cd0c160e799b6e8d02": [
+      "DECOMPILATION/retained_scheduler/0x14469d130_FUN_14469d130.c",
+      "PRIOR_GHIDRA_EXPORTS/prior_final/ghidra/first/0x14469d130_FUN_14469d130.c"
+    ],
     "dd9189226961a0698508aeb214d69afc2a31cc5f38b3644bb778ae7f4646b72d": [
       "PRIOR_GHIDRA_EXPORTS/part6/ghidra/0x142c15510_FUN_142c15510.c",
       "PRIOR_GHIDRA_EXPORTS/prior_final/baseline/0x142c15510_FUN_142c15510.c"
@@ -1506,6 +1570,9 @@
       "WORK/ghidra/sim_block_type_core/skipped.json",
       "WORK/ghidra/sim_composition/reuse.json",
       "WORK/ghidra/sim_composition/skipped.json",
+      "WORK/ghidra/sim_connected_provider_constructor/reuse.json",
+      "WORK/ghidra/sim_connected_provider_constructor/skipped.json",
+      "WORK/ghidra/sim_container_constructor/skipped.json",
       "WORK/ghidra/sim_custom_collision_shape/reuse.json",
       "WORK/ghidra/sim_custom_collision_shape/skipped.json",
       "WORK/ghidra/sim_default_math/reuse.json",
@@ -1513,6 +1580,10 @@
       "WORK/ghidra/sim_default_move/reuse.json",
       "WORK/ghidra/sim_default_move/skipped.json",
       "WORK/ghidra/sim_default_views/reuse.json",
+      "WORK/ghidra/sim_derived_shape_helpers/reuse.json",
+      "WORK/ghidra/sim_derived_shape_helpers/skipped.json",
+      "WORK/ghidra/sim_derived_shapes/reuse.json",
+      "WORK/ghidra/sim_derived_shapes/skipped.json",
       "WORK/ghidra/sim_effect_mode_bindings/reuse.json",
       "WORK/ghidra/sim_effect_mode_bindings/skipped.json",
       "WORK/ghidra/sim_effect_registration/reuse.json",
@@ -1525,6 +1596,7 @@
       "WORK/ghidra/sim_factory_owner/skipped.json",
       "WORK/ghidra/sim_fluid_geometry/reuse.json",
       "WORK/ghidra/sim_fluid_geometry/skipped.json",
+      "WORK/ghidra/sim_forwarded_shape_helpers/skipped.json",
       "WORK/ghidra/sim_input_bodies/reuse.json",
       "WORK/ghidra/sim_input_bodies/skipped.json",
       "WORK/ghidra/sim_input_bridge/reuse.json",
@@ -1535,8 +1607,18 @@
       "WORK/ghidra/sim_mode_reset/skipped.json",
       "WORK/ghidra/sim_movecontrol/reuse.json",
       "WORK/ghidra/sim_movecontrol/skipped.json",
+      "WORK/ghidra/sim_multipart_binding/reuse.json",
+      "WORK/ghidra/sim_multipart_binding/skipped.json",
+      "WORK/ghidra/sim_multipart_bounds/reuse.json",
+      "WORK/ghidra/sim_multipart_bounds/skipped.json",
+      "WORK/ghidra/sim_multipart_initializer/reuse.json",
+      "WORK/ghidra/sim_multipart_initializer/skipped.json",
       "WORK/ghidra/sim_noclip_receiver/reuse.json",
       "WORK/ghidra/sim_noclip_receiver/skipped.json",
+      "WORK/ghidra/sim_registry_scheduler_owner/reuse.json",
+      "WORK/ghidra/sim_registry_scheduler_owner/skipped.json",
+      "WORK/ghidra/sim_scheduler_factory/reuse.json",
+      "WORK/ghidra/sim_scheduler_factory/skipped.json",
       "WORK/ghidra/sim_shape_bounds/reuse.json",
       "WORK/ghidra/sim_shape_bounds/skipped.json",
       "WORK/ghidra/sim_shape_enumeration/reuse.json",
@@ -1552,6 +1634,8 @@
       "WORK/ghidra/sim_velocity_delegates/reuse.json",
       "WORK/ghidra/sim_velocity_delegates/skipped.json",
       "WORK/ghidra/sim_velocity_views/reuse.json",
+      "WORK/ghidra/sim_world_metadata_method/reuse.json",
+      "WORK/ghidra/sim_world_metadata_method/skipped.json",
       "WORK/ghidra/sim_world_queries/reuse.json",
       "WORK/ghidra/sim_world_queries/skipped.json",
       "WORK/ghidra/sim_world_shapes/reuse.json",
@@ -1740,6 +1824,14 @@
       "WORK/movement_types/exports/0000000142503410.json",
       "WORK/physics/type_verification/exports/0000000142503410.json",
       "WORK/type_metadata/exports/0000000142503410.json"
+    ],
+    "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855": [
+      "WORK/ghidra/sim_container_constructor/ranges.tsv",
+      "WORK/ghidra/sim_container_constructor/targets.txt"
+    ],
+    "25f3010d2fddf1551d16a114e94db6f90c154b63ad2e3c6c779f9c69ccc86a3a": [
+      "WORK/ghidra/sim_container_constructor/requests.json",
+      "WORK/ghidra/sim_container_constructor/reuse.json"
     ],
     "ab74e9250bb9593625301649a445805a62c4f9ab26670d8cdf51c1d9f1c29b84": [
       "WORK/ghidra/typed_collision/requests.json",
