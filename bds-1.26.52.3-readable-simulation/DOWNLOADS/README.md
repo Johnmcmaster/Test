@@ -2,8 +2,8 @@
 
 Download both ZIPs and extract them into the same directory:
 
-- [1.zip — 7,367,998 bytes](1.zip)
-- [2.zip — 4,611,180 bytes](2.zip)
+- [1.zip — 7,367,998 bytes](https://raw.githubusercontent.com/Johnmcmaster/Test/43ad7d0c69fc4732dbbaff7e9f21c7090ea19440/bds-1.26.52.3-readable-simulation/DOWNLOADS/1.zip)
+- [2.zip — 4,611,180 bytes](https://raw.githubusercontent.com/Johnmcmaster/Test/43ad7d0c69fc4732dbbaff7e9f21c7090ea19440/bds-1.26.52.3-readable-simulation/DOWNLOADS/2.zip)
 
 Each is below 8,000,000 bytes and is an independent ZIP. No concatenation is
 required. The extracted folder is `bedrock_anticheat_final_1.26.52.3`.
