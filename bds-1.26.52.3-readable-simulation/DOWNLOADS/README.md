@@ -1,35 +1,14 @@
-# Download the movement reconstruction checkpoint
+# Verified movement research downloads
 
-Download both ZIPs and extract them into the same directory:
+The latest checkpoint adds readable MobJump decisions, jump impulses, material queries, no-jump delay processing and selected concrete replay-worker bindings. Full simulation, historical restoration, complete authority and production Geyser integration remain unfinished.
 
-- [1.zip — 7,367,998 bytes](https://raw.githubusercontent.com/Johnmcmaster/Test/43ad7d0c69fc4732dbbaff7e9f21c7090ea19440/bds-1.26.52.3-readable-simulation/DOWNLOADS/1.zip)
-- [2.zip — 4,611,180 bytes](https://raw.githubusercontent.com/Johnmcmaster/Test/43ad7d0c69fc4732dbbaff7e9f21c7090ea19440/bds-1.26.52.3-readable-simulation/DOWNLOADS/2.zip)
+Download both independent ZIPs and extract them into the same directory; no concatenation is needed. Each is smaller than8,000,000 bytes.
 
-Each is below 8,000,000 bytes and is an independent ZIP. No concatenation is
-required. The extracted folder is `bedrock_anticheat_final_1.26.52.3`.
-`DOWNLOAD_MANIFEST.json` records SHA-256 hashes, contents and suite counts.
+- [1.zip](https://raw.githubusercontent.com/Johnmcmaster/Test/5f34429048c0e18e64bddaf9afde0d4457e46955/bds-1.26.52.3-readable-simulation/DOWNLOADS/1.zip) — 7380375 bytes; SHA-256 `8e9808f8d37d1f2e098d88dff9a64d0c4050e91e55def4b242e1a1f1c327cdd1`.
+- [2.zip](https://raw.githubusercontent.com/Johnmcmaster/Test/5f34429048c0e18e64bddaf9afde0d4457e46955/bds-1.26.52.3-readable-simulation/DOWNLOADS/2.zip) — 5775107 bytes; SHA-256 `c4cba816f6ae45e302b116af53e15bcb9bc51399294810540a28ba432e2debf1`.
 
-The checkpoint includes 568 targeted Ghidra C files across 325 entry VAs,
-including eight explicitly reused prior raw files, plus 173 separately labeled
-historical exports. Readable C++, assembly, scripts, evidence, prior Java/Geyser
-code and the consolidated TXT are included. The TXT preserves the complete
-10,720,783-byte Parts 1–6 prefix unchanged. The original executable and raw mapped
-image/database are excluded. This is a targeted research collection.
+Public HTTPS responses, full checksums and ZIP CRCs were independently verified after upload. DATA/PUBLIC_DOWNLOAD_VERIFICATION.json and DATA/PACKAGE_EXTRACTION_VERIFICATION_JUMP_20261017.json retain the verification.
 
-Seven bounded C++ suites pass 170,390 original-instruction comparisons across
-49 variants. Seven NaN payload differences remain recorded in the earlier
-environment suite. The new multipart geometry, two forwarded geometry bodies
-and bounded replay category path add 49,636 comparisons. Full physics, history
-restoration, outer scheduling and production Geyser integration remain unfinished.
+Includes641 current targeted Ghidra C exports,173 historical exports, readable sources, assembly, scripts,414 evidence rows and consolidated Parts1–6 plus verified continuation. All4,792 source-manifest entries verify after extraction. The nine readable C++ suites retain198,852 bounded comparisons across66 variants; the new registration/jump work contributes28,462. Extracted-package edge validation reran33,098 overlapping cases without mismatches; these are not added again to the primary count.
 
-After extraction, all 4,341 source-manifest entries and the prior-research prefix
-were verified. The extracted new code was compiled and 29,636 overlapping native
-edge cases rerun with zero mismatches. These packaging checks are not added to
-the primary totals. Verification records are published after archive creation in
-Git `DATA/PACKAGE_EXTRACTION_VERIFICATION_20261017.json` and
-`DATA/PUBLIC_DOWNLOAD_VERIFICATION.json`.
-
-The uncompressed TXT and ZIP-specific `SOURCE_FILE_MANIFEST.csv` are inside the
-ZIPs; `GIT_SOURCE_MANIFEST.csv` covers published Git files. The earlier full
-Ghidra database snapshot remains in the [earlier release](https://github.com/Johnmcmaster/Test/releases/tag/bds-1.26.52.3-verified-movement-checkpoint-20261015).
-Read `UNRESOLVED.md` for exact targets and continuation commands.
+The original server executable and raw imported Ghidra database are excluded. The separately published [earlier Ghidra project snapshot](https://github.com/Johnmcmaster/Test/releases/tag/bds-1.26.52.3-verified-movement-checkpoint-20261015) has its own restore instructions. This package contains the current targeted exports, not a whole-executable decompilation.
