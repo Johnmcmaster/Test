@@ -41,7 +41,7 @@ def main():
         if rel.parts[0] != 'DOWNLOADS' and (root / rel).is_file():
             selected.add(root / rel)
     for name in ['READABLE_SIMULATION', 'SCRIPTS', 'REPORTS', 'DATA',
-                 'ASSEMBLY', 'DECOMPILATION', 'WORK/ghidra']:
+                 'ASSEMBLY', 'DECOMPILATION', 'WORK/ghidra','WORK/scheduler_continuation']:
         selected.update(p for p in (root / name).rglob('*') if p.is_file())
     selected.update(p for p in root.iterdir() if p.is_file())
     for name in ['WORK/full_sim/shapes_smoke.json',
@@ -56,6 +56,11 @@ def main():
                  'WORK/full_sim/multipart_initializer_pointer_refs.json',
                  'WORK/full_sim/forwarded_smoke.json',
                  'WORK/full_sim/forwarded_core_validation.json',
+                 'WORK/full_sim/replay_category_smoke.json',
+                 'WORK/full_sim/scheduler_continuation_refs.json',
+                 'WORK/full_sim/scheduler_pointer_candidates.json',
+                 'WORK/full_sim/scheduler_construction_refs.json',
+                 'WORK/full_sim/scheduler_factory_callers.json',
                  'WORK/history_writer/snapshot_copy_candidates.json',
                  'WORK/history_writer/snapshot_copy_review.json']:
         if (root / name).is_file():

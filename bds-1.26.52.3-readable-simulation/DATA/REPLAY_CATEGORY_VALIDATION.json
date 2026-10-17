@@ -1,0 +1,95 @@
+{
+  "binary_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "case_count": 2060,
+  "cases_by_variant": {
+    "0": 2060
+  },
+  "mismatches": 0,
+  "nan_payload_differences": 0,
+  "first_failures": [],
+  "compile_flags": [
+    "-std=c++20",
+    "-O2",
+    "-fno-fast-math",
+    "-ffp-contract=off"
+  ],
+  "native_ranges": [
+    {
+      "variant": 0,
+      "va": "0x14469c820",
+      "end_exclusive": "0x14469c914",
+      "code_sha256": "083e3c8f6868e4644cdd668ace962cbc8bdf20f8ceaf12efe6796c21ea537fa1",
+      "basic_blocks": [
+        "0x3001f010",
+        "0x3001f020",
+        "0x3001f030",
+        "0x1400f5a30",
+        "0x1400f5a3e",
+        "0x14256f0e0",
+        "0x14256f108",
+        "0x1425705d0",
+        "0x1425705ff",
+        "0x142570600",
+        "0x142570606",
+        "0x14257060f",
+        "0x142570614",
+        "0x142570628",
+        "0x1425706b6",
+        "0x1425706d0",
+        "0x1425706d4",
+        "0x1425706dd",
+        "0x142570730",
+        "0x14257075c",
+        "0x14257076f",
+        "0x14257087b",
+        "0x14469c820",
+        "0x14469c87c",
+        "0x14469c89c",
+        "0x14469c8a5",
+        "0x14469c8bc",
+        "0x1446b7ac0",
+        "0x1446b7af0",
+        "0x1446b7b04",
+        "0x1446b7b23",
+        "0x1446b7b2f",
+        "0x1446b7b43",
+        "0x14a59a850"
+      ]
+    }
+  ],
+  "dependency_ranges": [
+    {
+      "va": "0x14256f0e0",
+      "end_exclusive": "0x14256f10e",
+      "code_sha256": "c1f8d52f923af77199458472a101015c61e2524bae6a4fe8732b3cd7cce416ca"
+    },
+    {
+      "va": "0x1425705d0",
+      "end_exclusive": "0x142570d2f",
+      "code_sha256": "0380051dfe46099a007329f69e159a9d8c80f693ebbb701a8e4782104198415a"
+    },
+    {
+      "va": "0x1446b7ac0",
+      "end_exclusive": "0x1446b7b4f",
+      "code_sha256": "93045f75ec652cf1840460a58d971093d11b748fc831090df3f90dddcb52af5c"
+    }
+  ],
+  "sources": {
+    "READABLE_SIMULATION/NativeCategoryDispatcher.cpp": "ad03d98be4f7c6fce2daa07c35f3904ab14ff6e60f02dda1b818feba7574de45",
+    "READABLE_SIMULATION/NativeCategoryDispatcherCli.cpp": "e3e23a98e09cf1c66b6a65b4b5e648d08929555febe01c6e396925805708ed0b",
+    "READABLE_SIMULATION/NativeCategoryDispatcher.h": "d4b58a313ab7f8c4884d34c0f9044bf2a8843be20e0a40f4a4a815d2a2f51d4e",
+    "SCRIPTS/verify_replay_category.py": "c5d812a518ab3c49c5a2912c53f253b89b94344b36443585f3a86b2590997dab",
+    "SCRIPTS/verify_native_shapes.py": "6ce094d0fcd8b5325500d024f039adbe3d738fc6e797bb489891235b686cd944",
+    "JAVA/collision-kernels/verify_contact_machine.py": "962ce0ad990c547999637fc8897b69200ea21a28bfdbcd424eab297950cf450f"
+  },
+  "shims": [
+    "Actual14469C820 builds closure14A836890, dispatches through real14A7A28D0+20=14256F0E0, executes category search1425705D0 and actual1446B7AC0 invocation/destruction",
+    "Registered worker virtual10 and optional before/after hook virtual10 are explicit fixture callbacks; registry pointer and system IDs checked",
+    "Valid preinitialized16-bit category token/TLS guard, untimed byte60=0, per-system metadataC8=null"
+  ],
+  "limits": [
+    "No history snapshot restoration, physics resimulation, replay advancement or termination policy inferred",
+    "No exceptions, category/task mutation, real registered worker implementation or timing/profiling path tested",
+    "First matching category and stored duplicate-ID order verified; outer phase invocation and per-player universal scheduling still unresolved"
+  ]
+}

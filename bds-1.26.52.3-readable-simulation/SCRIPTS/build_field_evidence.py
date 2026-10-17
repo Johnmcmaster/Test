@@ -86,10 +86,19 @@ B.extend([
 ('MovingShapeReturnedAccessPrefix',0x1465f8960,0x1465f8b33,0x1465f8b3c,'rbx',0xfc,'World18 resultRAX saved inRBX at8AD6; rawfloatF4/F8 used in separateSUBSS/ADDSS.'),
 ('NumericPropertyBlockAccessPrefix',0x1465fa380,0x1465fa3b6,0x1465fa3fe,'rax',0x128,'Block pointer returned by worldvirtual10 atA3A9; reads provider68 andunsigned16 packed120.'),
 ('PackedPropertyNodeAccessPrefix',0x1465fa380,0x1465fa453,0x1465fa462,'r10',0x38,'Confirmed matching numeric property node; DWORDwidth2C/end30 reads, not complete metadata semantics.'),
+('SystemCollectionAccessPrefix',0x14469bad0,0x14469bb67,0x14469bb71,'r14',0x168,'Constructor receiverR14; independent primary00/secondary08 vptr stores.'),
+('SystemCollectionAccessPrefix',0x14469bad0,0x14469bbc6,0x14469bbc6,'r14',0x168,'Transfers incoming owned dispatcher handle into28; caller constructed it with14256D570.'),
+('SystemCollectionAccessPrefix',0x14469bad0,0x14469bda6,0x14469bda6,'r14',0x168,'Same constructor receiver; dispatch-mode byte60 initializedzero.'),
+('SystemCollectionAccessPrefix',0x1446b7ac0,0x1446b7ae4,0x1446b7ae4,'r14',0x168,'Closure capture08 points to collection; optional before-callback pointer120.'),
+('SystemCollectionAccessPrefix',0x1446b7ac0,0x1446b7b23,0x1446b7b23,'r14',0x168,'Same collection capture; optional after-callback pointer160.'),
+('CategoryDispatcherAccessPrefix',0x14256f0e0,0x14256f0e4,0x14256f0e8,'rcx',0x60,'Constructed dispatcher14A7A28D0 virtual20; category begin38/end40.'),
+('CategoryDispatcherAccessPrefix',0x14256f110,0x14256f114,0x14256f118,'rcx',0x60,'Distinct installed virtual28; alternate category begin50/end58.'),
+('CategoryRecordAccessPrefix',0x1425705d0,0x142570600,0x142570600,'rdi',0x18,'RDI scans38-byte records from supplied span; WORDtoken00.'),
+('CategoryRecordAccessPrefix',0x1425705d0,0x1425706b6,0x1425706ba,'rdi',0x18,'First matching category; loadsDWORD-ID begin08/end10.'),
 ])
 rows=[]
 for component,va,start,end,reg,limit,proof in B:
- paths=list((a.root/'ASSEMBLY').rglob(f'{va:016X}.asm'))+list((a.root/'BASELINE/DECOMPILATION').rglob(f'{va:016X}.asm'))
+ paths=list((a.root/'ASSEMBLY').rglob(f'{va:016X}.asm'))+list((a.root/'BASELINE/DECOMPILATION').rglob(f'{va:016X}.asm'))+list((a.root/'WORK/scheduler_continuation/ASSEMBLY').rglob(f'{va:016X}.asm'))
  if not paths:raise SystemExit(f'MissingASM{va:x}')
  source=paths[0];header=source.read_text().splitlines()[0];import re
  stop=int(re.search(r'end=(0x[0-9a-f]+)',header,re.I)[1],16)

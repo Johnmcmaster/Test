@@ -1,0 +1,404 @@
+{
+  "binary_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "confidence": "confirmed",
+  "instruction_checks": [
+    {
+      "function_va": "0x140763b60",
+      "instruction_va": "0x140763c61",
+      "instruction": "mov bl, byte ptr [rdi]",
+      "bytes": "8a1f",
+      "source_artifact": "ASSEMBLY/0000000140763B60.asm"
+    },
+    {
+      "function_va": "0x140763b60",
+      "instruction_va": "0x140763c63",
+      "instruction": "mov dil, byte ptr [rdi + 1]",
+      "bytes": "408a7f01",
+      "source_artifact": "ASSEMBLY/0000000140763B60.asm"
+    },
+    {
+      "function_va": "0x140763b60",
+      "instruction_va": "0x140763cbc",
+      "instruction": "mov edx, ebx",
+      "bytes": "89da",
+      "source_artifact": "ASSEMBLY/0000000140763B60.asm"
+    },
+    {
+      "function_va": "0x140763b60",
+      "instruction_va": "0x140763cbe",
+      "instruction": "mov r8d, edi",
+      "bytes": "4189f8",
+      "source_artifact": "ASSEMBLY/0000000140763B60.asm"
+    },
+    {
+      "function_va": "0x140763b60",
+      "instruction_va": "0x140763cc1",
+      "instruction": "call 0x140794160",
+      "bytes": "e89a040300",
+      "source_artifact": "ASSEMBLY/0000000140763B60.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x14079418f",
+      "instruction": "test dl, dl",
+      "bytes": "84d2",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x140794191",
+      "instruction": "je 0x140794290",
+      "bytes": "0f84f9000000",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x140794197",
+      "instruction": "test bl, bl",
+      "bytes": "84db",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x140794199",
+      "instruction": "je 0x140794343",
+      "bytes": "0f84a4010000",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x140794218",
+      "instruction": "call 0x14256d570",
+      "bytes": "e85393dd01",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x140794239",
+      "instruction": "call 0x14469bad0",
+      "bytes": "e89278f003",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x1407942d1",
+      "instruction": "movaps xmm0, xmmword ptr [rip + 0x9f7ba58]",
+      "bytes": "0f280558baf709",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x14079431c",
+      "instruction": "call 0x14256d570",
+      "bytes": "e84f92dd01",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x140794339",
+      "instruction": "call 0x14469bad0",
+      "bytes": "e89277f003",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x140794384",
+      "instruction": "movaps xmm0, xmmword ptr [rip + 0x9f7b985]",
+      "bytes": "0f280585b9f709",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x1407943cf",
+      "instruction": "call 0x14256d570",
+      "bytes": "e89c91dd01",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x140794160",
+      "instruction_va": "0x1407943ec",
+      "instruction": "call 0x14469bad0",
+      "bytes": "e8df76f003",
+      "source_artifact": "ASSEMBLY/0000000140794160.asm"
+    },
+    {
+      "function_va": "0x14469bad0",
+      "instruction_va": "0x14469bb60",
+      "instruction": "lea rax, [rip + 0x619a819]",
+      "bytes": "488d0519a81906",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014469BAD0.asm"
+    },
+    {
+      "function_va": "0x14469bad0",
+      "instruction_va": "0x14469bb67",
+      "instruction": "mov qword ptr [r14], rax",
+      "bytes": "498906",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014469BAD0.asm"
+    },
+    {
+      "function_va": "0x14469bad0",
+      "instruction_va": "0x14469bb6a",
+      "instruction": "lea rax, [rip + 0x619a837]",
+      "bytes": "488d0537a81906",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014469BAD0.asm"
+    },
+    {
+      "function_va": "0x14469bad0",
+      "instruction_va": "0x14469bb71",
+      "instruction": "mov qword ptr [r14 + 8], rax",
+      "bytes": "49894608",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014469BAD0.asm"
+    },
+    {
+      "function_va": "0x14469bad0",
+      "instruction_va": "0x14469bbc6",
+      "instruction": "mov qword ptr [r14 + 0x28], rax",
+      "bytes": "49894628",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014469BAD0.asm"
+    },
+    {
+      "function_va": "0x14469bad0",
+      "instruction_va": "0x14469bda6",
+      "instruction": "mov byte ptr [r14 + 0x60], 0",
+      "bytes": "41c6466000",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014469BAD0.asm"
+    },
+    {
+      "function_va": "0x14256d570",
+      "instruction_va": "0x14256d5ee",
+      "instruction": "lea rax, [rip + 0x82352db]",
+      "bytes": "488d05db522308",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014256D570.asm"
+    },
+    {
+      "function_va": "0x14256d570",
+      "instruction_va": "0x14256d5f5",
+      "instruction": "mov qword ptr [rdi], rax",
+      "bytes": "488907",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014256D570.asm"
+    },
+    {
+      "function_va": "0x14256f110",
+      "instruction_va": "0x14256f114",
+      "instruction": "mov rax, qword ptr [rcx + 0x50]",
+      "bytes": "488b4150",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014256F110.asm"
+    },
+    {
+      "function_va": "0x14256f110",
+      "instruction_va": "0x14256f118",
+      "instruction": "mov r10, qword ptr [rcx + 0x58]",
+      "bytes": "4c8b5158",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014256F110.asm"
+    },
+    {
+      "function_va": "0x14256f110",
+      "instruction_va": "0x14256f133",
+      "instruction": "call 0x1425705d0",
+      "bytes": "e898140000",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/000000014256F110.asm"
+    },
+    {
+      "function_va": "0x1425705d0",
+      "instruction_va": "0x142570600",
+      "instruction": "cmp word ptr [rdi], r9w",
+      "bytes": "6644390f",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/00000001425705D0.asm"
+    },
+    {
+      "function_va": "0x1425705d0",
+      "instruction_va": "0x142570606",
+      "instruction": "add rdi, 0x38",
+      "bytes": "4883c738",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/00000001425705D0.asm"
+    },
+    {
+      "function_va": "0x1425705d0",
+      "instruction_va": "0x1425706b6",
+      "instruction": "mov rsi, qword ptr [rdi + 8]",
+      "bytes": "488b7708",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/00000001425705D0.asm"
+    },
+    {
+      "function_va": "0x1425705d0",
+      "instruction_va": "0x1425706ba",
+      "instruction": "mov r12, qword ptr [rdi + 0x10]",
+      "bytes": "4c8b6710",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/00000001425705D0.asm"
+    },
+    {
+      "function_va": "0x1425705d0",
+      "instruction_va": "0x1425706d0",
+      "instruction": "add rsi, 4",
+      "bytes": "4883c604",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/00000001425705D0.asm"
+    },
+    {
+      "function_va": "0x1425705d0",
+      "instruction_va": "0x1425706dd",
+      "instruction": "mov r13d, dword ptr [rsi]",
+      "bytes": "448b2e",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/00000001425705D0.asm"
+    },
+    {
+      "function_va": "0x1425705d0",
+      "instruction_va": "0x142570769",
+      "instruction": "call qword ptr [rip + 0x8839ab1]",
+      "bytes": "ff15b19a8308",
+      "source_artifact": "WORK/scheduler_continuation/ASSEMBLY/00000001425705D0.asm"
+    },
+    {
+      "function_va": "0x1446b7ac0",
+      "instruction_va": "0x1446b7ae4",
+      "instruction": "mov rcx, qword ptr [r14 + 0x120]",
+      "bytes": "498b8e20010000",
+      "source_artifact": "BASELINE/DECOMPILATION/00000001446B7AC0.asm"
+    },
+    {
+      "function_va": "0x1446b7ac0",
+      "instruction_va": "0x1446b7b0f",
+      "instruction": "mov rdx, qword ptr [rdi + 0x10]",
+      "bytes": "488b5710",
+      "source_artifact": "BASELINE/DECOMPILATION/00000001446B7AC0.asm"
+    },
+    {
+      "function_va": "0x1446b7ac0",
+      "instruction_va": "0x1446b7b16",
+      "instruction": "mov rax, qword ptr [rax + 0x10]",
+      "bytes": "488b4010",
+      "source_artifact": "BASELINE/DECOMPILATION/00000001446B7AC0.asm"
+    },
+    {
+      "function_va": "0x1446b7ac0",
+      "instruction_va": "0x1446b7b1d",
+      "instruction": "call qword ptr [rip + 0x66f26fd]",
+      "bytes": "ff15fd266f06",
+      "source_artifact": "BASELINE/DECOMPILATION/00000001446B7AC0.asm"
+    },
+    {
+      "function_va": "0x1446b7ac0",
+      "instruction_va": "0x1446b7b23",
+      "instruction": "mov rcx, qword ptr [r14 + 0x160]",
+      "bytes": "498b8e60010000",
+      "source_artifact": "BASELINE/DECOMPILATION/00000001446B7AC0.asm"
+    }
+  ],
+  "table_checks": [
+    {
+      "table_va": "0x14a836380",
+      "offset": "0x8",
+      "pointer_va": "0x14a836388",
+      "target_va": "0x14469cc10"
+    },
+    {
+      "table_va": "0x14a836380",
+      "offset": "0x10",
+      "pointer_va": "0x14a836390",
+      "target_va": "0x14469d130"
+    },
+    {
+      "table_va": "0x14a836380",
+      "offset": "0x18",
+      "pointer_va": "0x14a836398",
+      "target_va": "0x14469c6e0"
+    },
+    {
+      "table_va": "0x14a836380",
+      "offset": "0x20",
+      "pointer_va": "0x14a8363a0",
+      "target_va": "0x14469c820"
+    },
+    {
+      "table_va": "0x14a7a28d0",
+      "offset": "0x8",
+      "pointer_va": "0x14a7a28d8",
+      "target_va": "0x14256e1c0"
+    },
+    {
+      "table_va": "0x14a7a28d0",
+      "offset": "0x20",
+      "pointer_va": "0x14a7a28f0",
+      "target_va": "0x14256f0e0"
+    },
+    {
+      "table_va": "0x14a7a28d0",
+      "offset": "0x28",
+      "pointer_va": "0x14a7a28f8",
+      "target_va": "0x14256f110"
+    },
+    {
+      "table_va": "0x14a836890",
+      "offset": "0x10",
+      "pointer_va": "0x14a8368a0",
+      "target_va": "0x1446b7ac0"
+    }
+  ],
+  "literal_checks": [
+    {
+      "va": "0x14a70fd30",
+      "bytes": "536572766572207469636b696e672073797374656d73",
+      "text": "Server ticking systems"
+    },
+    {
+      "va": "0x14a70fd10",
+      "bytes": "436c69656e74207469636b696e672073797374656d73",
+      "text": "Client ticking systems"
+    },
+    {
+      "va": "0x14a9d62d7",
+      "bytes": "436c69656e747b7d207469636b696e672073797374656d73",
+      "text": "Client{} ticking systems"
+    }
+  ],
+  "function_boundaries": {
+    "0x140763b60": {
+      "start": "0x140763b60",
+      "end_exclusive": "0x140763dc8",
+      "size": 616,
+      "basis": ".pdata unwind range"
+    },
+    "0x140794160": {
+      "start": "0x140794160",
+      "end_exclusive": "0x1407944d8",
+      "size": 888,
+      "basis": ".pdata unwind range"
+    },
+    "0x14469bad0": {
+      "start": "0x14469bad0",
+      "end_exclusive": "0x14469be61",
+      "size": 913,
+      "basis": ".pdata unwind range"
+    },
+    "0x14256d570": {
+      "start": "0x14256d570",
+      "end_exclusive": "0x14256d6d0",
+      "size": 352,
+      "basis": ".pdata unwind range"
+    },
+    "0x14256f110": {
+      "start": "0x14256f110",
+      "end_exclusive": "0x14256f13e",
+      "size": 46,
+      "basis": ".pdata unwind range"
+    },
+    "0x1425705d0": {
+      "start": "0x1425705d0",
+      "end_exclusive": "0x142570d2f",
+      "size": 1887,
+      "basis": ".pdata unwind range"
+    },
+    "0x1446b7ac0": {
+      "start": "0x1446b7ac0",
+      "end_exclusive": "0x1446b7b4f",
+      "size": 143,
+      "basis": ".pdata unwind range"
+    }
+  },
+  "scope": "Factory/constructor ownership and bounded untimed category pass, not complete player scheduling or historical replay",
+  "limits": [
+    "Adjacent14A8363A8 is independently installed on a secondary interface; only cited slots are asserted and total primary table extent is not claimed",
+    "Factory labels identify constructed contexts, not active server-player reachability or movement authority",
+    "Concrete registered worker virtual10 at1446B7B1D, history restoration and outer phase invocation remain unresolved",
+    "14256F110 uses a separate category range50/58; the emulated path is14256F0E0 with range38/40"
+  ]
+}

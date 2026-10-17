@@ -34,6 +34,10 @@ def edge(source, target, kind, label, evidence, confidence="confirmed", site="")
 def assembly(va):
     candidates = sorted((ROOT / "ASSEMBLY").rglob("*" + va.upper().removeprefix("0X") + ".asm"))
     if not candidates:
+        for directory in ['WORK/scheduler_continuation/ASSEMBLY','BASELINE/DECOMPILATION']:
+            candidates=sorted((ROOT/directory).rglob('*'+va.upper().removeprefix('0X')+'.asm'))
+            if candidates:break
+    if not candidates:
         raise RuntimeError("Missing assembly for " + va)
     return candidates[0]
 
@@ -227,6 +231,25 @@ edge(register_four, "replay_category", "registration", "span4 includes replay to
 edge(replay_wrapper, "replay_category", "registration", "selects token for a category pass", "MOVEMENT_REPLAY.md; BASELINE/EVIDENCE.csv")
 edge("replay_category", dispatcher, "resolved_indirect", "dispatcher route; not a full restore loop", "MOVEMENT_REPLAY.md; ECS_EXECUTION_ORDER.md", confidence="strongly supported")
 edge(dispatcher, "category_systems", "data_flow", "synchronous list traversal in stored order", "ECS_EXECUTION_ORDER.md")
+collection_owner=function('140763B60','Shared system holder construction')
+collection_factory=function('140794160','Server / client labeled ticking collection factory')
+collection_constructor=function('14469BAD0','Collection interfaces and owned dispatcher28')
+dispatcher_constructor=function('14256D570','Construct dispatcher14A7A28D0')
+category_adapter=function('14256F0E0','Dispatch category range38/40')
+alternate_adapter=function('14256F110','Dispatch distinct category range50/58')
+replay_invoker=function('1446B7AC0','Before hook / registered worker / after hook')
+normal_category=function('14469C6E0','Category wrapper selecting14CCB0FBC')
+call(collection_owner,collection_factory)
+call(collection_factory,collection_constructor)
+call(collection_factory,dispatcher_constructor)
+edge(collection_constructor,replay_wrapper,'registration','constructor-installed primary20','DATA/SCHEDULER_CONTINUATION_BINDING.json')
+edge(collection_constructor,normal_category,'registration','constructor-installed primary18','DATA/SCHEDULER_CONTINUATION_BINDING.json')
+edge(replay_wrapper,category_adapter,'resolved_indirect','constructed dispatcher28 virtual20; native-composed','DATA/REPLAY_CATEGORY_VALIDATION.json',site='0x14469C896')
+call(category_adapter,dispatcher)
+call(alternate_adapter,dispatcher)
+edge(dispatcher,replay_invoker,'resolved_indirect','untimed pass with replay closure14A836890','DATA/REPLAY_CATEGORY_VALIDATION.json',site='0x142570769')
+node('registered_replay_worker','Registered worker virtual10(registry)\nConcrete implementation / history loop unresolved','unknown')
+edge(replay_invoker,'registered_replay_worker','unresolved','actual fixture callback boundary; no historical resimulation inferred','REPORTS/SCHEDULER_CONTINUATION.md',confidence='unresolved',site='0x1446B7B1D')
 edge("tick_connection", collision_tick, "unresolved", "exact server-player phase edge missing", "ECS_EXECUTION_ORDER.md", confidence="unresolved")
 edge("tick_connection", correction_tick, "unresolved", "exact server-player phase edge missing", "ECS_EXECUTION_ORDER.md", confidence="unresolved")
 edge("tick_connection", replay_wrapper, "unresolved", "outer replay scheduling/termination missing", "MOVEMENT_REPLAY.md", confidence="unresolved")

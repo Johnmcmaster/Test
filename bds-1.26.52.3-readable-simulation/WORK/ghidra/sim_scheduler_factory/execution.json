@@ -1,0 +1,34 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_scheduler_factory",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_scheduler_factory/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_scheduler_factory/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_scheduler_factory/headless.log"
+  ],
+  "started_utc": "2026-10-17T00:26:34.663237+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_scheduler_factory",
+  "exit_code": 0,
+  "completed_utc": "2026-10-17T00:26:38.761918+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_scheduler_factory/0x140794160_FUN_140794160.c",
+      "bytes": 4817,
+      "sha256": "f3ac7cf8f6ef4ad739d60dca3b0f306bed55e8ab7b31316d712d10841ba85d35",
+      "failed": false
+    }
+  ],
+  "expected_targets": 1,
+  "successful_exports": 1
+}

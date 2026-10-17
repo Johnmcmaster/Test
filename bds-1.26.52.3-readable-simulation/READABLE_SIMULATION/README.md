@@ -170,7 +170,22 @@ All34,944 cases pass; only property fallback getters and vector growth are
 supplied backends. See[FORWARDED_COLLISION_SHAPES.md](../REPORTS/FORWARDED_COLLISION_SHAPES.md)
 for branch tables, data flow, exact instructions and limits.
 
-Across all six readable C++ suites,168,330 bounded comparisons pass across48
+## Bounded replay category dispatch
+
+`NativeCategoryDispatcher.cpp` reconstructs the untimed replay category chain
+with explicit registered-worker callbacks. All2,060 native comparisons pass.
+Observed constructor/dispatcher/category access prefixes have checked offsets;
+they are not complete original C++ declarations.
+
+```sh
+python SCRIPTS/verify_scheduler_binding.py /path/bedrock_server.exe .
+python SCRIPTS/verify_replay_category.py /path/bedrock_server.exe --cases 2000
+```
+
+See[SCHEDULER_CONTINUATION.md](../REPORTS/SCHEDULER_CONTINUATION.md) for conditions
+and remaining history/scheduler gaps.
+
+Across all seven readable C++ suites,170,390 bounded comparisons pass across49
 variants. Seven NaN payload differences occur in the environment suite. These
 counts are not unique server states, full ticks or a coverage percentage. The
 remaining derived providers, complete world/authority model and scheduler/replay

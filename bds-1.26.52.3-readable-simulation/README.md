@@ -10,7 +10,9 @@ The original Windows executable was independently verified: 223,223,112 bytes, i
 
 ## New recovered behavior
 
-- Two forwarded geometry bodies and their local helpers now have readable C++ and **34,944 passing original-entry comparisons**. The actual installed dispatch paths execute in the tests. See [FORWARDED_COLLISION_SHAPES.md](REPORTS/FORWARDED_COLLISION_SHAPES.md). The six readable C++ suites total **168,330 bounded comparisons across 48 variants**; these are fixtures, not full ticks or a coverage percentage.
+- The actual untimed replay category chain now has readable C++ and **2,060 passing native comparisons**. New factory evidence binds labeled server/client ticking collections to their constructed dispatcher interfaces. See [SCHEDULER_CONTINUATION.md](REPORTS/SCHEDULER_CONTINUATION.md). Historical restoration and resimulation remain unresolved.
+
+- Two forwarded geometry bodies and their local helpers now have readable C++ and **34,944 passing original-entry comparisons**. The actual installed dispatch paths execute in the tests. See [FORWARDED_COLLISION_SHAPES.md](REPORTS/FORWARDED_COLLISION_SHAPES.md). The seven readable C++ suites total **170,390 bounded comparisons across 49 variants**; these are fixtures, not full ticks or a coverage percentage.
 
 - Moving multipart collision emission has readable C++, its concrete virtual258 callback, direction-table initialization and constructor/table proof. **12,632 original-entry comparisons pass** with zero mismatches. See [MULTIPART_COLLISION_SHAPES.md](REPORTS/MULTIPART_COLLISION_SHAPES.md). Seven NaN payload differences remain confined to the earlier environment suite.
 

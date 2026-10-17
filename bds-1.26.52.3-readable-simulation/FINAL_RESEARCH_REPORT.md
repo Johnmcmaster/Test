@@ -1,5 +1,12 @@
 # Native movement simulation reconstruction — current checkpoint
 
+The [scheduler continuation](REPORTS/SCHEDULER_CONTINUATION.md) identifies the
+server/client-labeled collection factory and constructed interfaces. The actual
+untimed replay wrapper/dispatcher/closure chain passes2,060 native comparisons
+against readable C++. It proves first-match category selection, stored duplicate-ID
+order and before/worker/after argument flow within scope. Historical restoration
+and universal player-tick order remain unresolved.
+
 The [forwarded-body continuation](REPORTS/FORWARDED_COLLISION_SHAPES.md) recovers
 146614A70, its two actual local-box helpers, and the separate148B33800 five-box
 body. Both constructor-installed forwarding chains execute in34,944 passing
@@ -26,7 +33,7 @@ the constructed NoClip world callback and reconstructs more lava/fluid/flying
 and speed-source code. It adds31,004 native comparisons with zero mismatches and
 seven NaN payload differences. Full simulator composition remains open.
 
-The six readable C++ suites total 168,330 bounded comparisons across 48 variants.
+The seven readable C++ suites total 170,390 bounded comparisons across 49 variants.
 These counts describe finite fixtures, not a measured percentage of the simulator.
 
 Status: **new native stages reconstructed into compilable readable C++; full simulator, anti-cheat and complete Geyser port remain unfinished**. This continuation used targeted Ghidra, Capstone and original-instruction harnesses directly, without agents. It preserves the earlier kernels and precise unresolved dependencies.

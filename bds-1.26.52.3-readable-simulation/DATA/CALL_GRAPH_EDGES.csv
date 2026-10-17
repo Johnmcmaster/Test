@@ -84,6 +84,16 @@ f14469ccd0,replay_category,registration,span4 includes replay token,confirmed,,E
 f14469c820,replay_category,registration,selects token for a category pass,confirmed,,MOVEMENT_REPLAY.md; BASELINE/EVIDENCE.csv
 replay_category,f1425705d0,resolved_indirect,dispatcher route; not a full restore loop,strongly supported,,MOVEMENT_REPLAY.md; ECS_EXECUTION_ORDER.md
 f1425705d0,category_systems,data_flow,synchronous list traversal in stored order,confirmed,,ECS_EXECUTION_ORDER.md
+f140763b60,f140794160,direct_call,direct call,confirmed,0x140763CC1,ASSEMBLY/0000000140763B60.asm
+f140794160,f14469bad0,direct_call,direct call,confirmed,0x140794239;0x140794339;0x1407943EC,ASSEMBLY/0000000140794160.asm
+f140794160,f14256d570,direct_call,direct call,confirmed,0x140794218;0x14079431C;0x1407943CF,ASSEMBLY/0000000140794160.asm
+f14469bad0,f14469c820,registration,constructor-installed primary20,confirmed,,DATA/SCHEDULER_CONTINUATION_BINDING.json
+f14469bad0,f14469c6e0,registration,constructor-installed primary18,confirmed,,DATA/SCHEDULER_CONTINUATION_BINDING.json
+f14469c820,f14256f0e0,resolved_indirect,constructed dispatcher28 virtual20; native-composed,confirmed,0x14469C896,DATA/REPLAY_CATEGORY_VALIDATION.json
+f14256f0e0,f1425705d0,direct_call,direct call,confirmed,0x14256F103,WORK/scheduler_continuation/ASSEMBLY/000000014256F0E0.asm
+f14256f110,f1425705d0,direct_call,direct call,confirmed,0x14256F133,WORK/scheduler_continuation/ASSEMBLY/000000014256F110.asm
+f1425705d0,f1446b7ac0,resolved_indirect,untimed pass with replay closure14A836890,confirmed,0x142570769,DATA/REPLAY_CATEGORY_VALIDATION.json
+f1446b7ac0,registered_replay_worker,unresolved,actual fixture callback boundary; no historical resimulation inferred,unresolved,0x1446B7B1D,REPORTS/SCHEDULER_CONTINUATION.md
 tick_connection,f142f2fcb0,unresolved,exact server-player phase edge missing,unresolved,,ECS_EXECUTION_ORDER.md
 tick_connection,f1457d5d20,unresolved,exact server-player phase edge missing,unresolved,,ECS_EXECUTION_ORDER.md
 tick_connection,f14469c820,unresolved,outer replay scheduling/termination missing,unresolved,,MOVEMENT_REPLAY.md

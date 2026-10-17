@@ -4,6 +4,14 @@ Registration order is used as execution evidence only where the actual dispatche
 
 ## Dispatcher semantics retained and checked
 
+The actual untimed14469C820→14256F0E0→1425705D0→1446B7AC0 chain now passes2,060
+original-entry comparisons against readable C++. First matching category, stored
+DWORD-ID order, repeated IDs and before/worker/after hooks are checked. New
+factory140794160 binds server/client ticking labels to constructed collection and
+dispatcher interfaces. A separate dispatcher entry uses category range50/58; the
+replay route uses38/40. These are concrete intra-pass constraints, not a universal
+outer phase order. See REPORTS/SCHEDULER_CONTINUATION.md.
+
 Prior targeted exports establish the dispatcher constructed at `0x14256D570`, category records of stride0x38, DWORD system-ID vectors, and synchronous ordered traversal at `0x1425705D0`. `0x14256E1C0` appends system IDs to category vectors according to registration flags. Timing collection does not establish parallel dispatch. Category tokens are dynamically allocated 16-bit values; their backing global addresses identify categories in the static analysis, not fixed runtime numeric IDs.
 
 ## New registration distinction
@@ -39,7 +47,7 @@ Newly bound stages are listed in `WORK/full_sim/system_callbacks.json`, with31 c
 
 The selector145EED380 ensures travel-mode memberships and does not erase old tags. Registered group table14A75E5D0 has bulk clear14192F4F0 and per-entity removal14192F810. A list of descriptor registrations is insufficient to prove mode exclusivity across server ticks or replay passes. The group/category invocation must still be followed.
 
-Finalizer14469EE70 writes position and collision markers; reset views143B6FFE0/143B70F90 require those markers, MoveRequest and StateVector. Motion-to-request145EEC7F0 and the bounds-derived writes establish storage dependencies, while restitution and guaranteed player-specific phase order remain open. The graph has198 curated edges with edge kinds/provenance and preserves this distinction.
+Finalizer14469EE70 writes position and collision markers; reset views143B6FFE0/143B70F90 require those markers, MoveRequest and StateVector. Motion-to-request145EEC7F0 and the bounds-derived writes establish storage dependencies, while restitution and guaranteed player-specific phase order remain open. The graph has208 curated edges with edge kinds/provenance and preserves this distinction.
 
 Multipart collision1465F8960→1465F8EC0 and its constructor-bound virtual258→1465FA380
 are now concrete call edges. Direction-table initialization and secondary-object

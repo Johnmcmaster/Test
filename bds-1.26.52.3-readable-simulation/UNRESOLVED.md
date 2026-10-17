@@ -7,6 +7,12 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
 
 ## Proven since the previous checkpoint
 
+- New factory140794160 constructs server/client-labeled ticking collections via
+  14256D570/14469BAD0. The actual untimed replay chain now has readable code and
+  2,060 passing original-entry comparisons, including stored order, duplicate-ID
+  behavior and hook arguments. Concrete registered workers, historical restoration
+  and outer player phases remain unresolved. See REPORTS/SCHEDULER_CONTINUATION.md.
+
 - Forwarded body146614A70, helpers146614190/146614640 and separate148B33800 now
   have readable code and34,944 passing original-entry comparisons. Both actual
   constructor-bound141A2CA60 dispatch chains execute in the suite. First-helper
@@ -48,8 +54,8 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
   the temporary block-shape vector has24-byte AABBs.
 - Effect constructor/indexed stores independently identify Jump Boost8,
   Levitation24 and Slow Falling27. The reduced-gravity slot is no longer unnamed.
-- The six readable C++ suites pass 168,330 bounded comparisons across 48
-  variants. The full Ghidra index has 556 exports/315 entry VAs; successful export
+- The seven readable C++ suites pass 170,390 bounded comparisons across 49
+  variants. The full Ghidra index has 568 exports/325 entry VAs; successful export
   is not semantic completeness. The 64,621-case core suite was rerun after the
   shared component-header additions and remains passing.
 
@@ -129,6 +135,11 @@ BASELINE/PRE_READABLE_CONTINUATION/UNRESOLVED.md. This continuation used no agen
    world/ECS backends and supplied native trig/LUT results. Validate Windows CRT
    trig/LUT generation, chunk streaming/lifetimes, full native tick outputs and a
    live target-version Geyser session after the missing architecture is recovered.
+
+The next highest-value scheduler investigation is to bind the registered worker
+receiver at1446B7B1D through14256E1C0 registration and the token14CCB1044 category,
+then follow its real system body. New factory and dispatch evidence narrows the
+interface boundary; it does not supply the missing worker/history producer.
 
 ## Reproduction and preserved attempts
 
