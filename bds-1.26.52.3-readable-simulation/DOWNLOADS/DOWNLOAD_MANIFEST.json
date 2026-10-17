@@ -3,26 +3,27 @@
   "archives": [
     {
       "file": "1.zip",
-      "bytes": 7380375,
-      "sha256": "8e9808f8d37d1f2e098d88dff9a64d0c4050e91e55def4b242e1a1f1c327cdd1",
-      "entries": 2046,
+      "bytes": 7379864,
+      "sha256": "da95a83a7543d14ffca56be9e1bae80543e0c9fb50066405efc98c08867f67e9",
+      "entries": 2042,
       "crc_verified": true,
       "contents_sha256_verified": true
     },
     {
       "file": "2.zip",
-      "bytes": 5775107,
-      "sha256": "c4cba816f6ae45e302b116af53e15bcb9bc51399294810540a28ba432e2debf1",
-      "entries": 2747,
+      "bytes": 6614497,
+      "sha256": "58e75b6c3a2f53b6fd58083fb4e03f4dcab829ab9aabe1e2d85ce2a6829068a5",
+      "entries": 3162,
       "crc_verified": true,
       "contents_sha256_verified": true
     }
   ],
-  "file_count": 4793,
-  "current_targeted_ghidra_c": 641,
+  "file_count": 5204,
+  "current_targeted_ghidra_c": 727,
+  "current_decompilation_c_files": 728,
   "historical_ghidra_c": 173,
-  "omitted_files": 7361,
-  "omitted_bytes": 1407456688,
+  "omitted_files": 7369,
+  "omitted_bytes": 1413359892,
   "missing_evidence_paths": [],
   "full_simulator_status": "incomplete; Unavailable",
   "numeric_machine_cases": 104028,
@@ -98,10 +99,18 @@
       "mismatches": 0,
       "nan_payload_differences": 0,
       "source_hashes_verified": true
+    },
+    {
+      "report": "DATA/JUMP_INPUT_VALIDATION.json",
+      "case_count": 34340,
+      "variants": 11,
+      "mismatches": 0,
+      "nan_payload_differences": 0,
+      "source_hashes_verified": true
     }
   ],
-  "readable_cpp_machine_cases": 198852,
-  "readable_cpp_variants": 66,
+  "readable_cpp_machine_cases": 233192,
+  "readable_cpp_variants": 77,
   "duplicate_groups": {
     "e7bd5eeea9a393171199133f31f617813d733be40e635fbc7fcf94eb17f2f72b": [
       "ASSEMBLY/00000001409A5710.asm",
@@ -172,6 +181,14 @@
       "ASSEMBLY/collision/00000001418E7490.json",
       "ASSEMBLY/predicted/00000001418E7490.json",
       "WORK/physics/ASSEMBLY/00000001418E7490.json"
+    ],
+    "af543591dd4cc5c8a885a4a5e54509703f09826700648d9d5a9ba4e255d64bc0": [
+      "ASSEMBLY/00000001418EA270.asm",
+      "WORK/physics/ASSEMBLY/00000001418EA270.asm"
+    ],
+    "869071811608ab87e2fa99a986eb61391d99a36811dae1cd8571d08f0c93a37a": [
+      "ASSEMBLY/00000001418EA270.json",
+      "WORK/physics/ASSEMBLY/00000001418EA270.json"
     ],
     "c60e1d7eb40a59378fea452e75c2ec27fbd2c7509a722d1108ed9a23d1202d20": [
       "ASSEMBLY/00000001418EEEA0.asm",
@@ -495,6 +512,40 @@
       "ASSEMBLY/000000014256FDD0.json",
       "WORK/registration_continuation/ASSEMBLY/000000014256FDD0.json"
     ],
+    "cde21e835d8cf72514fb5690f17d9ff6a1148cb47338536b175a84aa8866446b": [
+      "ASSEMBLY/00000001429DAA90.asm",
+      "WORK/physics/ASSEMBLY/00000001429DAA90.asm"
+    ],
+    "8698053873593d261cd8035176e4494aff0caad9c6a7f9aa3568c376f35f3a9f": [
+      "ASSEMBLY/00000001429DAA90.json",
+      "WORK/physics/ASSEMBLY/00000001429DAA90.json"
+    ],
+    "a855b9b8df8ec57022b79c4607fb830c897ee31b4348b30a7c81bb994e67a4c4": [
+      "ASSEMBLY/00000001429E0C20.asm",
+      "WORK/full_sim/hash_ref_asm/00000001429E0C20.asm",
+      "WORK/physics/ASSEMBLY/00000001429E0C20.asm"
+    ],
+    "e3b4380344b2f3dfcc922a4274c146f5cfd5bd2e88e5bfc2f73a82114571f1e9": [
+      "ASSEMBLY/00000001429E0C20.json",
+      "WORK/full_sim/hash_ref_asm/00000001429E0C20.json",
+      "WORK/physics/ASSEMBLY/00000001429E0C20.json"
+    ],
+    "6632c6dd650bdb77c87cbe1f06c75bf454d4795a6dbd1f80f89a10e01b0be669": [
+      "ASSEMBLY/00000001429EBE10.asm",
+      "WORK/full_sim/hash_ref_asm/00000001429EBE10.asm"
+    ],
+    "8454da1116ff3271855ff85574a99944313569cd7ed27af98aab594bffeff3a3": [
+      "ASSEMBLY/00000001429EBE10.json",
+      "WORK/full_sim/hash_ref_asm/00000001429EBE10.json"
+    ],
+    "51736bff8d50d6df3b1f27428ed80ba89d4189d46f33bef1471f8e1b7b67fa7a": [
+      "ASSEMBLY/00000001429EC0B0.asm",
+      "WORK/jump_input_continuation/ASSEMBLY/00000001429EC0B0.asm"
+    ],
+    "b3b9f57d0d70177c91a6aaee7d95f1300ed2975d990f6050cef1ae7a8fd85b46": [
+      "ASSEMBLY/00000001429EC0B0.json",
+      "WORK/jump_input_continuation/ASSEMBLY/00000001429EC0B0.json"
+    ],
     "b1d9cfac3e6d4cd2051a58117d7bdf7b086fed47d9d1454513f4fe6c02f6e1ff": [
       "ASSEMBLY/0000000142C19020.asm",
       "ASSEMBLY/walking_flight/0000000142C19020.asm"
@@ -817,6 +868,14 @@
       "ASSEMBLY/00000001466272B0.json",
       "ASSEMBLY/history/00000001466272B0.json"
     ],
+    "6062a1e4b8374aa13b7b848e20458ac4647e6ae50b9838c71f26d62b8d28c6f8": [
+      "ASSEMBLY/000000014665E2E0.asm",
+      "WORK/jump_input_continuation/ASSEMBLY/000000014665E2E0.asm"
+    ],
+    "682afa5492dd9ca759f98d7d9f13b1357224aeca7f1c148c8ca5cb5f10f25875": [
+      "ASSEMBLY/000000014665E2E0.json",
+      "WORK/jump_input_continuation/ASSEMBLY/000000014665E2E0.json"
+    ],
     "f11ae2f9d44c17ab7ad589a90c88663df2738d6eb471bc0105be57fea7594dc3": [
       "ASSEMBLY/0000000148265630.asm",
       "WORK/full_sim/input_factories/ASSEMBLY/0000000148265630.asm"
@@ -942,6 +1001,22 @@
       "ASSEMBLY/00000001483DF410.json",
       "ASSEMBLY/walking_flight/00000001483DF410.json",
       "WORK/physics/ASSEMBLY/00000001483DF410.json"
+    ],
+    "b7b0bbba382f488def61449bdd236eee770e5584c5c6d75407c118b1f223f18d": [
+      "ASSEMBLY/0000000148423AE0.asm",
+      "WORK/jump_input_continuation/ASSEMBLY/0000000148423AE0.asm"
+    ],
+    "f8d43e051988ebefffa9ecdcf70fe793d5a55a2a44568453aa1ace38b9def5fe": [
+      "ASSEMBLY/0000000148423AE0.json",
+      "WORK/jump_input_continuation/ASSEMBLY/0000000148423AE0.json"
+    ],
+    "57370a3efc7b2e09869fb925fef48fdce9fef154858f8b385cf86c8417fe3c15": [
+      "ASSEMBLY/00000001484262A0.asm",
+      "WORK/jump_input_continuation/ASSEMBLY/00000001484262A0.asm"
+    ],
+    "ea176cfe4293a2992e3fe87e4ab6663767b44843d97048cdc9b4ce9430c763da": [
+      "ASSEMBLY/00000001484262A0.json",
+      "WORK/jump_input_continuation/ASSEMBLY/00000001484262A0.json"
     ],
     "03f26fc6d9f770340637a76a720225b1c49d6d90285eac17c937fd4542e01a7d": [
       "ASSEMBLY/000000014842B540.asm",
@@ -1404,6 +1479,7 @@
       "WORK/full_sim/types/exports/00000001402DA100.asm",
       "WORK/gravity_types/exports/00000001402DA100.asm",
       "WORK/history_writer/types/exports/00000001402DA100.asm",
+      "WORK/jump_input_continuation/types/exports/00000001402DA100.asm",
       "WORK/movement_types/exports/00000001402DA100.asm",
       "WORK/physics/type_verification/exports/00000001402DA100.asm",
       "WORK/registration_continuation/types/exports/00000001402DA100.asm",
@@ -1422,6 +1498,7 @@
       "WORK/full_sim/types/exports/00000001402E2130.asm",
       "WORK/gravity_types/exports/00000001402E2130.asm",
       "WORK/history_writer/types/exports/00000001402E2130.asm",
+      "WORK/jump_input_continuation/types/exports/00000001402E2130.asm",
       "WORK/movement_types/exports/00000001402E2130.asm",
       "WORK/physics/type_verification/exports/00000001402E2130.asm",
       "WORK/registration_continuation/types/exports/00000001402E2130.asm",
@@ -1436,6 +1513,7 @@
       "WORK/full_sim/types/exports/00000001402F16A0.asm",
       "WORK/gravity_types/exports/00000001402F16A0.asm",
       "WORK/history_writer/types/exports/00000001402F16A0.asm",
+      "WORK/jump_input_continuation/types/exports/00000001402F16A0.asm",
       "WORK/movement_types/exports/00000001402F16A0.asm",
       "WORK/physics/type_verification/exports/00000001402F16A0.asm",
       "WORK/registration_continuation/types/exports/00000001402F16A0.asm",
@@ -1446,6 +1524,7 @@
       "WORK/full_sim/types/exports/00000001407852B0.asm",
       "WORK/gravity_types/exports/00000001407852B0.asm",
       "WORK/history_writer/types/exports/00000001407852B0.asm",
+      "WORK/jump_input_continuation/types/exports/00000001407852B0.asm",
       "WORK/movement_types/exports/00000001407852B0.asm",
       "WORK/physics/type_verification/exports/00000001407852B0.asm",
       "WORK/registration_continuation/types/exports/00000001407852B0.asm",
@@ -1455,11 +1534,16 @@
       "BASELINE/DECOMPILATION/hash_registration/0000000140DDEDF0.asm",
       "WORK/physics/type_verification/exports/0000000140DDEDF0.asm"
     ],
+    "984544ba19bb7d9c2f02f9148f1a415c15998efbe7dcc58d42450c6e85a67093": [
+      "BASELINE/DECOMPILATION/hash_registration/0000000141919930.asm",
+      "WORK/jump_input_continuation/types/exports/0000000141919930.asm"
+    ],
     "9f5fa1d23388942e6bd52949c2b9dfcb15d2d032809fe94627de29979a45b36f": [
       "BASELINE/DECOMPILATION/hash_registration/0000000141945E00.asm",
       "WORK/full_sim/types/exports/0000000141945E00.asm",
       "WORK/gravity_types/exports/0000000141945E00.asm",
       "WORK/history_writer/types/exports/0000000141945E00.asm",
+      "WORK/jump_input_continuation/types/exports/0000000141945E00.asm",
       "WORK/movement_types/exports/0000000141945E00.asm",
       "WORK/physics/type_verification/exports/0000000141945E00.asm",
       "WORK/registration_continuation/types/exports/0000000141945E00.asm",
@@ -1474,12 +1558,13 @@
       "WORK/full_sim/types/exports/0000000142503410.asm",
       "WORK/gravity_types/exports/0000000142503410.asm",
       "WORK/history_writer/types/exports/0000000142503410.asm",
+      "WORK/jump_input_continuation/types/exports/0000000142503410.asm",
       "WORK/movement_types/exports/0000000142503410.asm",
       "WORK/physics/type_verification/exports/0000000142503410.asm",
       "WORK/registration_continuation/types/exports/0000000142503410.asm",
       "WORK/type_metadata/exports/0000000142503410.asm"
     ],
-    "51eb94f88fbbf2cf0b7c07696175401a1bc34ee5ea8f07a32baaab68d39be215": [
+    "7a3e5d22e32d43f4a1dc6096a7eb097e27d91dcffd3c5a1144fbd4649d7e6a20": [
       "DATA/PORT_STATUS.csv",
       "PORT_STATUS.csv"
     ],
@@ -1705,6 +1790,10 @@
       "WORK/ghidra/sim_derived_shape_helpers/skipped.json",
       "WORK/ghidra/sim_derived_shapes/reuse.json",
       "WORK/ghidra/sim_derived_shapes/skipped.json",
+      "WORK/ghidra/sim_dynamic_jump/reuse.json",
+      "WORK/ghidra/sim_dynamic_jump/skipped.json",
+      "WORK/ghidra/sim_dynamic_jump_writes/reuse.json",
+      "WORK/ghidra/sim_dynamic_jump_writes/skipped.json",
       "WORK/ghidra/sim_effect_mode_bindings/reuse.json",
       "WORK/ghidra/sim_effect_mode_bindings/skipped.json",
       "WORK/ghidra/sim_effect_registration/reuse.json",
@@ -1724,9 +1813,27 @@
       "WORK/ghidra/sim_input_bridge/skipped.json",
       "WORK/ghidra/sim_input_filters/reuse.json",
       "WORK/ghidra/sim_input_filters/skipped.json",
+      "WORK/ghidra/sim_jump_controller_impl/reuse.json",
+      "WORK/ghidra/sim_jump_controller_setup/reuse.json",
+      "WORK/ghidra/sim_jump_controller_setup/skipped.json",
+      "WORK/ghidra/sim_jump_counter_reset/reuse.json",
+      "WORK/ghidra/sim_jump_counter_reset/skipped.json",
+      "WORK/ghidra/sim_jump_decisions/skipped.json",
       "WORK/ghidra/sim_jump_delay/skipped.json",
       "WORK/ghidra/sim_jump_dependencies/skipped.json",
+      "WORK/ghidra/sim_jump_dispatch/reuse.json",
+      "WORK/ghidra/sim_jump_dispatch/skipped.json",
+      "WORK/ghidra/sim_jump_input/reuse.json",
+      "WORK/ghidra/sim_jump_input/skipped.json",
+      "WORK/ghidra/sim_jump_processing/reuse.json",
+      "WORK/ghidra/sim_jump_processing/skipped.json",
+      "WORK/ghidra/sim_jump_reset_event/reuse.json",
+      "WORK/ghidra/sim_jump_reset_event/skipped.json",
       "WORK/ghidra/sim_jump_state_writers/skipped.json",
+      "WORK/ghidra/sim_jump_tick_owner/reuse.json",
+      "WORK/ghidra/sim_jump_tick_owner/skipped.json",
+      "WORK/ghidra/sim_jump_views/reuse.json",
+      "WORK/ghidra/sim_jump_views/skipped.json",
       "WORK/ghidra/sim_jump_world/reuse.json",
       "WORK/ghidra/sim_jump_world/skipped.json",
       "WORK/ghidra/sim_mode_reset/reuse.json",
@@ -1754,6 +1861,8 @@
       "WORK/ghidra/sim_shape_enumeration/skipped.json",
       "WORK/ghidra/sim_shape_local_leaf/reuse.json",
       "WORK/ghidra/sim_shape_local_leaf/skipped.json",
+      "WORK/ghidra/sim_static_jump/reuse.json",
+      "WORK/ghidra/sim_static_jump/skipped.json",
       "WORK/ghidra/sim_travel_core/reuse.json",
       "WORK/ghidra/sim_travel_core/skipped.json",
       "WORK/ghidra/sim_type_jump_bindings/reuse.json",
@@ -1770,23 +1879,18 @@
       "WORK/ghidra/sim_world_shapes/reuse.json",
       "WORK/ghidra/sim_world_shapes/skipped.json",
       "WORK/ghidra/typed_collision/skipped.json",
+      "WORK/jump_input_continuation/jump_input_callback_callers.json",
       "WORK/physics/gravity_member_callbacks.json"
     ],
     "f51eec15bee4c9ef160e8613090e08aca6bb3f446e5517d28a64910cb1e876a9": [
       "WORK/full_sim/hash_ref_asm/000000014126A4B0.asm",
-      "WORK/gravity_types/exports/000000014126A4B0.asm"
+      "WORK/gravity_types/exports/000000014126A4B0.asm",
+      "WORK/jump_input_continuation/types/exports/000000014126A4B0.asm"
     ],
     "317d820a41840df7c6d6ab33c44b138775ace44a8e431cef2213ae186780577f": [
       "WORK/full_sim/hash_ref_asm/000000014126A4B0.json",
-      "WORK/gravity_types/exports/000000014126A4B0.json"
-    ],
-    "a855b9b8df8ec57022b79c4607fb830c897ee31b4348b30a7c81bb994e67a4c4": [
-      "WORK/full_sim/hash_ref_asm/00000001429E0C20.asm",
-      "WORK/physics/ASSEMBLY/00000001429E0C20.asm"
-    ],
-    "e3b4380344b2f3dfcc922a4274c146f5cfd5bd2e88e5bfc2f73a82114571f1e9": [
-      "WORK/full_sim/hash_ref_asm/00000001429E0C20.json",
-      "WORK/physics/ASSEMBLY/00000001429E0C20.json"
+      "WORK/gravity_types/exports/000000014126A4B0.json",
+      "WORK/jump_input_continuation/types/exports/000000014126A4B0.json"
     ],
     "d50eac34a1bee8ef760545f3bfa72f9f6932d00e254910f4c305020c3dacdabd": [
       "WORK/full_sim/hash_ref_asm/0000000148A36FC0.asm",
@@ -1854,6 +1958,7 @@
       "WORK/full_sim/types/collisions.csv",
       "WORK/gravity_types/collisions.csv",
       "WORK/history_writer/types/collisions.csv",
+      "WORK/jump_input_continuation/types/collisions.csv",
       "WORK/movement_types/collisions.csv",
       "WORK/physics/type_verification/collisions.csv",
       "WORK/registration_continuation/types/collisions.csv",
@@ -1863,6 +1968,7 @@
       "WORK/full_sim/types/decoded_hash_xrefs.csv",
       "WORK/gravity_types/decoded_hash_xrefs.csv",
       "WORK/history_writer/types/decoded_hash_xrefs.csv",
+      "WORK/jump_input_continuation/types/decoded_hash_xrefs.csv",
       "WORK/movement_types/decoded_hash_xrefs.csv",
       "WORK/physics/type_verification/decoded_hash_xrefs.csv",
       "WORK/registration_continuation/types/decoded_hash_xrefs.csv",
@@ -1872,24 +1978,43 @@
       "WORK/full_sim/types/exports/00000001402DA100.json",
       "WORK/gravity_types/exports/00000001402DA100.json",
       "WORK/history_writer/types/exports/00000001402DA100.json",
+      "WORK/jump_input_continuation/types/exports/00000001402DA100.json",
       "WORK/movement_types/exports/00000001402DA100.json",
       "WORK/physics/type_verification/exports/00000001402DA100.json",
       "WORK/registration_continuation/types/exports/00000001402DA100.json",
       "WORK/type_metadata/exports/00000001402DA100.json"
     ],
+    "ee36b33d89df35751d2478d47e20f6290ed3d2569bf0a4e6f8a94525d62c2c5e": [
+      "WORK/full_sim/types/exports/00000001402E17F0.asm",
+      "WORK/jump_input_continuation/types/exports/00000001402E17F0.asm"
+    ],
+    "f35b8bf663b396b48f95ecabedcb85424914acd478a01338e3f7061b65832d19": [
+      "WORK/full_sim/types/exports/00000001402E17F0.json",
+      "WORK/jump_input_continuation/types/exports/00000001402E17F0.json"
+    ],
     "e36b87ddc846997a649cd85b2bc6b3639c330a3bce3b68f4c1b7e0f1a0595b04": [
       "WORK/full_sim/types/exports/00000001402E2130.json",
       "WORK/gravity_types/exports/00000001402E2130.json",
       "WORK/history_writer/types/exports/00000001402E2130.json",
+      "WORK/jump_input_continuation/types/exports/00000001402E2130.json",
       "WORK/movement_types/exports/00000001402E2130.json",
       "WORK/physics/type_verification/exports/00000001402E2130.json",
       "WORK/registration_continuation/types/exports/00000001402E2130.json",
       "WORK/type_metadata/exports/00000001402E2130.json"
     ],
+    "08ce76be9812b3d3c56714a2db9163eef9e2b7bb00499331138aff89cd34e353": [
+      "WORK/full_sim/types/exports/00000001402EFF30.asm",
+      "WORK/jump_input_continuation/types/exports/00000001402EFF30.asm"
+    ],
+    "b513681c6847f5af39b3d7c9d9f99600b379873dd750f0ddf761e9b67f9cc415": [
+      "WORK/full_sim/types/exports/00000001402EFF30.json",
+      "WORK/jump_input_continuation/types/exports/00000001402EFF30.json"
+    ],
     "0bc282036ceb0b02574d3c6253b45ff7d5d2700f2b28ee5257a1207608d5ce70": [
       "WORK/full_sim/types/exports/00000001402F16A0.json",
       "WORK/gravity_types/exports/00000001402F16A0.json",
       "WORK/history_writer/types/exports/00000001402F16A0.json",
+      "WORK/jump_input_continuation/types/exports/00000001402F16A0.json",
       "WORK/movement_types/exports/00000001402F16A0.json",
       "WORK/physics/type_verification/exports/00000001402F16A0.json",
       "WORK/registration_continuation/types/exports/00000001402F16A0.json",
@@ -1899,6 +2024,7 @@
       "WORK/full_sim/types/exports/00000001407852B0.json",
       "WORK/gravity_types/exports/00000001407852B0.json",
       "WORK/history_writer/types/exports/00000001407852B0.json",
+      "WORK/jump_input_continuation/types/exports/00000001407852B0.json",
       "WORK/movement_types/exports/00000001407852B0.json",
       "WORK/physics/type_verification/exports/00000001407852B0.json",
       "WORK/registration_continuation/types/exports/00000001407852B0.json",
@@ -1936,6 +2062,14 @@
       "WORK/full_sim/types/exports/0000000140E4AAE0.json",
       "WORK/registration_continuation/types/exports/0000000140E4AAE0.json"
     ],
+    "eb11ac05ca5eaab2a72383670df09ef345ddc1c962d7b6e7e3500f01fddeb420": [
+      "WORK/full_sim/types/exports/00000001412687A0.asm",
+      "WORK/jump_input_continuation/types/exports/00000001412687A0.asm"
+    ],
+    "cf24f92965571ea76c7093f15dd9375c9ded7547c4220e6566184c012da2c9ca": [
+      "WORK/full_sim/types/exports/00000001412687A0.json",
+      "WORK/jump_input_continuation/types/exports/00000001412687A0.json"
+    ],
     "230d775aad0130f88caac2965875f7dcfd200f21ab84b9c1488ab9f89222f981": [
       "WORK/full_sim/types/exports/000000014192EF50.asm",
       "WORK/physics/type_verification/exports/000000014192EF50.asm"
@@ -1960,19 +2094,37 @@
       "WORK/full_sim/types/exports/000000014192F270.json",
       "WORK/physics/type_verification/exports/000000014192F270.json"
     ],
+    "a2b44809ecb3493bb8b1a189cdcd43b5b94186ff6a601159bc4998b3d28ab618": [
+      "WORK/full_sim/types/exports/0000000141938420.asm",
+      "WORK/jump_input_continuation/types/exports/0000000141938420.asm"
+    ],
+    "90d2ac6d9b6a422bc7a9c444ed03996e9ec30140a4213ebee714355e9c64712b": [
+      "WORK/full_sim/types/exports/0000000141938420.json",
+      "WORK/jump_input_continuation/types/exports/0000000141938420.json"
+    ],
     "06a01e356517e3aa1d112ac621d032890e4fed89d93ed0b1cba4e05674bd326a": [
       "WORK/full_sim/types/exports/0000000141945E00.json",
       "WORK/gravity_types/exports/0000000141945E00.json",
       "WORK/history_writer/types/exports/0000000141945E00.json",
+      "WORK/jump_input_continuation/types/exports/0000000141945E00.json",
       "WORK/movement_types/exports/0000000141945E00.json",
       "WORK/physics/type_verification/exports/0000000141945E00.json",
       "WORK/registration_continuation/types/exports/0000000141945E00.json",
       "WORK/type_metadata/exports/0000000141945E00.json"
     ],
+    "b6734c65b4a6d9dc1c83595687a71c7e1fbb9994775c861ee406b0411c28ff55": [
+      "WORK/full_sim/types/exports/0000000141CB0680.asm",
+      "WORK/jump_input_continuation/types/exports/0000000141CB0680.asm"
+    ],
+    "6f8483be86e440719b0e9046681bb5b139693574a35d6ab2d7e7cf4f48cf41b6": [
+      "WORK/full_sim/types/exports/0000000141CB0680.json",
+      "WORK/jump_input_continuation/types/exports/0000000141CB0680.json"
+    ],
     "b4bfa995ce195964af7d56fc223d585b2c6a622db17cdbdc511276f263178a63": [
       "WORK/full_sim/types/exports/0000000142503410.json",
       "WORK/gravity_types/exports/0000000142503410.json",
       "WORK/history_writer/types/exports/0000000142503410.json",
+      "WORK/jump_input_continuation/types/exports/0000000142503410.json",
       "WORK/movement_types/exports/0000000142503410.json",
       "WORK/physics/type_verification/exports/0000000142503410.json",
       "WORK/registration_continuation/types/exports/0000000142503410.json",
@@ -2001,6 +2153,22 @@
     "38580823c5a2cf114fc7e41d6fe666f94ee92389bbd500f41b1c977aabaa249f": [
       "WORK/history_writer/types/audit_summary.json",
       "WORK/movement_types/audit_summary.json"
+    ],
+    "c0b35303b8cf9f39a945386269909302f8eff44c7abc6868b1a5f4426dd7dcfb": [
+      "WORK/jump_input_continuation/types/exports/0000000140E4B0A0.asm",
+      "WORK/registration_continuation/types/exports/0000000140E4B0A0.asm"
+    ],
+    "d0785177744e9daddfa64c5bd41a4bffa24f75c31f5c05366aabfe9f3b44d771": [
+      "WORK/jump_input_continuation/types/exports/0000000140E4B0A0.json",
+      "WORK/registration_continuation/types/exports/0000000140E4B0A0.json"
+    ],
+    "107f9fa87449f302fcc015c6478b24712d8abf0c051bb84082cdb8c0e862a405": [
+      "WORK/jump_input_continuation/types/exports/0000000141EC9F00.asm",
+      "WORK/type_metadata/exports/0000000141EC9F00.asm"
+    ],
+    "62388ff33d334f74ffa4844582c38210ba8dca7a570742bdbccf7daddb1cb749": [
+      "WORK/jump_input_continuation/types/exports/0000000141EC9F00.json",
+      "WORK/type_metadata/exports/0000000141EC9F00.json"
     ],
     "502d70b54797429accf587bfbd8d4348cd4c764d737967d15e3c2bb25862135d": [
       "WORK/physics/ASSEMBLY/00000001418F9A60.asm",
