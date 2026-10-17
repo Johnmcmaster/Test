@@ -1,0 +1,17 @@
+{
+  "exe_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "function_va": "0x148265630",
+  "end_exclusive": "0x148265a00",
+  "code_sha256": "b4ad84a27673afb2bccfd5882439eb22d7e70eb97f39ae91e10d4b891b09e001",
+  "case_count": 2000,
+  "mismatches": 0,
+  "first_failures": [],
+  "shims": [
+    "MoveRequest storage getter returns synthetic absent membership; erase side effects not tested"
+  ],
+  "limits": [
+    "Only ActorDataFlag byte+6 bit0-clear branch",
+    "Finite randomized inputs, synthetic bounds/sub-bounds and components, MXCSR0x1F80",
+    "No mode selection, block-source branch, actual scheduler, network or running server"
+  ]
+}

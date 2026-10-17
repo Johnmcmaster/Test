@@ -1,0 +1,174 @@
+{
+  "binary_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "array_base": "0x14ccb6c78",
+  "constructor_id_store": {
+    "owner": "0x141c4d480",
+    "site": "0x141c4d4d7",
+    "instruction": "mov dword ptr [rsi + 8], edx",
+    "bytes": "895608"
+  },
+  "bindings": [
+    {
+      "effect": "jump_boost",
+      "id": 8,
+      "global_slot": "0x14ccb6cb8",
+      "evidence": [
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c4f7e4",
+          "instruction": "movabs rax, 0x6f6f625f706d756a",
+          "bytes": "48b86a756d705f626f6f"
+        },
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c4f7f5",
+          "instruction": "mov word ptr [rbp + 0x168], 0x7473",
+          "bytes": "66c785680100007374"
+        },
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c4f8b2",
+          "instruction": "mov edx, 8",
+          "bytes": "ba08000000"
+        },
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c4f8ba",
+          "instruction": "call 0x141c4d480",
+          "bytes": "e8c1dbffff"
+        },
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c4f6aa",
+          "instruction": "lea rdi, [rip + 0xb0675c7]",
+          "bytes": "488d3dc775060b"
+        },
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c4f8e7",
+          "instruction": "mov eax, dword ptr [rdx + 8]",
+          "bytes": "8b4208"
+        },
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c4f8ee",
+          "instruction": "mov qword ptr [rdi + rax*8], rdx",
+          "bytes": "488914c7"
+        }
+      ]
+    },
+    {
+      "effect": "levitation",
+      "id": 24,
+      "global_slot": "0x14ccb6d38",
+      "evidence": [
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c50bfe",
+          "instruction": "mov ecx, 0x18",
+          "bytes": "b918000000"
+        },
+        {
+          "owner": "0x141c54880",
+          "site": "0x141c548ad",
+          "instruction": "mov dword ptr [rbp + 0x20], ecx",
+          "bytes": "894d20"
+        },
+        {
+          "owner": "0x141c54880",
+          "site": "0x141c54a0b",
+          "instruction": "mov edx, dword ptr [rbp + 0x20]",
+          "bytes": "8b5520"
+        },
+        {
+          "owner": "0x141c54880",
+          "site": "0x141c54a11",
+          "instruction": "call 0x141c4d480",
+          "bytes": "e86a8affff"
+        },
+        {
+          "owner": "0x141c54880",
+          "site": "0x141c54a6d",
+          "instruction": "mov eax, dword ptr [r8 + 8]",
+          "bytes": "418b4008"
+        },
+        {
+          "owner": "0x141c54880",
+          "site": "0x141c54a71",
+          "instruction": "lea rdx, [rip + 0xb062200]",
+          "bytes": "488d150022060b"
+        },
+        {
+          "owner": "0x141c54880",
+          "site": "0x141c54a7c",
+          "instruction": "mov qword ptr [rdx + rax*8], r8",
+          "bytes": "4c8904c2"
+        },
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c50be9",
+          "instruction": "lea r8, [rip + 0x8da5c82]",
+          "literal_va": "0x14a9f6872",
+          "literal": "potion.levitation"
+        }
+      ]
+    },
+    {
+      "effect": "slow_falling",
+      "id": 27,
+      "global_slot": "0x14ccb6d50",
+      "evidence": [
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c50f9a",
+          "instruction": "mov ecx, 0x1b",
+          "bytes": "b91b000000"
+        },
+        {
+          "owner": "0x141c53840",
+          "site": "0x141c5386d",
+          "instruction": "mov dword ptr [rbp + 0x20], ecx",
+          "bytes": "894d20"
+        },
+        {
+          "owner": "0x141c53840",
+          "site": "0x141c539cb",
+          "instruction": "mov edx, dword ptr [rbp + 0x20]",
+          "bytes": "8b5520"
+        },
+        {
+          "owner": "0x141c53840",
+          "site": "0x141c539d1",
+          "instruction": "call 0x141c4d480",
+          "bytes": "e8aa9affff"
+        },
+        {
+          "owner": "0x141c53840",
+          "site": "0x141c53a2d",
+          "instruction": "mov eax, dword ptr [rsi + 8]",
+          "bytes": "8b4608"
+        },
+        {
+          "owner": "0x141c53840",
+          "site": "0x141c53a30",
+          "instruction": "lea rdx, [rip + 0xb063241]",
+          "bytes": "488d154132060b"
+        },
+        {
+          "owner": "0x141c53840",
+          "site": "0x141c53a3b",
+          "instruction": "mov qword ptr [rdx + rax*8], rsi",
+          "bytes": "488934c2"
+        },
+        {
+          "owner": "0x141c4ed80",
+          "site": "0x141c50f85",
+          "instruction": "lea r8, [rip + 0x8dbb90d]",
+          "literal_va": "0x14aa0c899",
+          "literal": "potion.slowFalling"
+        }
+      ]
+    }
+  ],
+  "scope": "Effect object identity and global indexing only; record field20 meaning/effect application ownership require separate evidence."
+}

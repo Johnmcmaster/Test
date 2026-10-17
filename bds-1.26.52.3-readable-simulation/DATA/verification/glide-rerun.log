@@ -1,0 +1,44 @@
+{
+  "exe_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "function_va": "0x1484403b0",
+  "end_exclusive": "0x1484408d0",
+  "code_sha256": "dbd0fc6f027f3f011e31e54dc33dd91bbd4016f14be30a1771716db78a043c8d",
+  "harness_source_sha256": "34b5f7eae9eebcd4c34f807818cd7d232105454b0fdec503cf8ca2f5aadc7748",
+  "compiler_flags": [
+    "-std=c++17",
+    "-O0",
+    "-fno-fast-math",
+    "-ffp-contract=off"
+  ],
+  "case_count": 381,
+  "output_fields_per_case": 4,
+  "mismatches": 0,
+  "generated_fixture_sha256": "884817f6a5071ad7a896b4b1d0edf7e682de53e52ab951e7e83093a27a7f02bd",
+  "stored_fixture_sha256": "80dbb3de881a8615c6921995acc0155215e84633bd0eb5d26573f494699211a7",
+  "stored_fixture_exact_match": false,
+  "stored_fixture_row_count": 381,
+  "stored_fixture_field_differences": 1,
+  "first_fixture_differences": [
+    {
+      "case": 380,
+      "field": "lookZ",
+      "generated": "7fc00000",
+      "stored": "ffc00000"
+    }
+  ],
+  "regenerated_fixture": "JAVA/physics-kernels/fixtures/glide_native_regenerated.csv",
+  "java_output": "PASS 381 original-machine-code glide fixtures (4 output fields each)",
+  "instruction_bytes_unmodified": true,
+  "dependencies": [
+    "Synthetic valid EnTT component data and pool membership",
+    "65,536-entry LUT initialized with host Linux sinf, matching recovered initializer expression",
+    "ms_abi host fmodf import shim",
+    "Explicit observed look/pitch trigonometric outputs supplied to Java"
+  ],
+  "limits": [
+    "No Windows CRT or LUT bit-equivalence claim",
+    "NaN values compared by class; payload and sign are not promised",
+    "Default host floating-point environment; no exhaustive MXCSR modes",
+    "No complete glide eligibility, world physics, fireworks ownership, scheduler, or live server validation"
+  ]
+}

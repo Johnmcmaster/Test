@@ -1,0 +1,70 @@
+{
+  "batch": "sim_remaining_fluid",
+  "new_targets": 2,
+  "defined_ranges": 22,
+  "reused": 4,
+  "skipped": 1,
+  "output": "DECOMPILATION/ghidra/sim_remaining_fluid",
+  "requests": [
+    {
+      "va": "0x141c69960",
+      "rva": "0x1c69960",
+      "end_exclusive": "0x141c69dca",
+      "size": 1130,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/sim_remaining_fluid/0x141c69960_FUN_141c69960.c",
+      "assembly": "ASSEMBLY/0000000141C69960.asm"
+    },
+    {
+      "va": "0x14842b540",
+      "rva": "0x842b540",
+      "status": "reused_final",
+      "output": "DECOMPILATION/ghidra/root_ground_fly/0x14842b540_FUN_14842b540.c"
+    },
+    {
+      "va": "0x141c5c370",
+      "rva": "0x1c5c370",
+      "status": "reused_final",
+      "output": "DECOMPILATION/ghidra/root_gravity_actual/0x141c5c370_FUN_141c5c370.c"
+    },
+    {
+      "va": "0x141c5c610",
+      "rva": "0x1c5c610",
+      "status": "reused_final",
+      "output": "DECOMPILATION/ghidra/root_gravity_actual/0x141c5c610_FUN_141c5c610.c"
+    },
+    {
+      "va": "0x141c81cd0",
+      "rva": "0x1c81cd0",
+      "status": "reused_final",
+      "output": "DECOMPILATION/ghidra/root_gravity_actual/0x141c81cd0_FUN_141c81cd0.c"
+    },
+    {
+      "va": "0x146620DA0",
+      "reason": "Needs explicit verified leaf/range bound or is not an unwind start",
+      "covering_range": [
+        5475798416,
+        5475798560,
+        false
+      ],
+      "status": "skipped"
+    },
+    {
+      "va": "0x14664d330",
+      "rva": "0x664d330",
+      "end_exclusive": "0x14664e369",
+      "size": 4153,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/sim_remaining_fluid/0x14664d330_FUN_14664d330.c",
+      "assembly": "ASSEMBLY/000000014664D330.asm"
+    }
+  ],
+  "execution": {
+    "exit_code": 0,
+    "expected_targets": 2,
+    "successful_exports": 2,
+    "record": "WORK/ghidra/sim_remaining_fluid/execution.json"
+  }
+}

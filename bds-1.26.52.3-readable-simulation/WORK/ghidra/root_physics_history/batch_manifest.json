@@ -1,0 +1,58 @@
+{
+  "batch": "root_physics_history",
+  "new_targets": 3,
+  "defined_ranges": 4,
+  "reused": 1,
+  "skipped": 0,
+  "output": "DECOMPILATION/ghidra/root_physics_history",
+  "requests": [
+    {
+      "va": "0x14845b3c0",
+      "rva": "0x845b3c0",
+      "end_exclusive": "0x14845b4db",
+      "size": 283,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/root_physics_history/0x14845b3c0_FUN_14845b3c0.c",
+      "assembly": "ASSEMBLY/000000014845B3C0.asm"
+    },
+    {
+      "va": "0x148456490",
+      "rva": "0x8456490",
+      "end_exclusive": "0x1484566d8",
+      "size": 584,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/root_physics_history/0x148456490_FUN_148456490.c",
+      "assembly": "ASSEMBLY/0000000148456490.asm"
+    },
+    {
+      "va": "0x14839f2a0",
+      "rva": "0x839f2a0",
+      "end_exclusive": "0x14839f2f6",
+      "size": 86,
+      "boundary_source": "Explicit leaf; terminal RET and bounded branches verified",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/root_physics_history/0x14839f2a0_FUN_14839f2a0.c",
+      "assembly": "ASSEMBLY/000000014839F2A0.asm"
+    },
+    {
+      "va": "0x1483a7a60",
+      "rva": "0x83a7a60",
+      "status": "reused_final",
+      "output": "DECOMPILATION/ghidra/collision03/0x1483a7a60_FUN_1483a7a60.c"
+    }
+  ],
+  "execution": {
+    "exit_code": 0,
+    "expected_targets": 3,
+    "successful_exports": 3,
+    "record": "WORK/ghidra/root_physics_history/execution.json"
+  },
+  "cfg_execution": {
+    "exit_code": 0,
+    "expected_targets": 3,
+    "successful_exports": 3,
+    "record": "WORK/ghidra/root_physics_history_cfg/execution.json"
+  }
+}

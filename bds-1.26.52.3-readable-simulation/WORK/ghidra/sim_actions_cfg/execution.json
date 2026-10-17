@@ -1,0 +1,110 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_actions",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_actions/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_actions/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_actions_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:19:52.466741+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_actions",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:19:56.992776+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x141c5b3c0_FUN_141c5b3c0.c",
+      "bytes": 3026,
+      "sha256": "234a916b54603bc09b4ef7914f61e1e3b239e0583ef7d6349d4daeccd48f22ac",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x142f17890_FUN_142f17890.c",
+      "bytes": 2706,
+      "sha256": "60552f1d2c980c3ca1d378105c168c76115b2c36536ea1dfd379f192bbac53e9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x1436bcc60_FUN_1436bcc60.c",
+      "bytes": 4996,
+      "sha256": "2b5bbd7c66f265371224a911dcc7cc18fc3be0d7b3d945c8bb0462553764df97",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x1446c60d0_FUN_1446c60d0.c",
+      "bytes": 2329,
+      "sha256": "c2ae693e0285bcf4f36db4093415bc62b7a9d3240090797e34bf1ec1e30e3dd1",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x145e36020_FUN_145e36020.c",
+      "bytes": 1983,
+      "sha256": "194eb73a848edc53c14d965da164d91bef43ce76c33fc5574d5560f9af8a9bbc",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x145eed380_FUN_145eed380.c",
+      "bytes": 5532,
+      "sha256": "8b77dbced6fc616db066d978703759920b52ddcec44fc450f1d8153e7914221d",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x145eef9b0_FUN_145eef9b0.c",
+      "bytes": 6594,
+      "sha256": "89ba70203d58429131d02a5cd363814d1a177b95a99e95d6fb48f031e38bfaa8",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x14661fab0_FUN_14661fab0.c",
+      "bytes": 1448,
+      "sha256": "124b614e5a54d27107044d8d72ad580239e3c6c349ab9adb8f4d0be1e35113f4",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x14661fbb0_FUN_14661fbb0.c",
+      "bytes": 3436,
+      "sha256": "6ee3d106d621dd50c95d3452438b7d74ae6be65d02408c7937461984a0df19df",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x14661fe60_FUN_14661fe60.c",
+      "bytes": 1792,
+      "sha256": "5eb88d50da485b24607472420cab3bd2e1789b164ebc1b9bb3852ac0b1841bf1",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x146620e20_FUN_146620e20.c",
+      "bytes": 7539,
+      "sha256": "c2b4b18579b8a529f1157f13d56c49756e85762127f0e9235915a904d0899eae",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x1483d2a80_FUN_1483d2a80.c",
+      "bytes": 11080,
+      "sha256": "2deefca7949ccc1b6f5601b6ea2def90446a7b0bd34b35594517d1e506449de1",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_actions/0x148408460_FUN_148408460.c",
+      "bytes": 2049,
+      "sha256": "fdf8517ecfbe37f5b2fd5b6c23efd753be5c6f1b124c942068de9cf107e84e1c",
+      "failed": false
+    }
+  ],
+  "expected_targets": 13,
+  "successful_exports": 13
+}

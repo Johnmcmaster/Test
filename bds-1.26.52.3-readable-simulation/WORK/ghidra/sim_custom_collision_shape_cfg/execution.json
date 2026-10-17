@@ -1,0 +1,50 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_custom_collision_shape",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_custom_collision_shape/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_custom_collision_shape/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_custom_collision_shape_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-16T18:54:40.987788+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_custom_collision_shape",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T18:54:44.713657+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_custom_collision_shape/0x142cea4b0_FUN_142cea4b0.c",
+      "bytes": 4963,
+      "sha256": "e14cbca99259034f61f7209a538dce108e27d0406fa0ca1f96f0bd5b7fef47e5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_custom_collision_shape/0x144c50eb0_FUN_144c50eb0.c",
+      "bytes": 3372,
+      "sha256": "345446efcfea9c94e861e48eecad190ee3936f9608f5a678039c5f14cc8f0022",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_custom_collision_shape/0x145825460_FUN_145825460.c",
+      "bytes": 3114,
+      "sha256": "5787eceed775f7de61db2d14405f6468cc85bc481b6129dd4cc72093414ec073",
+      "failed": false
+    }
+  ],
+  "expected_targets": 3,
+  "successful_exports": 3
+}

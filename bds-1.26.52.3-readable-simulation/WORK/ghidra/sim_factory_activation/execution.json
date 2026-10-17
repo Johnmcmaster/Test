@@ -1,0 +1,58 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_factory_activation",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_factory_activation/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_factory_activation/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_factory_activation/headless.log"
+  ],
+  "started_utc": "2026-10-16T17:55:51.530799+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_factory_activation",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T17:55:55.156529+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_factory_activation/0x14191f3f0_FUN_14191f3f0.c",
+      "bytes": 893,
+      "sha256": "daa271200478147e444d215289c1d0a97b5471c833c80771d993352e008719af",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_factory_activation/0x1482652a0_FUN_1482652a0.c",
+      "bytes": 1809,
+      "sha256": "051d6b790597eb123def1f105a48f6b7fbf8269fdb25c87864b66b82d5728323",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_factory_activation/0x1482653e0_FUN_1482653e0.c",
+      "bytes": 1807,
+      "sha256": "0ae44ac76d1445b437ad3c8282532f3cfd0574580cae9ac04b76498a79e406f4",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_factory_activation/0x148265ce0_FUN_148265ce0.c",
+      "bytes": 8724,
+      "sha256": "90767a5c88464cdfbb7ae4c1a71f1d5a752aa8dfdfafe76055136af67d02d00b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_factory_activation/0x14826dc90_FUN_14826dc90.c",
+      "bytes": 1795,
+      "sha256": "4381472734b0aa26db8d1d6c312eb25198b784d4d1cbf70ca887aeb281798397",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

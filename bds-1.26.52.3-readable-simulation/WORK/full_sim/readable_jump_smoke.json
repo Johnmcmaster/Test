@@ -1,0 +1,87 @@
+{
+  "binary_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "case_count": 422,
+  "cases_by_variant": {
+    "0": 91,
+    "6": 91,
+    "1": 82,
+    "2": 82,
+    "3": 46,
+    "4": 10,
+    "5": 10,
+    "7": 10
+  },
+  "mismatches": 0,
+  "nan_payload_differences": 0,
+  "first_failures": [],
+  "native_ranges": [
+    {
+      "variant": 0,
+      "va": "0x144832a50",
+      "end_exclusive": "0x144832c96",
+      "code_sha256": "2aee0dcef10a88c9630a6cdb417d691bc8db432c99e6e5636888532dc26f5ec6"
+    },
+    {
+      "variant": 1,
+      "va": "0x141c72700",
+      "end_exclusive": "0x141c72947",
+      "code_sha256": "7c02764aba25b663d06a19ac56aa4cdd27bcb73e4941e5fc637b8f263db41948"
+    },
+    {
+      "variant": 2,
+      "va": "0x141c5b3c0",
+      "end_exclusive": "0x141c5b57a",
+      "code_sha256": "12ecfdb2ae1d13b7501a9467dfa4710acf5498046092ad5d1338f35c7d0f6f38"
+    },
+    {
+      "variant": 3,
+      "va": "0x141c67400",
+      "end_exclusive": "0x141c675b6",
+      "code_sha256": "8bbd4960b9f6ee56d61c01a3d94b76113c1cecb6cfb66b5618584c85fea6cf71"
+    },
+    {
+      "variant": 4,
+      "va": "0x142f17840",
+      "end_exclusive": "0x142f1788c",
+      "code_sha256": "f16f759ca14762d5c83f0f4b5fe8d22b647f134acb550d7a602775b5e3df5b75"
+    },
+    {
+      "variant": 5,
+      "va": "0x145e36020",
+      "end_exclusive": "0x145e36151",
+      "code_sha256": "c8cb0278616a80846a69be2857b0cc2dc93153f13bd463286aac06fb77b960e2"
+    },
+    {
+      "variant": 6,
+      "va": "0x144832ca0",
+      "end_exclusive": "0x144832fbc",
+      "code_sha256": "926eb6b0c8c9c7701a01ae6578fd2f40113f4bc8da17cb8b43a3c04318cd0bd9"
+    },
+    {
+      "variant": 7,
+      "va": "0x14661f790",
+      "end_exclusive": "0x14661faa5",
+      "code_sha256": "23ffd61226c6ccd81d3badbfcda8a0216e559634b299ca74bbf4ea0959dc0112"
+    }
+  ],
+  "sources": {
+    "READABLE_SIMULATION/NativeMovement.cpp": "c4eb90a73918d57289a2b386d1591cdd6a2cebe68ff0b8687e5f8f0a1b47f975",
+    "READABLE_SIMULATION/NativeMovementCli.cpp": "deef19c252d5ec5dcfb24d29235f847643471bfa90bb3d622fa3eefc8b6ec650",
+    "READABLE_SIMULATION/NativeMovement.h": "5f9e977896b0d3028014d6f3c59f5160abec411e4c88d671f7a7b7bc8250ba75"
+  },
+  "shims": [
+    "sinf/cosf imports return explicitly supplied values; yaw conversion is native-only and statically inspected",
+    "floorf import thunk14A5BD120 receives finite fixture coordinates and returns their float32 floor",
+    "Block virtual+0x10 returns explicit synthetic material, friction and flag data; coordinates/call order compared",
+    "Water provider virtual+0x28 returns explicit signed integer maximum",
+    "Jump LUT is deterministic supplied data; C++ receives values read by native LUT indexing",
+    "Jump optional control virtual+0x28 returns explicit scalar; TriggerJump storage getter supplies valid pool and insertion records payload"
+  ],
+  "limits": [
+    "Original body and sparse membership instructions execute in Unicorn; no live server/tick scheduler test",
+    "Mode6 runs original ground/air wrapper AND original shared acceleration helper",
+    "Synthetic valid ECS reference pools do not exercise allocation or lifecycle",
+    "NaN payloads and FP exception flags not guaranteed; MXCSR0x1F80",
+    "No permission, mode authority, collision-world construction, or unknown raw flag meaning is invented"
+  ]
+}

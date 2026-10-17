@@ -1,0 +1,312 @@
+[
+  {
+    "id": "SIM-CONTROL-1",
+    "va": "0x1411f41e0",
+    "start": "0x1411f42a9",
+    "end": "0x1411f42c0",
+    "claim": "Default control object table and ownership transfer are independently installed",
+    "detail": "LEA14A7D46C0 then object[0] store, followed by141C0B690. Table+10 is verified as142CC7330. This proves one installed default, not every entity/control implementation.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/FULL_SIM_TABLE_POINTERS.json"
+  },
+  {
+    "id": "SIM-CONTROL-2",
+    "va": "0x141c0b690",
+    "start": "0x141c0b690",
+    "end": "0x141c0b786",
+    "claim": "MoveControl object and shared ownership fields are real writes",
+    "detail": "Stores transferred object at component+20 and its shared-control pointer at+28. Old ownership release remains in native body.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-ACCEL",
+    "va": "0x144832a50",
+    "start": "0x144832a50",
+    "end": "0x144832c95",
+    "claim": "Ordinary default acceleration uses actual input and yaw, then writes friction scalar",
+    "detail": "z*z+(y*y+x*x), ordered epsilon guard, denominatorMAXSS(1,sqrt(sum)), coefficientMobTravel+0C, yaw-rotated accumulation into StateVector+18/1C/20. Independently writes MobTravel+1C=1 or conditional block-dependent scalar.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeMovement.cpp; DATA/READABLE_SIMULATION_VALIDATION.json"
+  },
+  {
+    "id": "SIM-POST",
+    "va": "0x144832ca0",
+    "start": "0x144832ca0",
+    "end": "0x144832fbb",
+    "claim": "Ground/air wrapper has additional raw actor/block Y rules",
+    "detail": "Calls original144832A50 before gates using two powder-snow memberships, raw actor flags40000/80000, block flags33/34, material identifier and optional MoveInput flags. Native numerical branch retained without inventing raw flag names.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-FRICTION-GROUND",
+    "va": "0x141c72700",
+    "start": "0x141c72700",
+    "end": "0x141c72946",
+    "claim": "Ground friction is distinct from air/flying drag",
+    "detail": "Vex branch applies0.91 toXYZ; ordinary branch selects two factors from MobTravel+1C, optional override and MovementAttributes+30/34,+40/44. Native tiny-value and SSE attenuation behavior preserved.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-FRICTION-BIND",
+    "va": "0x141c72a90",
+    "start": "0x141c72b1c",
+    "end": "0x141c72b7c",
+    "claim": "Ground-friction optional membership is VexFlag, not Navigation",
+    "detail": "0CBB7191 and52857D3D storage lookups, then their thin references passed into141C72700 in the verified positions.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "WORK/full_sim/types/verified_registration_records.csv"
+  },
+  {
+    "id": "SIM-FRICTION-AIR",
+    "va": "0x141c5b3c0",
+    "start": "0x141c5b3c0",
+    "end": "0x141c5b579",
+    "claim": "Shared friction preserves separate raw control Booleans",
+    "detail": "Reads optional override, modifiers30/34 and40/44, raw ActorDataFlag+8 sign, and three Boolean arguments. Port does not collapse these to a universal drag constant.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-WATER-DRAG",
+    "va": "0x141c67400",
+    "start": "0x141c67400",
+    "end": "0x141c675b5",
+    "claim": "Water drag uses clamped enchant field and an external maximum",
+    "detail": "Base from raw flag/optional WaterMovement, signed level clamp, OnGround-dependent half-level, interpolation to binary3F0BC6A9, scalar5 branch, horizontal factor and vertical0.8.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-JUMP-GROUND",
+    "va": "0x14661f790",
+    "start": "0x14661f790",
+    "end": "0x14661faa0",
+    "claim": "Ground jump has block, effect, optional control and request dependencies",
+    "detail": "Captures StateVector position; queries floor block coordinates; raw block bit30 selects0.6 scale; base0.2/0.42/customvirtual28 plus JumpBoost record20; MAXSS with oldY; raw flag8 horizontal LUT impulse; absent TriggerJumpRequest gets payload.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/EFFECT_BINDINGS.json; DATA/READABLE_SIMULATION_VALIDATION.json"
+  },
+  {
+    "id": "SIM-JUMP-MODIFIER",
+    "va": "0x145e36020",
+    "start": "0x145e36020",
+    "end": "0x145e36150",
+    "claim": "Jump modifier consumes scalar and applies a separate impulse",
+    "detail": "Optional field18 and JumpBoost record20 feedY; positive control field8 triggers LUT horizontal0.4*scalar; consumed scalar becomes zero.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-MODES",
+    "va": "0x145eed380",
+    "start": "0x145eed380",
+    "end": "0x145eed7b2",
+    "claim": "Travel selector adds mode tags and leaves old membership cleanup elsewhere",
+    "detail": "Verified abilities/water/lava immunity/on-ground/actor-flag branches choose flying, water+liquid, lava+liquid, glide, ground or air. Contracted main AABB then sub-bounds are queried with code6. Existing flying payload remains unchanged; new payloadDWORD0=0.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-CONTRACT",
+    "va": "0x142f78040",
+    "start": "0x142f78040",
+    "end": "0x142f781c4",
+    "claim": "AABB contraction collapses crossed axes to their midpoint",
+    "detail": "Each low=min+shrink and high=max-shrink; crossed endpoints select midpoint before native MINSS/MAXSS. Mode selector uses literal(0.1,0.4,0.1).",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-MODE-CLEAR",
+    "va": "0x14192f4f0",
+    "start": "0x14192f4f0",
+    "end": "0x14192f80f",
+    "claim": "A registered bulk method clears the transient movement group",
+    "detail": "Twelve pool clear paths include travel-mode flags and MobTravel. Table14A75E5D0 points here; actual pass cadence relative to every server-player path is not proved.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "WORK/full_sim/mode_reset_registration_refs.json"
+  },
+  {
+    "id": "SIM-INPUT-LOCAL",
+    "va": "0x143b54a00",
+    "start": "0x143b54a00",
+    "end": "0x143b54a15",
+    "claim": "Raw MoveInput axes become LocalMoveVelocity X/Z",
+    "detail": "Reads MoveInput+24/+28 into LocalMoveVelocity+0/+8. Does not overwrite localY; view143B75820 binds018B1887/BD68C2E2/10257C61/6B04A058.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-INTENT",
+    "va": "0x142f17840",
+    "start": "0x142f17840",
+    "end": "0x142f1788b",
+    "claim": "Local motion input becomes MobTravel intent through exact scale factors",
+    "detail": "ScalesXYZ by native0.98, MobRotation scalar by0.9, then copiesXYZ into MobTravel+0. View142F29AF0 supplies LocalMoveVelocity10257C61, MobRotation66E7134A and MobTravel39CF8D64.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-REQUEST",
+    "va": "0x145eec7f0",
+    "start": "0x145eec80f",
+    "end": "0x145eec86c",
+    "claim": "Ordinary motion feeds MoveRequest while previous ordinary position is retained",
+    "detail": "StateVector XYZ copied to MobTravel+10/+18; getter1424DF1A0 supplies request; motionX/Z stored+90/+94; motionXYZ added to request+3C/+40/+44.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeMovement.cpp"
+  },
+  {
+    "id": "SIM-FINALIZE",
+    "va": "0x14469ee70",
+    "start": "0x14469ee70",
+    "end": "0x14469f669",
+    "claim": "Resolved AABB becomes ordinary XYZ and collision memberships",
+    "detail": "Stores centerX,offset00+minY,centerZ before diagnostics. Optional abilities bit10 skips flag updates; ordered epsilon comparisons govern horizontal/vertical/collision markers and on-ground state; always removes CollidableMobNear. Does not itself zero velocity.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/READABLE_SIMULATION_VALIDATION.json"
+  },
+  {
+    "id": "SIM-UNORDERED",
+    "va": "0x14469ee70",
+    "start": "0x14469eff1",
+    "end": "0x14469f01c",
+    "claim": "Finalizer decompiler comparisons require instruction-level unordered correction",
+    "detail": "CMPLTPS builds ordered greater-than-epsilon masks. JBE atF19E also includes unordered, so NaN difference does not imply a collision. Initial C++<= transcription produced32 failures; corrected ordered predicates pass explicit edge fixtures.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "WORK/full_sim/finalize_unordered_comparison_failures.json; DATA/READABLE_SIMULATION_VALIDATION.json"
+  },
+  {
+    "id": "SIM-RESET-XZ",
+    "va": "0x143b6ffb0",
+    "start": "0x143b6ffb0",
+    "end": "0x143b6ffd5",
+    "claim": "Horizontal collision reset has a request-byte bypass",
+    "detail": "Nonzero MoveRequest+88 returns; only horizontal payload bytes exactly1 zero StateVectorX/Z. Required view includes horizontal-collision marker, MoveRequest and StateVector.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-RESET-Y",
+    "va": "0x143b70f80",
+    "start": "0x143b70f80",
+    "end": "0x143b70f87",
+    "claim": "Vertical reset is an unconditional leaf under its filtered view",
+    "detail": "Writes zero StateVector+1C. View143B70F90 requires StateVector,VerticalCollisionFlag,MoveRequest; no permission or material semantics are invented for the leaf.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-INPUT-SNAPSHOT",
+    "va": "0x142c142b0",
+    "start": "0x142c142b0",
+    "end": "0x142c14353",
+    "claim": "Input bridge preserves server state separately from reported XYZ",
+    "detail": "CurrentMovement98/9C/A0/8E feed input-mode/interaction fields;44 feeds head rotation. Reads StateVectorXYZ into CurrentMovementE8/F0, saves old actor rotationF4/F8, copies input rotation30/34 toFC/100 and ActorRotation0/4. No StateVector write.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-ABILITIES",
+    "va": "0x145ed8e40",
+    "start": "0x145ed8e40",
+    "end": "0x145ed8e6e",
+    "claim": "Input request flight-related bytes come from ability/actor bits",
+    "detail": "MovementAbilities field4 bits0/2/1 become PlayerInputRequest22/24/25; ActorDataFlag field4 bit0 becomes request23. Bit authority requires its producer path.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-PREVIOUS-INPUT",
+    "va": "0x145eda450",
+    "start": "0x145eda450",
+    "end": "0x145eda483",
+    "claim": "Previous-input snapshot stores bits and analog comparison",
+    "detail": "Reads MoveInput60 bit4, DWORD00 bit19, byte60 bit0; writes previous-component15/14/16; ordered analog28 comparison produces byte17.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-WORLD-CACHE",
+    "va": "0x142f310a0",
+    "start": "0x142f311b7",
+    "end": "0x142f3127c",
+    "claim": "Collision wrapper refreshes a cached world-query object and passes it into acquisition",
+    "detail": "141E7E060 receives cache+188; that routine constructs object at cache-header+8. Wrapper passes cache+190 as argument10 to142F191B0; acquisition uses receiver virtualB0.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/COLLISION_WORLD_BINDING.json"
+  },
+  {
+    "id": "SIM-WORLD-CONSTRUCT",
+    "va": "0x141e7e060",
+    "start": "0x141e7e153",
+    "end": "0x141e7e1a8",
+    "claim": "Cache refresh explicitly constructs the fixed-table query receiver",
+    "detail": "RDI=cacheHeader+8, prior object destructed if header180==1, call1415F33F0 onRDI, then initialized marker set. This proves the constructed route; other receiver origins remain scoped.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/COLLISION_WORLD_BINDING.json"
+  },
+  {
+    "id": "SIM-WORLD-DISPATCH",
+    "va": "0x1415fe590",
+    "start": "0x1415fe590",
+    "end": "0x1415fe651",
+    "claim": "Collision query virtualB0 clears output and calls concrete enumeration",
+    "detail": "14A753900+B0 equals1415FE590; output vector end resets to begin, caller-supplied auxiliary vector or temporary used, then1415FE680 called.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/COLLISION_WORLD_BINDING.json"
+  },
+  {
+    "id": "SIM-WORLD-ENUM",
+    "va": "0x1415fe680",
+    "start": "0x1415fe680",
+    "end": "0x1415ff445",
+    "claim": "Concrete collision-shape enumeration is exported with downstream virtual dependencies",
+    "detail": "Full3526-byte body is retained in raw/CFG pseudocode and assembly. Block/chunk/secondary provider targets and per-block collision methods still require binding; a successful export is not complete geometry reconstruction.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-WORLD-RECORD",
+    "va": "0x1415fe680",
+    "start": "0x1415fed00",
+    "end": "0x1415fed2c",
+    "claim": "World shape output records are48bytes, distinct from24-byte AABB-only vectors",
+    "detail": "Nonallocating append stores owner pointer0, AABB8..1F, blockXYZ20/24/28, zero byte2C; end advances30hex and inputAABB advances18hex. Secondary append atFF1A2..1C6 uses same layout.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "COMPONENT_STRUCTURES.h; DATA/COMPONENT_FIELD_EVIDENCE.csv"
+  },
+  {
+    "id": "SIM-BLOCK-LOOKUP",
+    "va": "0x1415f65e0",
+    "start": "0x1415f65e0",
+    "end": "0x1415f6733",
+    "claim": "Concrete block lookup has verified height/chunk/section and packed-coordinate arithmetic",
+    "detail": "SignedY compared with words3A/38; X/Z arithmetic-shift4; virtual148 chunk; wrapped16bitY difference selects stride68 section pointer30; packedindex=((X&15)<<8)|((Z&15)<<4)|(deltaY&15); virtual18 returns block. Unavailable data returns external registry240 handle, whose block identity is not invented.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "READABLE_SIMULATION/NativeMovement.cpp; DATA/READABLE_SIMULATION_VALIDATION.json"
+  },
+  {
+    "id": "SIM-SPEED-GUARD",
+    "va": "0x14826c570",
+    "start": "0x14826c570",
+    "end": "0x14826c80b",
+    "claim": "Named MoveSpeedCap route zeros request under a component-wise guard or shared predicate",
+    "detail": "MoveRequest+3C/40/44 compared individually using native bound literal14A782C80, plus142535070 entity predicate; selected branch zeros those12bytes. It is not a universal walking-speed limit or independent cheat classifier.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  },
+  {
+    "id": "SIM-INPUT-DEFAULT",
+    "va": "0x1436b3f50",
+    "start": "0x1436b3f50",
+    "end": "0x1436b429a",
+    "claim": "Server input filter initializes a real40-byte input-request payload",
+    "detail": "Intersection includes ActorMovementTickNeeded94154CCE and CurrentMovementAF78DFA4. Ensures PlayerInputRequest6B04A058 with stride28hex and initializes defaults/flags. Packet input and simulation state remain distinct.",
+    "confidence": "confirmed",
+    "supporting_artifacts": ""
+  }
+]

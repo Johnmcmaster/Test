@@ -1,0 +1,58 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/root_vertical_drag",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_vertical_drag/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_vertical_drag/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_vertical_drag/headless.log"
+  ],
+  "started_utc": "2026-10-15T20:46:12.725813+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/root_vertical_drag",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T20:46:18.276778+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/root_vertical_drag/0x141c5a400_FUN_141c5a400.c",
+      "bytes": 15397,
+      "sha256": "5e4d7fc9de7729b80c7f2a42047782186118966f0a314c886eef236548f9bf95",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_vertical_drag/0x141c5ca50_FUN_141c5ca50.c",
+      "bytes": 36983,
+      "sha256": "4ec2660b6e8c3564d945844b78c040345263153330b9e121d9072ce9930e74f5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_vertical_drag/0x141c6a570_FUN_141c6a570.c",
+      "bytes": 1013,
+      "sha256": "72fd4595280daae6bfdbe5d04b08b0cf95eaadbc89d97b16c1cb420c95c7e416",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_vertical_drag/0x141c6d8f0_FUN_141c6d8f0.c",
+      "bytes": 835,
+      "sha256": "c203004b804a0fa003444527d1c59cd020b0e3c0994fc03ad4aebcd1f161c6fc",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_vertical_drag/0x141c6eee0_FUN_141c6eee0.c",
+      "bytes": 1085,
+      "sha256": "a468cea0337ae8923aaaef662c5063463740462e48a9868973aecc4808af4761",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

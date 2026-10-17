@@ -1,0 +1,392 @@
+{
+  "binary_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "confidence": "confirmed",
+  "scope": "base implementation; conditional at polymorphic enumeration call",
+  "function_boundaries": {
+    "0x141a1fef0": {
+      "start": "0x141a1fef0",
+      "end_exclusive": "0x141a208b0",
+      "size": 2496,
+      "basis": ".pdata unwind range; reviewed instruction windows only"
+    },
+    "0x1415fe680": {
+      "start": "0x1415fe680",
+      "end_exclusive": "0x1415ff446",
+      "size": 3526,
+      "basis": ".pdata unwind range; reviewed instruction windows only"
+    },
+    "0x141a22f50": {
+      "start": "0x141a22f50",
+      "end_exclusive": "0x141a2314a",
+      "size": 506,
+      "basis": ".pdata unwind range; reviewed instruction windows only"
+    },
+    "0x141a22b80": {
+      "start": "0x141a22b80",
+      "end_exclusive": "0x141a22eac",
+      "size": 812,
+      "basis": ".pdata unwind range; reviewed instruction windows only"
+    },
+    "0x144c50eb0": {
+      "start": "0x144c50eb0",
+      "end_exclusive": "0x144c51182",
+      "size": 722,
+      "basis": ".pdata unwind range; reviewed instruction windows only"
+    },
+    "0x145825460": {
+      "start": "0x145825460",
+      "end_exclusive": "0x145825647",
+      "size": 487,
+      "basis": ".pdata unwind range; reviewed instruction windows only"
+    },
+    "0x142d0cba0": {
+      "start": "0x142d0cba0",
+      "end_exclusive": "0x142d0cce7",
+      "size": 327,
+      "basis": ".pdata unwind range; reviewed instruction windows only"
+    },
+    "0x1425f41e0": {
+      "start": "0x1425f41e0",
+      "end_exclusive": "0x14261d0c9",
+      "size": 167657,
+      "basis": ".pdata unwind range; reviewed instruction windows only"
+    }
+  },
+  "base_table": "0x14a763920",
+  "instruction_checks": [
+    {
+      "function_va": "0x141a1fef0",
+      "instruction_va": "0x141a1ff13",
+      "instruction": "lea rax, [rip + 0x8d43a06]",
+      "bytes": "488d05063ad408",
+      "source_artifact": "ASSEMBLY/0000000141A1FEF0.asm"
+    },
+    {
+      "function_va": "0x141a1fef0",
+      "instruction_va": "0x141a1ff1a",
+      "instruction": "mov qword ptr [rcx], rax",
+      "bytes": "488901",
+      "source_artifact": "ASSEMBLY/0000000141A1FEF0.asm"
+    },
+    {
+      "function_va": "0x141a1fef0",
+      "instruction_va": "0x141a200aa",
+      "instruction": "movups xmm1, xmmword ptr [rip + 0x8dc60f7]",
+      "bytes": "0f100df760dc08",
+      "source_artifact": "ASSEMBLY/0000000141A1FEF0.asm"
+    },
+    {
+      "function_va": "0x141a1fef0",
+      "instruction_va": "0x141a200b1",
+      "instruction": "movups xmmword ptr [rcx + 0x1b8], xmm1",
+      "bytes": "0f1189b8010000",
+      "source_artifact": "ASSEMBLY/0000000141A1FEF0.asm"
+    },
+    {
+      "function_va": "0x1415fe680",
+      "instruction_va": "0x1415ff142",
+      "instruction": "mov rcx, qword ptr [r14 + 0x68]",
+      "bytes": "498b4e68",
+      "source_artifact": "ASSEMBLY/00000001415FE680.asm"
+    },
+    {
+      "function_va": "0x1415fe680",
+      "instruction_va": "0x1415ff149",
+      "instruction": "mov rax, qword ptr [rax + 0x30]",
+      "bytes": "488b4030",
+      "source_artifact": "ASSEMBLY/00000001415FE680.asm"
+    },
+    {
+      "function_va": "0x1415fe680",
+      "instruction_va": "0x1415ff16d",
+      "instruction": "call qword ptr [rip + 0x97ab0ad]",
+      "bytes": "ff15adb07a09",
+      "source_artifact": "ASSEMBLY/00000001415FE680.asm"
+    },
+    {
+      "function_va": "0x141a22f50",
+      "instruction_va": "0x141a22f8e",
+      "instruction": "mov r14, qword ptr [rdx + 0x80]",
+      "bytes": "4c8bb280000000",
+      "source_artifact": "ASSEMBLY/0000000141A22F50.asm"
+    },
+    {
+      "function_va": "0x141a22f50",
+      "instruction_va": "0x141a22fdd",
+      "instruction": "mov rax, qword ptr [rax + 0x20]",
+      "bytes": "488b4020",
+      "source_artifact": "ASSEMBLY/0000000141A22F50.asm"
+    },
+    {
+      "function_va": "0x141a22f50",
+      "instruction_va": "0x141a22ff0",
+      "instruction": "call qword ptr [rip + 0x938722a]",
+      "bytes": "ff152a723809",
+      "source_artifact": "ASSEMBLY/0000000141A22F50.asm"
+    },
+    {
+      "function_va": "0x141a22f50",
+      "instruction_va": "0x141a2309e",
+      "instruction": "add qword ptr [rsi + 8], 0x18",
+      "bytes": "4883460818",
+      "source_artifact": "ASSEMBLY/0000000141A22F50.asm"
+    },
+    {
+      "function_va": "0x141a22f50",
+      "instruction_va": "0x141a23106",
+      "instruction": "call 0x145825460",
+      "bytes": "e85523e003",
+      "source_artifact": "ASSEMBLY/0000000141A22F50.asm"
+    },
+    {
+      "function_va": "0x141a22b80",
+      "instruction_va": "0x141a22c7e",
+      "instruction": "mov rax, qword ptr [rax + 0x50]",
+      "bytes": "488b4050",
+      "source_artifact": "ASSEMBLY/0000000141A22B80.asm"
+    },
+    {
+      "function_va": "0x141a22b80",
+      "instruction_va": "0x141a22c90",
+      "instruction": "call qword ptr [rip + 0x938758a]",
+      "bytes": "ff158a753809",
+      "source_artifact": "ASSEMBLY/0000000141A22B80.asm"
+    },
+    {
+      "function_va": "0x141a22b80",
+      "instruction_va": "0x141a22c9c",
+      "instruction": "call 0x142cea4b0",
+      "bytes": "e80f782c01",
+      "source_artifact": "ASSEMBLY/0000000141A22B80.asm"
+    },
+    {
+      "function_va": "0x141a22b80",
+      "instruction_va": "0x141a22cb1",
+      "instruction": "call 0x144c50eb0",
+      "bytes": "e8fae12203",
+      "source_artifact": "ASSEMBLY/0000000141A22B80.asm"
+    },
+    {
+      "function_va": "0x144c50eb0",
+      "instruction_va": "0x144c50fb1",
+      "instruction": "cmp edx, 1",
+      "bytes": "83fa01",
+      "source_artifact": "ASSEMBLY/0000000144C50EB0.asm"
+    },
+    {
+      "function_va": "0x144c50eb0",
+      "instruction_va": "0x144c50f7e",
+      "instruction": "or r10, r9",
+      "bytes": "4d09ca",
+      "source_artifact": "ASSEMBLY/0000000144C50EB0.asm"
+    },
+    {
+      "function_va": "0x145825460",
+      "instruction_va": "0x14582549b",
+      "instruction": "mov r13, qword ptr [rcx + 0x20]",
+      "bytes": "4c8b6920",
+      "source_artifact": "ASSEMBLY/0000000145825460.asm"
+    },
+    {
+      "function_va": "0x145825460",
+      "instruction_va": "0x14582549f",
+      "instruction": "mov rbp, qword ptr [rcx + 0x28]",
+      "bytes": "488b6928",
+      "source_artifact": "ASSEMBLY/0000000145825460.asm"
+    },
+    {
+      "function_va": "0x145825460",
+      "instruction_va": "0x145825603",
+      "instruction": "add qword ptr [r15 + 8], 0x18",
+      "bytes": "4983470818",
+      "source_artifact": "ASSEMBLY/0000000145825460.asm"
+    },
+    {
+      "function_va": "0x142d0cba0",
+      "instruction_va": "0x142d0cbd7",
+      "instruction": "movabs rax, 0xbd584baf00003448",
+      "bytes": "48b848340000af4b58bd",
+      "source_artifact": "ASSEMBLY/0000000142D0CBA0.asm"
+    },
+    {
+      "function_va": "0x142d0cba0",
+      "instruction_va": "0x142d0cbe1",
+      "instruction": "mov qword ptr [rip + 0x9fecd68], rax",
+      "bytes": "48890568cdfe09",
+      "source_artifact": "ASSEMBLY/0000000142D0CBA0.asm"
+    },
+    {
+      "function_va": "0x142d0cba0",
+      "instruction_va": "0x142d0cbe8",
+      "instruction": "mov qword ptr [rip + 0x9fecd75], 0xd",
+      "bytes": "48c70575cdfe090d000000",
+      "source_artifact": "ASSEMBLY/0000000142D0CBA0.asm"
+    },
+    {
+      "function_va": "0x142d0cba0",
+      "instruction_va": "0x142d0cbf3",
+      "instruction": "movabs rax, 0x66617263656e696d",
+      "bytes": "48b86d696e6563726166",
+      "source_artifact": "ASSEMBLY/0000000142D0CBA0.asm"
+    },
+    {
+      "function_va": "0x142d0cba0",
+      "instruction_va": "0x142d0cc04",
+      "instruction": "movabs rax, 0x7269613a74666172",
+      "bytes": "48b8726166743a616972",
+      "source_artifact": "ASSEMBLY/0000000142D0CBA0.asm"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260b4e3",
+      "instruction": "lea rcx, [rip + 0xa6d01fe]",
+      "bytes": "488d0dfe016d0a",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260b500",
+      "instruction": "movabs rax, 0x3d847a02ce3b2fb",
+      "bytes": "48b8fbb2e32ca047d803",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260b50a",
+      "instruction": "mov qword ptr [rip + 0xa6d01cf], rax",
+      "bytes": "488905cf016d0a",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260b511",
+      "instruction": "lea r9, [rip + 0x83b01ad]",
+      "bytes": "4c8d0dad013b08",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260b518",
+      "instruction": "mov edx, 0x15",
+      "bytes": "ba15000000",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260b51d",
+      "instruction": "call 0x1400bc5a0",
+      "bytes": "e87e10abfd",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e54c",
+      "instruction": "lea rcx, [rip + 0xa6d5cc5]",
+      "bytes": "488d0dc55c6d0a",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e553",
+      "instruction": "mov qword ptr [rip + 0xa6d5cd2], 0xf",
+      "bytes": "48c705d25c6d0a0f000000",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e55e",
+      "instruction": "mov qword ptr [rip + 0xa6d5ccf], 0",
+      "bytes": "48c705cf5c6d0a00000000",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e569",
+      "instruction": "movabs rax, 0x93e2bb1cb7f99fc6",
+      "bytes": "48b8c69ff9b71cbbe293",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e573",
+      "instruction": "mov qword ptr [rip + 0xa6d5c96], rax",
+      "bytes": "488905965c6d0a",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e57a",
+      "instruction": "lea r9, [rip + 0x841c05b]",
+      "bytes": "4c8d0d5bc04108",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e581",
+      "instruction": "mov edx, 0x13",
+      "bytes": "ba13000000",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    },
+    {
+      "function_va": "0x1425f41e0",
+      "instruction_va": "0x14260e586",
+      "instruction": "call 0x1400bc5a0",
+      "bytes": "e815e0aafd",
+      "source_artifact": "DATA/BLOCK_PROVIDER_BINDING.json"
+    }
+  ],
+  "table_checks": [
+    {
+      "table_va": "0x14a763920",
+      "offset": "0x20",
+      "pointer_va": "0x14a763940",
+      "target_va": "0x141a22b80"
+    },
+    {
+      "table_va": "0x14a763920",
+      "offset": "0x30",
+      "pointer_va": "0x14a763950",
+      "target_va": "0x141a22f50"
+    },
+    {
+      "table_va": "0x14a763920",
+      "offset": "0x50",
+      "pointer_va": "0x14a763970",
+      "target_va": "0x141653c90"
+    }
+  ],
+  "local_bounds_leaf": {
+    "va": "0x141653c90",
+    "bytes": "488d81b8010000c3",
+    "behavior": "return receiver+1B8"
+  },
+  "named_identifiers": [
+    {
+      "name": "minecraft:air",
+      "global_va": "0x14ccf9950",
+      "key": "0xbd584baf00003448",
+      "initializer": "0x142d0cba0"
+    },
+    {
+      "name": "minecraft:powder_snow",
+      "global_va": "0x14ccdb6e0",
+      "key": "0x03d847a02ce3b2fb",
+      "instruction_va": "0x14260b500",
+      "name_va": "0x14a9bb6c5"
+    },
+    {
+      "name": "minecraft:soul_sand",
+      "global_va": "0x14cce4210",
+      "key": "0x93e2bb1cb7f99fc6",
+      "instruction_va": "0x14260e569",
+      "name_va": "0x14aa2a5dc",
+      "name_length": 19
+    }
+  ],
+  "limits": [
+    "Derived block classes may replace the base vtable; no full block override set claimed",
+    "Base table installation proved from constructor141A1FEF0; concrete runtime per-block selection remains separate",
+    "Names bound from actual constant-string initialization, not recomputed type or block hashes",
+    "Only targeted initializer instructions are checked in large1425F41E0; its unrelated initialization is not decompiled"
+  ]
+}

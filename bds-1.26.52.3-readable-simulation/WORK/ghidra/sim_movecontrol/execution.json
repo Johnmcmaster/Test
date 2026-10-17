@@ -1,0 +1,64 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_movecontrol",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_movecontrol/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_movecontrol/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_movecontrol/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:16:41.935393+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_movecontrol",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:16:46.523476+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_movecontrol/0x1411f41e0_FUN_1411f41e0.c",
+      "bytes": 1931,
+      "sha256": "9d0f0746996c95ee7f993c09186b65fd6b9ba3989b6aca236ef193baf7f9cab8",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_movecontrol/0x141c0a180_FUN_141c0a180.c",
+      "bytes": 2862,
+      "sha256": "561412877cb29764849645da548cb0c6db42921b0297e6279d11767c3bc2de3b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_movecontrol/0x141c0b690_FUN_141c0b690.c",
+      "bytes": 1513,
+      "sha256": "2f8f4cfff4342fb83e4a44f8b2d71595c20530aeb1260438796eb49bc5868203",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_movecontrol/0x142cc7330_FUN_142cc7330.c",
+      "bytes": 14262,
+      "sha256": "f563f12851de7a0cff0ddb96968c409bf2229747b928c25fb1ffd21da878dfd6",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_movecontrol/0x142cc7e60_FUN_142cc7e60.c",
+      "bytes": 10251,
+      "sha256": "a4438c38ff88ce2812150732e4bc0f9d8385f4bce4ae7149b8f304264787b562",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_movecontrol/0x142cc92f0_FUN_142cc92f0.c",
+      "bytes": 4790,
+      "sha256": "581f7c1c718a0fd380f7e24695231843fafd80f92e1f0f593642adcd951216e4",
+      "failed": false
+    }
+  ],
+  "expected_targets": 6,
+  "successful_exports": 6
+}

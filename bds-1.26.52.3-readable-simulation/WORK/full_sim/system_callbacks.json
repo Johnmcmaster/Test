@@ -1,0 +1,660 @@
+{
+  "binary_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "stages": [
+    {
+      "name": "PlayerMovementRateSystem",
+      "table": "0x14a803b00",
+      "registration_evidence": "0x1418BBB2A/31 + 0x1418BBB42",
+      "tick": "0x1436bcc60",
+      "tick_range": [
+        5426105440,
+        5426106157,
+        true
+      ],
+      "callback_candidates": []
+    },
+    {
+      "name": "SneakMovementSystem",
+      "table": "0x14a92a0f0",
+      "registration_evidence": "0x1418E791C/23; same name span at0x1418E78C7",
+      "tick": "0x1483d3560",
+      "tick_range": [
+        5506938208,
+        5506941344,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x1483d35ca",
+          "target": "0x1483d2a80",
+          "range": [
+            5506935424,
+            5506937459,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "FinalizeMoveSystem",
+      "table": "0x14a836d30",
+      "registration_evidence": "0x1418E8043/4A +0x1418E805B",
+      "tick": "0x1446c60d0",
+      "tick_range": [
+        5442920656,
+        5442920806,
+        true
+      ],
+      "callback_candidates": []
+    },
+    {
+      "name": "JumpInputSystem",
+      "table": "0x14a92b040",
+      "registration_evidence": "0x1418ECB0F/16 +0x1418ECB27",
+      "tick": "0x148427f70",
+      "tick_range": [
+        5507284848,
+        5507286217,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x148427fe0",
+          "target": "0x148408460",
+          "range": [
+            5507155040,
+            5507155363,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "MobJumpSystem",
+      "table": "0x14a8be440",
+      "registration_evidence": "0x1418F036F/76 +0x1418F0380",
+      "tick": "0x146656840",
+      "tick_range": [
+        5476018240,
+        5476018625,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x146656970",
+          "target": "0x146620e20",
+          "range": [
+            5475798560,
+            5475800059,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "JumpFromGroundSystem",
+      "table": "0x14a8be2c0",
+      "registration_evidence": "0x1418F0547/4E +0x1418F055F",
+      "tick": "0x146646ae0",
+      "tick_range": [
+        5475953376,
+        5475979819,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x146646b41",
+          "target": "0x14661fab0",
+          "range": [
+            5475793584,
+            5475793838,
+            true
+          ],
+          "leaf_bound": null
+        },
+        {
+          "site": "0x146646fe3",
+          "target": "0x14661fbb0",
+          "range": [
+            5475793840,
+            5475794526,
+            true
+          ],
+          "leaf_bound": null
+        },
+        {
+          "site": "0x14664717a",
+          "target": "0x14661fe60",
+          "range": [
+            5475794528,
+            5475794871,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "TriggerJumpSystem",
+      "table": "0x14a89d4e0",
+      "registration_evidence": "0x1418F238E/95 +0x1418F23A6",
+      "tick": "0x145ef0570",
+      "tick_range": [
+        5468259696,
+        5468269419,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x145ef068e",
+          "target": "0x145eef9b0",
+          "range": [
+            5468256688,
+            5468258095,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "ApplyJumpModifierSystem",
+      "table": "0x14a89ba10",
+      "registration_evidence": "0x1418F2426/2D +0x1418F243E",
+      "tick": "0x145e4f980",
+      "tick_range": [
+        5467601280,
+        5467612125,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x145e4fa02",
+          "target": "0x145e36020",
+          "range": null,
+          "leaf_bound": {
+            "status": "candidate_bounded_leaf",
+            "start": "0x145e36020",
+            "end": "0x145e36151",
+            "size": 305,
+            "return_sites": [
+              "0x145e36150"
+            ],
+            "warning": "Reachability bounds do not establish source function identity; review callback binding."
+          }
+        }
+      ]
+    },
+    {
+      "name": "MobTravelUpdateSpeedsSystem",
+      "table": "0x14a7e5300",
+      "registration_evidence": "0x1418F26BA/C1 +0x1418F26D2",
+      "tick": "0x142f2c870",
+      "tick_range": [
+        5418174576,
+        5418180626,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x142f2c91b",
+          "target": "0x142f17890",
+          "range": [
+            5418088592,
+            5418089044,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "TravelTypeSensingSystem",
+      "table": "0x14a89d460",
+      "registration_evidence": "0x1418F2759/60 +0x1418F2771",
+      "tick": "0x145eee5c0",
+      "tick_range": [
+        5468251584,
+        5468251885,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x145eee69c",
+          "target": "0x145eed380",
+          "range": [
+            5468246912,
+            5468247991,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "MobTravelIntentSystem",
+      "table": "0x14a7e5240",
+      "registration_evidence": "0x1418F00EA/F1 +0x1418F00FB",
+      "tick": "0x142f29af0",
+      "tick_range": [
+        5418162928,
+        5418165222,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x142f29b4b",
+          "target": "0x142f17840",
+          "range": null,
+          "leaf_bound": {
+            "status": "candidate_bounded_leaf",
+            "start": "0x142f17840",
+            "end": "0x142f1788c",
+            "size": 76,
+            "return_sites": [
+              "0x142f1788b"
+            ],
+            "warning": "Reachability bounds do not establish source function identity; review callback binding."
+          }
+        }
+      ]
+    },
+    {
+      "name": "TravelMoveRequestSystem",
+      "table": "0x14a89d420",
+      "registration_evidence": "0x1418F2B7B/82 +0x1418F2B93",
+      "tick": "0x145eec970",
+      "tick_range": [
+        5468244336,
+        5468245141,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x145eec9c6",
+          "target": "0x145eec7f0",
+          "range": [
+            5468243952,
+            5468244110,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "StoreAbilitiesForPlayerInputSystem",
+      "table": "0x14a89cfb0",
+      "registration_evidence": "0x1418EAE6C through1418EAEE7",
+      "tick": "0x145ed8e70",
+      "tick_range": [
+        5468163696,
+        5468165985,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x145ed8ecb",
+          "target": "0x145ed8e40",
+          "range": null,
+          "leaf_bound": {
+            "status": "candidate_bounded_leaf",
+            "start": "0x145ed8e40",
+            "end": "0x145ed8e6f",
+            "size": 47,
+            "return_sites": [
+              "0x145ed8e6e"
+            ],
+            "warning": "Reachability bounds do not establish source function identity; review callback binding."
+          }
+        }
+      ]
+    },
+    {
+      "name": "UpdateServerPlayerInputSystem",
+      "table": "0x14a7d2700",
+      "registration_evidence": "0x1418EB2E0/F8 through1418EB31E",
+      "tick": "0x142c292d0",
+      "tick_range": [
+        5415015120,
+        5415022943,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x142c29346",
+          "target": "0x142c142b0",
+          "range": null,
+          "leaf_bound": {
+            "status": "candidate_bounded_leaf",
+            "start": "0x142c142b0",
+            "end": "0x142c14354",
+            "size": 164,
+            "return_sites": [
+              "0x142c14353"
+            ],
+            "warning": "Reachability bounds do not establish source function identity; review callback binding."
+          }
+        }
+      ]
+    },
+    {
+      "name": "FlyTriggerIntentSystem",
+      "table": "0x14a836e80",
+      "registration_evidence": "0x1418EBD82 through1418EBDF9",
+      "tick": "0x1446ccf60",
+      "tick_range": [
+        5442948960,
+        5442951877,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x1446ccfca",
+          "target": "0x1446ccc00",
+          "range": [
+            5442948096,
+            5442948326,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "FlyTriggerActionSystem",
+      "table": "0x14a836ec0",
+      "registration_evidence": "0x1418EC45F through1418EC4D6",
+      "tick": "0x1446cf440",
+      "tick_range": [
+        5442958400,
+        5442958550,
+        true
+      ],
+      "callback_candidates": []
+    },
+    {
+      "name": "GlideInputSystem",
+      "table": "0x14a92b290",
+      "registration_evidence": "0x1418EC94B/63 through1418EC986",
+      "tick": "0x14843de50",
+      "tick_range": [
+        5507374672,
+        5507380865,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x14843dec6",
+          "target": "0x148430db0",
+          "range": null,
+          "leaf_bound": {
+            "status": "candidate_bounded_leaf",
+            "start": "0x148430db0",
+            "end": "0x148430e11",
+            "size": 97,
+            "return_sites": [
+              "0x148430e10"
+            ],
+            "warning": "Reachability bounds do not establish source function identity; review callback binding."
+          }
+        }
+      ]
+    },
+    {
+      "name": "DefaultMoveSystems - Ground",
+      "table": "0x14a83ff00",
+      "registration_evidence": "0x14483309A through1448330F1 andGroundTravelFlag descriptor",
+      "tick": "0x14484f1b0",
+      "tick_range": [
+        5444530608,
+        5444537485,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x14484f259",
+          "target": "0x144832ca0",
+          "range": [
+            5444414624,
+            5444415420,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "DefaultMoveSystems - Air",
+      "table": "0x14a83ff60",
+      "registration_evidence": "0x144833343 through14483338F andAirTravelFlag descriptor",
+      "tick": "0x144851f00",
+      "tick_range": [
+        5444542208,
+        5444549085,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x144851fa9",
+          "target": "0x144832ca0",
+          "range": [
+            5444414624,
+            5444415420,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "DefaultMoveSystems - Flying Player",
+      "table": "0x14a83ffa0",
+      "registration_evidence": "0x1448335D3 through144833632 andPlayerFlyingTravel descriptor",
+      "tick": "0x144854df0",
+      "tick_range": [
+        5444554224,
+        5444558018,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x144854e88",
+          "target": "0x144832fc0",
+          "range": [
+            5444415424,
+            5444415520,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "RotateAndSetVelocitySystem",
+      "table": "0x14a814580",
+      "registration_evidence": "0x1418ECA7B/93 through1418ECAB6",
+      "tick": "0x143b75820",
+      "tick_range": [
+        5431056416,
+        5431058789,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x143b7587b",
+          "target": "0x143b54a00",
+          "range": null,
+          "leaf_bound": {
+            "status": "candidate_bounded_leaf",
+            "start": "0x143b54a00",
+            "end": "0x143b54a16",
+            "size": 22,
+            "return_sites": [
+              "0x143b54a15"
+            ],
+            "warning": "Reachability bounds do not establish source function identity; review callback binding."
+          }
+        }
+      ]
+    },
+    {
+      "name": "ResetHorizontalVelocitySystem",
+      "table": "0x14a814470",
+      "registration_evidence": "0x143B54839 through143B548A6",
+      "tick": "0x143b70120",
+      "tick_range": [
+        5431034144,
+        5431035466,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x143b7017e",
+          "target": "0x143b6ffb0",
+          "range": null,
+          "leaf_bound": {
+            "status": "candidate_bounded_leaf",
+            "start": "0x143b6ffb0",
+            "end": "0x143b6ffd6",
+            "size": 38,
+            "return_sites": [
+              "0x143b6ffd5"
+            ],
+            "warning": "Reachability bounds do not establish source function identity; review callback binding."
+          }
+        }
+      ]
+    },
+    {
+      "name": "ResetVerticalVelocitySystem",
+      "table": "0x14a8144b0",
+      "registration_evidence": "0x143B548BD through143B54929",
+      "tick": "0x143b710d0",
+      "tick_range": [
+        5431038160,
+        5431039403,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x143b7112e",
+          "target": "0x143b70f80",
+          "range": null,
+          "leaf_bound": {
+            "status": "candidate_bounded_leaf",
+            "start": "0x143b70f80",
+            "end": "0x143b70f88",
+            "size": 8,
+            "return_sites": [
+              "0x143b70f87"
+            ],
+            "warning": "Reachability bounds do not establish source function identity; review callback binding."
+          }
+        }
+      ]
+    },
+    {
+      "name": "RemoveFromAllEntitiesSystem<movement group>",
+      "table": "0x14a75e5d0",
+      "registration_evidence": "0x1418F336C plus generic name literal14AC4D884",
+      "tick": "0x14192f4f0",
+      "tick_range": [
+        5395117296,
+        5395118096,
+        true
+      ],
+      "callback_candidates": []
+    },
+    {
+      "name": "PlayerInputFilterServerSystem",
+      "table": "0x14a803930",
+      "registration_evidence": "14369F975/9BC/9C3",
+      "tick": "0x1436b3f50",
+      "tick_range": [
+        5426069328,
+        5426070171,
+        true
+      ],
+      "callback_candidates": []
+    },
+    {
+      "name": "MoveSpeedCapSystem",
+      "table": "0x14a925470",
+      "registration_evidence": "1482687F4/7FB plus148268852/859",
+      "tick": "0x14826c0c0",
+      "tick_range": [
+        5505466560,
+        5505467625,
+        true
+      ],
+      "callback_candidates": []
+    },
+    {
+      "name": "CameraInputTransformSystem",
+      "table": "0x14a929c30",
+      "registration_evidence": "1418EB3E1 and1418EB436/43D",
+      "tick": "0x1483b5320",
+      "tick_range": [
+        5506814752,
+        5506817772,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x1483b538a",
+          "target": "0x1483b4e60",
+          "range": [
+            5506813536,
+            5506814457,
+            true
+          ],
+          "leaf_bound": null
+        }
+      ]
+    },
+    {
+      "name": "StorePreviousClientInputSystem",
+      "table": "0x14a89cff0",
+      "registration_evidence": "1418ECE8B and1418ECEE4/EEB",
+      "tick": "0x145eda490",
+      "tick_range": [
+        5468169360,
+        5468171647,
+        true
+      ],
+      "callback_candidates": [
+        {
+          "site": "0x145eda4eb",
+          "target": "0x145eda450",
+          "range": null,
+          "leaf_bound": {
+            "status": "candidate_bounded_leaf",
+            "start": "0x145eda450",
+            "end": "0x145eda484",
+            "size": 52,
+            "return_sites": [
+              "0x145eda483"
+            ],
+            "warning": "Reachability bounds do not establish source function identity; review callback binding."
+          }
+        }
+      ]
+    },
+    {
+      "name": "PlayerResetMovementSpeedSystem",
+      "table": "0x14a803c00",
+      "registration_evidence": "1418F437E/385/396",
+      "tick": "0x1436c1760",
+      "tick_range": [
+        5426124640,
+        5426126782,
+        true
+      ],
+      "callback_candidates": []
+    }
+  ]
+}

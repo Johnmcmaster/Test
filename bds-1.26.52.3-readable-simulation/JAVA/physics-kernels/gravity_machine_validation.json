@@ -1,0 +1,26 @@
+{
+  "exe_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "function_va": "0x141c5c910",
+  "end_exclusive": "0x141c5ca49",
+  "code_sha256": "d98805e425a595fdbdef92c8212abe7cd01b9c9fd361fe9711f2ea61a3f0b494",
+  "application_leaf": {
+    "start": "0x141c867b0",
+    "end_exclusive": "0x141c867ce",
+    "code_sha256": "a5f6990e1fcfe468ca4d38f39cedc449b067467a4d0ed8c70130a23d8571bfd8"
+  },
+  "case_count": 6240,
+  "prepare_cases": 3240,
+  "apply_cases": 3000,
+  "mismatches": 0,
+  "nan_payload_differences": 0,
+  "first_failures": [],
+  "shims": [
+    "ApplyGravity storage getter returns synthetic pool with valid membership"
+  ],
+  "limits": [
+    "Raw flag/effectslot gates explicit; effect/global authority not reconstructed",
+    "Synthetic effectrecords and valid component; creation branch untested",
+    "Scalar request/application only; bounce route, drag and whole-tick order separate",
+    "Unicorn MXCSR0x1F80; NaNpayload/FPflags notcontractual"
+  ]
+}

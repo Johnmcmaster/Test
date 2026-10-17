@@ -1,0 +1,58 @@
+{
+  "start": "0x1415f5ec0",
+  "rva": "0x15f5ec0",
+  "end": "0x1415f5ef4",
+  "size": 52,
+  "requested_va_is_range_start": true,
+  "decoded_bytes": 52,
+  "calls_and_jumps": [
+    {
+      "site": "0x1415f5ed2",
+      "kind": "call",
+      "target": "",
+      "operand": "qword ptr [rip + 0x97b4348]",
+      "resolved": false
+    },
+    {
+      "site": "0x1415f5ee8",
+      "kind": "jmp",
+      "target": "0x1415f5eec",
+      "operand": "0x1415f5eec",
+      "resolved": true
+    }
+  ],
+  "memory_operands": [
+    {
+      "site": "0x1415f5ec8",
+      "instruction": "mov rax, qword ptr [rcx]",
+      "base": "rcx",
+      "disp": "0x0",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1415f5ecb",
+      "instruction": "mov rax, qword ptr [rax + 0x148]",
+      "base": "rax",
+      "disp": "0x148",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1415f5ed2",
+      "instruction": "call qword ptr [rip + 0x97b4348]",
+      "base": "rip",
+      "disp": "0x97b4348",
+      "size": 8,
+      "rip_target": "0x14adaa220"
+    },
+    {
+      "site": "0x1415f5edd",
+      "instruction": "and sil, byte ptr [rax + 0x152c]",
+      "base": "rax",
+      "disp": "0x152c",
+      "size": 1,
+      "rip_target": ""
+    }
+  ]
+}

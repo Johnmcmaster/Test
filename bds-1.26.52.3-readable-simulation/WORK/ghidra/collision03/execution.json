@@ -1,0 +1,58 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/collision03",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/collision03/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/collision03/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/collision03/headless.log"
+  ],
+  "started_utc": "2026-10-15T17:57:05.413014+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/collision03",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T17:57:17.363669+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/collision03/0x1424e1840_FUN_1424e1840.c",
+      "bytes": 4398,
+      "sha256": "919c28299f9bd0f4693555316ec9963720e28264034a66d6485218aa696cd49b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/collision03/0x142eab580_FUN_142eab580.c",
+      "bytes": 5259,
+      "sha256": "0467005fb36cd26eea467be271982aa063217f1a14cdfca9a078f5a9b66300be",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/collision03/0x142f77210_FUN_142f77210.c",
+      "bytes": 6332,
+      "sha256": "fab15418cd245d4a24adc366aac481f600224ccfb32d318e3efff0f20556f0a3",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/collision03/0x145e58350_FUN_145e58350.c",
+      "bytes": 2961,
+      "sha256": "faca3755545e02b969a02fcbbf14a300c5c60b3d9e2a6d372fbda2757086be5b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/collision03/0x1483a7a60_FUN_1483a7a60.c",
+      "bytes": 1825,
+      "sha256": "da0b5eccb5736e083641aac6a1071812d218672b1a7462534eb115800bd5f183",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "DERIVED-CONNECTED-TABLE",
+    "va": "0x148a9b2d0",
+    "start": "0x148a9b447",
+    "end": "0x148a9b467",
+    "claim": "Selected constructor installs the connected-geometry table after real base construction",
+    "detail": "RCX=RBX, saved atstack90, call141A1FEF0, LEA14A8E4D10, reloadR13 andstorevptr. Slot30=147153270. This is object/table provenance, not a named block assignment or universal runtime selection.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/DERIVED_BLOCK_BINDING.json; DATA/SHAPE_OVERRIDES_VALIDATION.json; REPORTS/DERIVED_BLOCK_SHAPES.md"
+  },
+  {
+    "id": "DERIVED-NONEMIT",
+    "va": "0x141a2e090",
+    "start": "0x141a2e0d3",
+    "end": "0x141a2e0df",
+    "claim": "A real derived provider installs zero bounds and a non-emitting callback",
+    "detail": "Constructor installs14A764E40; slot20=140216E60 clears24 output bytes, slot30=140076010 returnszero. Separate constructor148B59A00 installs14A94F170 withsame two targets. No all-air/no-collision-block class-name claim.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/DERIVED_BLOCK_BINDING.json; DATA/SHAPE_OVERRIDES_VALIDATION.json; REPORTS/DERIVED_BLOCK_SHAPES.md"
+  },
+  {
+    "id": "DERIVED-PROPERTY",
+    "va": "0x147152aa0",
+    "start": "0x147152abe",
+    "end": "0x147153079",
+    "claim": "Four Boolean property results are packed into byte positions0/8/16/24",
+    "detail": "Block+68 provider holds a key tree at1D8. Node fields19/20/2C/30 support lower-bound lookup and16-bit extraction fromBlock120 with native masked shifts. Missing descriptor uses16-byte fallback entries320..328 and getter result int32+validbyte4. Actual keyglobals are14CD25850,258B0,257F0,25910 in output-byte order. Names/initialization of those properties and reentrant mutation remain unproved.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/DERIVED_BLOCK_BINDING.json; DATA/SHAPE_OVERRIDES_VALIDATION.json; REPORTS/DERIVED_BLOCK_SHAPES.md"
+  },
+  {
+    "id": "DERIVED-CONNECTED",
+    "va": "0x147153270",
+    "start": "0x14715329d",
+    "end": "0x1471535ce",
+    "claim": "Connected collision emission preserves native topology, rounding and query tests",
+    "detail": "Calls actual147152AA0. Emits Z-aligned box first whenflags10001 select it, then optionalX box using1000100; no connections selectcenter. Exact local endpoints.375/.625, Yheight1.5 and conditional0/1 extensions follow original float conversions/additions.24-byte append order, nativeMINSS/MAXSS andordered>= rejection preserved. AlwaysAL1; no named fence-class or full registry claim.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/DERIVED_BLOCK_BINDING.json; DATA/SHAPE_OVERRIDES_VALIDATION.json; REPORTS/DERIVED_BLOCK_SHAPES.md"
+  },
+  {
+    "id": "DERIVED-GATE",
+    "va": "0x1487e5140",
+    "start": "0x1487e5159",
+    "end": "0x1487e5223",
+    "claim": "Conditional emission uses separate world/returned-object/seventh-argument interfaces",
+    "detail": "Requires argument7nonnull; world18(position)nonnull andbyte14==18hex; returned object virtual80(18hex)nonzero. world90 writesDWORD; value2 requires argument7virtual48 or50 nonzero. Then calls141A22F50 preserving its raw return. These are observed API/field gates; no inferred game modes or cheat thresholds.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/DERIVED_BLOCK_BINDING.json; DATA/SHAPE_OVERRIDES_VALIDATION.json; REPORTS/DERIVED_BLOCK_SHAPES.md"
+  },
+  {
+    "id": "DERIVED-ZERORETURN",
+    "va": "0x148a2e2c0",
+    "start": "0x148a2e2c0",
+    "end": "0x148a2e2e3",
+    "claim": "A derived emitter can append real boxes and returnzero",
+    "detail": "Calls completebase141A22F50 at148A2E2D8 andXOREAX,EAX at2DD. Target installed in14A940230 by reviewed registry stores inDATA/DERIVED_BLOCK_BINDING.json. Native fixtures compare unchanged preexisting output plusactualbase geometry. Returnzero is not absence of collision output.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/DERIVED_BLOCK_BINDING.json; DATA/SHAPE_OVERRIDES_VALIDATION.json; REPORTS/DERIVED_BLOCK_SHAPES.md"
+  },
+  {
+    "id": "DERIVED-FORWARD",
+    "va": "0x141a2ca60",
+    "start": "0x141a2ca60",
+    "end": "0x141a2ca81",
+    "claim": "Forwarding emitter ignores the virtual38 callback result andreturnsAL1",
+    "detail": "Preserves six-argument geometry call, dispatches receiver+38 andwritesAL1. Constructor146612EF0 installs14A8BC7B0 with30=141A2CA60 and38=146614A70. That target andother forwarding table overrides are exported; complete downstream geometry remains separate.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/DERIVED_BLOCK_BINDING.json; DATA/SHAPE_OVERRIDES_VALIDATION.json; REPORTS/DERIVED_BLOCK_SHAPES.md"
+  },
+  {
+    "id": "DERIVED-RETURN-DISCARDED",
+    "va": "0x1415fe680",
+    "start": "0x1415ff16d",
+    "end": "0x1415ff185",
+    "claim": "This world enumeration call discards the emitter return and consumes its vector",
+    "detail": "Aftervirtual30 at1415FF16D, MOVRDI,[RSI] andMOVRAX,[RSI+8] overwrite returnRAX beforeCMP/RDI,RAX. Vector emptiness selectsiteration; emitterAL isnotread. SeparatevirtualA0/secondary-object checks choose record owner later. This proof iscall-site-specific.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/DERIVED_BLOCK_BINDING.json; DATA/SHAPE_OVERRIDES_VALIDATION.json; REPORTS/DERIVED_BLOCK_SHAPES.md"
+  },
+  {
+    "id": "DERIVED-WORLD-METHOD",
+    "va": "0x1415f4380",
+    "start": "0x1415f4385",
+    "end": "0x1415f43a1",
+    "claim": "Constructed world virtual90 delegates to a separate receiver",
+    "detail": "Table14A753900+90=1415F4380; loadsworld+30 andcallsvirtual10 at1415F4393 with the supplied output pointer. Its underlying receiver type isunresolved. Table18=1415F67D0 is the existing chunk1390 secondary-object lookup. Enumerator savesworldRCX atFE6E9, reloadsR13 atFEF2A andforwardsR8=R13 atFF166, supporting conditionalgate bindings for this constructed route.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/DERIVED_BLOCK_BINDING.json; DATA/SHAPE_OVERRIDES_VALIDATION.json; REPORTS/DERIVED_BLOCK_SHAPES.md"
+  }
+]

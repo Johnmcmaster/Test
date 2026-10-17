@@ -1,0 +1,27 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_container_constructor",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_container_constructor/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_container_constructor/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_container_constructor/headless.log"
+  ],
+  "started_utc": "2026-10-17T00:19:12.772744+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_container_constructor",
+  "exit_code": 0,
+  "completed_utc": "2026-10-17T00:19:18.696696+00:00",
+  "exports": [],
+  "expected_targets": 0,
+  "successful_exports": 0
+}

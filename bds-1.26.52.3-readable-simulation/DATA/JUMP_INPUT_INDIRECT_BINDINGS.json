@@ -1,0 +1,32 @@
+{
+  "0x146620d05": {
+    "target_va": "0x1430b85d0;0x142cc6fa0",
+    "resolution": "conditional_known_target",
+    "scope": "Constructed static14A7F2A90 or dynamic14A7D4650 controller in JumpControl50; other controller classes/live player selection separate",
+    "evidence": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json"
+  },
+  "0x14193bd71": {
+    "target_va": "0x148408460",
+    "resolution": "conditional_known_target",
+    "scope": "JumpInputSystem148427F70 local callback cell initialized148427FE0/7FE7; generic adapter can serve other callers",
+    "evidence": "DATA/JUMP_INPUT_BINDING.json"
+  },
+  "0x142cc6f62": {
+    "target_va": "0x142cc6fd0",
+    "resolution": "conditional_known_target",
+    "scope": "Dynamic controller14A7D4650 virtual40; actual constructed table executes in native fixture",
+    "evidence": "DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json"
+  },
+  "0x14840832c": {
+    "target_va": "0x1430b85b0;0x142cc6f40",
+    "resolution": "conditional_known_target",
+    "scope": "JumpControl50 virtual18 when installed controller is static/dynamic; upstream actor269,virtual138 and141CCF880 gates remain separate",
+    "evidence": "DATA/JUMP_INPUT_BINDING.json; ASSEMBLY/00000001484082D0.asm"
+  },
+  "0x141919f35": {
+    "target_va": "0x142f2fcb0;0x146656840;0x14484f1b0;0x144851f00;0x144854df0;0x1466520d0;0x148427f70;0x148423ae0;0x1484262a0",
+    "resolution": "conditional_known_target",
+    "scope": "Observed installed tables respectively MoveCollision/MobJump/default ground/default air/default flying/DecrementNoJumpDelay. Registry pointer is wrapped by address; this is not one universal target.; additionally constructor/name-bound JumpInput,JumpEnd,JumpExhaustion workers",
+    "evidence": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/JUMP_INPUT_BINDING.json"
+  }
+}

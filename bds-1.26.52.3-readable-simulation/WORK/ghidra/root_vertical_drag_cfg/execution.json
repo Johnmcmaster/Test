@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/root_vertical_drag",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_vertical_drag/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_vertical_drag/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_vertical_drag_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T20:46:18.301766+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/root_vertical_drag",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T20:46:23.471619+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_vertical_drag/0x141c5a400_FUN_141c5a400.c",
+      "bytes": 16158,
+      "sha256": "b6f61e4109c96dc0a98a9f527527231edb01f17322df07bf3869c1ef6f5f6dfb",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_vertical_drag/0x141c5ca50_FUN_141c5ca50.c",
+      "bytes": 38410,
+      "sha256": "17e125b5b9c528a025fdeb24150701c4abda6d8289697ff8610b149f7983aed6",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_vertical_drag/0x141c6a570_FUN_141c6a570.c",
+      "bytes": 1151,
+      "sha256": "afe2171642ab759cc413a77487bf9c2678239db133803458ea8c0212e58cda69",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_vertical_drag/0x141c6d8f0_FUN_141c6d8f0.c",
+      "bytes": 973,
+      "sha256": "3c32d1803793b90ea7e46d569f97432e54a3aa0065810511ed98df7abc77fffe",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/root_vertical_drag/0x141c6eee0_FUN_141c6eee0.c",
+      "bytes": 1223,
+      "sha256": "cd409e563f8b6a363ca7375da38ed3f3106e0250dad5676f8969ad27988e9279",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

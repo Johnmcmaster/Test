@@ -1,0 +1,40 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_forwarded_shape_helpers",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_forwarded_shape_helpers/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_forwarded_shape_helpers/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_forwarded_shape_helpers/headless.log"
+  ],
+  "started_utc": "2026-10-17T00:14:08.434514+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_forwarded_shape_helpers",
+  "exit_code": 0,
+  "completed_utc": "2026-10-17T00:14:12.352698+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_forwarded_shape_helpers/0x146614190_FUN_146614190.c",
+      "bytes": 7281,
+      "sha256": "bf07130cdb88b489cacea9f9478634d035ccbc667a14d6b8750679a43fd035d0",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_forwarded_shape_helpers/0x146614640_FUN_146614640.c",
+      "bytes": 6380,
+      "sha256": "884b9c982a95e03066f88485ef019397752cff920ff427117d6e8391fe2ba067",
+      "failed": false
+    }
+  ],
+  "expected_targets": 2,
+  "successful_exports": 2
+}

@@ -1,0 +1,44 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/input02",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/input02/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/input02/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/input02_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T17:53:55.321146+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/input02",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T17:54:05.443276+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/input02/0x1409a5710_FUN_1409a5710.c",
+      "bytes": 9441,
+      "sha256": "2cdbc1378bc4785b04e3622a84bd3c98b7e8de153ae0d108d9e7f2d3d767dbbf",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/input02/0x14116f050_FUN_14116f050.c",
+      "bytes": 3999,
+      "sha256": "2e739b3b9a800fb156e158227fe2a512865af40026d1de5b8722a60f8f5eed8e",
+      "failed": false
+    }
+  ],
+  "expected_targets": 2,
+  "successful_exports": 2
+}

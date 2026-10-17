@@ -1,0 +1,10 @@
+--- a/core/src/main/java/org/geysermc/geyser/translator/protocol/bedrock/entity/player/input/BedrockPlayerAuthInputTranslator.java
++++ b/core/src/main/java/org/geysermc/geyser/translator/protocol/bedrock/entity/player/input/BedrockPlayerAuthInputTranslator.java
+@@ -71,6 +71,7 @@
+ 
+     @Override
+     public void translate(GeyserSession session, PlayerAuthInputPacket packet) {
++        org.bedrockresearch.movement.geyser.GeyserResearchHooks.beforeTranslate(session, packet);
+         SessionPlayerEntity entity = session.getPlayerEntity();
+ 
+         session.setClientTicks(packet.getTick());

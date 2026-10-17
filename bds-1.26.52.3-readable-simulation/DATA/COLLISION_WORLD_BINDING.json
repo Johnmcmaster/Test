@@ -1,0 +1,194 @@
+{
+  "binary_sha256": "19c88569af2e4b7d984e999055a31cbcb0799dacf8bbbf7371eda42f5772a443",
+  "confidence": "confirmed for constructor/cache-refreshed route",
+  "receiver_table": "0x14a753900",
+  "collision_query_method": "0x1415fe590",
+  "enumeration_body": "0x1415fe680",
+  "data_flow": "wrapper cache+188 -> refresh141E7E060 -> object(cache-header+8)=cache+190 -> constructor1415F33F0 vptr14A753900 -> argument10 -> virtualB0 ->1415FE590 ->1415FE680",
+  "instruction_checks": [
+    {
+      "function_va": "0x142f310a0",
+      "instruction_va": "0x142f311c4",
+      "instruction": "lea rdx, [r15 + 0x188]",
+      "bytes": "498d9788010000",
+      "source": "ASSEMBLY/0000000142F310A0.asm"
+    },
+    {
+      "function_va": "0x142f310a0",
+      "instruction_va": "0x142f311cb",
+      "instruction": "call 0x141e7e060",
+      "bytes": "e890cef4fe",
+      "source": "ASSEMBLY/0000000142F310A0.asm"
+    },
+    {
+      "function_va": "0x142f310a0",
+      "instruction_va": "0x142f31200",
+      "instruction": "mov r9, qword ptr [r13 + 8]",
+      "bytes": "4d8b4d08",
+      "source": "ASSEMBLY/0000000142F310A0.asm"
+    },
+    {
+      "function_va": "0x142f310a0",
+      "instruction_va": "0x142f31204",
+      "instruction": "lea r10, [r9 + 0x190]",
+      "bytes": "4d8d9190010000",
+      "source": "ASSEMBLY/0000000142F310A0.asm"
+    },
+    {
+      "function_va": "0x142f310a0",
+      "instruction_va": "0x142f31242",
+      "instruction": "mov qword ptr [rsp + 0x48], r10",
+      "bytes": "4c89542448",
+      "source": "ASSEMBLY/0000000142F310A0.asm"
+    },
+    {
+      "function_va": "0x142f310a0",
+      "instruction_va": "0x142f3127c",
+      "instruction": "call 0x142f191b0",
+      "bytes": "e82f7ffeff",
+      "source": "ASSEMBLY/0000000142F310A0.asm"
+    },
+    {
+      "function_va": "0x141e7e060",
+      "instruction_va": "0x141e7e15a",
+      "instruction": "lea rdi, [rsi + 8]",
+      "bytes": "488d7e08",
+      "source": "ASSEMBLY/0000000141E7E060.asm"
+    },
+    {
+      "function_va": "0x141e7e060",
+      "instruction_va": "0x141e7e192",
+      "instruction": "mov rcx, rdi",
+      "bytes": "4889f9",
+      "source": "ASSEMBLY/0000000141E7E060.asm"
+    },
+    {
+      "function_va": "0x141e7e060",
+      "instruction_va": "0x141e7e198",
+      "instruction": "call 0x1415f33f0",
+      "bytes": "e8535277ff",
+      "source": "ASSEMBLY/0000000141E7E060.asm"
+    },
+    {
+      "function_va": "0x1415f33f0",
+      "instruction_va": "0x1415f343f",
+      "instruction": "lea rax, [rip + 0x91604ba]",
+      "bytes": "488d05ba041609",
+      "source": "ASSEMBLY/00000001415F33F0.asm"
+    },
+    {
+      "function_va": "0x1415f33f0",
+      "instruction_va": "0x1415f3446",
+      "instruction": "mov qword ptr [rcx], rax",
+      "bytes": "488901",
+      "source": "ASSEMBLY/00000001415F33F0.asm"
+    },
+    {
+      "function_va": "0x142f191b0",
+      "instruction_va": "0x142f19718",
+      "instruction": "mov rax, qword ptr [rcx]",
+      "bytes": "488b01",
+      "source": "ASSEMBLY/0000000142F191B0.asm"
+    },
+    {
+      "function_va": "0x142f191b0",
+      "instruction_va": "0x142f1971b",
+      "instruction": "mov rax, qword ptr [rax + 0xb0]",
+      "bytes": "488b80b0000000",
+      "source": "ASSEMBLY/0000000142F191B0.asm"
+    },
+    {
+      "function_va": "0x142f191b0",
+      "instruction_va": "0x142f19739",
+      "instruction": "call qword ptr [rip + 0x7e90ae1]",
+      "bytes": "ff15e10ae907",
+      "source": "ASSEMBLY/0000000142F191B0.asm"
+    },
+    {
+      "function_va": "0x1415fe590",
+      "instruction_va": "0x1415fe5ce",
+      "instruction": "call 0x1415fe680",
+      "bytes": "e8ad000000",
+      "source": "ASSEMBLY/00000001415FE590.asm"
+    },
+    {
+      "function_va": "0x1415fe590",
+      "instruction_va": "0x1415fe5f6",
+      "instruction": "call 0x1415fe680",
+      "bytes": "e885000000",
+      "source": "ASSEMBLY/00000001415FE590.asm"
+    }
+  ],
+  "table_slots": [
+    {
+      "slot": "0x10",
+      "pointer_va": "0x14a753910",
+      "target_va": "0x1415f65e0"
+    },
+    {
+      "slot": "0x18",
+      "pointer_va": "0x14a753918",
+      "target_va": "0x1415f67d0"
+    },
+    {
+      "slot": "0x20",
+      "pointer_va": "0x14a753920",
+      "target_va": "0x1415f6880"
+    },
+    {
+      "slot": "0x40",
+      "pointer_va": "0x14a753940",
+      "target_va": "0x141600a50"
+    },
+    {
+      "slot": "0x60",
+      "pointer_va": "0x14a753960",
+      "target_va": "0x1415f7ef0"
+    },
+    {
+      "slot": "0x68",
+      "pointer_va": "0x14a753968",
+      "target_va": "0x1415f74f0"
+    },
+    {
+      "slot": "0x80",
+      "pointer_va": "0x14a753980",
+      "target_va": "0x1415f6180"
+    },
+    {
+      "slot": "0x90",
+      "pointer_va": "0x14a753990",
+      "target_va": "0x1415f4380"
+    },
+    {
+      "slot": "0xb0",
+      "pointer_va": "0x14a7539b0",
+      "target_va": "0x1415fe590"
+    },
+    {
+      "slot": "0x118",
+      "pointer_va": "0x14a753a18",
+      "target_va": "0x1415f7f90"
+    },
+    {
+      "slot": "0x120",
+      "pointer_va": "0x14a753a20",
+      "target_va": "0x140ada880"
+    },
+    {
+      "slot": "0x140",
+      "pointer_va": "0x14a753a40",
+      "target_va": "0x141602f30"
+    },
+    {
+      "slot": "0x148",
+      "pointer_va": "0x14a753a48",
+      "target_va": "0x1415f5900"
+    }
+  ],
+  "limitations": [
+    "Constructed route proved statically; no live-server receiver trace",
+    "Chunk/block/secondary virtual providers inside enumeration are separate unresolved implementations",
+    "14A7E53D0 is a different context table; its+B0 is data, not a code pointer"
+  ]
+}

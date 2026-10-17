@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-readOnly",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-preScript",
+    "TypeCollisionSignatures.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/typed_collision",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/typed_collision/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/typed_collision/targets.txt",
+    "Verified offsets applied as temporary analysis types; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/typed_collision/headless.log"
+  ],
+  "read_only": true,
+  "targets": [
+    "0x142f77210",
+    "0x1424e1840",
+    "0x145e587b0"
+  ]
+}

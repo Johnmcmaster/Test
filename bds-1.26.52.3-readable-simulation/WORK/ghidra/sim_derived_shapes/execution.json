@@ -1,0 +1,100 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_derived_shapes",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shapes/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shapes/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shapes/headless.log"
+  ],
+  "started_utc": "2026-10-16T19:15:54.625433+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_derived_shapes",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T19:15:59.367017+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x140076010_FUN_140076010.c",
+      "bytes": 300,
+      "sha256": "3a0999fd45e143a38f643548e5e0557d743e97028fa0422551cfd26293d132b6",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x140216e60_FUN_140216e60.c",
+      "bytes": 394,
+      "sha256": "bcb83d2f79aabf2e08e9b8ce62fa6835b22f4046e03bc884340bb2a8aea3478d",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x141a2ca60_FUN_141a2ca60.c",
+      "bytes": 409,
+      "sha256": "6c70c9f6c556602d37c15d138a1bb332f1bbf50b22c23f7ed8b8d1cdf956832e",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x141a2e090_FUN_141a2e090.c",
+      "bytes": 1152,
+      "sha256": "ede1a01ffde0a5371f405f5091ebb715c985f257c9397017558a1d8ffa37a912",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x1465f8960_FUN_1465f8960.c",
+      "bytes": 7685,
+      "sha256": "5590b8f52991d5018bcd0082eb9084c47e0f3192d19d363efea10fdc64feba26",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x146612ef0_FUN_146612ef0.c",
+      "bytes": 2000,
+      "sha256": "d2eecdf65723bfde0cd99b0011de77f4e092e5e68b0ff145c0e789bdfbac56e5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x147153270_FUN_147153270.c",
+      "bytes": 5206,
+      "sha256": "45679897e8e167cebbd79f2daa281dd341bb30ba87e03b946a0088435be8d7f3",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x1487cdeb0_FUN_1487cdeb0.c",
+      "bytes": 26124,
+      "sha256": "73d4bab4790c34ebe6934dc4b05be7a6509526fde8bcdfb26ccf88ad512ab132",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x1487e5140_FUN_1487e5140.c",
+      "bytes": 1230,
+      "sha256": "6acc62aba2d5f714db95c7badb30e356a7f1206dcb4946dfd85f4703c85adad0",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x148a2e2c0_FUN_148a2e2c0.c",
+      "bytes": 319,
+      "sha256": "bb0353208fd8e5918088b11e61d66a997a6a04be0d9f690fcb86a8d559ffc690",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x148b31700_FUN_148b31700.c",
+      "bytes": 1070,
+      "sha256": "519c0e6d520406d4798a77ac1f5736b7b4a0de45db81a0d251b95a2d36b58598",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shapes/0x148b59a00_FUN_148b59a00.c",
+      "bytes": 1474,
+      "sha256": "52b56deeeb08fd03044ceade46ab1c5f9d9020b4ad462a80face0c95c9fd17f3",
+      "failed": false
+    }
+  ],
+  "expected_targets": 12,
+  "successful_exports": 12
+}

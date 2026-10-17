@@ -1,0 +1,42 @@
+{
+  "batch": "sim_jump_views",
+  "new_targets": 2,
+  "defined_ranges": 9,
+  "reused": 0,
+  "skipped": 0,
+  "output": "DECOMPILATION/ghidra/sim_jump_views",
+  "requests": [
+    {
+      "va": "0x141cb0720",
+      "rva": "0x1cb0720",
+      "end_exclusive": "0x141cb07f6",
+      "size": 214,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/sim_jump_views/0x141cb0720_FUN_141cb0720.c",
+      "assembly": "ASSEMBLY/0000000141CB0720.asm"
+    },
+    {
+      "va": "0x142cc6f40",
+      "rva": "0x2cc6f40",
+      "end_exclusive": "0x142cc6f80",
+      "size": 64,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/sim_jump_views/0x142cc6f40_FUN_142cc6f40.c",
+      "assembly": "ASSEMBLY/0000000142CC6F40.asm"
+    }
+  ],
+  "execution": {
+    "exit_code": 0,
+    "expected_targets": 2,
+    "successful_exports": 2,
+    "record": "WORK/ghidra/sim_jump_views/execution.json"
+  },
+  "cfg_execution": {
+    "exit_code": 0,
+    "expected_targets": 2,
+    "successful_exports": 2,
+    "record": "WORK/ghidra/sim_jump_views_cfg/execution.json"
+  }
+}

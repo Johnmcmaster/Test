@@ -1,0 +1,40 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_remaining_fluid",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_remaining_fluid/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_remaining_fluid/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_remaining_fluid/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:29:45.451316+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_remaining_fluid",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:29:49.779295+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_remaining_fluid/0x141c69960_FUN_141c69960.c",
+      "bytes": 7187,
+      "sha256": "537998877b2db9ef780f31a1a51806729600320a826c4e092039e7a7282ff062",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_remaining_fluid/0x14664d330_FUN_14664d330.c",
+      "bytes": 22079,
+      "sha256": "afd34fb37a034062418a2b42196e8260be882cdecd93e6b1975a9ff14665e96f",
+      "failed": false
+    }
+  ],
+  "expected_targets": 2,
+  "successful_exports": 2
+}

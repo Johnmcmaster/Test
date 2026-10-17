@@ -1,0 +1,56 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_noclip_receiver",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_noclip_receiver/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_noclip_receiver/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_noclip_receiver_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-16T17:52:45.335232+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_noclip_receiver",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T17:52:49.924982+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_noclip_receiver/0x1415f5ec0_FUN_1415f5ec0.c",
+      "bytes": 809,
+      "sha256": "38faeab9de54279f1ae426ab8fa8e852fb45a0bc1f0756f1f906aed91a76817e",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_noclip_receiver/0x1415f6180_FUN_1415f6180.c",
+      "bytes": 1970,
+      "sha256": "ecd911aed2d41a6b6ad84a366dd7c602520075263e2ffac06c06b0b6fc2686f8",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_noclip_receiver/0x1482663c0_FUN_1482663c0.c",
+      "bytes": 1008,
+      "sha256": "82b3b42792d619e1e397e29c7a9a7fdf17b4e2dcfeb65d4813eb1201c159113a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_noclip_receiver/0x14826da50_FUN_14826da50.c",
+      "bytes": 1760,
+      "sha256": "c1a3e1825cf0f9a30cb35a777543d4104822d7a990cba373dd39225cc2734baa",
+      "failed": false
+    }
+  ],
+  "expected_targets": 4,
+  "successful_exports": 4
+}

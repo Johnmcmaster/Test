@@ -1,0 +1,177 @@
+{
+  "start": "0x1459a3380",
+  "rva": "0x59a3380",
+  "end": "0x1459a3412",
+  "size": 146,
+  "requested_va_is_range_start": true,
+  "decoded_bytes": 146,
+  "calls_and_jumps": [
+    {
+      "site": "0x1459a33db",
+      "kind": "call",
+      "target": "0x14a0fe3f0",
+      "operand": "0x14a0fe3f0",
+      "resolved": true
+    },
+    {
+      "site": "0x1459a3408",
+      "kind": "call",
+      "target": "0x14a0fe4b0",
+      "operand": "0x14a0fe4b0",
+      "resolved": true
+    },
+    {
+      "site": "0x1459a3410",
+      "kind": "jmp",
+      "target": "0x1459a33a9",
+      "operand": "0x1459a33a9",
+      "resolved": true
+    }
+  ],
+  "memory_operands": [
+    {
+      "site": "0x1459a3388",
+      "instruction": "mov ecx, dword ptr [rip + 0x73fa8c2]",
+      "base": "rip",
+      "disp": "0x73fa8c2",
+      "size": 4,
+      "rip_target": "0x14cd9dc50"
+    },
+    {
+      "site": "0x1459a338e",
+      "instruction": "mov edx, dword ptr [rip + 0x72747e4]",
+      "base": "rip",
+      "disp": "0x72747e4",
+      "size": 4,
+      "rip_target": "0x14cc17b78"
+    },
+    {
+      "site": "0x1459a3394",
+      "instruction": "mov r8, qword ptr gs:[0x58]",
+      "base": null,
+      "disp": "0x58",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1459a339d",
+      "instruction": "mov rdx, qword ptr [r8 + rdx*8]",
+      "base": "r8",
+      "disp": "0x0",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1459a33a1",
+      "instruction": "cmp ecx, dword ptr [rdx + 4]",
+      "base": "rdx",
+      "disp": "0x4",
+      "size": 4,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1459a33a9",
+      "instruction": "mov ecx, dword ptr [rip + 0x73fa89d]",
+      "base": "rip",
+      "disp": "0x73fa89d",
+      "size": 4,
+      "rip_target": "0x14cd9dc4c"
+    },
+    {
+      "site": "0x1459a33af",
+      "instruction": "mov dword ptr [rax], ecx",
+      "base": "rax",
+      "disp": "0x0",
+      "size": 4,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1459a33b1",
+      "instruction": "mov dword ptr [rax + 4], 0xdd2da6e4",
+      "base": "rax",
+      "disp": "0x4",
+      "size": 4,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1459a33b8",
+      "instruction": "lea rcx, [rip + 0x50d5880]",
+      "base": "rip",
+      "disp": "0x50d5880",
+      "size": 8,
+      "rip_target": "0x14aa78c3f"
+    },
+    {
+      "site": "0x1459a33bf",
+      "instruction": "mov qword ptr [rax + 8], rcx",
+      "base": "rax",
+      "disp": "0x8",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1459a33c3",
+      "instruction": "mov qword ptr [rax + 0x10], 0x19",
+      "base": "rax",
+      "disp": "0x10",
+      "size": 8,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1459a33d1",
+      "instruction": "lea rcx, [rip + 0x73fa878]",
+      "base": "rip",
+      "disp": "0x73fa878",
+      "size": 8,
+      "rip_target": "0x14cd9dc50"
+    },
+    {
+      "site": "0x1459a33e3",
+      "instruction": "cmp dword ptr [rip + 0x73fa866], -1",
+      "base": "rip",
+      "disp": "0x73fa866",
+      "size": 4,
+      "rip_target": "0x14cd9dc50"
+    },
+    {
+      "site": "0x1459a33ec",
+      "instruction": "mov eax, dword ptr [rip + 0x727dd42]",
+      "base": "rip",
+      "disp": "0x727dd42",
+      "size": 4,
+      "rip_target": "0x14cc21134"
+    },
+    {
+      "site": "0x1459a33f2",
+      "instruction": "lea ecx, [rax + 1]",
+      "base": "rax",
+      "disp": "0x1",
+      "size": 4,
+      "rip_target": ""
+    },
+    {
+      "site": "0x1459a33f5",
+      "instruction": "mov dword ptr [rip + 0x727dd39], ecx",
+      "base": "rip",
+      "disp": "0x727dd39",
+      "size": 4,
+      "rip_target": "0x14cc21134"
+    },
+    {
+      "site": "0x1459a33fb",
+      "instruction": "mov dword ptr [rip + 0x73fa84b], eax",
+      "base": "rip",
+      "disp": "0x73fa84b",
+      "size": 4,
+      "rip_target": "0x14cd9dc4c"
+    },
+    {
+      "site": "0x1459a3401",
+      "instruction": "lea rcx, [rip + 0x73fa848]",
+      "base": "rip",
+      "disp": "0x73fa848",
+      "size": 8,
+      "rip_target": "0x14cd9dc50"
+    }
+  ]
+}

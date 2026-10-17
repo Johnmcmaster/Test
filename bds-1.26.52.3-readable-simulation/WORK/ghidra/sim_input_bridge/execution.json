@@ -1,0 +1,64 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_input_bridge",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_input_bridge/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_input_bridge/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_input_bridge/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:40:48.958956+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_input_bridge",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:40:53.156783+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_input_bridge/0x142c142b0_FUN_142c142b0.c",
+      "bytes": 1106,
+      "sha256": "038eb02f1994fcf46b44d7dc5e32a4b0a406989d79c0cd93efa264abca2bb87b",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_input_bridge/0x142c292d0_FUN_142c292d0.c",
+      "bytes": 47645,
+      "sha256": "c08f81b3677c9a6bbb6a4837b06a08c7b08e48ff66d2a0989084d40b3658096d",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_input_bridge/0x1446ccc00_FUN_1446ccc00.c",
+      "bytes": 1619,
+      "sha256": "cc07bde84a2bec9567e14d2e5598eaa4b08fe6d5bc66830e9c5d8499a5e2a613",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_input_bridge/0x1446cf440_FUN_1446cf440.c",
+      "bytes": 2191,
+      "sha256": "83983fcdb01930752193518943c69ebe9e59adc498215e0a1fecdc9ead6d31ef",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_input_bridge/0x145ed8e40_FUN_145ed8e40.c",
+      "bytes": 599,
+      "sha256": "5ae664ff5afd84aaa58a3d546e653c14f94ec145e85076a2445c68ff177af7d6",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_input_bridge/0x148430db0_FUN_148430db0.c",
+      "bytes": 956,
+      "sha256": "60c3caba1762cd9f3921898f205aff383bb4c35f539f381beed6bf733a6e47fd",
+      "failed": false
+    }
+  ],
+  "expected_targets": 6,
+  "successful_exports": 6
+}

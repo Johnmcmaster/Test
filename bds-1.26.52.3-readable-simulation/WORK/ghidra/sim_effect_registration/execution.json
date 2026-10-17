@@ -1,0 +1,58 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_effect_registration",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_effect_registration/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_effect_registration/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_effect_registration/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:33:08.687136+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_effect_registration",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:33:12.715981+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_effect_registration/0x141c4d480_FUN_141c4d480.c",
+      "bytes": 9086,
+      "sha256": "f02d72650c8a3dea444c445127035eea2d291d4840bc92e663e6f07b47b077fb",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_effect_registration/0x141c53840_FUN_141c53840.c",
+      "bytes": 3269,
+      "sha256": "0f19dda5aac256bfac53f0a1e26db3d6ac3482a4c9255ac5b8143d07b1695973",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_effect_registration/0x141c54880_FUN_141c54880.c",
+      "bytes": 3395,
+      "sha256": "f14562eae10088cf16d9bdf2e405471e90bbc1f259b945c7ff36e85a68fc5ccf",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_effect_registration/0x141e7e060_FUN_141e7e060.c",
+      "bytes": 3028,
+      "sha256": "843c5df79f3fdc592b9e44fbbbfe1e1e10494c9757bb6420d2fd90fde21e8d77",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_effect_registration/0x145eec890_FUN_145eec890.c",
+      "bytes": 1191,
+      "sha256": "aeefaec8728c9a1e35b38a3a5c9534140128fc55c2107e70519f9b550890b840",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

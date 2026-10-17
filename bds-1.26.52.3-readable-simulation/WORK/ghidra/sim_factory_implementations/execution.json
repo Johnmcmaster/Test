@@ -1,0 +1,52 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_factory_implementations",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_factory_implementations/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_factory_implementations/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_factory_implementations/headless.log"
+  ],
+  "started_utc": "2026-10-16T17:54:54.061586+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_factory_implementations",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T17:54:57.786201+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_factory_implementations/0x14191f170_FUN_14191f170.c",
+      "bytes": 1767,
+      "sha256": "996c9abe272d526e99adb99cf11c3c9034c778d73a93b5ece688f7f9c0d0bc8a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_factory_implementations/0x14191f260_FUN_14191f260.c",
+      "bytes": 2169,
+      "sha256": "96e9f76263cc92490a3f5c3cdc038249f4983e330fd2f2cb9d999942c437ce14",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_factory_implementations/0x14191f490_FUN_14191f490.c",
+      "bytes": 508,
+      "sha256": "6944e9ef9f277f591e9a7e0909ea693191bed27c391080697848bd66862d053e",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_factory_implementations/0x14191f4e0_FUN_14191f4e0.c",
+      "bytes": 1459,
+      "sha256": "4310e4fbcda1fd92b70b14e3bbb8d085dba1aa155c9cbd561f16158692e1c1b2",
+      "failed": false
+    }
+  ],
+  "expected_targets": 4,
+  "successful_exports": 4
+}

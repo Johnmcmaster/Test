@@ -1,0 +1,258 @@
+source,target,kind,label,confidence,instruction_va,source_artifact
+f1409a5710,f14116f050,direct_call,direct call,confirmed,0x1409A5BBF,ASSEMBLY/00000001409A5710.asm
+f14116f050,f14116ee60,direct_call,direct call,confirmed,0x14116F1BD,ASSEMBLY/000000014116F050.asm
+f1409a5710,f1457bb0a0,direct_call,conditional call,confirmed,0x1409A5CD7,ASSEMBLY/00000001409A5710.asm
+f1409a5710,f1457bb5c0,direct_call,conditional call,confirmed,0x1409A5CE2,ASSEMBLY/00000001409A5710.asm
+f1409a5710,f1432f8db0,resolved_indirect,packet vtable+0x58,confirmed,0x1409A575A,DECOMPILATION/ghidra_cfg/input02/0x1409a5710_FUN_1409a5710.c; FINAL_RESEARCH_REPORT.md
+f14116ee60,pending_queue,data_flow,append input records,confirmed,,FINAL_RESEARCH_REPORT.md
+pending_queue,f14116ec10,data_flow,select pending record,confirmed,,FINAL_RESEARCH_REPORT.md
+pending_queue,f1457ba650,data_flow,consume and remove records,confirmed,,FINAL_RESEARCH_REPORT.md
+f143b570f0,f143b56b70,direct_call,direct call,confirmed,0x143B57870;0x143B57A4D;0x143B57C2E;0x143B57E12,ASSEMBLY/0000000143B570F0.asm
+f143b570f0,f143b4c860,registration,local callback-cell initialization,confirmed,0x143B5755D;0x143B57564,ASSEMBLY/0000000143B570F0.asm
+f143b56b70,f143b4c860,resolved_indirect,CFG target loaded from callback cell,confirmed,0x143B56C98;0x143B56C9C;0x143B56D32,ASSEMBLY/0000000143B56B70.asm; DATA/cfg_dispatch_proof.json
+f143b4c860,f141165620,direct_call,direct call,confirmed,0x143B4CDFC,ASSEMBLY/0000000143B4C860.asm
+f143b4c860,f141166420,direct_call,direct call,confirmed,0x143B4CF18,ASSEMBLY/0000000143B4C860.asm
+f141166420,f140d3e290,direct_call,direct call,confirmed,0x1411674B0,ASSEMBLY/0000000141166420.asm
+f141165620,sample_queue,data_flow,dynamic shared-sample queue insertion,confirmed,0x14116579B;0x1411657D0,WORK/predicted/evidence.csv
+sample_queue,f141166420,data_flow,time bracketing and wrapped-angle interpolation,confirmed,0x1411666D7;0x141166D1D,WORK/predicted/evidence.csv
+f142f2fcb0,f142f310a0,direct_call,direct call,confirmed,0x142F30100;0x142F3031E;0x142F3052D;0x142F3074B,ASSEMBLY/0000000142F2FCB0.asm
+f142f310a0,f142f191b0,direct_call,direct call,confirmed,0x142F3127C,ASSEMBLY/0000000142F310A0.asm
+f142f191b0,shape_receiver,data_flow,argument10: cache+0x190,confirmed,0x142F31242,DATA/COLLISION_WORLD_BINDING.json
+shape_receiver,f1415fe590,resolved_indirect,constructed receiver: table+0xB0,confirmed,0x142F19739,DATA/COLLISION_WORLD_BINDING.json
+f142f310a0,f141e7e060,direct_call,direct call,confirmed,0x142F311CB;0x142F311E1,ASSEMBLY/0000000142F310A0.asm
+f141e7e060,f1415f33f0,direct_call,direct call,confirmed,0x141E7E198,ASSEMBLY/0000000141E7E060.asm
+f1415f33f0,shape_receiver,registration,installs fixed query vptr,confirmed,0x1415F3446,DATA/COLLISION_WORLD_BINDING.json
+f1415fe590,f1415fe680,direct_call,direct call,confirmed,0x1415FE5CE;0x1415FE5F6,ASSEMBLY/00000001415FE590.asm
+f1415fe680,block_shape_virtual,unresolved,per-block shape emission,unresolved,0x1415FF16D,ASSEMBLY/00000001415FE680.asm
+f142f191b0,candidate_aabbs,data_flow,candidate collection / cache writes,strongly supported,,DECOMPILATION/ghidra/primary/0x142f191b0_FUN_142f191b0.c
+f145e59030,f145e58ef0,direct_call,direct call,confirmed,0x145E59372;0x145E595A1;0x145E597D2;0x145E59A10;0x145E59C43,ASSEMBLY/collision/0000000145E59030.asm
+f145e58ef0,f145e587b0,resolved_indirect,captured auto-step callback through CFG,confirmed,0x145E58FA1,DECOMPILATION/ghidra/collision02/0x145e58ef0_FUN_145e58ef0.c; ASSEMBLY/collision/0000000145E59030.asm
+f145e587b0,f1424e1840,direct_call,up/X/Z trial then downward trial,confirmed,0x145E58986;0x145E589C8,ASSEMBLY/0000000145E587B0.asm
+f1424e1840,f142f77210,direct_call,reverse candidate loop,confirmed,0x1424E1987,ASSEMBLY/00000001424E1840.asm
+f145e587b0,f145e58350,direct_call,successful-trial branch,confirmed,0x145E58C5B,ASSEMBLY/0000000145E587B0.asm
+candidate_aabbs,f145e587b0,data_flow,filtered trial list + original overlap checks,confirmed,,DECOMPILATION/typed_collision/0x145e587b0_FUN_145e587b0.c
+candidate_aabbs,f1424e1840,data_flow,caller-provided AABB list,confirmed,,DECOMPILATION/typed_collision/0x1424e1840_FUN_1424e1840.c
+f145e587b0,move_request,data_flow,adopt improved horizontal result only,confirmed,0x145E58B56;0x145E58C5B,ASSEMBLY/0000000145E587B0.asm
+f148267d70,filter_table,registration,same descriptor: vptr + SSE name copy,confirmed,0x148268C4E;0x148268C55;0x148268CB7;0x148268CC2,ASSEMBLY/0000000148267D70.asm
+filter_table,f14826de30,registration,method slot+0x28,confirmed,,WORK/physics/no_clip_table.json
+filter_table,f14826f150,registration,method slot+0x30,confirmed,,WORK/physics/no_clip_table.json
+f14826f150,f148265630,direct_call,direct call,confirmed,0x14826F408,ASSEMBLY/000000014826F150.asm
+f148265630,f142535850,direct_call,ActorDataFlag+6 bit0-clear branch,confirmed,0x14826568E,ASSEMBLY/0000000148265630.asm
+move_request,f148265630,data_flow,vector+0x3C is application input,confirmed,,ASSEMBLY/0000000148265630.asm
+f148265630,state_position,data_flow,write box-center X/Z and lower-Y+offset,confirmed,0x1482656CC;0x1482656D1;0x1482656D7,ASSEMBLY/0000000148265630.asm
+f148265630,filter_world_callback,unresolved,alternate flag branch; no cheat verdict established,unresolved,0x1482658B7,ASSEMBLY/0000000148265630.asm
+f140d3e290,f145e33650,direct_call,fallback direct call,confirmed,0x140D3E414,ASSEMBLY/predicted/0000000140D3E290.asm
+f141166420,f145e33650,direct_call,optional sample-position branch,confirmed,0x141167495,ASSEMBLY/0000000141166420.asm
+f145e33650,position_request,data_flow,write request XYZ,confirmed,,BASELINE/POSITION_REQUEST_LIFECYCLE.md
+f145e33650,f145e32bd0,direct_call,synchronous call; baseline verified,confirmed,0x145E33769,BASELINE/POSITION_REQUEST_LIFECYCLE.md
+f145e32bd0,f145e2ed50,direct_call,eligible intersection; baseline verified,confirmed,0x145E32FE0,BASELINE/POSITION_REQUEST_LIFECYCLE.md
+f145e2f7e0,f145e2ed50,direct_call,bulk intersection; baseline verified,confirmed,0x145E30788,BASELINE/EVIDENCE.csv
+position_request,f145e2ed50,data_flow,request is separate from StateVector,confirmed,,BASELINE/POSITION_REQUEST_LIFECYCLE.md
+f145e2ed50,state_position,data_flow,copy XYZ before synchronous setter returns,confirmed,,BASELINE/POSITION_REQUEST_LIFECYCLE.md
+f148440b70,f148440a20,direct_call,direct call,confirmed,0x148440EC2;0x14844110D;0x14844135E;0x1484415AA;0x14844180E;0x148441A75,ASSEMBLY/0000000148440B70.asm
+f148441a90,f1484403b0,direct_call,direct call,confirmed,0x148441BD6,ASSEMBLY/0000000148441A90.asm
+f148440a20,f1484403b0,resolved_indirect,captured glide callback through CFG,confirmed,0x148440AE5,DECOMPILATION/ghidra_cfg/physics01/0x148440a20_FUN_148440a20.c; ASSEMBLY/0000000148440A20.asm
+f14845ed50,f14845e860,direct_call,direct call,confirmed,0x14845F154;0x14845F423;0x14845F6F2;0x14845F9C2;0x14845FC90;0x14845FF7E;0x148460264,ASSEMBLY/000000014845ED50.asm
+f14845e860,f148456490,resolved_indirect,WaterTravel callback supplied by owner,confirmed,,DECOMPILATION/ghidra_cfg/physics01/0x14845e860_FUN_14845e860.c; DECOMPILATION/ghidra_cfg/physics01/0x14845ed50_FUN_14845ed50.c
+f1484403b0,state_motion,data_flow,velocity recurrence / selected gravity dependency,confirmed,,DECOMPILATION/ghidra/physics01/0x1484403b0_FUN_1484403b0.c
+f14845b3c0,state_motion,data_flow,add input acceleration using caller scalar/trig,confirmed,,ASSEMBLY/000000014845B3C0.asm
+f14845b4e0,f14845b3c0,resolved_indirect,named WaterMoveSystem table+0x28 route,strongly supported,,WORK/walking_flight/registration_contexts.txt; WORK/walking_flight/next_callbacks.py; ASSEMBLY/000000014845B3C0.asm
+physics_modes,f1484403b0,unresolved,full eligibility/caller mechanics unresolved,unresolved,,UNRESOLVED.md
+physics_modes,f14845b3c0,unresolved,complete mode-specific coefficient path unresolved,unresolved,,UNRESOLVED.md
+f148447e50,f148447b00,resolved_indirect,captured callback initialized here,confirmed,0x148447F92,ASSEMBLY/walking_flight/0000000148447E50.asm
+f1484469f0,f1484454b0,resolved_indirect,captured callback initialized here,confirmed,0x148446B32,ASSEMBLY/walking_flight/00000001484469F0.asm
+f142c47700,f142c19020,resolved_indirect,captured callback initialized here,confirmed,0x142C477D1,ASSEMBLY/walking_flight/0000000142C47700.asm
+f14842bc20,f14842b540,resolved_indirect,captured callback initialized here,confirmed,0x14842BCC9,ASSEMBLY/walking_flight/000000014842BC20.asm
+f141c87d40,f141c5eb90,resolved_indirect,callback141C87BE0 tail-jumps to body,confirmed,0x141C87DAA,ASSEMBLY/walking_flight/0000000141C87D40.asm; WORK/walking_flight/next_callbacks.py
+f141c88390,f141c5eb90,direct_call,direct call,confirmed,0x141C8846A,ASSEMBLY/0000000141C88390.asm
+f142c19020,state_motion,data_flow,vertical tail field+0x1C update,confirmed,,DECOMPILATION/ghidra/root_ground_fly/0x142c19020_FUN_142c19020.c
+f141c5eb90,state_motion,data_flow,guarded effect-record vertical recurrence,confirmed,,ASSEMBLY/walking_flight/0000000141C5EB90.asm; JAVA/physics-kernels/levitation_machine_validation.json
+f14842b540,state_motion,data_flow,mode-local numerical behavior; not complete lava mechanics,strongly supported,,DECOMPILATION/ghidra/root_ground_fly/0x14842b540_FUN_14842b540.c
+f1457d5d20,f1457d4bc0,direct_call,baseline verified chain,confirmed,,BASELINE/MOVEMENT_ARCHITECTURE.md
+f1457d4bc0,f1457d5b70,direct_call,baseline verified chain,confirmed,,BASELINE/MOVEMENT_ARCHITECTURE.md
+f1457d5b70,f1457d54a0,direct_call,baseline verified chain,confirmed,,BASELINE/MOVEMENT_ARCHITECTURE.md
+f1457d54a0,f1411750c0,resolved_indirect,ReplayState+0x10 / vtable+0x10 through CFG,confirmed,0x1457D573C,ASSEMBLY/input/00000001457D54A0.asm; DECOMPILATION/input/residual_selector_1411750C0.cpp
+state_position,f1411750c0,data_flow,independent reference position,confirmed,,DECOMPILATION/input/residual_selector_1411750C0.cpp
+reported_position,f1411750c0,data_flow,reported position and rotation residual,confirmed,,DECOMPILATION/input/residual_selector_1411750C0.cpp
+f1457d54a0,state_motion,data_flow,tag1: add accepted-target residual; XYZ untouched,confirmed,0x1457D5A1A;0x1457D5A4A,ASSEMBLY/input/00000001457D54A0.asm
+f1457d54a0,correction_packet,data_flow,tag2 player branch copies authoritative fields,confirmed,,ASSEMBLY/input/00000001457D54A0.asm
+correction_packet,sender,unresolved,queue/send via virtual+0x30,unresolved,0x1457D5A0F,ASSEMBLY/input/00000001457D54A0.asm
+f1457d54a0,f145e33650,direct_call,separate position-request branch,confirmed,0x1457D5A5E,ASSEMBLY/input/00000001457D54A0.asm
+f1418e5730,f141924800,direct_call,direct call,confirmed,0x1418E5767,ASSEMBLY/00000001418E5730.asm
+f141924800,category_systems,registration,span3: FB4/FBC/FC4; no local replay token,confirmed,,ASSEMBLY/0000000141924800.asm
+f14469ccd0,replay_category,registration,span4 includes replay token,confirmed,,ECS_EXECUTION_ORDER.md
+f14469c820,replay_category,registration,selects token for a category pass,confirmed,,MOVEMENT_REPLAY.md; BASELINE/EVIDENCE.csv
+replay_category,f1425705d0,resolved_indirect,dispatcher route; not a full restore loop,strongly supported,,MOVEMENT_REPLAY.md; ECS_EXECUTION_ORDER.md
+f1425705d0,category_systems,data_flow,synchronous list traversal in stored order,confirmed,,ECS_EXECUTION_ORDER.md
+f140763b60,f140794160,direct_call,direct call,confirmed,0x140763CC1,ASSEMBLY/0000000140763B60.asm
+f140794160,f14469bad0,direct_call,direct call,confirmed,0x140794239;0x140794339;0x1407943EC,ASSEMBLY/0000000140794160.asm
+f140794160,f14256d570,direct_call,direct call,confirmed,0x140794218;0x14079431C;0x1407943CF,ASSEMBLY/0000000140794160.asm
+f14469bad0,f14469c820,registration,constructor-installed primary20,confirmed,,DATA/SCHEDULER_CONTINUATION_BINDING.json
+f14469bad0,f14469c6e0,registration,constructor-installed primary18,confirmed,,DATA/SCHEDULER_CONTINUATION_BINDING.json
+f14469c820,f14256f0e0,resolved_indirect,constructed dispatcher28 virtual20; native-composed,confirmed,0x14469C896,DATA/REPLAY_CATEGORY_VALIDATION.json
+f14256f0e0,f1425705d0,direct_call,direct call,confirmed,0x14256F103,WORK/scheduler_continuation/ASSEMBLY/000000014256F0E0.asm
+f14256f110,f1425705d0,direct_call,direct call,confirmed,0x14256F133,WORK/scheduler_continuation/ASSEMBLY/000000014256F110.asm
+f1425705d0,f1446b7ac0,resolved_indirect,untimed pass with replay closure14A836890,confirmed,0x142570769,DATA/REPLAY_CATEGORY_VALIDATION.json
+f1446b7ac0,f141919f20,resolved_indirect,conditional installed movement tables; other workers separate,confirmed,0x1446B7B1D,DATA/REGISTRATION_AND_JUMP_BINDING.json
+f141919f20,f142f2fcb0,resolved_indirect,conditional virtual28 for actual installed table; registry passed by address,confirmed,0x141919F35,DATA/REGISTRATION_AND_JUMP_BINDING.json
+replay_category,f142f2fcb0,registration,verified selected replay membership; not outer phase order,confirmed,,REPORTS/REGISTRATION_AND_JUMP.md
+f141919f20,f146656840,resolved_indirect,conditional virtual28 for actual installed table; registry passed by address,confirmed,0x141919F35,DATA/REGISTRATION_AND_JUMP_BINDING.json
+replay_category,f146656840,registration,verified selected replay membership; not outer phase order,confirmed,,REPORTS/REGISTRATION_AND_JUMP.md
+f141919f20,f14484f1b0,resolved_indirect,conditional virtual28 for actual installed table; registry passed by address,confirmed,0x141919F35,DATA/REGISTRATION_AND_JUMP_BINDING.json
+replay_category,f14484f1b0,registration,verified selected replay membership; not outer phase order,confirmed,,REPORTS/REGISTRATION_AND_JUMP.md
+f141919f20,f144851f00,resolved_indirect,conditional virtual28 for actual installed table; registry passed by address,confirmed,0x141919F35,DATA/REGISTRATION_AND_JUMP_BINDING.json
+replay_category,f144851f00,registration,verified selected replay membership; not outer phase order,confirmed,,REPORTS/REGISTRATION_AND_JUMP.md
+f141919f20,f144854df0,resolved_indirect,conditional virtual28 for actual installed table; registry passed by address,confirmed,0x141919F35,DATA/REGISTRATION_AND_JUMP_BINDING.json
+replay_category,f144854df0,registration,verified selected replay membership; not outer phase order,confirmed,,REPORTS/REGISTRATION_AND_JUMP.md
+f141919f20,f1466520d0,resolved_indirect,conditional virtual28 for actual installed table; registry passed by address,confirmed,0x141919F35,DATA/REGISTRATION_AND_JUMP_BINDING.json
+replay_category,f1466520d0,registration,verified selected replay membership; not outer phase order,confirmed,,REPORTS/REGISTRATION_AND_JUMP.md
+f146620e20,f146620c10,direct_call,direct call,confirmed,0x1466211E5,ASSEMBLY/0000000146620E20.asm
+f146620e20,f141c64ce0,direct_call,direct call,confirmed,0x146621262,ASSEMBLY/0000000146620E20.asm
+f146620e20,f146620d90,direct_call,tail JMP after restoring caller stack,confirmed,0x14662131F,ASSEMBLY/0000000146620E20.asm
+f141c64ce0,f141600a50,resolved_indirect,actual14A753900+40 executes in composed native variant4; block lookup backend explicit,confirmed,0x141C64E8D,DATA/REGISTRATION_AND_JUMP_BINDING.json
+f146620e20,state_motion,data_flow,actual guarded vertical writes / increments,confirmed,,DATA/JUMP_CONTROLLER_VALIDATION.json
+f146620d90,jump_request_marker,data_flow,"ensure4EA8C276, no direct impulse",confirmed,,ASSEMBLY/0000000146620D90.asm
+f1466520d0,f146651b80,direct_call,direct call,confirmed,0x146652128,ASSEMBLY/00000001466520D0.asm
+f146620e20,mob_jump_data,data_flow,consume byte0C / save ordinaryXYZ / set field10,confirmed,,DATA/JUMP_CONTROLLER_VALIDATION.json
+f146620d90,mob_jump_data,data_flow,field10=10 after marker ensure,confirmed,,ASSEMBLY/0000000146620D90.asm
+f1466520d0,mob_jump_data,data_flow,signed field10>0 decrements; cadence separate,confirmed,,DATA/JUMP_CONTROLLER_VALIDATION.json
+tick_connection,f142f2fcb0,unresolved,exact server-player phase edge missing,unresolved,,ECS_EXECUTION_ORDER.md
+tick_connection,f1457d5d20,unresolved,exact server-player phase edge missing,unresolved,,ECS_EXECUTION_ORDER.md
+tick_connection,f14469c820,unresolved,outer replay scheduling/termination missing,unresolved,,MOVEMENT_REPLAY.md
+f146625230,retained_storage,data_flow,allocate and initialize; capacity1..1000,confirmed,,DECOMPILATION/baseline/0x146625230_FUN_146625230.c
+f146619c30,retained_storage,data_flow,clear deque/vector fields before ownership transfer,confirmed,,ASSEMBLY/history/replay_candidates/0000000146619C30.asm
+snapshot_writer,retained_storage,unresolved,append/retention policy not recovered,unresolved,,MOVEMENT_HISTORY.md
+retained_storage,f14839f2a0,data_flow,tick-base index / count / masked map lookup,confirmed,,ASSEMBLY/000000014839F2A0.asm
+retained_storage,f1483a7a60,data_flow,optional retained-record interface path,confirmed,,DECOMPILATION/ghidra_cfg/collision03/0x1483a7a60_FUN_1483a7a60.c
+retained_storage,f142eab580,data_flow,optional snapshot virtual+0x58 path,confirmed,,DECOMPILATION/ghidra_cfg/collision03/0x142eab580_FUN_142eab580.c
+f14839f2a0,snapshot_virtual88,unresolved,CFG-mediated tail jump; concrete restore not recovered,unresolved,0x14839F2F2,ASSEMBLY/000000014839F2A0.asm
+f145e64e60,f145e65390,direct_call,direct call,confirmed,0x145E64E87,ASSEMBLY/0000000145E64E60.asm
+f145e64e60,f145e5c6d0,direct_call,direct call,confirmed,0x145E64EA7,ASSEMBLY/0000000145E64E60.asm
+f145e65ea0,f145e65390,direct_call,direct call,confirmed,0x145E65EBC,ASSEMBLY/0000000145E65EA0.asm
+f145e65ea0,f145e5c6d0,direct_call,direct call,confirmed,0x145E65EDC,ASSEMBLY/0000000145E65EA0.asm
+f145e64e60,metadata_tracker,data_flow,current values + XOR/boolean change indicators,confirmed,,ASSEMBLY/0000000145E64E60.asm
+f145e65ea0,metadata_tracker,data_flow,alternate current-value route,confirmed,,ASSEMBLY/0000000145E65EA0.asm
+f141c5c910,gravity_component,data_flow,conditional scalar/byte write,confirmed,,ASSEMBLY/0000000141C5C910.asm; DATA/GRAVITY_TYPE_BINDING.json
+gravity_component,f141c867b0,data_flow,scalar addition to StateVectorY,confirmed,,ASSEMBLY/0000000141C867B0.asm
+gravity_component,f141c853c0,data_flow,alternative correction/erase route,confirmed,,ASSEMBLY/0000000141C853C0.asm
+f141c867b0,state_motion,data_flow,Y += scalar,confirmed,,ASSEMBLY/0000000141C867B0.asm
+f141c853c0,state_motion,data_flow,sqrt-based scalar correction,confirmed,,ASSEMBLY/0000000141C853C0.asm
+f141c6a570,state_motion,data_flow,vertical drag only,confirmed,,ASSEMBLY/0000000141C6A570.asm
+f141c6d8f0,state_motion,data_flow,vertical drag / separate scalar clear,confirmed,,ASSEMBLY/0000000141C6D8F0.asm
+f1484454b0,mob_travel_scalar,data_flow,block-derived inverse-cube coefficient,confirmed,,JAVA/physics-kernels/ground_machine_validation.json
+f148447b00,mob_travel_scalar,data_flow,material-derived inverse-cube coefficient,confirmed,,JAVA/physics-kernels/ground_machine_validation.json
+f145e38860,move_request,data_flow,threshold fields+0x48/4C/50,confirmed,,ASSEMBLY/0000000145E38860.asm
+f142f1b480,move_control_receiver,data_flow,component+20 object / virtual10 after actor gates,confirmed,0x142F1B4DC,ASSEMBLY/0000000142F1B480.asm
+f1411f41e0,f141c0b690,direct_call,direct call,confirmed,0x1411F42C0,ASSEMBLY/00000001411F41E0.asm
+f1411f41e0,move_control_receiver,registration,object vptr installation,confirmed,0x1411F42A9;0x1411F42B0,ASSEMBLY/00000001411F41E0.asm
+move_control_receiver,f142cc7330,resolved_indirect,default object table+10,confirmed,,DATA/FULL_SIM_TABLE_POINTERS.json
+state_position,f142c142b0,data_flow,save authoritative XYZ at CurrentMovement+E8,confirmed,0x142C142F3;0x142C14300,ASSEMBLY/0000000142C142B0.asm
+f143b54a00,local_input,data_flow,two raw input-axis fields,confirmed,,ASSEMBLY/0000000143B54A00.asm
+local_input,f142f17840,data_flow,input vector scaled0.98,confirmed,,ASSEMBLY/0000000142F17840.asm
+f142f17840,mob_travel,data_flow,copy intentXYZ,confirmed,,ASSEMBLY/0000000142F17840.asm
+f145eed380,mode_tags,data_flow,ensure selected mode tags,confirmed,,ASSEMBLY/0000000145EED380.asm
+f14192f4f0,mode_tags,data_flow,clear pools in separate registered pass,confirmed,,ASSEMBLY/000000014192F4F0.asm
+mode_tags,f144832ca0,data_flow,ground/air view eligibility,confirmed,,ASSEMBLY/000000014484EE10.asm; ASSEMBLY/0000000144851DD0.asm
+mode_tags,f144832fc0,data_flow,player-flying view eligibility,confirmed,,ASSEMBLY/0000000144854B20.asm
+f144832ca0,f144832a50,direct_call,direct call,confirmed,0x144832D19,ASSEMBLY/0000000144832CA0.asm
+f144832fc0,f144832a50,direct_call,direct call,confirmed,0x144832FFF,ASSEMBLY/0000000144832FC0.asm
+mob_travel,f144832a50,data_flow,inputXYZ and coefficient0C,confirmed,,ASSEMBLY/0000000144832A50.asm
+f144832a50,state_motion,data_flow,yaw-rotated acceleration addition,confirmed,,ASSEMBLY/0000000144832A50.asm
+f141c72700,state_motion,data_flow,explicit component/world/effect dependent update,confirmed,,READABLE_SIMULATION/NativeMovement.cpp; DATA/READABLE_SIMULATION_VALIDATION.json
+f141c5b3c0,state_motion,data_flow,explicit component/world/effect dependent update,confirmed,,READABLE_SIMULATION/NativeMovement.cpp; DATA/READABLE_SIMULATION_VALIDATION.json
+f141c67400,state_motion,data_flow,explicit component/world/effect dependent update,confirmed,,READABLE_SIMULATION/NativeMovement.cpp; DATA/READABLE_SIMULATION_VALIDATION.json
+f14661f790,state_motion,data_flow,explicit component/world/effect dependent update,confirmed,,READABLE_SIMULATION/NativeMovement.cpp; DATA/READABLE_SIMULATION_VALIDATION.json
+f145e36020,state_motion,data_flow,explicit component/world/effect dependent update,confirmed,,READABLE_SIMULATION/NativeMovement.cpp; DATA/READABLE_SIMULATION_VALIDATION.json
+state_motion,f145eec7f0,data_flow,motionXYZ request contribution,confirmed,,ASSEMBLY/0000000145EEC7F0.asm
+f145eec7f0,move_request,data_flow,add vector3C; store fields90/94,confirmed,,ASSEMBLY/0000000145EEC7F0.asm
+move_request,f14469ee70,data_flow,selected/requested vector differences,confirmed,,ASSEMBLY/000000014469EE70.asm
+f14469ee70,state_position,data_flow,resolved AABB center / Y offset,confirmed,0x14469EECE;0x14469EED2;0x14469EED7,ASSEMBLY/000000014469EE70.asm
+f14469ee70,collision_flags,data_flow,ensure/remove collision memberships,confirmed,,ASSEMBLY/000000014469EE70.asm
+collision_flags,f143b6ffb0,data_flow,horizontal flag payload under filtered view,confirmed,,ASSEMBLY/0000000143B6FFE0.asm
+collision_flags,f143b70f80,data_flow,vertical marker under filtered view,confirmed,,ASSEMBLY/0000000143B70F90.asm
+f143b6ffb0,state_motion,data_flow,clear X/Z unless request88 bypasses,confirmed,,ASSEMBLY/0000000143B6FFB0.asm
+f143b70f80,state_motion,data_flow,clear Y; bounce/order separate,confirmed,,ASSEMBLY/0000000143B70F80.asm
+f148266460,world_adapter,data_flow,install verified14A75DB78 factory,confirmed,,DATA/NOCLIP_WORLD_BINDING.json
+world_adapter,f1482652a0,data_flow,factory00 ->virtual08; storeinstance08,confirmed,,DATA/NOCLIP_WORLD_BINDING.json
+f1482652a0,f14191f260,resolved_indirect,installed factory14A75DB78+08,confirmed,0x14826534A,DATA/NOCLIP_WORLD_BINDING.json
+world_adapter,f14191f4e0,resolved_indirect,constructed instance14A75DB88+08,confirmed,0x14826F32F,DATA/NOCLIP_WORLD_BINDING.json
+f14191f4e0,f141e7e060,direct_call,direct call,confirmed,0x14191F5AA,ASSEMBLY/000000014191F4E0.asm
+f148265630,f1415f6180,resolved_indirect,constructed14A753900+80; radius0/flag1,confirmed,0x1482658B7,DATA/NOCLIP_WORLD_BINDING.json
+f1415f6180,f1415f5ec0,resolved_indirect,constructed world table+70,confirmed,0x1415F620F,DATA/NOCLIP_WORLD_BINDING.json
+f1415f5ec0,f1415f5900,resolved_indirect,constructed world table+148,confirmed,0x1415F5ED2,DATA/NOCLIP_WORLD_BINDING.json
+f141c5c370,gravity_component,data_flow,verified stage; scheduler composition remains separate,confirmed,,REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json
+f141c5c610,gravity_component,data_flow,verified stage; scheduler composition remains separate,confirmed,,REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json
+f141c81cd0,gravity_component,data_flow,verified stage; scheduler composition remains separate,confirmed,,REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json
+f141c69960,state_motion,data_flow,verified stage; scheduler composition remains separate,confirmed,,REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json
+f14842b540,state_motion,data_flow,verified stage; scheduler composition remains separate,confirmed,,REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json
+f141c88c60,mob_travel,data_flow,verified stage; scheduler composition remains separate,confirmed,,REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json
+f142f17890,mob_travel,data_flow,verified stage; scheduler composition remains separate,confirmed,,REPORTS/ENVIRONMENT_CONTINUATION.md; DATA/ENVIRONMENT_STAGES_VALIDATION.json
+f1415fe680,f141a22f50,resolved_indirect,conditional base table14A763920+30; other providers separate,confirmed,0x1415FF16D,DATA/BLOCK_PROVIDER_BINDING.json
+f141a22f50,f141a22b80,resolved_indirect,base table virtual20,confirmed,0x141A22FF0,DATA/BLOCK_PROVIDER_BINDING.json
+f141a22b80,f141653c90,resolved_indirect,base table virtual50,confirmed,0x141A22C90,DATA/BLOCK_PROVIDER_BINDING.json
+f141a22f50,f145825460,direct_call,direct call,confirmed,0x141A23106,ASSEMBLY/0000000141A22F50.asm
+f141a22f50,f142cea4b0,direct_call,direct call,confirmed,0x141A22F9D,ASSEMBLY/0000000141A22F50.asm
+f141a22f50,f144c50eb0,direct_call,direct call,confirmed,0x141A22FB6,ASSEMBLY/0000000141A22F50.asm
+f141a22b80,f142cea4b0,direct_call,direct call,confirmed,0x141A22C9C;0x141A22DA6,ASSEMBLY/0000000141A22B80.asm
+f141a22b80,f144c50eb0,direct_call,direct call,confirmed,0x141A22CB1;0x141A22DBB,ASSEMBLY/0000000141A22B80.asm
+f141a22f50,move_request,data_flow,"geometry dependency via candidate enumeration, not guaranteed tick order",confirmed,,REPORTS/BLOCK_SHAPE_RECONSTRUCTION.md
+f1415fe680,f147153270,resolved_indirect,conditional provider 14A8E4D10+30,confirmed,0x1415FF16D,DATA/DERIVED_BLOCK_BINDING.json
+f1415fe680,f1487e5140,resolved_indirect,conditional provider 14A92E540+30,confirmed,0x1415FF16D,DATA/DERIVED_BLOCK_BINDING.json
+f1415fe680,f148a2e2c0,resolved_indirect,conditional provider 14A940230+30,confirmed,0x1415FF16D,DATA/DERIVED_BLOCK_BINDING.json
+f1415fe680,f141a2ca60,resolved_indirect,conditional provider 14A8BC7B0+30,confirmed,0x1415FF16D,DATA/DERIVED_BLOCK_BINDING.json
+f147153270,f147152aa0,direct_call,direct call,confirmed,0x14715329D,ASSEMBLY/0000000147153270.asm
+f1487e5140,f141a22f50,direct_call,direct call,confirmed,0x1487E521C,ASSEMBLY/00000001487E5140.asm
+f148a2e2c0,f141a22f50,direct_call,direct call,confirmed,0x148A2E2D8,ASSEMBLY/0000000148A2E2C0.asm
+f141a2ca60,f146614a70,resolved_indirect,conditional14A8BC7B0+38,confirmed,0x141A2CA75,DATA/DERIVED_BLOCK_BINDING.json
+f141a2ca60,f148b33800,resolved_indirect,conditional constructor-bound14A949430+38,confirmed,0x141A2CA75,DATA/FORWARDED_PROVIDER_BINDING.json
+f146614a70,f146614190,direct_call,direct call,confirmed,0x146614C88,ASSEMBLY/0000000146614A70.asm
+f146614a70,f146614640,direct_call,direct call,confirmed,0x146614D68,ASSEMBLY/0000000146614A70.asm
+f1487e5140,f1415f67d0,resolved_indirect,constructed world14A753900+18,confirmed,0x1487E517F,DATA/DERIVED_BLOCK_BINDING.json
+f1487e5140,f1415f4380,resolved_indirect,constructed world14A753900+90,confirmed,0x1487E51C5,DATA/DERIVED_BLOCK_BINDING.json
+f1415fe680,f1465f8960,resolved_indirect,conditional14A8B6DF0+30,confirmed,0x1415FF16D,DATA/MULTIPART_PROVIDER_BINDING.json
+f1465f8960,f1465f8ec0,direct_call,direct call,confirmed,0x1465F8A80,ASSEMBLY/00000001465F8960.asm
+f1465f8960,f1465fa380,resolved_indirect,installed14A8B6DF0+258,confirmed,0x1465F8AAB,DATA/MULTIPART_PROVIDER_BINDING.json
+f1465fa380,f1415f65e0,resolved_indirect,constructed world14A753900+10; fixtures use explicit backend,confirmed,0x1465FA3A9,DATA/MULTIPART_PROVIDER_BINDING.json
+f1465f8960,f1415f67d0,resolved_indirect,constructed world14A753900+18; returned receiver unresolved,confirmed,0x1465F8AC7,DATA/MULTIPART_PROVIDER_BINDING.json
+f1465f8ec0,f142f77110,direct_call,direct call,confirmed,0x1465F902B;0x1465F9081;0x1465F90C8;0x1465F90F8;0x1465F913C;0x1465F9180;0x1465F9227;0x1465F9269;0x1465F92B0;0x1465F92E0;0x1465F9324;0x1465F9354;0x1465F93F5;0x1465F944B;0x1465F9482;0x1465F94B6;0x1465F94EA;0x1465F9528,ASSEMBLY/00000001465F8EC0.asm
+f1465f88e0,f141a22b80,direct_call,direct call,confirmed,0x1465F8939,ASSEMBLY/00000001465F88E0.asm
+f1465ff420,multipart_direction_table,data_flow,native literal loads and direction stores,confirmed,,DATA/MULTIPART_PROVIDER_BINDING.json
+multipart_direction_table,f1465fa380,data_flow,selected by looked-up block propertylowbyte,confirmed,,REPORTS/MULTIPART_COLLISION_SHAPES.md
+multipart_direction_table,f1465f8960,data_flow,selected independently by outer block property,confirmed,,REPORTS/MULTIPART_COLLISION_SHAPES.md
+f1465f8960,multipart_secondary,unresolved,actual object dispatch and two float reads,confirmed,0x1465F8AE8,ASSEMBLY/00000001465F8960.asm
+f1487e5140,shape_gate_receivers,unresolved,raw gates known; object authority unresolved,unresolved,0x1487E51AA;0x1487E51DB;0x1487E51EF,ASSEMBLY/00000001487E5140.asm
+f1415f4380,world_metadata_receiver,unresolved,output-pointer delegation; class unresolved,unresolved,0x1415F4393,ASSEMBLY/00000001415F4380.asm
+f147153270,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
+f1487e5140,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
+f148a2e2c0,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
+f1465f8960,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
+f146614a70,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
+f148b33800,shape_vector,data_flow,append selected boxes; independent of return byte,confirmed,,REPORTS/DERIVED_BLOCK_SHAPES.md
+shape_vector,f1415fe680,data_flow,vector begin/end selects48-byte record iteration,confirmed,0x1415FF173;0x1415FF176;0x1415FF17E,ASSEMBLY/00000001415FE680.asm
+f148427f70,f14193bce0,direct_call,direct call,confirmed,0x1484281CC;0x148428347;0x1484284B6,ASSEMBLY/0000000148427F70.asm
+f14193bce0,f148408460,resolved_indirect,148427FE0 local callback cell; original composition executes,confirmed,0x14193BD71,DATA/JUMP_INPUT_BINDING.json
+f148408460,mob_is_jumping,data_flow,input00/60 andabilities04 insert/remove tag,confirmed,,DATA/JUMP_INPUT_VALIDATION.json
+mob_is_jumping,f146620e20,data_flow,queried membership in actualMobJump view; scheduler phase separate,confirmed,,ASSEMBLY/0000000146656250.asm
+f148423ae0,f148423710,direct_call,direct call,confirmed,0x148423ED0;0x14842415F;0x1484243F9;0x148424699;0x148424939;0x148424BE7,ASSEMBLY/0000000148423AE0.asm
+f148423710,f141c64f50,direct_call,direct call,confirmed,0x148423895,ASSEMBLY/0000000148423710.asm
+jump_duration,f148423710,data_flow,signed counter < sign-extended duration,confirmed,,DATA/JUMP_INPUT_BINDING.json
+f141c64f50,mob_is_jumping,data_flow,conditionally remove existing owner membership,confirmed,,DATA/JUMP_INPUT_VALIDATION.json
+f141c64f50,jump_duration,data_flow,clear nonzero duration; counter unchanged,confirmed,,DATA/JUMP_INPUT_VALIDATION.json
+f141c64f50,jump_passenger_requests,data_flow,nonnegative ordinaryY-savedY and qualified entries,confirmed,,DATA/JUMP_INPUT_BINDING.json
+mob_jump_data,f141c64f50,data_flow,"savedY04 subtractand, distinct from ordinaryStateY",confirmed,,DATA/JUMP_INPUT_BINDING.json
+f146620c10,f1430b85d0,resolved_indirect,actual constructor-bound JumpControl50 table+28,confirmed,0x146620D05,DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json
+f146620c10,f142cc6fa0,resolved_indirect,actual constructor-bound JumpControl50 table+28,confirmed,0x146620D05,DATA/JUMP_INPUT_BINDING.json; DATA/JUMP_INPUT_VALIDATION.json
+f1430b85b0,f141cd2970,direct_call,direct call,confirmed,0x1430B85BF,ASSEMBLY/00000001430B85B0.asm
+f142cc6f40,f141cd2970,direct_call,direct call,confirmed,0x142CC6F71,ASSEMBLY/0000000142CC6F40.asm
+f142cc6f40,f142cc6fd0,resolved_indirect,"constructed14A7D4650+40, after index08=2",confirmed,0x142CC6F62,DATA/JUMP_INPUT_BINDING.json
+f142cc6fd0,f1429ebe10,direct_call,direct call,confirmed,0x142CC6FF5,ASSEMBLY/0000000142CC6FD0.asm
+f142cc6fd0,f1425360d0,direct_call,tail JMP whenbyte01 iszero,confirmed,0x142CC7021,ASSEMBLY/0000000142CC6FD0.asm
+f1425360d0,jump_duration,data_flow,selected byte18 ->duration00; changed-byte dirty bit,confirmed,,DATA/JUMP_INPUT_VALIDATION.json
+f141cd2970,mob_is_jumping,data_flow,membership checks before insert/remove,confirmed,,ASSEMBLY/0000000141CD2970.asm
+f141919f20,f148427f70,resolved_indirect,"constructor/name-bound table28, replay-inclusive registration",confirmed,0x141919F35,DATA/JUMP_INPUT_BINDING.json
+f141919f20,f148423ae0,resolved_indirect,"constructor/name-bound table28, replay-inclusive registration",confirmed,0x141919F35,DATA/JUMP_INPUT_BINDING.json
+f1430b73d0,f1429ebfd0,direct_call,direct call,confirmed,0x1430B76F4;0x1430B7B58,ASSEMBLY/00000001430B73D0.asm
+f1446f7130,f1429ebfd0,direct_call,direct call,confirmed,0x1446F722E,ASSEMBLY/00000001446F7130.asm
+f1446f7130,f1429ec0b0,direct_call,direct call,confirmed,0x1446F7224,ASSEMBLY/00000001446F7130.asm
+f1429ebfd0,jump_duration,data_flow,separate counter reset; native setter writes suppliedDWORD,confirmed,,DATA/JUMP_INPUT_BINDING.json
+f1429ec0b0,jump_event_receivers,unresolved,final receiver08 tail and earlier returned-value dependencies,unresolved,0x1429EC1B2,ASSEMBLY/00000001429EC0B0.asm

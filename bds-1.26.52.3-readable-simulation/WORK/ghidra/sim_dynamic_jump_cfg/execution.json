@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_dynamic_jump",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_dynamic_jump/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_dynamic_jump/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_dynamic_jump_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-17T14:19:21.649613+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_dynamic_jump",
+  "exit_code": 0,
+  "completed_utc": "2026-10-17T14:19:25.040058+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_dynamic_jump/0x142cc6f80_FUN_142cc6f80.c",
+      "bytes": 538,
+      "sha256": "45b637011a88206aff07ca62646855e4fc06480a7474e2079dc060c41f1dbe0a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_dynamic_jump/0x142cc6fa0_FUN_142cc6fa0.c",
+      "bytes": 540,
+      "sha256": "2127d1acb98d991ba5187d1b653e5d009e35a006eb572609e9c0a1113e225dbd",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_dynamic_jump/0x142cc6fb0_FUN_142cc6fb0.c",
+      "bytes": 496,
+      "sha256": "41798807faabee6ba48727df29d2fee2bcf3e8604eb23ca747103c1e749a12cf",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_dynamic_jump/0x142cc6fc0_FUN_142cc6fc0.c",
+      "bytes": 522,
+      "sha256": "60f2b5da0ee1ce41c5e66ec3356c879ad69a5ca30286e889c36c7a683b8802d9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_dynamic_jump/0x142cc6fd0_FUN_142cc6fd0.c",
+      "bytes": 2627,
+      "sha256": "e8fa433552c0150ed5e85a27dc45349ce51fa52c15bc8c0a78339902f6f13716",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

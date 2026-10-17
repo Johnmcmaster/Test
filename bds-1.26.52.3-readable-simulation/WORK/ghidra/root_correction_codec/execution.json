@@ -1,0 +1,58 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/root_correction_codec",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_correction_codec/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_correction_codec/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/root_correction_codec/headless.log"
+  ],
+  "started_utc": "2026-10-15T20:55:28.024260+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/root_correction_codec",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T20:55:36.264621+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/root_correction_codec/0x143141390_FUN_143141390.c",
+      "bytes": 3979,
+      "sha256": "b8b4c974b07e792d59d013eadfc3ee75dba42ecc92597b0a055f20f40122a5f9",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_correction_codec/0x1431415d0_FUN_1431415d0.c",
+      "bytes": 6217,
+      "sha256": "702ea81339109a77edf1765e446dfbd59d9650d1a4ae1b7e821ee369f20ebf40",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_correction_codec/0x143141ba0_FUN_143141ba0.c",
+      "bytes": 2556,
+      "sha256": "84a20efb3110aa288356b4ec4f72f87082af85da179a22b958d887bb27f3f742",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_correction_codec/0x143141f90_FUN_143141f90.c",
+      "bytes": 2631,
+      "sha256": "fd8a754f5d448b7ea6637c036aad6a8cba6853d7520d462f9fe2554b2a1c8c0a",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/root_correction_codec/0x143142230_FUN_143142230.c",
+      "bytes": 36871,
+      "sha256": "a94883fbfe8983bda67a77abac9db25eca040bef7b755735343b9c8d255651c1",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

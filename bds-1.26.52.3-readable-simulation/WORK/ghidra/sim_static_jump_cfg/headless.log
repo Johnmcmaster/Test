@@ -1,0 +1,48 @@
+2026-10-17 14:18:33 INFO  (LoggingInitialization) Using log config file: jar:file:/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Framework/Generic/lib/Generic.jar!/generic.log4j.xml  
+2026-10-17 14:18:33 INFO  (LoggingInitialization) Using log file: /workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_static_jump_cfg/headless.log  
+2026-10-17 14:18:33 INFO  (Preferences) Loading user preferences: /home/agent/.config/ghidra/ghidra_11.4.2_PUBLIC/preferences  
+2026-10-17 14:18:33 INFO  (ClassSearcher) Searching for classes...  
+2026-10-17 14:18:33 INFO  (ClassSearcher) Class search complete (624 ms)  
+2026-10-17 14:18:33 INFO  (SSLContextInitializer) Initializing SSL Context  
+2026-10-17 14:18:33 INFO  (SecureRandomFactory) Initializing Random Number Generator...  
+2026-10-17 14:18:33 INFO  (SecureRandomFactory) Random Number Generator initialization complete: NativePRNGNonBlocking  
+2026-10-17 14:18:33 INFO  (ApplicationTrustManagerFactory) Trust manager disabled, cacerts have not been set  
+2026-10-17 14:18:33 INFO  (AnalyzeHeadless) Headless startup complete (1311 ms)  
+2026-10-17 14:18:33 INFO  (ClassSearcher) Class searcher loaded 58 extension points (18 false positives)  
+2026-10-17 14:18:34 INFO  (HeadlessAnalyzer) HEADLESS Script Paths:
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/Base/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger-rmi-trace/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/DecompilerDependent/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/FileFormats/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Debug/Debugger/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Processors/PIC/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Processors/Atmel/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/VersionTracking/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/PyGhidra/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Processors/JVM/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/BytePatterns/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/SystemEmulation/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Processors/8051/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/MicrosoftCodeAnalyzer/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/Decompiler/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/WildcardAssembler/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/SwiftDemangler/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Processors/DATA/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/PDB/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/Jython/ghidra_scripts
+    /workspace/bedrock_movement_master_1.26.52.3/SCRIPTS
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/BSim/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/GnuDemangler/ghidra_scripts
+    /workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/Ghidra/Features/FunctionID/ghidra_scripts  
+2026-10-17 14:18:34 INFO  (HeadlessAnalyzer) HEADLESS: execution starts  
+2026-10-17 14:18:34 INFO  (HeadlessAnalyzer) Opening existing project: /workspace/scratch/part6_ghidra/project/PositionPart6Raw  
+2026-10-17 14:18:34 INFO  (HeadlessProject) Opening project: /workspace/scratch/part6_ghidra/project/PositionPart6Raw  
+2026-10-17 14:18:35 INFO  (HeadlessAnalyzer) REPORT: Processing read-only project file: /bedrock_mapped.bin  
+2026-10-17 14:18:35 INFO  (HeadlessAnalyzer) SCRIPT: /workspace/bedrock_movement_master_1.26.52.3/SCRIPTS/ModelCfgDispatch.java  
+2026-10-17 14:18:35 INFO  (GhidraScript) ModelCfgDispatch.java> CFG analysis model: pointer14adaa220 -> stub14a59a850; callfixup guard_dispatch_icall; no bytes changed  
+2026-10-17 14:18:35 INFO  (HeadlessAnalyzer) SCRIPT: /workspace/bedrock_movement_master_1.26.52.3/SCRIPTS/DecompilePdataTargets.java  
+2026-10-17 14:18:35 INFO  (GhidraScript) DecompilePdataTargets.java> Bounded .pdata function ranges defined: 0  
+2026-10-17 14:18:35 INFO  (GhidraScript) DecompilePdataTargets.java> Wrote /workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_static_jump/0x1430b85d0_FUN_1430b85d0.c  
+2026-10-17 14:18:35 INFO  (GhidraScript) DecompilePdataTargets.java> Wrote /workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_static_jump/0x141bf9880_FUN_141bf9880.c  
+2026-10-17 14:18:35 INFO  (GhidraScript) DecompilePdataTargets.java> Wrote /workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_static_jump/0x1430b85b0_FUN_1430b85b0.c  
+2026-10-17 14:18:35 INFO  (HeadlessAnalyzer) REPORT: Discarding changes to the following read-only file: /bedrock_mapped.bin  

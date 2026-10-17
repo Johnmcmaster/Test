@@ -1,0 +1,98 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/physics01",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/physics01/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/physics01/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/physics01_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T17:52:21.874657+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/physics01",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T17:52:35.147545+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x141c6d940_FUN_141c6d940.c",
+      "bytes": 1702,
+      "sha256": "ff362ea474a14fa6dcb7320219f2d136cc90fcab335e033d13edcdf05ec067d0",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x141c71380_FUN_141c71380.c",
+      "bytes": 1656,
+      "sha256": "ce3eb493576e5360824ce38cfbcc88018c98a290e9bd079c9c518080cc4c57a8",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x146622680_FUN_146622680.c",
+      "bytes": 11843,
+      "sha256": "757a07cc4f7d19a9fe01173b01d58042de9792e94ee61a85a86afef1eeb5ba7e",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x146625040_FUN_146625040.c",
+      "bytes": 2141,
+      "sha256": "3151cfcad7a8d126a3ca716c865c82de56ac95ae9f256ad3bf07f49361c5bfb5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x1466272b0_FUN_1466272b0.c",
+      "bytes": 3295,
+      "sha256": "9121583692cb5ac17e60977613487a5015c84f2414950bd989ba23031f8c86c7",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x1484403b0_FUN_1484403b0.c",
+      "bytes": 5356,
+      "sha256": "83289e1690ca61b0bfd935e88038d87a89cb23480ad6f56cb9129f65b4a12b17",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x148440a20_FUN_148440a20.c",
+      "bytes": 1909,
+      "sha256": "d610e38f744fcda6883f05381aff66f9382b6ba27203b7d8a172be737026772d",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x148440b70_FUN_148440b70.c",
+      "bytes": 23896,
+      "sha256": "40582c277c6047f6783c20381c8d0aeb70ce717f4528e08f9e53a35a6ac50e94",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x148441a90_FUN_148441a90.c",
+      "bytes": 2223,
+      "sha256": "431143536b590318b345ad08cec251033216e79ddc2a06b7e15c024a4ddda396",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x14845e860_FUN_14845e860.c",
+      "bytes": 2319,
+      "sha256": "0d41b343ad65559d48285794171c48da86ae68ba6b7c26e5db7695fa982860b8",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/physics01/0x14845ed50_FUN_14845ed50.c",
+      "bytes": 33370,
+      "sha256": "5db3e541e4dbc09e7feff9dd6403dbd3be4fe93208303f6b4a4425af5195c326",
+      "failed": false
+    }
+  ],
+  "expected_targets": 11,
+  "successful_exports": 11
+}

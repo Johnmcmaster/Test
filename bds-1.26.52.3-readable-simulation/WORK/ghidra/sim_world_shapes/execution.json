@@ -1,0 +1,58 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_world_shapes",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_world_shapes/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_world_shapes/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_world_shapes/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:59:40.325494+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_world_shapes",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:59:44.156560+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_world_shapes/0x1415fe590_FUN_1415fe590.c",
+      "bytes": 1460,
+      "sha256": "9b06275c3b8ac7d86423e58a46e163a5c230d430594124a8bc3e45fe98854a3d",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_world_shapes/0x142503550_FUN_142503550.c",
+      "bytes": 1632,
+      "sha256": "36ec851da876be4b39bbab6afe175650d6d7f0e53da0eb6cdc03144f9242ddf8",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_world_shapes/0x142f30bc0_FUN_142f30bc0.c",
+      "bytes": 1197,
+      "sha256": "5a7169565eef0bdcb4b2b8fe253cea9b554793799db6b3a7bec7b59a57029444",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_world_shapes/0x142f30c40_FUN_142f30c40.c",
+      "bytes": 2188,
+      "sha256": "ef9163ce0b1d989dafd19fc2c1a95e6e14029dd6e4d4235002e317066ebec970",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_world_shapes/0x142f30fa0_FUN_142f30fa0.c",
+      "bytes": 1633,
+      "sha256": "04fc1d80907053eb2ac7d1e83b4ad5da24d7fce04b8186bde22ff8194b0fd188",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

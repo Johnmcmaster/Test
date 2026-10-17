@@ -1,0 +1,62 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-readOnly",
+    "-preScript",
+    "ModelCfgDispatch.java",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra_cfg/sim_effect_registration",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_effect_registration/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_effect_registration/targets.txt",
+    "CFG pointer14ADAA220->stub14A59A850 verified; temporary built-in guard_dispatch_icall callfixup; raw exports preserved",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_effect_registration_cfg/headless.log"
+  ],
+  "started_utc": "2026-10-15T22:38:37.323068+00:00",
+  "cfg_readonly": true,
+  "outputs": "DECOMPILATION/ghidra_cfg/sim_effect_registration",
+  "exit_code": 0,
+  "completed_utc": "2026-10-15T22:38:41.023030+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_effect_registration/0x141c4d480_FUN_141c4d480.c",
+      "bytes": 9479,
+      "sha256": "b4f881a6407e6dde98bcae4cd34206e3ab4d3cfa2924bc43cc226c4a7a9074aa",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_effect_registration/0x141c53840_FUN_141c53840.c",
+      "bytes": 3580,
+      "sha256": "8cb62b90ce2f2eec1247cef6002d4e2584543205fce7e07c4e2fd280ae008751",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_effect_registration/0x141c54880_FUN_141c54880.c",
+      "bytes": 3565,
+      "sha256": "7073e4bdabf31914c7c3f2c5efad244051f0a5a746116b37da98b219c8908774",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_effect_registration/0x141e7e060_FUN_141e7e060.c",
+      "bytes": 3470,
+      "sha256": "b19a9fd503ae472ca0dd2d9648d864b6fa548b06a3bfc7c9b7b0038c7035f6c5",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra_cfg/sim_effect_registration/0x145eec890_FUN_145eec890.c",
+      "bytes": 1329,
+      "sha256": "6da2ee91d48fcdef5ba21bddf19417babe3e440ae68874c7159b0faa10d7aaa4",
+      "failed": false
+    }
+  ],
+  "expected_targets": 5,
+  "successful_exports": 5
+}

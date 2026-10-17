@@ -1,0 +1,62 @@
+{
+  "batch": "sim_velocity_views",
+  "new_targets": 3,
+  "defined_ranges": 19,
+  "reused": 0,
+  "skipped": 1,
+  "output": "DECOMPILATION/ghidra/sim_velocity_views",
+  "requests": [
+    {
+      "va": "0x143b6ffe0",
+      "rva": "0x3b6ffe0",
+      "end_exclusive": "0x143b70112",
+      "size": 306,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/sim_velocity_views/0x143b6ffe0_FUN_143b6ffe0.c",
+      "assembly": "ASSEMBLY/0000000143B6FFE0.asm"
+    },
+    {
+      "va": "0x143b70f90",
+      "rva": "0x3b70f90",
+      "end_exclusive": "0x143b710c2",
+      "size": 306,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/sim_velocity_views/0x143b70f90_FUN_143b70f90.c",
+      "assembly": "ASSEMBLY/0000000143B70F90.asm"
+    },
+    {
+      "va": "0x143B75990",
+      "reason": "Needs explicit verified leaf/range bound or is not an unwind start",
+      "covering_range": [
+        5431056416,
+        5431058789,
+        false
+      ],
+      "status": "skipped"
+    },
+    {
+      "va": "0x143b75820",
+      "rva": "0x3b75820",
+      "end_exclusive": "0x143b76165",
+      "size": 2373,
+      "boundary_source": ".pdata unwind range",
+      "status": "prepared",
+      "output": "DECOMPILATION/ghidra/sim_velocity_views/0x143b75820_FUN_143b75820.c",
+      "assembly": "ASSEMBLY/0000000143B75820.asm"
+    }
+  ],
+  "execution": {
+    "exit_code": 0,
+    "expected_targets": 3,
+    "successful_exports": 3,
+    "record": "WORK/ghidra/sim_velocity_views/execution.json"
+  },
+  "cfg_execution": {
+    "exit_code": 0,
+    "expected_targets": 3,
+    "successful_exports": 3,
+    "record": "WORK/ghidra/sim_velocity_views_cfg/execution.json"
+  }
+}

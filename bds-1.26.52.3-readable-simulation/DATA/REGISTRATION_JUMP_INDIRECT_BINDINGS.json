@@ -1,0 +1,38 @@
+{
+  "0x1446b7b1d": {
+    "target_va": "0x141919f20",
+    "resolution": "conditional_known_target",
+    "scope": "Selected constructor/factory-bound movement workers14A7E5390/14A8BE440/14A8BE400 and default child tables; other registered worker tables remain separate",
+    "evidence": "DATA/REGISTRATION_AND_JUMP_BINDING.json"
+  },
+  "0x141919f35": {
+    "target_va": "0x142f2fcb0;0x146656840;0x14484f1b0;0x144851f00;0x144854df0;0x1466520d0",
+    "resolution": "conditional_known_target",
+    "scope": "Observed installed tables respectively MoveCollision/MobJump/default ground/default air/default flying/DecrementNoJumpDelay. Registry pointer is wrapped by address; this is not one universal target.",
+    "evidence": "DATA/REGISTRATION_AND_JUMP_BINDING.json"
+  },
+  "0x141c64e8d": {
+    "target_va": "0x141600a50",
+    "resolution": "conditional_known_target",
+    "scope": "Constructed/cached world receiver table14A753900; native variant4 executes actual target and real slot table, with10/28 block entry backends",
+    "evidence": "DATA/REGISTRATION_AND_JUMP_BINDING.json; DATA/JUMP_CONTROLLER_VALIDATION.json; DATA/COLLISION_WORLD_BINDING.json"
+  },
+  "0x141600c0f": {
+    "target_va": "0x140ae1b70;0x140327560",
+    "resolution": "conditional_known_target",
+    "scope": "Selector5 uses140327560, other selectors use140AE1B70; original conditional pointer selection and both bounded native tail adapters execute",
+    "evidence": "DATA/JUMP_CONTROLLER_VALIDATION.json; ASSEMBLY/0000000141600A50.asm"
+  },
+  "0x140ae1b7e": {
+    "target_va": "0x1415f65e0",
+    "resolution": "conditional_known_target",
+    "scope": "CFG dispatch through receiver10 when installed world table is14A753900; lookup entry is backend in composed tests",
+    "evidence": "DATA/JUMP_CONTROLLER_VALIDATION.json; ASSEMBLY/0000000140AE1B70.asm"
+  },
+  "0x14032756e": {
+    "target_va": "0x1415f69e0",
+    "resolution": "conditional_known_target",
+    "scope": "CFG dispatch through receiver28 when installed world table is14A753900; lookup entry is backend in composed tests",
+    "evidence": "DATA/JUMP_CONTROLLER_VALIDATION.json; ASSEMBLY/0000000140327560.asm"
+  }
+}

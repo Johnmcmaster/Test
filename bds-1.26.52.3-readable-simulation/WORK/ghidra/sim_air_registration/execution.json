@@ -1,0 +1,46 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_air_registration",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_air_registration/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_air_registration/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_air_registration/headless.log"
+  ],
+  "started_utc": "2026-10-16T18:42:54.080398+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_air_registration",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T18:42:58.736964+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_air_registration/0x1419499b0_FUN_1419499b0.c",
+      "bytes": 10118,
+      "sha256": "88181e3277bcc673c081ee73e2305c86f93e1ba9f211cd428bce5e00bc485dfe",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_air_registration/0x1419b8b60_FUN_1419b8b60.c",
+      "bytes": 19165,
+      "sha256": "8ec12e051dc7a2680ad1c3d616c498223a25e017697afd5b94b7cbbf20a10025",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_air_registration/0x142d0cba0_FUN_142d0cba0.c",
+      "bytes": 1233,
+      "sha256": "4fd4a7b46a8a2b1396fa596b2f04f32be211afe05b2a7d928729771f7a26df73",
+      "failed": false
+    }
+  ],
+  "expected_targets": 3,
+  "successful_exports": 3
+}

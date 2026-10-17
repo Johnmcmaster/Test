@@ -1,0 +1,72 @@
+[
+  {
+    "id": "SCHED-FACTORY",
+    "va": "0x140794160",
+    "start": "0x14079418f",
+    "end": "0x1407943ec",
+    "claim": "Concrete factory creates labeled Server/Client ticking collections through the same dispatcher and collection constructors",
+    "detail": "InputDLzero selectsServerliteral14A70FD30, nonzeroDL/zeroBL selectsClientliteral14A70FD10, otherwiseClient{} format14A9D62D7. Allthreebranches allocate170-byte collection, call14256D570 and14469BAD0. These are actual label/construction branches, not proof of active player authority or guaranteed tick order.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/SCHEDULER_CONTINUATION_BINDING.json; DATA/REPLAY_CATEGORY_VALIDATION.json; REPORTS/SCHEDULER_CONTINUATION.md"
+  },
+  {
+    "id": "SCHED-FACTORY-INPUTS",
+    "va": "0x140763b60",
+    "start": "0x140763c61",
+    "end": "0x140763cc1",
+    "claim": "An outer shared-holder constructor forwards two distinct raw configuration bytes to the factory",
+    "detail": "Loads byte0 toBL andbyte1 toDIL, allocates40-byte sharedholder andcalls140794160 at763CC1 with thosebytes inEDX/R8D. Upstream construction and live server-player context selection remain unresolved; no names assigned to the raw input structure.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/SCHEDULER_CONTINUATION_BINDING.json; DATA/REPLAY_CATEGORY_VALIDATION.json; REPORTS/SCHEDULER_CONTINUATION.md"
+  },
+  {
+    "id": "SCHED-OWNERSHIP",
+    "va": "0x14469bad0",
+    "start": "0x14469bb60",
+    "end": "0x14469bda6",
+    "claim": "Constructed collection owns the dispatcher at28 and installs separate primary/secondary interfaces",
+    "detail": "Stores14A836380 atobject00 and14A8363A8 at08; transfers incoming dispatcher to28, clears sourceunique handle, andinitializesbyte60=0. Dispatcherconstructor14256D570 installs14A7A28D0. Citedslotsbind registration08, normalcategory18 and replaycategory20; no total primary table extent inferred from adjacent pointers.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/SCHEDULER_CONTINUATION_BINDING.json; DATA/REPLAY_CATEGORY_VALIDATION.json; REPORTS/SCHEDULER_CONTINUATION.md"
+  },
+  {
+    "id": "SCHED-FIRST-CATEGORY",
+    "va": "0x1425705d0",
+    "start": "0x1425705fa",
+    "end": "0x142570622",
+    "claim": "Category selection uses the first matching16-bit token in a38-byte-record span",
+    "detail": "CMPWORD[RDI],R9W, stride38 andequality/end branches selectfirstrecord; empty/missingcategories return. Native replay-chain fixtures include duplicate category tokens, andlatermatchingcategory isnot executed.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/SCHEDULER_CONTINUATION_BINDING.json; DATA/REPLAY_CATEGORY_VALIDATION.json; REPORTS/SCHEDULER_CONTINUATION.md"
+  },
+  {
+    "id": "SCHED-ORDER",
+    "va": "0x1425705d0",
+    "start": "0x1425706b6",
+    "end": "0x14257078c",
+    "claim": "Untimed valid category pass invokes workers synchronously in stored DWORD-ID order",
+    "detail": "LoadsIDsbegin08/end10, incrementscursor4, selectsworkerhandle viaID*10 andmetadata viaID*D0+C8, theninvokesactualclosurebeforeadvancing. Fixture metadataC8=null; registered worker callbacks explicitlysupplied. RepeatedIDs runrepeatedly. This doesnot prove registration order or outerECS phase order without producer/invocation semantics.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/SCHEDULER_CONTINUATION_BINDING.json; DATA/REPLAY_CATEGORY_VALIDATION.json; REPORTS/SCHEDULER_CONTINUATION.md"
+  },
+  {
+    "id": "SCHED-REPLAY-INVOKER",
+    "va": "0x1446b7ac0",
+    "start": "0x1446b7add",
+    "end": "0x1446b7b3d",
+    "claim": "Replay closure places optional per-system hook calls before and after the registered worker",
+    "detail": "Capture+8 providescollection; collection120/160 optionalcallbacks receiveDWORDsystemID. Workerobjectreceiver fromdispatcher receives capture10 registry throughvirtual10 at1446B7B1D. Actualouter14469C820, real14256F0E0 and1425705D0, closure1446B7AC0 andcleanup execute in2060 passing original-entry fixtures. Concrete worker/history code isnot replaced by an inferred replay implementation.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/SCHEDULER_CONTINUATION_BINDING.json; DATA/REPLAY_CATEGORY_VALIDATION.json; REPORTS/SCHEDULER_CONTINUATION.md"
+  },
+  {
+    "id": "SCHED-ALTERNATE-RANGE",
+    "va": "0x14256f110",
+    "start": "0x14256f114",
+    "end": "0x14256f133",
+    "claim": "A separate installed dispatcher entry uses an alternate category-record span",
+    "detail": "Table14A7A28D0+28=14256F110 loadscollection50/58 beforecalling1425705D0. Emulatedreplayuses+20=14256F0E0 and38/40. Those ranges mustnot beconflated or assumed tohaveidentical registration/membership semantics.",
+    "confidence": "confirmed",
+    "supporting_artifacts": "DATA/SCHEDULER_CONTINUATION_BINDING.json; DATA/REPLAY_CATEGORY_VALIDATION.json; REPORTS/SCHEDULER_CONTINUATION.md"
+  }
+]

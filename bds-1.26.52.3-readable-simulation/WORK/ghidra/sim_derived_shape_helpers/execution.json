@@ -1,0 +1,52 @@
+{
+  "command": [
+    "/workspace/scratch/part6_ghidra/ghidra_11.4.2_PUBLIC/support/analyzeHeadless",
+    "/workspace/scratch/part6_ghidra/project",
+    "PositionPart6Raw",
+    "-process",
+    "bedrock_mapped.bin",
+    "-noanalysis",
+    "-scriptPath",
+    "/workspace/bedrock_movement_master_1.26.52.3/SCRIPTS",
+    "-postScript",
+    "DecompilePdataTargets.java",
+    "/workspace/bedrock_movement_master_1.26.52.3/DECOMPILATION/ghidra/sim_derived_shape_helpers",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shape_helpers/ranges.tsv",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shape_helpers/targets.txt",
+    "-log",
+    "/workspace/bedrock_movement_master_1.26.52.3/WORK/ghidra/sim_derived_shape_helpers/headless.log"
+  ],
+  "started_utc": "2026-10-16T19:17:05.461437+00:00",
+  "cfg_readonly": false,
+  "outputs": "DECOMPILATION/ghidra/sim_derived_shape_helpers",
+  "exit_code": 0,
+  "completed_utc": "2026-10-16T19:17:09.824991+00:00",
+  "exports": [
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shape_helpers/0x1465f8ec0_FUN_1465f8ec0.c",
+      "bytes": 5865,
+      "sha256": "ccf5a54beae37ee46b0948e6bccfb4f074fd5218c39cbdeee94a2761dcc89ae3",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shape_helpers/0x146614a70_FUN_146614a70.c",
+      "bytes": 5739,
+      "sha256": "39f0293b7d7ce7232f15ab52ca9f1b43eb551313485592617c70fcdf92e5b1df",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shape_helpers/0x147152aa0_FUN_147152aa0.c",
+      "bytes": 9435,
+      "sha256": "c8a8cdce3c8f30ba2359edf6dfe0061b6550bea6dd41eb5469ea113353659ead",
+      "failed": false
+    },
+    {
+      "path": "DECOMPILATION/ghidra/sim_derived_shape_helpers/0x148b33800_FUN_148b33800.c",
+      "bytes": 7363,
+      "sha256": "76ded9b870780c16ed2502e242a0652907d7c2e1dec32b22c46f0569c5c98731",
+      "failed": false
+    }
+  ],
+  "expected_targets": 4,
+  "successful_exports": 4
+}
