@@ -3,7 +3,7 @@
 
 namespace bds_research::readable {
 struct PackedPropertyNodeAccessPrefix {
-    std::uint64_t left00, parent08, right10;
+    std::uint64_t child00, unknown08, child10;
     std::uint8_t unknown18, sentinel19, unknown1a[6];
     std::uint64_t key20;
     std::uint32_t unknown28, width2c, end30;

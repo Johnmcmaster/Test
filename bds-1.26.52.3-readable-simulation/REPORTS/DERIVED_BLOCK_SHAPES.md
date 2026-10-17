@@ -40,6 +40,10 @@ Complete entry147152AA0..14715307E reads Block+68 as a provider and its+1D8 tree
 header. The lower-bound search observes node sentinel19, key20, DWORD2C and
 DWORD30. It extracts Boolean values from the block's unsigned16 field120:
 
+The node access prefix keeps+08 as`unknown08`; that member's meaning is not
+established by these searches. Child links00/10 and the header's root at+08 are
+distinct observed accesses. The prefixes do not assert a full native allocation.
+
 ```text
 right = (end30 - width2C + 1) & 31;
 left  = (16 - width2C) & 31;
